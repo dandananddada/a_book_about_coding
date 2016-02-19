@@ -121,8 +121,18 @@ System.out.println(number - Integer.parseInt(string));
 
 而当我们显示的把一个内容为非数字的`String`转换为`int`时会抛出一个**运行时**异常：字符串无法格式化为数字。
 
+另外如果你在Ruby中对`String`和`Number`进行加法运算的话，也会报运行时错误。
 
-接下来我们看下弱类型的c++和JavaScript是如何处理两种不同数据类型的运算的。
+```Ruby
+1 + "1"
+//=> String can't be coerced into Fixnum
+
+1 + "this is a string"
+//=> String can't be coerced into Fixnum
+
+```
+
+接下来我们看下弱类型的C++和JavaScript是如何处理两种不同数据类型的运算的。
 
 
 
