@@ -78,13 +78,51 @@ paramsIsWeaktyped(string);
 //=> params is string
 ```
 
+**3.变量运算时**
+
+这是最容易拿来说明强弱类型语言的差异的。在强类型语言中，不同类型的变量是无法直接运算的，而弱类型语言在处理这种运算时不会抛出异常，来看下面几个例子。
+
+在Java中`int`类型不能和`String`类型直接运算，在加法运算中`int`类型会被隐式转换为`String`，然后进行`String + String`的字符串合并运算。
+
+而在减法运算中，首先字符串不存在减法运算，所以`int`类型无法隐式转换为`String`类型进行`String - String`运算，其次`String`类型无法隐式转换为`int`类型，所以`int`与`String`的减法运算在**编译时**会报错。
+
+```java
+int number = 1;
+String string = "this is a string";
+String stringNumber = "1";
+
+System.out.println(number + string);
+//=> 1this is a string
+
+System.out.println(number + stringNumber);
+//=> 11
+
+System.out.println(number - string);
+//=> error: bad operand types for binary operator '-'
+```
+接下来我们看下Java中显示转换下会如何。
+
+```java
+int number = 1;
+String string = "this is a string";
+String stringNumber = "1";
+
+System.out.println(number + Integer.parseInt(stringNumber));
+//=> 2
+
+System.out.println(number -  Integer.parseInt(stringNumber));
+//=> 0
+
+System.out.println(number - Integer.parseInt(string));
+//=> Exception in thread "main" Java.lang.NumberFormatException: For input string: "this is a string"
+```
+
+可以看出当我们显示的把一个内容为数字的`String`转换为`int`时，会按照两个`int`类型的规则进行加减运算。
+
+而当我们显示的把一个内容为非数字的`String`转换为`int`时会抛出一个**运行时**异常：字符串无法格式化为数字。
 
 
-
-
-
-
-
+接下来我们看下弱类型的c++和JavaScript是如何处理两种不同数据类型的运算的。
 
 
 
