@@ -36,7 +36,7 @@ var unknowVariable;     //这里通过变量声明无法判断其具体类型。
 除此之外你可能还会拿出Scala说它的`val`和`var`也是无法区分类型的，但是在Scala的代码中你随处都可以看见`a: Int`、`b: Double`这样的变量定义，因为Scala确实是一个强类型语言，而`val`和`var`只是在使用时进行了必要的类型转换，同时Scala本身是不支持变量声明不初始化的，所以代码中的变量初始化其实已经告诉你`val`究竟是一个什么类型了。
 ```scala
 val uninitializeVariable;       
-//error: only classes can have declared but undefined memebers
+//=> error: only classes can have declared but undefined memebers
 ```
 
 **2.在作为函数参数时**
@@ -54,10 +54,12 @@ public class StrongTyped{
      public static void main(String []args){
         StrongTyped strongTyped = new StrongTyped();
         String stringParams = "this params is a string";
+        
         strongTyped.mustBeInt(stringParams);
-        //error: method mustBeInt in class StrongTyped cannot be applied to given types:
+        //=> error: method mustBeInt in class StrongTyped cannot be applied to given types:
+        
         strongTyped.mustBeString(stringParams);
-        //params is permited
+        //=> params is permited
      }
 }
 ```
