@@ -134,6 +134,44 @@ System.out.println(number - Integer.parseInt(string));
 
 接下来我们看下弱类型的C++和JavaScript是如何处理两种不同数据类型的运算的。
 
+```c++
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int number = 1;
+    char character1 = '1';
+    char characterA = 'A';
+    
+    cout << number + character1 << endl;    //=> 50
+    cout << number + characterA << endl;    //=> 66
+    cout << number - character1 << endl;    //=> -48
+   return 0;
+}
+```
+可以看到无论`char`是字母还是数字在C++中都会转换为表示这个字符的ASCII码，然后与`int`进行运算。
+
+接下来看下JavaScript中是如何的。
+
+```
+var number = 1
+,   string = "this is a string"
+,   stringNumber = "1";
+
+console.log(number + string);       //=> 1this is a string
+
+console.log(number + stringNumber); //=> 11 
+
+console.log(number - string);       //=> NaN
+
+console.log(number - stringNumber); //=> 0
+
+```
+可以看出JavaScript的运算结果是在Java的基础上有所变化，`number` + `string` 仍旧是做字符串合并运算，而`number` - `string`则变成了数字减法运算，而对无法转换为数字的字符串进行数学运算也不会返回错误，取而代之的是返回`NaN`（Not a Number，是JavaScript内置的一个特殊值）。
+
+更有趣的是，在大多数语言中除零运算都会报错，比如Java和Ruby中会报运行错误，而C++中会报编译错误，但是在JavaScript中除零会返回另外一个特殊值`Infinity`（表示无限大的值）。
 
 
 
