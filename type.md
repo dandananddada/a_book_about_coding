@@ -14,10 +14,53 @@
 
 比如数字和数字是可以直接求和运算的，因为数字1和数字2都被划分为数字类型，而数字和字符是不能直接相加的。
 
+有了数据类型点概念就可以说明强／弱类型和动／静类型了。
 
 
 ####强类型和弱类型
 
+这里的强与弱是对数据类型灵活程度对一个形容，我会通过以下几个方面来说明其差异。
+
+**1.在变量声明时**
+
+强类型语言中的变量时是知道其数据类型的，而弱类型语言中变量在声明时你无法知道其具体类型，只有在使用时才能明确。
+
+```java
+int intVariable;        //这里很明显这个变量是个数字。   
+```
+```javascript
+var unknowVariable;     //这里通过变量声明无法判断其具体类型。
+```
+也许你想说我在用Java的范型时也无法得知变量具体的类型，但不得不承认你所用的范型是你自己定义的一个类这一点你是知道的。而在上面的JavaScript中我们甚至无法区别`unknowVariable`是一个内置的变量类型还是一个自定义对象的实例。
+
+除此之外你可能还会拿出Scala说它的`val`和`var`也是无法区分类型的，但是在Scala的代码中你随处都可以看见`a: Int`、`b: Double`这样的变量定义，因为Scala确实是一个强类型语言，而`val`和`var`只是在使用时进行了必要的类型转换，同时Scala本身是不支持变量声明不初始化的，所以代码中的变量初始化其实已经告诉你`val`究竟是一个什么类型了。
+```scala
+val uninitializeVariable;       
+//error: only classes can have declared but undefined memebers
+```
+
+**2.在作为函数参数时**
+
+强类型语言中要求传入函数的实参必须与函数定义时的形参类型一致。而弱类型语言中要灵活的多。
+
+```java
+public class StrongTyped{
+    public void mustBeInt(int params){
+        System.out.println("params is permited"); 
+    }
+    public void mustBeString(String params){
+        System.out.println("params is permited"); 
+    }
+     public static void main(String []args){
+        StrongTyped strongTyped = new StrongTyped();
+        String stringParams = "this params is a string";
+        strongTyped.mustBeInt(stringParams);
+        //error: method mustBeInt in class StrongTyped cannot be applied to given types:
+        strongTyped.mustBeString(stringParams);
+        //params is permited
+     }
+}
+```
 
 
 
