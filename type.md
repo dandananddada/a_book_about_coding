@@ -63,7 +63,18 @@ public class StrongTyped{
      }
 }
 ```
+```javascript
+function paramsIsWeaktyped(params){
+    if(typeof params === "number") console.log("params is number");
+    if(typeof params === "string") console.log("params is string);
+}
+var number = 1
+,   string = "this is a string";
 
+paramsIsWeaktyped(number);
+
+paramsIsWeaktyped(string);
+```
 
 
 
