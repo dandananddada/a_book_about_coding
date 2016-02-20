@@ -131,15 +131,15 @@ System.out.println(number - Integer.parseInt(string));
 
 另外如果你在Ruby中对`String`和`Number`进行加法运算的话，也会报运行时错误。
 
-```Ruby
+```ruby
 1 + "1"
-//=> String can't be coerced into Fixnum
+#=> String can't be coerced into Fixnum
 
 1 + "this is a string"
-//=> String can't be coerced into Fixnum
-
+#=> String can't be coerced into Fixnum
 ```
 
+# String can't be coerced into Fixnum
 接下来我们看下弱类型的C++和JavaScript是如何处理两种不同数据类型的运算的。
 
 ```c++
@@ -163,7 +163,7 @@ int main()
 
 接下来看下JavaScript中是如何的。
 
-```
+```javascript
 var number = 1
 ,   string = "this is a string"
 ,   stringNumber = "1";
@@ -183,7 +183,9 @@ console.log(number - stringNumber); //=> 0
 
 
 
-
+```ruby
+1 + 1
+```
 
 
 
