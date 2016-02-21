@@ -18,7 +18,7 @@ var unknowVariable;     //这里通过变量声明无法判断其具体类型。
 ```
 也许你想说我在用Java的范型时也无法得知变量具体的类型，但不得不承认你所用的范型是你自己定义的一个类这一点你是知道的。而在上面的JavaScript中我们甚至无法区别`unknowVariable`是一个内置的变量类型还是一个自定义对象的实例。
 
-除此之外你可能还会拿出Scala说它的`val`和`var`也是无法区分类型的，但是在Scala的代码中你随处都可以看见`a: Int`、`b: Double`这样的变量定义，因为Scala确实是一个型语言，而`val`和`var`只是Scala引入了类型推断机制。
+除此之外你可能还会拿出Scala说它的`val`和`var`也是无法区分类型的，但是在Scala的代码中你随处都可以看见`a: Int`、`b: Double`这样的变量定义，因为Scala确实是一个型语言，而`val`和`var`只是Scala引入了类型推断机制。这一点可以在Scala变量不支持只声明不初始化看出来。
 ```scala
 val uninitializeVariable;       
 //=> error: only classes can have declared but undefined memebers
