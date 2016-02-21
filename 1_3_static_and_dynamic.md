@@ -19,7 +19,8 @@ var unknowVariable;     //这里通过变量声明无法判断其具体类型。
 在动态类型语言中你甚至可以不声明而直接使用一个变量。
 
 ```javascript
-undeclaredVariable = "this variable is not declared"
+undeclaredVariable = "this variable is not declared";
+//undeclaredVariable是一个未声明的变量，在JavaScript中这个变量会变为Global对象的一个属性。
 ```
 
 也许你想说我在用Java的范型时也无法得知变量具体的类型，但不得不承认你所用的范型是你自己定义的一个类这一点你是知道的。而在上面的JavaScript中我们甚至无法区别`unknowVariable`是一个内置的变量类型还是一个自定义对象的实例。
