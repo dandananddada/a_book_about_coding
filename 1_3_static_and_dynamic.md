@@ -82,10 +82,3 @@ console.log(window.zaro, zero);     //=> 0 undefined
 int zero;
 zaro = 0;           //=> error: cannot find symbol
 ```
-
-
-
-
-
-
-```
