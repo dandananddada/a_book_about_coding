@@ -86,6 +86,9 @@ zaro = 0;           //=> error: cannot find symbol
 
 下表就是一个好的例子：
 
-
+|           | 静态类型  | 动态类型      |
+|--         | --        | --            |
+| 强类型    | Java      | Ruby          |
+| 弱类型    | C++       | JavaScript    |
 
 
