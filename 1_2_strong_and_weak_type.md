@@ -83,7 +83,7 @@ int main()
 ```
 可以看到无论`char`是字母还是数字在C++中都会转换为表示这个字符的ASCII码，然后与`int`进行运算。
 
-接下来看下JavaScript中是如何的。
+接下来看下JavaScript中是如何处理的。
 
 ```javascript
 var number = 1
