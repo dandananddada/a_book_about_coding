@@ -54,17 +54,17 @@ public class StaticTyped{
 }
 ```
 ```javascript
-function paramsIsWeaktyped(params){
+function paramsIsDynamicTyped(params){
     if(typeof params === "number") console.log("params is number");
     if(typeof params === "string") console.log("params is string");
 }
 var number = 1
 ,   string = "this is a string";
 
-paramsIsWeaktyped(number);
+paramsIsDynamicTyped(number);
 //=> params is number
 
-paramsIsWeaktyped(string);
+paramsIsDynamicTyped(string);
 //=> params is string
 ```
 
