@@ -82,3 +82,10 @@ console.log(window.zaro, zero);     //=> 0 undefined
 int zero;
 zaro = 0;           //=> error: cannot find symbol
 ```
+其实这两个纬度的类型定义，都是在灵活性和避免小陷阱这个数轴上寻找一个折中点。作为开发人员你只要记住这是两个完全不同的概念就行了，也就是静态类型语言可能是强类型的，也可能是弱类型的。
+
+下表就是一个好的例子：
+
+
+
+
