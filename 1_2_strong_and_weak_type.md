@@ -3,48 +3,7 @@
 这里的强与弱是对数据类型检查的严格程度的描述，强类型语言中对类型转换的要求相对要更严格些。所以在参数的类型匹配上要求也会更加严格。
 
 
-
-
-**2.在作为函数参数时**
-
-强类型语言中要求传入函数的实参必须与函数定义时的形参类型一致。而弱类型语言中要灵活的多。
-
-```java
-public class StrongTyped{
-    public void mustBeInt(int params){
-        System.out.println("params is permited"); 
-    }
-    public void mustBeString(String params){
-        System.out.println("params is permited"); 
-    }
-     public static void main(String []args){
-        StrongTyped strongTyped = new StrongTyped();
-        String stringParams = "this params is a string";
-        
-        strongTyped.mustBeInt(stringParams);
-        //=> error: method mustBeInt in class StrongTyped cannot be applied to given types:
-        
-        strongTyped.mustBeString(stringParams);
-        //=> params is permited
-     }
-}
-```
-```javascript
-function paramsIsWeaktyped(params){
-    if(typeof params === "number") console.log("params is number");
-    if(typeof params === "string") console.log("params is string");
-}
-var number = 1
-,   string = "this is a string";
-
-paramsIsWeaktyped(number);
-//=> params is number
-
-paramsIsWeaktyped(string);
-//=> params is string
-```
-
-**3.变量运算时**
+**1.2.1 类型转换场景下**
 
 这是最容易拿来说明强弱类型语言的差异的。在强类型语言中，不同类型的变量是无法直接运算的，而弱类型语言在处理这种运算时不会抛出异常，来看下面几个例子。
 
@@ -139,6 +98,48 @@ console.log(number - stringNumber); //=> 0
 值得一提的是，在大多数语言中除零运算都会报错，比如Java和Ruby中会报运行错误，而C++中会报编译错误，但是在JavaScript中除零会返回另外一个特殊值`Infinity`（表示无限大的值）。
 
 当然通过上述的说明想判断一门语言是否为强类型你可以用`int - string`试一试，不过千万别把这个作为判断准则，我只是说这个规则有时候还是挺靠谱，但只是有些时候。
+
+
+**2.在作为函数参数时**
+
+强类型语言中要求传入函数的实参必须与函数定义时的形参类型一致。而弱类型语言中要灵活的多。
+
+```java
+public class StrongTyped{
+    public void mustBeInt(int params){
+        System.out.println("params is permited"); 
+    }
+    public void mustBeString(String params){
+        System.out.println("params is permited"); 
+    }
+     public static void main(String []args){
+        StrongTyped strongTyped = new StrongTyped();
+        String stringParams = "this params is a string";
+        
+        strongTyped.mustBeInt(stringParams);
+        //=> error: method mustBeInt in class StrongTyped cannot be applied to given types:
+        
+        strongTyped.mustBeString(stringParams);
+        //=> params is permited
+     }
+}
+```
+```javascript
+function paramsIsWeaktyped(params){
+    if(typeof params === "number") console.log("params is number");
+    if(typeof params === "string") console.log("params is string");
+}
+var number = 1
+,   string = "this is a string";
+
+paramsIsWeaktyped(number);
+//=> params is number
+
+paramsIsWeaktyped(string);
+//=> params is string
+```
+
+
 
 究竟一个语言是强类型还是弱类型还是取决于语言设计是所做出的便好，弱类型语言可以让你的代码更简单明了，同时有些时候你会觉得弱类型让你的逻辑处理变得简化。但为此付出的代价就是你可能会因为一时的疏忽而导致一些难以发现的bug。总之强弱类型影响着你的是是用更灵活的方式编码，还是扎扎实实的操作变量避免一些不必要的类型问题。不过，既然你选择了自己要用的语言，或者你被迫要使用这样那样的语言，那么你只能遵从语言设计时所定义的折中的法则，你在这里只是能知道这样做有什么好处又什么坏处，而不是能不能不这么做。
 
