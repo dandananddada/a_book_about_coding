@@ -30,3 +30,22 @@ undeclaredVariable = "this variable is not declared";
 val uninitializeVariable;       
 //=> error: only classes can have declared but undefined memebers
 ```
+
+同时因为动态类型语言对变量与数据类型绑定的宽松要求，导致在函数传参时相对与静态类型语言也要灵活的多。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
