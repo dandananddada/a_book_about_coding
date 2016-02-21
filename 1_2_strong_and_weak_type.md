@@ -100,49 +100,6 @@ console.log(number - stringNumber); //=> 0
 
 当然通过上述的说明想判断一门语言是否为强类型你可以用`int - string`试一试，不过千万别把这个作为判断准则，我只是说这个规则有时候还是挺靠谱，但只是有些时候。
 
-
-####1.2.2 参数匹配场景下
-
-强类型语言中要求传入函数的实参必须与函数定义时的形参类型一致。而弱类型语言中要灵活的多。
-
-```java
-public class StrongTyped{
-    public void mustBeInt(int params){
-        System.out.println("params is permited"); 
-    }
-    public void mustBeString(String params){
-        System.out.println("params is permited"); 
-    }
-     public static void main(String []args){
-        StrongTyped strongTyped = new StrongTyped();
-        String stringParams = "this params is a string";
-        
-        strongTyped.mustBeInt(stringParams);
-        //=> error: method mustBeInt in class StrongTyped cannot be applied to given types:
-        
-        strongTyped.mustBeString(stringParams);
-        //=> params is permited
-     }
-}
-```
-```javascript
-function paramsIsWeaktyped(params){
-    if(typeof params === "number") console.log("params is number");
-    if(typeof params === "string") console.log("params is string");
-}
-var number = 1
-,   string = "this is a string";
-
-paramsIsWeaktyped(number);
-//=> params is number
-
-paramsIsWeaktyped(string);
-//=> params is string
-```
-
-
-####1.2.3 小结
-
 究竟一个语言是强类型还是弱类型还是取决于语言设计是所做出的偏好，弱类型语言可以让你的代码更简单明了，逻辑更�加清晰易懂。但为此付出的代价就是你可能会因为一时的疏忽而导致一些难以发现的trap。
 
 ```javascript
