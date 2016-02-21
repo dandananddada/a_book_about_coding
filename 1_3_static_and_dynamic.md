@@ -33,8 +33,8 @@ val uninitializeVariable;
 
 同时因为动态类型语言对变量与数据类型绑定的宽松要求，导致在函数传参时相对与静态类型语言也要灵活的多。
 
-`｀`java
-public class StrongTyped{
+```java
+public class StaticTyped{
     public void mustBeInt(int params){
         System.out.println("params is permited"); 
     }
@@ -42,13 +42,13 @@ public class StrongTyped{
         System.out.println("params is permited"); 
     }
      public static void main(String []args){
-        StrongTyped strongTyped = new StrongTyped();
+        StaticTyped StaticTyped = new StaticTyped();
         String stringParams = "this params is a string";
         
-        strongTyped.mustBeInt(stringParams);
-        //=> error: method mustBeInt in class StrongTyped cannot be applied to given types:
+        StaticTyped.mustBeInt(stringParams);
+        //=> error: method mustBeInt in class StaticTyped cannot be applied to given types:
         
-        strongTyped.mustBeString(stringParams);
+        StaticTyped.mustBeString(stringParams);
         //=> params is permited
      }
 }
