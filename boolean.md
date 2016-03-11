@@ -11,7 +11,7 @@ if(true)        System.out.println("true");
 if(1)           console.log("true");
 ```
 其原理是弱类型语言会将数字类型隐式转换为布尔值。
-以下以JavaScript为例说明boolean类型和其他类型的转化。
+我准备用JavaScript为例来说明boolean类型和其他类型的转化。
 ```javascript
 1   == true;            //=> true,  [1]
 0   == false;           //=> true,  [1]
