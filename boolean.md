@@ -57,12 +57,12 @@ if(0) puts "zero equals true" end
 ```java
 //java
 int a = 1;
-if(a == 1)  System.out.println("true");     //=>true
+if(a == 1)  System.out.println("equals true");     //=>equals true
 ```
 ```Ruby
 #ruby
-a = 0
-puts "false" if a == 0            #=>false
+a = 1
+puts "equals true" if a != 0            #=>equals true
 ```
 
 
