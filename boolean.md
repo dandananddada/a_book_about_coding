@@ -46,9 +46,21 @@ boolean d   = true == Boolean.parseBoolean(b);
 //=>false
 ```
 上面的例子可以看出`Boolean.parseBoolean`会将字符串`true`（不区分大小写）转换为布尔值`true`，而其他字符串都会转换为`false`。
-Java boolean 0 1
 
-Ruby Scala 0 1
+另外并非所有动态类型语言都会把`0`当做`false`看待。
+比如下面的ruby代码
+```ruby
+if(0) puts "zero equals true" end
+#=>zero equals true
+```
+可以看出在ruby中`0`等价于`true`，所以在使用0，1做条件判断时最稳妥办法还是用`==`运算返回一个布尔值。
+```java
+int a = 1;
+if(a == 1)  System.out.println("true");     //=>true
+```
+```ruby
+a = 0
+if(a == 0) puts "false" end             #=>false
+```
 
-JavasCript 0 1
 
