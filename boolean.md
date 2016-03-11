@@ -33,8 +33,19 @@ Boolean('') == false;   //=>true,   [6]
 4. 非空字符和布尔类型始终不等。
 5. 通过4可知是非空字符本身即不是`true`也不是`false`，但是取反后是`false`，两次取反自然就是`true`。
 6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
-Java 字符串转 boolean
 
+Java对于boolean类型的处理上和JavaScript有些不同，他禁止数字类型和布尔类型的转换，同时字符类型和布尔类型要通过API。
+```java
+boolean a   = true == 1;          
+//=>incomparable types: boolean and int
+String  a   = "True";
+String  b   = "another";
+boolean c   = true == Boolean.parseBoolean(a);
+//=>true
+boolean d   = true == Boolean.parseBoolean(b);
+//=>false
+```
+上面的例子可以看出`Boolean.parseBoolean`会将字符串`true`（不区分大小写）转换为布尔值`true`，而其他字符串都会转换为`false`。
 Java boolean 0 1
 
 Ruby Scala 0 1
