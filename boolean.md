@@ -62,7 +62,7 @@ if(a == 1)  System.out.println("true");     //=>true
 ```Ruby
 #ruby
 a = 0
-if(a == 0) puts "false" end             #=>false
+puts "false" if a == 0            #=>false
 ```
 
 
