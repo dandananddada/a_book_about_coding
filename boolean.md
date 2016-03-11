@@ -55,10 +55,12 @@ if(0) puts "zero equals true" end
 ```
 可以看出在ruby中`0`等价于`true`，所以在使用0，1做条件判断时最稳妥办法还是用`==`运算返回一个布尔值。
 ```java
+//java
 int a = 1;
 if(a == 1)  System.out.println("true");     //=>true
 ```
 ```ruby
+//ruby
 a = 0
 if(a == 0) puts "false" end             #=>false
 ```
