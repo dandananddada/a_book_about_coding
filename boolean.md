@@ -24,10 +24,15 @@ if(1)           console.log("true");
 !'s' == true;           //=>false,  [5]
 !!'s' == true;          //=>true,   [5]
 Boolean('s') == true;   //=>true,   [6]
-Boolean('') == true;    //=>true,   [6]
+Boolean('') == false;   //=>true,   [6]
 ```
+1. 在JavaScript中boolean会转化为数字，其中`true`会转换为`1`，`false`会转换为`0`，所以相等。
 
-
+2. 而强制等于`===`会禁止类型转换，所以这里`1`不等于`true`
+3. 空字符会转换为true。
+4. 非空字符和布尔类型始终不等。
+5. 通过4可知是非空字符本身即不是`true`也不是`false`，但是取反后是`false`，两次取反自然就是`true`。
+6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
 Java 字符串转 boolean
 
 Java boolean 0 1
