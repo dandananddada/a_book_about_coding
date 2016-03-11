@@ -59,8 +59,8 @@ if(0) puts "zero equals true" end
 int a = 1;
 if(a == 1)  System.out.println("true");     //=>true
 ```
-```ruby
-//ruby
+```Ruby
+#ruby
 a = 0
 if(a == 0) puts "false" end             #=>false
 ```
