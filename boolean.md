@@ -39,9 +39,10 @@ null == false;          //=>false,  [7]
 6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
 7. 这里`undefined`和`null`类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说`undefined``nill`和`NaN`都表示`false`，这个说法不是很准确，但是在if表达式中确实又是如此的。
 ```javascript
+//第一个if表达式判断为false，不执行内部代码。
 if(undefined)   console.log("will not execute");
 if(!null)       console.log("will execute");
-//=>will execute, 第一个if表达式判断为false所以不执行。
+//=>will execute
 ```
 
 Java对于boolean类型的处理上和JavaScript有些不同，他禁止数字类型和布尔类型的转换，同时字符类型和布尔类型要通过API。
