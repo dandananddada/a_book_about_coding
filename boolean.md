@@ -25,6 +25,10 @@ if(1)           console.log("true");
 !!'s' == true;          //=>true,   [5]
 Boolean('s') == true;   //=>true,   [6]
 Boolean('') == false;   //=>true,   [6]
+undefined == false;     //=>false,  [7]
+!undefined == true;     //=>true,   [7]
+null == false;          //=>false,  [7]
+!null == true;          //=>true,   [7]
 ```
 1. 在JavaScript中boolean会转化为数字，其中`true`会转换为`1`，`false`会转换为`0`，所以相等。
 
@@ -33,6 +37,12 @@ Boolean('') == false;   //=>true,   [6]
 4. 非空字符和布尔类型始终不等。
 5. 通过4可知是非空字符本身即不是`true`也不是`false`，但是取反后是`false`，两次取反自然就是`true`。
 6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
+7. 这里`undefined`和`null`类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说`undefined``nill`和`NaN`都表示`false`，这个说法不是很准确，但是在if表达式中确实又是如此的。
+```javascript
+if(undefined)   console.log("will not execute");
+if(!null)       console.log("will execute");
+//=>will execute, 第一个if表达式判断为false所以不执行。
+```
 
 Java对于boolean类型的处理上和JavaScript有些不同，他禁止数字类型和布尔类型的转换，同时字符类型和布尔类型要通过API。
 ```java
