@@ -58,7 +58,16 @@ boolean d   = true == Boolean.parseBoolean(b);
 ```
 上面的例子可以看出`Boolean.parseBoolean`会将字符串`true`（不区分大小写）转换为布尔值`true`，而其他字符串都会转换为`false`。
 
-另外并非所有动态类型语言都会把`0`当做`false`看待。
+另外Java可以对一个布尔类型实例化为null，但是null本身是不能和boolean值进行比较的。
+```java
+Boolean a = true == null;
+//=>incomparable types: boolean and <null>
+Boolean a = null
+if(a == null) System.out.println("true");   //=>true
+
+```
+
+最后要说明的是并非所有动态类型语言都会把`0`当做`false`看待。
 比如下面的ruby代码
 ```ruby
 if(0) puts "zero equals true" end
