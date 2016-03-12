@@ -37,7 +37,7 @@ null == false;          //=>false,  [7]
 4. 非空字符和布尔类型始终不等。
 5. 通过4可知是非空字符本身即不是`true`也不是`false`，但是取反后是`false`，两次取反自然就是`true`。
 6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
-7. 这里`undefined`和`null`类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说`undefined``nill`和`NaN`都表示`false`，这个说法不是很准确，但是在if表达式中确实又是如此的。
+7. 这里`undefined`和`null`类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说`undefined``nill`和`NaN`都表示`false`，这个说法不是很准确，但是在if表达式中确实又是如此应用的。
 ```javascript
 //第一个if表达式判断为false，不执行内部代码。
 if(undefined)   console.log("will not execute");
