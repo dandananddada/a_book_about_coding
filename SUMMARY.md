@@ -7,6 +7,6 @@
    * [1.3 静态类型和动态类型](1_3_static_and_dynamic.md)
    * [1.4 编译型与解释型](1_4_compiled_and_interpreted.md)
    * [布尔类型](boolean.md)
-   * 
+   * 字符类型
 * [第二章 聊语言不聊并发？](chapter2.md)
 
