@@ -8,6 +8,6 @@
    * [1.4 编译型与解释型](1_4_compiled_and_interpreted.md)
    * [布尔类型](boolean.md)
    * [字符类型](string.md)
-   * 数字类型
+   * [数字类型](number.md)
 * [第二章 聊语言不聊并发？](chapter2.md)
 
