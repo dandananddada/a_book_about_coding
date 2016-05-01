@@ -82,7 +82,7 @@ puts string    #=>string
 public static void main(String []args){      
   char[] chars = {'s', 't', 'r', 'i', 'n', 'g'};
   String charStr = new String(chars);
-  String equalCharStr = charstr;
+  String equalCharStr = charStr;
 
   charStr = "string charStr";
   equalCharStr = "string equalCharStr";
@@ -96,8 +96,8 @@ public static void main(String []args){
   str = "string str";
   equalStr = "string equalStr";
 
-  System.out.println(str);
-  System.out.println(equalStr);
+  System.out.println(str);             //=>string str
+  System.out.println(equalStr);        //=>string equalStr
 
     }
 ```
