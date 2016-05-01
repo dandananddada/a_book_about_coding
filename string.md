@@ -77,8 +77,7 @@ string = 'string'
 puts char      #=>a
 puts string    #=>string
 ```
-
-
+注意虽然Java中String是一个类，但字符串拷贝的时候是值类型，而不是引用。
 
 
 
