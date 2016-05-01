@@ -9,6 +9,6 @@
    * [布尔类型](boolean.md)
    * [字符类型](string.md)
    * [数字类型](number.md)
-   * 值类型和引用类型
+   * [值类型和引用类型](value_and_refrence_type.md)
 * [第二章 聊语言不聊并发？](chapter2.md)
 
