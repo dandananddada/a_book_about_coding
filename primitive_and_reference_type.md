@@ -62,7 +62,6 @@ a === b;    //=>true
 a = [1, 2, 3];
 b = [1, 2, 3];
 a === b;    //=>false
-//注意如果使用`==`会隐士转换。
 ```
 ```java
 //java
@@ -73,4 +72,15 @@ System.out.print(a == b);    //=>true
 int a[] = { 1, 2, 3 };
 int b[] = { 1, 2, 3 };
 System.out.print(a == b);    //=>false
+```
+```ruby
+#ruby
+# 注意Ruby中`==`用于判断两个对象值是否相等，
+# equal？才用于判断是否为同一个对象。
+a = 1
+b = 1
+a.equal? b    #=>true
+a = [1, 2, 3]
+b = [1, 2, 3]
+a.equal? b    #=>false
 ```
