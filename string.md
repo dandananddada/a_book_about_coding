@@ -78,7 +78,29 @@ puts char      #=>a
 puts string    #=>string
 ```
 注意虽然Java中String是一个类，但字符串拷贝的时候是值类型，而不是引用。
+```java
+public static void main(String []args){      
+  char[] chars = {'s', 't', 'r', 'i', 'n', 'g'};
+  String charStr = new String(chars);
+  String equalCharStr = charstr;
 
+  charStr = "string charStr";
+  equalCharStr = "string equalCharStr";
+
+  System.out.println(charStr);          //=>string charStr
+  System.out.println(equalCharStr);     //=>string equalCharStr
+
+  String str = "string";
+  String equalStr = str;
+
+  str = "string str";
+  equalStr = "string equalStr";
+
+  System.out.println(str);
+  System.out.println(equalStr);
+
+    }
+```
 
 
 
