@@ -100,7 +100,7 @@ public static void main(String args[]){
   System.out.println(equalStr);        //=>string equalStr
 }
 ```
-
+Ruby和JavaScript中字符串本身就作为原始类型定义，所以字符串拷贝时自然也是值类型。
 
 
 
