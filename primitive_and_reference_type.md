@@ -63,4 +63,13 @@ a = [1, 2, 3];
 b = [1, 2, 3];
 a === b;    //=>false
 ```
+```java
+//java
+int a = 1;
+int b = 1;
+System.out.print(a == b);    //=>true
 
+int a[] = { 1, 2, 3 };
+int b[] = { 1, 2, 3 };
+System.out.print(a == b);    //=>false
+```
