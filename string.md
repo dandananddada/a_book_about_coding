@@ -112,7 +112,6 @@ puts str         #=>string str
 puts equalStr    #=>string equalStr
 ```
 
-  
 
 
 
