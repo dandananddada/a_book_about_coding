@@ -1,6 +1,6 @@
 # 字符类型
 
-####字符
+####字符编码
 
 计算机是只识别二进制的，所以和数字一样我们要想办法把字符也映射为一串01的记号，数字类型采用十进制与二进制的转换解决了这个问题。对于字符我们只需要规范一个二进制数和字符之间对应关系的表就可以了。
 
@@ -54,3 +54,47 @@ puts "𥊍".length  #=>1
 注意Ruby、Go、Rust这些语言已经开始使用UTF-8作为内部编码了，所以Ruby对特殊字符取长度返回1。
 
 ####字符和字符串
+
+在Java和C++中字符串并不是一个原始的数据类型，而是一个字符序列，是一个类。而字符是原始数据类型，但是JavaScript和Ruby中字符串是原始数据类型，没有细化字符的概念，字符是长度为1的字符串。
+```java
+public static void main(String []args){
+  char normal = 'a';
+  char unicode = '\u039A';
+  String str = "string";
+  char[] chars = {'s', 't', 'r', 'i', 'n', 'g'};
+  String charstr = new String(chars);
+  
+  System.out.println(normal);    //=>a
+  System.out.println(unicode);   //=>K
+  System.out.println(str);       //=>string
+  System.out.println(charstr);   //=>string
+}
+```
+```ruby
+char = 'a'
+string = 'string'
+
+puts char      #=>a
+puts string    #=>string
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
