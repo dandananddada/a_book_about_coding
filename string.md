@@ -57,7 +57,7 @@ puts "𥊍".length  #=>1
 
 在Java和C++中字符串并不是一个原始的数据类型，而是一个字符序列，是一个类。而字符是原始数据类型，但是JavaScript和Ruby中字符串是原始数据类型，没有细化字符的概念，字符是长度为1的字符串。
 ```java
-public static void main(String []args){
+public static void main(String args[]){
   char normal = 'a';
   char unicode = '\u039A';
   String str = "string";
@@ -79,7 +79,7 @@ puts string    #=>string
 ```
 注意虽然Java中String是一个类，但字符串拷贝的时候是值类型，而不是引用。
 ```java
-public static void main(String []args){      
+public static void main(String args[]){      
   char[] chars = {'s', 't', 'r', 'i', 'n', 'g'};
   String charStr = new String(chars);
   String equalCharStr = charStr;
@@ -98,8 +98,7 @@ public static void main(String []args){
 
   System.out.println(str);             //=>string str
   System.out.println(equalStr);        //=>string equalStr
-
-    }
+}
 ```
 
 
