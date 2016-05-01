@@ -35,24 +35,6 @@ UTF-6规定用十六进制、两个字节来存储字符，其范围是`0x0000 -
 
 目前Java、C#、Object-C、JavaScript（严格说是UCS-2）这些语言内部编码都采用的UTF-8。
 
-####字符长度
-
-刚刚也说过UTF-16会采用两个存储单元来对应特殊字符，这时通过length函数来取字符的长度将是2。
-
-```java
-/*  java  */
-System.out.println("𥊍".length()); //=>2
-```
-```javascript
-/*  javascript  */
-console.log("𥊍".length);  //=>2
-```
-```ruby
-#ruby
-puts "𥊍".length  #=>1
-```
-注意Ruby、Go、Rust这些语言已经开始使用UTF-8作为内部编码了，所以Ruby对特殊字符取长度返回1。
-
 ####字符和字符串
 
 在Java和C++中字符串并不是一个原始的数据类型，而是一个字符序列，是一个类。而字符是原始数据类型，但是JavaScript和Ruby中字符串是原始数据类型，没有细化字符的概念，字符是长度为1的字符串。
@@ -112,7 +94,29 @@ puts str         #=>string str
 puts equalStr    #=>string equalStr
 ```
 
+####字符长度
 
+刚刚也说过UTF-16会采用两个存储单元来对应特殊字符，这时通过length函数来取字符的长度将是2。
+
+```java
+/*  java  */
+System.out.println("𥊍".length()); //=>2
+```
+```javascript
+/*  javascript  */
+console.log("𥊍".length);  //=>2
+```
+```ruby
+#ruby
+puts "𥊍".length  #=>1
+```
+注意Ruby、Go、Rust这些语言已经开始使用UTF-8作为内部编码了，所以Ruby对特殊字符取长度返回1。
+
+
+
+####字符串长度
+
+  
 
 
 
