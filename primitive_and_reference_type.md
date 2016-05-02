@@ -154,7 +154,18 @@ puts s
 # address of s is 70123772400700
 # Array a contains: ABC
 ```
-
+可以看出，如果循环的集合对象中存在大量的元素，这时对栈内存而言是一种极大的开销，对于这种需要多次修改的字符串，Java提供了StringBuffer类，Ruby提供了StringIO类，我们仍旧以Ruby为例来演示StringIO的效果。
+```ruby
+require 'stringio'
+a = ["a", "b", "c"]
+s = StringIO.new
+s << "Array a contains: "
+a.each do |i|
+	s << i
+	puts "address of s is #{s.object_id}"
+end
+puts s.string
+```
 
 
 
