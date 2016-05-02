@@ -99,6 +99,20 @@ f(o);
 console.log(a);      //=>1
 console.log(o.b);    //=>2
 ```
+```java
+Class Demo{
+  public static void mi(int a){  a = 2;  }
+  public static void mr(int[] a){  a[0] = 2;  }
+  public static void main(String args[]){
+    int a = 1;
+    int[] aa = { 1, 2, 3 };
+    Demo.mi(a);
+    Demo.mr(aa);
+    System.out.print(a);        //=>1
+    System.out.print(aa[0]);    //=>2
+  }
+}
+```
 对于变量拷贝也是如此，基础类型拷贝的是值修改是无副作用的，引用类型拷贝的是引用，修改是有副作用的。
 ```javascript
 //javascript
