@@ -86,3 +86,17 @@ a.equal? b    #=>false
 ```
 
 **参数传递**
+
+基础类型传递的是值，而引用类型传递的是引用。值类型发生修改是无副作用的（不会修改原变量），引用类型修改是副作用的。
+```javascript
+//javascript
+var a = 1;
+var o = { b: 1 };
+var fa = function(a){  a = 2;  }
+var fo = function(o){  o.b = 2;  }
+f(a);
+f(o);
+console.log(a);      //=>1
+console.log(o.b);    //=>2
+```
+对于变量拷贝也是如此，基础类型拷贝的是值修改是无副作用的，引用类型拷贝的是引用，修改是有副作用的。
