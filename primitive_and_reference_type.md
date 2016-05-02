@@ -180,5 +180,18 @@ puts s.string
 
 当然最常用的实现思路是遍历这个对象的每一个属性，如果是引用类型则继续遍历这个引用，如何是基础类型就拷贝。另外一种相对简洁的思路是将对象序列化为JSON串，然后拷贝这个字符串，再反序列化为对象。我们采用第二个思路来看如下例子。
 
+```javascript
+//javascript
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
+var o = {
+  a: { b: 1, c: 2 },
+  d: 3
+}
+var b = deepClone(o);
+console.log(b);    //=>{ a: { b: 1, c: 2 }, d: 3 }
+```
+
 
 
