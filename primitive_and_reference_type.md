@@ -111,3 +111,12 @@ ob.a = 2;
 console.log(a);       //=>1
 console.log(oa.a);    //=>2
 ```
+```java
+//java
+int a = 1, b = a;
+int aa[] = { 1, 2, 3 }, ab[] = aa;
+b = 2;
+ab[0] = 2;
+System.out.print(a);        //=>1
+System.out.print(aa[0]);    //=>2
+```
