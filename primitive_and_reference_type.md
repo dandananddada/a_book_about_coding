@@ -136,3 +136,4 @@ ab[0] = 2;
 System.out.print(a);        //=>1
 System.out.print(aa[0]);    //=>2
 ```
+**数据类型**
