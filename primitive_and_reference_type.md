@@ -100,3 +100,14 @@ console.log(a);      //=>1
 console.log(o.b);    //=>2
 ```
 对于变量拷贝也是如此，基础类型拷贝的是值修改是无副作用的，引用类型拷贝的是引用，修改是有副作用的。
+```javascript
+//javascript
+var a = 1
+,   b = a
+,   oa = { a: 1 }
+,   ob = oa;
+b    = 2;
+ob.a = 2;
+console.log(a);       //=>1
+console.log(oa.a);    //=>2
+```
