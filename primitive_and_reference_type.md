@@ -165,9 +165,15 @@ a.each do |i|
 	puts "address of s is #{s.object_id}"
 end
 puts s.string
+# output
+# address of s is 70280643727180
+# address of s is 70280643727180
+# address of s is 70280643727180
+# Array a contains: abc
 ```
+可以看出这时s指向的是同一块地址，这样就可以避免频繁修改同一字符串变量造成栈内存大量开销的问题了。
 
-
+**引用类型和深度拷贝**
 
 
 
