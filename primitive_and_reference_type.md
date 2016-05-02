@@ -136,3 +136,28 @@ ab[0] = 2;
 System.out.print(a);        //=>1
 System.out.print(aa[0]);    //=>2
 ```
+**基础类型和栈内存分配**
+
+字符类型是基础类型，所以在做字符串修改、合并、截取等操作时，字符串的每次改变都会在栈中分配一块新的内存记录新的值。
+```ruby
+#ruby
+a = [ "A", "B", "C"]
+s = "Array a contains: "
+a.each do |i|
+	s += i	
+	puts "address of s is #{s.object_id}"
+end
+puts s
+# output
+# address of s is 70123772400880
+# address of s is 70123772400780
+# address of s is 70123772400700
+# Array a contains: ABC
+```
+
+
+
+
+
+
+
