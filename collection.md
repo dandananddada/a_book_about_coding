@@ -70,8 +70,8 @@ a.forEach(function(v){
 如果我们初始化的时候指定缺省值，这时候数组就不是稀疏数组了。
 ```javascript
 //javascript
-var a = [undefined]
-,   b = [,];
+var a = [undefined, 1]
+,   b = [, 1];
 
 console.log(0 in a);    //=>true
 console.log(0 in b);    //=>false
