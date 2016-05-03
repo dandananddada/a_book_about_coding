@@ -72,7 +72,7 @@ for(int i=0; i<a.length; i++){
 }
 //=>003
 ```
-而在JavaScript中缺省初始化一个数组时,缺省值为undefined，JavaScript在遍历说组时会跳过这些元素(在JavaScript中这样的数组定义为稀疏数组)。
+而在JavaScript中缺省初始化一个数组时,缺省值为undefined，JavaScript在遍历数组时会跳过这些元素(在JavaScript中这样的数组定义为稀疏数组)。
 ```javascript
 //javascript
 var a = [, , 3];
