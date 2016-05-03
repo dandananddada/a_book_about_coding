@@ -75,7 +75,7 @@ var a = [undefined, 1]
 
 console.log(0 in a);    //=>true
 console.log(0 in b);    //=>false
-Object.keys(a);         //=>["0"]
-Object.keys(b);         //=>[]
+Object.keys(a);         //=>["0", "1"]
+Object.keys(b);         //=>["1"]
 ```
 因为JavaScript中数组本身是key值为数字的Object，所以可以用in来判断键值是否在对象内，上面的例子可以发现`a[0]`是存在的，而`b[0]`是不存在的。所以a是稠密数组，而b是稀疏数组。
