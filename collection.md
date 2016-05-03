@@ -18,3 +18,11 @@ b[10] = 11;
 可以看出声明一个异质的数组会报编译时错误，而对超出数组索引的元素赋值会报运行时异常（数组越界异常）。
 
 于此不同JavaScript和Ruby的数组就是异质且变长的。
+```javascript
+var a = [1, 2, 3];
+console.log(a.length);    //=>3
+a[3] = 4;
+console.log(a.length);    //=>4
+a[6] = 7;
+console.log(a);           //=>[1, 2, 3, 4, undefined, undefined, 7]
+```
