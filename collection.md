@@ -27,3 +27,16 @@ a[6] = 7;
 console.log(a);           //=>[1, 2, 3, 4, undefined, undefined, 7]
 console.log(a.length);    //=>7
 ```
+在数组方面Ruby和JavaScript表现是一致的。
+```ruby
+a = [1, 2, "three"]
+puts a.length            #=>3
+a[3] = 4         
+puts a.length            #=>4
+a[6] = 7
+puts a                   #=>[1, 2, 3, 4, nil, nil, 7]
+puts nil
+puts a.length            #=>7
+```
+
+**稀疏数组**
