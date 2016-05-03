@@ -39,6 +39,8 @@ puts nil
 puts a.length            #=>7
 ```
 
+**数组长度**
+
 **稀疏数组**
 
 在JavaScript中缺省初始化一个数组时,不设置初始值，JavaScript在遍历数组时会跳过这些元素没有值的元素（这些元素缺省值为undefined，但是不存在对应的key）。在JavaScript中这样的数组定义为稀疏数组。
