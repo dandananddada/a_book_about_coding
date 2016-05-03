@@ -25,4 +25,5 @@ a[3] = 4;
 console.log(a.length);    //=>4
 a[6] = 7;
 console.log(a);           //=>[1, 2, 3, 4, undefined, undefined, 7]
+console.log(a.length);    //=>7
 ```
