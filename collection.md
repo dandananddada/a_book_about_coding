@@ -61,7 +61,7 @@ puts a.length            #=>7
 ##+JavaScript中稀疏数组的解释？
 
 **缺省值和稀疏数组**
-在Java中初始化一个int类型数组，缺省值为0，初始化一个字符串数组缺省值为null，他们都是占据内存空间的，所以Java数组缺省初始化本身是稠密数组而不是稀疏的。
+在Java中初始化一个int类型数组，缺省值为0，初始化一个字符串数组缺省值为null，Java在遍历数组时不会跳过这些元素。
 ```java
 //java
 int a[] = new int[3];
@@ -71,4 +71,13 @@ for(int i=0; i<a.length; i++){
   System.out.println(a[i]);
 }
 //=>003
+```
+而在JavaScript中缺省初始化一个数组时,缺省值为undefined，JavaScript在遍历说组时会跳过这些元素。
+```javascript
+//javascript
+var a = [, , 3];
+a.forEach(function(v){
+	console.log(v)
+});
+//=>3
 ```
