@@ -79,3 +79,15 @@ Object.keys(a);         //=>["0", "1"]
 Object.keys(b);         //=>["1"]
 ```
 因为JavaScript中数组本身是key值为数字的Object，所以可以用in来判断键值是否在对象内，上面的例子可以发现`a[0]`是存在的，而`b[0]`是不存在的。所以a是稠密数组，而b是稀疏数组。
+
+但Java中没有这样划分，因为Java数组默认是有缺省值的。
+```java
+//java
+int a[] = new int[3];
+a[2] = 3;
+
+for(int i=0; i<a.length; i++){
+  System.out.println(a[i]);
+}
+//=>003
+```
