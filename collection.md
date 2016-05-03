@@ -58,21 +58,7 @@ puts a.length            #=>7
 ```
 这样就把一个`5*5`的矩阵压缩为`3*4`的矩阵了，只要在解析的时候按照上述逻辑处理就可以了。这样就节省了很大一部分的内存开销。把这样的一个数组叫做稀疏数组（注意Java SE本身不提供稀疏数组API，Android API提供 SparseArray）。
 
-##+JavaScript中稀疏数组的解释？
-
-**缺省值和稀疏数组**
-在Java中初始化一个int类型数组，缺省值为0，初始化一个字符串数组缺省值为null，Java在遍历数组时不会跳过这些元素。
-```java
-//java
-int a[] = new int[3];
-a[2] = 3;
-
-for(int i=0; i<a.length; i++){
-  System.out.println(a[i]);
-}
-//=>003
-```
-而在JavaScript中缺省初始化一个数组时,缺省值为undefined，JavaScript在遍历数组时会跳过这些元素(在JavaScript中这样的数组定义为稀疏数组)。
+而在JavaScript中缺省初始化一个数组时,不设置初始值，JavaScript在遍历数组时会跳过这些元素没有值的元素（这些元素缺省值为undefined，但是不存在对应的key）。在JavaScript中这样的数组定义为稀疏数组。
 ```javascript
 //javascript
 var a = [, , 3];
