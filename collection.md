@@ -81,3 +81,13 @@ a.forEach(function(v){
 });
 //=>3
 ```
+如果我们初始化的时候指定缺省值，这时候数组就不是稀疏数组了。
+```javascript
+//javascript
+var a = [undefined]
+,   b = [,];
+
+console.log(0 in a);    //=>true
+console.log(0 in b);    //=>false
+```
+因为JavaScript中数组本身是key值为数字的Object，所以可以用in来判断键值是否在对象内，上面的例子可以发现`a[0]`是存在的，而`b[0]`是不存在的。a是稠密数组，而b是稀疏数组。
