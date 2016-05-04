@@ -130,3 +130,25 @@ Java中整型数组的缺省值为0，字符型数组缺省值为null。
 4 5 9    //第四个元素所在 行 列 及数值
 ```
 这样就把一个`5*5`的矩阵压缩为`3*4`的矩阵了，这个压缩后的矩阵就是稀疏矩阵，因为采用了数组类型所以笼统的就叫做稀疏数组了（注意Java SE本身没有特别定义稀疏数组的概念）。
+
+**链表**
+
+单纯的数组就先说这么多，之前有说要从数组的异质和定长两方面讨论数组，JavaScript和Ruby所提供的数组本身就是异质变长的，那么先抛开这两门语言，但从Java看，首先看下变长数组。
+
+List是Java的一个接口，它有两个实现类ArrayList和LinkedList，List允许你根据需求动态的增加数组（你也可以叫做链表，实际上就是变长数组的概念）的长度。
+
+大多数情况下使用场景下使用的都是ArrayList，只有在频繁的向数组头部插入元素，或者通过遍历删除数组元素时才会用LinkedList。所以这里我只通过ArrayList给出一个变长的例子。
+
+```java
+//java
+/* 这里需要引入 List 接口 和 ArrayList 实现类 */
+import java.util.List;
+import java.util.ArrayList;
+class Demo {
+  public static void main(String args[]){
+  	List<Integer> list = new ArrayList<Integer>();
+    list.add(1);
+    System.out.println(list.get(0));
+   }
+}
+```
