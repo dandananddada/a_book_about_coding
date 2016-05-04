@@ -137,7 +137,7 @@ Java中整型数组的缺省值为0，字符型数组缺省值为null。
 
 List是Java的一个接口，它有三个实现类ArrayList、LinkedList和Vector，List允许你根据需求动态的增加数组（你也可以叫做链表，实际上就是变长数组的概念）的长度。
 
-大多数情况下使用场景下使用的都是ArrayList，只有在频繁的向数组头部插入元素，或者通过遍历删除数组元素时才会用LinkedList。而Vectory和ArrayList的不同就是Vector是同步的，所以这里我只通过ArrayList给出一个变长的例子。
+大多数情况下使用场景下使用的都是ArrayList，只有在频繁的向数组头部插入元素，或者通过遍历删除数组元素时才会用LinkedList。而Vectory和ArrayList的不同就是Vector是同步的，这里我只通过ArrayList给出一个变长的例子。
 
 ```java
 //java
