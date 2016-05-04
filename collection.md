@@ -64,8 +64,10 @@ consoel.log(a.length);    //=>3
 a.length = 5;
 consoel.log(a[4]);        //=>undefined 
 consoel.log(4 in a);      //=>false
+
 /* 这时a是一个稀疏数组 */
 console.log(a);           //=>[1, 2, 3, , ,]
+
 a.length = 2;      
 consoel.log(a[3]);        //=>undefined
 consoel.log(3 in a);      //=>false
