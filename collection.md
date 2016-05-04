@@ -48,12 +48,14 @@ puts a.length            #=>7
 #ruby
 a = [1, 2, 3]
 a[5] = 6
-puts a    #=>[1, 2, 3, nil, nil, 6]
+puts a           #=>[1, 2, 3, nil, nil, 6]
+puts a.length    #=>6
 ```
 ```javascript
 var a = [1, 2, 3];
 a[5] = 6;
-console.log(a);    //=>[1, 2, 3, , , 6]
+console.log(a);           //=>[1, 2, 3, , , 6]
+console.log(a.length);    //=>6
 ```
 
 
