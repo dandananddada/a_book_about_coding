@@ -41,9 +41,25 @@ puts a.length            #=>7
 
 **数组长度**
 
+上面已经说过Java的数组是定长度，所以对长度为3的数组进行`a[4]=5`这赋值操作会报数组越界的异常。
+
+在JavaScript和Ruby中数组是变长的，也就是你可以对长度为3的数组执行类似`a[4]=5`这样的赋值操作，但是不同的是Ruby会把中间遗漏掉的元素用`nil`填补，而JavaScript则直接跳过，因为JavaScript本身没有数组类型，数组实际上是Key值为数字的Object，你可以给一个Object定义任何键值，所以跳过数组索引顺序赋值本身也是合法的（这样对一个数组的某个元素赋值时就会形成一个稀疏数组）。
+```ruby
+#ruby
+a = [1, 2, 3]
+a[5] = 6
+puts a    #=>[1, 2, 3, nil, nil, 6]
+```
+```javascript
+var a = [1, 2, 3];
+a[5] = 6;
+console.log(a);    //=>[1, 2, 3, , , 6]
+```
+
+
 **稀疏数组**
 
-在JavaScript中缺省初始化一个数组时,不设置初始值，JavaScript在遍历数组时会跳过这些元素没有值的元素（这些元素缺省值为undefined，但是不存在对应的key）。在JavaScript中这样的数组定义为稀疏数组。
+在JavaScript中缺省初始化一个数组时,不设置初始值，JavaScript在遍历数组时会跳过这些元素没有值的元素（这些元素缺省值为undefined，但是不存在对应的key）。在JavaScript这样的数组就是稀疏数组。
 ```javascript
 //javascript
 var a = [, , 3];
