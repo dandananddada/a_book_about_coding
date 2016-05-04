@@ -164,3 +164,4 @@ list.add(1);
 list.set(3, 3);
 //=>Exception in thread "main" java.lang.IndexOutOfBoundsException
 ```
+另外和数组不同List的不是存储在一段连续的空间的（注意数组是存储在一段连续空间的），同时数组必须初始化大小，而List可以不初始化大小，List可以删除和插入元素，但是数组不可以。
