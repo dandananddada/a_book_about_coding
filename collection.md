@@ -146,10 +146,21 @@ import java.util.List;
 import java.util.ArrayList;
 class Demo {
   public static void main(String args[]){
-  	List<Integer> list = new ArrayList<Integer>();
-    list.add(1);
-    System.out.println(list.get(0));    //=>1
-    System.out.println(list.size());    //=>1
+      List<Integer> list = new ArrayList<Integer>();
+      list.add(1);
+      list.add(2);
+      list.set(0, 3);
+      System.out.println(list.get(0));    //=>3
+      System.out.println(list.get(1));    //=>2
+      System.out.println(list.size());    //=>2
    }
 }
+```
+`ArryList.set(index, value)`可以修改索引为`index`的元素的值为`value`，但要注意你不能像Ruby或JavaScript一样对长度为3的ArrayList取第四个元素赋值。这和数组一样会在运行时报数组越界的异常。
+```java
+//java
+List<Integer> list = new ArrayList<Integer>();
+list.add(1);
+list.set(3, 3);
+//=>Exception in thread "main" java.lang.IndexOutOfBoundsException
 ```
