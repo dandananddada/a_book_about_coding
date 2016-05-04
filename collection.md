@@ -156,7 +156,7 @@ class Demo {
    }
 }
 ```
-`ArryList.set(index, value)`可以修改索引为`index`的元素的值为`value`，但要注意你不能像Ruby或JavaScript一样对长度为3的ArrayList取第四个元素赋值。这和数组一样会在运行时报数组越界的异常。
+`ArryList.set(index, value)`可以修改索引为`index`的元素的值为`value`，但要注意你不能像用Ruby或JavaScript一样对长度为3的ArrayList取第四个元素赋值。这和数组一样会在运行时报数组越界的异常。
 ```java
 //java
 List<Integer> list = new ArrayList<Integer>();
