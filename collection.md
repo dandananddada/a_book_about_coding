@@ -57,6 +57,20 @@ a[5] = 6;
 console.log(a);           //=>[1, 2, 3, , , 6]
 console.log(a.length);    //=>6
 ```
+与Ruby不同，JavaScript甚至支持对Array.length赋值，当设置的length值大于数组长度时，JavaScript也会形成一个等长度的数组，不过缺省的元素也是`undefined`。假如设置的length值小于数组实际长度，那么数组就会截取后面的元素。
+```javascript
+var a = [1, 2, 3];
+consoel.log(a.length);    //=>3
+a.length = 5;
+consoel.log(a[4]);        //=>undefined 
+consoel.log(4 in a);      //=>false
+console.log(a);           //=>[1, 2, 3, , ,]
+                          //这时a是一个稀疏数组
+a.length = 2;      
+consoel.log(a[3]);        //=>undefined
+consoel.log(3 in a);      //=>false
+consoel.log(a);           //=>[1, 2]
+```
 
 
 **稀疏数组**
