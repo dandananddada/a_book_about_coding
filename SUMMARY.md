@@ -14,5 +14,5 @@
    * [原子类型](atom.md)
    * [数组](array.md)
 * [第二章 聊语言不聊并发？](chapter2.md)
-* 第三章 集合结构
+* [第三章 集合结构](collection.md)
 
