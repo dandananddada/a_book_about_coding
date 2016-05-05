@@ -193,12 +193,14 @@ class Demo {
     list.add(1);
     list.add(1);
     list.add(2);
+    System.out.println(list);           //=>[1, 2, 2]
     System.out.println(list.size());    //=>3
 
     Set<Integer> set = new HashSet<Integer>();
     set.add(1);
     set.add(1);
     set.add(2);
+    System.out.println(list);          //=>[1, 2]
     System.out.println(set.size());    //=>2
   }
 }
