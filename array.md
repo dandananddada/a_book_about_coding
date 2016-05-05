@@ -29,7 +29,7 @@ a[6] = 7;
 console.log(a);           //=>[1, 2, 3, 4, undefined, undefined, 7]
 console.log(a.length);    //=>7
 ```
-在数组方面Ruby和JavaScript表现是一致的。唯一不同的是在Ruby中Array是作为引用类型（是内置的数据类型）存在的，而JavaScript中Array是一个内置结构（你也可以理解为类，因为Array确实是通过Object实现的）。
+在数组方面Ruby和JavaScript表现是一致的。唯一不同的是在Ruby中Array是作为引用类型（是内置的数据类型，这一点和Java一样）存在的，而JavaScript中Array是一个内置的结构（你也可以理解为类，因为Array确实是通过Object实现的）。
 ```ruby
 a = [1, 2, "three"]
 puts a.length            #=>3
