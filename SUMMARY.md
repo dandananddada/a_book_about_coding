@@ -11,6 +11,6 @@
    * [数字类型](number.md)
    * [基础类型和引用类型](primitive_and_reference_type.md)
    * [原子类型](atom.md)
-   * [数组](collection.md)
+   * [数组](array.md)
 * [第二章 聊语言不聊并发？](chapter2.md)
 
