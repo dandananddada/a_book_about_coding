@@ -179,3 +179,27 @@ list.set(3, 3);
 ```
 另外和数组不同List的不是存储在一段连续的空间的（注意数组是存储在一段连续空间的），同时数组必须初始化大小，而List可以不初始化大小，List可以删除和插入元素，但是数组不可以。不过相比之下数组效率比List高一些。
 
+**集**
+
+除了List外Java还提供了Set，和List不同Set不允许重复元素。Set也是一个接口，同样实现类有HashSet、TreeSet、LinkedHashSet。HashSet是最常用的，它通过散列（hash）来存储节点的，因此是无序的。TreeSet通过红黑树存储节点，所以元素的顺序按照红黑树的遍历顺序计算，效率不如HashSet。LinkedHashSet从名字可以看出，它的节点是由一个链表（list）串联起来的，所以元素的顺序跟插入顺序有关。
+
+同样以最常用的HashSet为例对比ArrayList来说明Set强调元素唯一。
+```java
+//java
+import java.util.*;
+class Demo {
+  public static void main(String args[]){
+    List<Integer> list = new ArrayList<Integer>();
+    list.add(1);
+    list.add(1);
+    list.add(2);
+    System.out.println(list.size());
+
+    Set<Integer> set = new HashSet<Integer>();
+    set.add(1);
+    set.add(1);
+    set.add(2);
+    System.out.println(set.size());
+  }
+}
+```
