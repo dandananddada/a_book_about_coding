@@ -1,9 +1,10 @@
 # 集合类型
 
-这里我想围绕两个概念来说明集合类型：
+这里我想围绕三个概念来说明集合类型：
 
 1.异质（是指集合中允许不同数据类型）
 2.定长（集合的长度可以拓展）
+3.顺序（集合元素是否有序）
 
 ####数组
 在Java中数组是同质定长的，也就是说Java的数组是不允许不同类型数据混合的，且其长度是在实例化的时候就指定的。
@@ -38,6 +39,18 @@ puts a                   #=>[1, 2, 3, 4, nil, nil, 7]
 puts nil
 puts a.length            #=>7
 ```
+其实Ruby和JavaScript支持异质数组是因为Ruby中一切都是对象，而JavaScript中一切都是原型，采用相同的逻辑，如果Java中定义类型为基类（Object）的数组结构，同样也是支持异质结构的。
+```java
+//java
+Object[] o = { "string", 1, false };
+System.out.println(o[0]);        //=>string
+System.out.println(o[1]);        //=>1
+System.out.println(o[2]);        //=>false
+System.out.println(o.length);    //=>3
+```
+
+
+
 
 **数组长度**
 
