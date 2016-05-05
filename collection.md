@@ -48,8 +48,7 @@ System.out.println(o[1]);        //=>1
 System.out.println(o[2]);        //=>false
 System.out.println(o.length);    //=>3
 ```
-而Java的变长数组会在介绍了和数组长度相关的几个概念后说明。
-
+关于Java的变长数组会在介绍了和数组长度相关的几个概念后再说明。
 
 
 **数组长度**
