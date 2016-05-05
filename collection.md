@@ -39,7 +39,7 @@ puts a                   #=>[1, 2, 3, 4, nil, nil, 7]
 puts nil
 puts a.length            #=>7
 ```
-其实Ruby和JavaScript支持异质数组是因为Ruby中一切都是对象，而JavaScript中一切都是原型，采用相同的逻辑，如果Java中定义类型为基类（Object）的数组结构，同样也是支持异质结构的。
+其实Ruby和JavaScript支持异质数组是因为Ruby中一切都是对象，而JavaScript中一切都是原型，采用相同的逻辑，如果Java中定义类型为基类（Object）的数组时，同样也是支持异质结构的。
 ```java
 //java
 Object[] o = { "string", 1, false };
