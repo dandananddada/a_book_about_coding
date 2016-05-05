@@ -48,7 +48,7 @@ System.out.println(o[1]);        //=>1
 System.out.println(o[2]);        //=>false
 System.out.println(o.length);    //=>3
 ```
-而关于Java变长数组在讨论完和数组长度相关的几个概念后，我会简单引入列表的概念来说明。
+而Java的变长数组会在介绍了和数组长度相关的几个概念后说明。
 
 
 
