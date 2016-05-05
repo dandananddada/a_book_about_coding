@@ -205,3 +205,7 @@ class Demo {
   }
 }
 ```
+注意Set本身是用来存储不重复数据集的，通常的操作是判断元素是否存在于集中，而不是获取元素（如果单纯想读取元素可以考虑用Array、List、Hash），所以Set本身不提供get方法。关于Set不提供get方法你也可以理解为因为Set不像Array
+或List按索引排序，同时也不像Hash一样可以通过key定位元素，所以Set无法通过索引或键定位元素，所以干脆Set就不提供get方法了。
+
+如果List是一个变长的数组，那么Set可以看做是一个无序的List，或者无序变长的数组。我想把List和Set归到数组下，这样方便理解，至于究竟用Array还是List，是HashSet还是LinkedHashSet就看你要面对的数据形式和业务场景了，如果你不够熟悉这些类，那么ArrayList是最通用的了，就像Ruby和JavaScript并没有对数组进行变长定长、有序无序的划分，但是不得不说它们的Array确实足够灵活来应对实际开发了，Java的ArrayList也是如此灵活的工具类，所以不妨试试看吧。
