@@ -95,4 +95,4 @@ Map<String, String> language = new HashMap<String, String>(){
 };
 name = "NAME";  
 ```
-可以看出变量`name`在作为键使用后值是不允许修改的。
+可以看出变量`name`在作为键使用时值是不允许修改的。
