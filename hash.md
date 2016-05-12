@@ -43,3 +43,19 @@ a = language;
 a.put("name", "Java");
 System.out.println(language.get("name"));    //=>Java
 ```
+**键值改变**
+在使用散列时保证键值的不变是很重要的，散列赋值后键值是不会改变的，但是如果我们通过变量定义散列的键，就会存在一种额外的风险（Ruby和JavaScript表现一致，Java不会存在这种情况）。我们以JavaScript为例说明。
+```javascript
+//javascript
+var name = "name"
+,   language = {};
+language[name] = "javascript";
+console.log(language, language[name]);
+//=>{ name: 'javascript' } 'javascript'
+name = "rename"
+console.log(language, language[name]);
+//=>{ name: 'javascript' } undefined
+```
+这个例子可以看出我们用一个变量作为一个对象（散列）的键，当我们修改变量值时对象的键不会改变，但是当我们用通过这个修改后的变量取得散列中的值时会发生意外。可能这段代码看起来很荒唐，但实际开发中你无法保证一个散列的键不是变量，也无法保证自己不会修改这个变量并仍旧以它作为键来取值。
+
+在Ruby中我们可以通过符号来避免这种情况，因为符号是不可修改的变量。Java中可以用Static类型修饰变量，但事实上Java的HashMap本身就不会存在这种问题（稍后会说明），所以不必担心。至于JavaScript语言本身没有这方面的防范机制，只能通过工作交开发人员定制规范来避免了（ES6中提出了不可变修饰符）。
