@@ -24,3 +24,10 @@ Map<String, String> language = new HashMap<String, String>(){
 };
 System.out.println(language.get("name"));    //=>java
 ```
+注意散列和数组一样，是引用类型，在使用时要特别小心，如果不想破坏原引用最好进行深度拷贝。
+```ruby
+#ruby
+a = language
+a["name"] = "Ruby"
+puts language["name"]    #=>Ruby
+```
