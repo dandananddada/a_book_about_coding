@@ -85,5 +85,14 @@ end
 另外关于之前说过的Java本身不存在这种意外，是因为如果你修改了键引用的变量的值，会在编译过程中报错。
 ```java
 //java
-import java.util.*;
+String name = "name";
+name = "name";
+Map<String, String> language = new HashMap<String, String>(){
+  {
+    put(name, "java");     //=>error: local variables referenced from a inner class must be final or effectively final
+    put("type", "static");
+  }
+};
+name = "NAME";  
 ```
+可以看出变量`name`在作为键使用后值是不允许修改的。
