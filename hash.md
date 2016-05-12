@@ -65,4 +65,19 @@ language = { :name=> "ruby", :type=> "dynamic" }
 # 使用散列作为键就很好的避免了使用不存在的键取值的问题
 ```
 另外Ruby中用符号作为键还有另外一个优势，因为符号是同一个引用，所以这样的散列相比字符串索引运算性能要高。
+```ruby
+require 'benchmark/ips'
 
+STRING_HASH = { "foo" => "bar" }
+SYMBOL_HASH = { :foo => "bar"  }
+Benchmark.ips do |x|
+  x.report("string") { STRING_HASH["foo"] }
+  x.report("symbol") { SYMBOL_HASH[:foo]  }
+end
+# Warming up --------------------------------------
+# string   102.788k i/100ms
+# symbol   116.332k i/100ms
+# Calculating -------------------------------------
+# string      3.799M (± 6.5%) i/s -     18.913M
+# symbol      7.810M (± 6.8%) i/s -     38.855M
+```
