@@ -31,3 +31,15 @@ a = language
 a["name"] = "Ruby"
 puts language["name"]    #=>Ruby
 ```
+```javascript
+var a = language;
+a.name = "JavaScript";
+console.log(language.name);    //=>JavaScript
+```
+```java
+//java
+Map<String, String> a = new HashMap<String, String>();
+a = language;
+a.put("name", "Java");
+System.out.println(language.get("name"));    //=>Java
+```
