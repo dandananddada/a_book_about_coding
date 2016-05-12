@@ -64,3 +64,5 @@ console.log(language, language[name]);
 language = { :name=> "ruby", :type=> "dynamic" }
 # 使用散列作为键就很好的避免了使用不存在的键取值的问题
 ```
+另外Ruby中用符号作为键还有另外一个优势，因为符号是同一个引用，所以这样的散列相比字符串索引运算性能要高。
+
