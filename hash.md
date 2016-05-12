@@ -44,6 +44,10 @@ a.put("name", "Java");
 System.out.println(language.get("name"));    //=>Java
 ```
 **键值改变**
+
+这不打脸么，下面写错了。。。。
+
+
 在使用散列时保证键值的不变是很重要的，散列赋值后键值是不会改变的，但是如果我们通过变量定义散列的键，就会存在一种额外的风险（Ruby和JavaScript表现一致，Java不会存在这种情况）。我们以JavaScript为例说明。
 ```javascript
 //javascript
