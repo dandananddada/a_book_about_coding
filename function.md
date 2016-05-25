@@ -1,5 +1,9 @@
 # 函数类型
 
+####构造函数
+构造函数是指在一个类实例化对象时要执行的函数。
+
+
 ####实例方法和类方法
 对于面向对象语言而谈，实例方法和类方法是不得不说的一个概念。
 
@@ -27,7 +31,20 @@ class Car{
 ```
 Ruby通过self（指向当前运行时的上下文，在方法定义时self指向的其实就是类本身）来定义类方法。
 
-
+```ruby
+#ruby
+class Car
+  @@instance_numbers = 0    #ruby中类属性用@@声明
+  def initialize()
+      @@instance_numbers += 1
+  end
+  def self.get_instance_numbers
+      @@instance_numbers
+  end
+end
+c = Car.new
+puts Car.get_instance_numbers    #=>1
+```
 ####私有方法
 
 
