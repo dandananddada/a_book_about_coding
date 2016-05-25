@@ -9,13 +9,13 @@
 /* 显式定义构造函数并执行赋值操作 */
 class Demo{
   public int a, b;
-  public Test(int a, int b){    //构造函数
+  public Demo(int a, int b){    //构造函数
     this.a = a;
     this.b = b;
   }
   public static void main(String args[]){
-    Test t = new Test(1, 2);
-    System.out.println(t.a +","+ t.b);    //=>1,2
+    Demo d = new Demo(1, 2);
+    System.out.println(d.a +","+ d.b);    //=>1,2
 }
 ```
 
