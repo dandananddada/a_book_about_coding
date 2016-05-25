@@ -15,5 +15,5 @@
 * [第三章 集合结构](collection.md)
    * [数组](array.md)
    * [散列](hash.md)
-   * [函数类型](function.md)
+   * [函数](function.md)
 
