@@ -20,6 +20,17 @@ class Demo{
 ```
 
 在ruby中类的构造函数名都是initialize，同样你也可以显示的定义，并进行赋值操作。
+```ruby
+class Demo
+  attr_accessor :a, :b    #=>配置属性可读写
+  def initialize(a, b)	
+    @a = a
+    @b = b
+  end
+end
+d = Demo.new(1, 2)
+puts d.a, d.b    #=>1 2
+```
 
 ####实例方法和类方法
 对于面向对象语言而谈，实例方法和类方法是不得不说的一个概念。
