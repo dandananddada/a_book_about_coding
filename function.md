@@ -1,7 +1,23 @@
 # 函数类型
 
 ####构造函数
-构造函数是指在一个类实例化对象时要执行的函数。
+构造函数是类在实例化（构造）一个对象时执行的函数。
+
+在Java中构造函数与类名同名，你可以显示的定义构造函数，并执行一些赋值操作。
+```java
+//java
+/* 显式定义构造函数并执行赋值操作 */
+class Demo{
+  public int a, b;
+  public Test(int a, int b){    //构造函数
+    this.a = a;
+    this.b = b;
+  }
+  public static void main(String args[]){
+    Test t = new Test(1, 2);
+    System.out.println(t.a +","+ t.b);
+}
+```
 
 
 ####实例方法和类方法
