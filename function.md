@@ -15,7 +15,7 @@ class Demo{
   }
   public static void main(String args[]){
     Test t = new Test(1, 2);
-    System.out.println(t.a +","+ t.b);
+    System.out.println(t.a +","+ t.b);    //=>1,2
 }
 ```
 
