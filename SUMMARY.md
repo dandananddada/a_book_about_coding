@@ -10,8 +10,7 @@
 *  * [2.1 基础类型和引用类型](primitive_and_reference_type.md)
    * [2.2 布尔类型](boolean.md)
    * [2.3 数字类型](number.md)
-   * [字符类型](string.md)
-
-   * [原子类型](atom.md)
+   * [2.4 字符类型](string.md)
+   * [2.5 原子类型](atom.md)
    * [集合类型](collection.md)
 
