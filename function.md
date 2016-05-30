@@ -75,6 +75,8 @@ puts Car.get_instance_numbers    #=>1
 ```
 ####私有方法
 
+public protected private
+
 
 
 ####匿名函数
