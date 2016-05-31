@@ -13,4 +13,8 @@
    * [2.4 字符类型](chapter2/4_string.md)
    * [2.5 原子类型](chapter2/5_atom.md)
    * [集合类型](collection.md)
+  [第三章 集合结构](collection.md)
+   * [数组](array.md)
+   * [散列](hash.md)
+   * [函数](function.md)
 
