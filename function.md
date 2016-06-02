@@ -65,6 +65,8 @@ class Car{
   }
 }
 ```
+上述例子中声明了类属性instanceNumbers以及类方法getInstanceNumbers
+
 **Ruby实例方法和类方法**
 
 Ruby则通过self（指向当前运行时的上下文，在方法定义时self指向的其实就是类本身）来定义类方法。
