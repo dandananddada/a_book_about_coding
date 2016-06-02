@@ -138,3 +138,5 @@ Proc.new { |x| puts x + 1 }.call(2)     #=>3
 
 ```
 上面代码定义了一个匿名的lambda，并且通过call（等同于上面JavaScript代码的()）调用这个lambda并传入参数。第二个例子是创建了一个匿名的Proc对象并调用。
+
+当然lambda也是可以署名的，和Java中lambda类似，这时就不能叫做纯粹的匿名函数了，只是一个可以作为参数传递的代码段。
