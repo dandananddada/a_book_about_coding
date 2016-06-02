@@ -163,4 +163,5 @@ a = lambda { |x| puts x*2 }
 #ruby
 #匿名函数作为参数传递
 [1, 2, 3].each(&lambda { |x| puts x*2 })
+#=>2 4 6 
 ```
