@@ -149,7 +149,7 @@ lambda{ |x| puts x + 1 }.call(2)        #=>3
 Proc.new { |x| puts x + 1 }.call(2)     #=>3
 
 ```
-上面代码定义了一个匿名的lambda，并且通过call（等同于上面JavaScript代码的()）执行这个lambda。第二个例子是创建了一个匿名的Proc对象并调用子。
+上面代码定义了一个匿名的lambda，并且通过call（等同于上面JavaScript代码的()）执行这个lambda。第二个例子是创建了一个匿名的Proc对象并执行。
 
 因为proc和lambda都是对象，所以是可以赋值给其他变量的，当然这样概念上就算是给匿名函数署名了。
 ```ruby
