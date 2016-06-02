@@ -87,9 +87,15 @@ public protected private
 //JavaScript匿名自执行函数
 console.log(function(){ return 2 }());    //=>1
 ```
-
-
-
-
-Java本身是不支持匿名函数的
+Java本身是不支持匿名函数的，Java可以通过匿名内部类实现匿名函数的功能。
+```java
+//java
+class Demo{
+  public static void main(String args[]){
+    System.out.println(new Object(){
+      int add(int a, int b){  return a + b; }
+    }.add(1, 2));
+  }
+}
+```
 
