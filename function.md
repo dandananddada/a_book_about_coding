@@ -106,5 +106,14 @@ class Demo{
 
  ```java
  //java
- 
+ /*  匿名内部类实现  */
+new Thread(new Runnable() {
+  @Override
+  public void run() {
+    System.out.println("anonymous inner class");
+  }
+}).start();
+
+ /*  lambda表达式实现  */
+new Thread(() -> System.out.println("lambda express")).start();
  ```
