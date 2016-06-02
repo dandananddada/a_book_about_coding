@@ -156,7 +156,7 @@ Proc.new { |x| puts x + 1 }.call(2)     #=>3
 #ruby
 #作为参数传递
 a = lambda { |x| puts x*2 }
-[1, 2, 3].each(&a)    #=> 2 4 6
+[1, 2, 3].each(&a)    #=>2 4 6
 ```
 上面这段代码`&`运算符是将proc对象转为block，相当于把代码段带入到`each`中，当然这样的写法就不能算作纯粹的匿名函数了，因为我们给lambda了名称a。
 ```ruby
