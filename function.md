@@ -128,4 +128,5 @@ new Thread(new Runnable() {
 new Thread(() -> System.out.println("lambda express")).start();
  ```
  在这样还要强调一点，虽然Java8引入了lambda的特性，但这不是匿名函数，和内部类一样只是一种匿名函数的实现手段，lambda表达式和匿名函数最大的区别就在于lambda并不是一个可以通过`()`直接调用的函数，它只是一段带有作用域的代码，其主要目的是用于数据的传递。
- 
+
+
