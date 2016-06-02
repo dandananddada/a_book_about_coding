@@ -136,6 +136,8 @@ new Thread(() -> System.out.println("lambda express")).start();
  ```
 在这里还要强调一点，虽然Java8引入了lambda的特性，但这不只是单纯的匿名函数，和内部类一样只是一种匿名函数的实现手段，lambda表达式和匿名函数最大的区别就在于lambda并不是一个可以通过`()`直接调用的函数，它只是一段带有作用域的代码，其主要目的其实是用于数据的传递。
 
+**Ruby中的proc和lambda**
+
 在Ruby中匿名函数就是lambda，而lambda实质上是一个proc对象，Ruby用proc和block两个概念来包装代码段进行传递，区别在于proc是Proc类的对象，而block只是单纯的代码段。同时lambda和proc也存在区别，lambda会检查参数是否合法（参数个数），而proc则不会。
 
 ```ruby
