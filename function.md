@@ -102,7 +102,7 @@ class Demo{
 ```
 上面我们在输出方法中实例化了一个匿名内部类，并在类中定义了add方法，紧接着用这个实例化后的对象调用了add方法。
 
-在Java8中加入了lambda，所以如果使用Java8以后版本可以通过lambda替代匿名内部类。
+在Java8中加入了lambda，所以如果使用Java8以后版本可以通过lambda表达式替代匿名内部类。
 
  ```java
  //java
