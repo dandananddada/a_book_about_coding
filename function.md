@@ -87,6 +87,7 @@ public protected private
 1. 作为参数传递。
 2. 匿名自执行，简化代码。
 
+**JavaScript中匿名函数**
 ```javascript
 /*  JavaScript匿名自执行函数  */
 console.log(function(){ return 2 }());    //=>1
