@@ -84,10 +84,19 @@ public protected private
 一般对于基本不会复用或使用次数有限的函数可以用匿名函数。匿名函数可以简化代码调用起来更便捷。
 
 ```javascript
-//JavaScript匿名自执行函数
+/*  JavaScript匿名自执行函数  */
 console.log(function(){ return 2 }());    //=>1
 ```
 我们在输出语句里传入了一个匿名函数的定义，紧接着用调用运算`()`符执行了这个匿名函数。
+
+相比自执行外更加常用的场景就是作为参数进行传递，一般在高阶函数中会经常用到，高阶函数所涉及到的一些概念我会在后续的章节（函数式编程）中详细说明，这里只简单看一下作为参数使用时的匿名函数。
+```javascript
+/*  JavaScript匿名函数作为参数传递  */
+function add (a){
+  return function(b, c){ b+c };
+}
+
+```
 
 Java本身是不支持匿名函数的，但是可以通过匿名内部类实现匿名函数的功能。
 ```java
@@ -117,3 +126,5 @@ new Thread(new Runnable() {
  /*  lambda表达式实现  */
 new Thread(() -> System.out.println("lambda express")).start();
  ```
+ 在这样还要强调一点，虽然Java8引入了lambda的特性，但这不是匿名函数，和内部类一样只是一种匿名函数的实现手段，lambda表达式和匿名函数最大的区别就在于lambda并不是一个可以通过`()`直接调用的函数，它只是一段带有作用域的代码，其主要目的是用于数据的传递。
+ 
