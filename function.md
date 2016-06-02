@@ -138,7 +138,9 @@ new Thread(() -> System.out.println("lambda express")).start();
 
 **Ruby中的proc和lambda**
 
-在Ruby中匿名函数也是通过lambda实现，而lambda实质上是一个proc对象，Ruby用proc和block两个概念来包装代码段，区别在于proc是Proc类的对象，而block只是单纯的代码段，所以block只能作为代码段使用，而proc可以像变量一样传递。同时lambda和proc也存在区别，lambda会检查参数是否合法（参数个数），而proc则不会。
+在Ruby中匿名函数也是通过lambda实现，而lambda实质上是一个proc对象，Ruby用proc和block两个概念来包装代码段，区别在于proc是Proc类的对象，而block只是单纯的代码段，所以block只能作为代码段使用，而proc可以像变量一样传递。
+
+同时lambda和proc也存在区别，lambda会检查参数是否合法（比如实参个数是否与形参匹配），而proc则不会。
 
 ```ruby
 #ruby
