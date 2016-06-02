@@ -83,6 +83,10 @@ public protected private
 匿名函数是无需显示声明名称的函数，一般作为高阶函数（参数或返回值类型为函数的函数）的参数或者返回值使用。
 一般对于基本不会复用或使用次数有限的函数可以用匿名函数。匿名函数可以简化代码调用起来更便捷。
 
+```javascript
+//JavaScript匿名自执行函数
+console.log(function(){ return 2 }());    //=>1
+```
 
 
 
