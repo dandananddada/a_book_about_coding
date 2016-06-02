@@ -93,9 +93,9 @@ console.log(function(){ return 2 }());    //=>1
 ```javascript
 /*  JavaScript匿名函数作为参数传递  */
 function add (a){
-  return function(b, c){ b+c };
+  return function(b, c){ a+b+c };
 }
-
+add(1)(2,3);    //=>6
 ```
 
 Java本身是不支持匿名函数的，但是可以通过匿名内部类实现匿名函数的功能。
