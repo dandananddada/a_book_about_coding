@@ -94,9 +94,9 @@ Java本身是不支持匿名函数的，但是可以通过匿名内部类实现�
 //java
 class Demo{
   public static void main(String args[]){
-    System.out.println(new Object(){
-      int add(int a, int b){  return a + b; }
-    }.add(1, 2));
+    new Object(){
+      void add(int a, int b){  System.out.println(a + b); }
+    }.add(1, 2);
   }
 }
 ```
