@@ -16,5 +16,5 @@
    * [数组](array.md)
    * [散列](hash.md)
    * [函数](function.md)
-   * 类
+   * [类](class.md)
 
