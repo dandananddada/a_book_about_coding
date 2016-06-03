@@ -194,3 +194,5 @@ a = lambda { |x| puts x*2 }
 [1, 2, 3].each(&lambda { |x| puts x*2 })
 #=>2 4 6 
 ```
+
+####高阶函数
