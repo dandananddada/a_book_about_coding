@@ -2,8 +2,6 @@
 
 ####构造函数
 
-##加初始化顺序
-
 构造函数是类在实例化（构造）一个对象时执行的函数。一般用于初始化一个对象的属性。
 
 **Java构造函数**
@@ -103,6 +101,7 @@ puts Animal.get_numbers     #=>2
 puts dog.get_index          #=>1
 ```
 上面的例子和Java一样，只是语法上稍有不同，Ruby通过`@`定义成员属性,`@@`定义类属性。
+
 ####私有方法
 
 public protected private
