@@ -54,11 +54,11 @@ puts d.a, d.b    #=>1 2
 //java
 /* 对比类方法和实例方法 */
 class Animal{ 
-  public static int number;
+  public static int numbers;
   public int index;
 
-  public static int getNumber(){
-    return number;
+  public static int getNumbers(){
+    return numbers;
   }
   public int getIndex(){
     return index;
@@ -70,7 +70,7 @@ class Animal{
   public static void main(String args[]){
     Animal cat = new Animal();
     Animal dog = new Animal();
-    System.out.println(Animal.getNumber());    //=>2
+    System.out.println(Animal.getNumbers());    //=>2
     System.out.println(dog.getIndex());        //=>1
   }
 }
