@@ -75,26 +75,34 @@ class Animal{
   }
 }
 ```
-上述例子中声明了类属性number以及类方法getNumber，实例属性（也有叫成员属性的）index和实例方法getIndex。输出结果中可以看出，每次实例对象都会有一个新的index，但是number却是共享的，因为它是类级别的。
+上述例子中声明了类属性number以及类方法getNumber，实例属性（也有叫成员变量的）index和实例方法getIndex。输出结果中可以看出，每次实例对象都会有一个新的index，但是number却是共享的，因为它是类级别的。
 
 **Ruby实例方法和类方法**
 
-Ruby则通过self（指向当前运行时的上下文，在方法定义时self指向的其实就是类本身）来定义类方法。
+Ruby则通过`@@`来定义类属性，通过`self`（指向当前运行时的上下文，在方法定义时self指向的其实就是类本身）来定义类方法。
 
 ```ruby
 #ruby
-class Car
-  @@instance_numbers = 0    #ruby中类属性用@@声明
+class Animal
+  @@numbers = 0    
   def initialize()
-      @@instance_numbers += 1
+      @@numbers += 1
+      @index = 1
   end
-  def self.get_instance_numbers
-      @@instance_numbers
+  def self.get_numbers
+      @@numbers
+  end
+  def get_index
+      @index
   end
 end
-c = Car.new
-puts Car.get_instance_numbers    #=>1
+cat = Animal.new
+dog = Animal.new
+
+puts Animal.get_numbers     #=>2
+puts dog.get_index          #=>1
 ```
+上面的例子和Java一样，只是语法上稍有不同，Ruby通过`@`定义成员属性,`@@`定义类属性，不同的时Ruby在构造函数里对实例属性进行
 ####私有方法
 
 public protected private
