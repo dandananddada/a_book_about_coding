@@ -39,36 +39,41 @@ puts d.a, d.b    #=>1 2
 
 ####实例方法和类方法
 
-对于面向对象语言而谈，实例方法和类方法是不得不说的一个概念。
+对于面向对象语言而谈，实例方法（Java中也有叫做成员方法的）和类方法是不得不说的一个概念。
 
 简单的说实例方法是属于对象的，而类方法是属于类的，也就是说前者通过
 对象调用，而后者可以通过类直接调用。
 
 **Java实例方法和类方法**
 
-
-#改造代码加实例方法及说明。
-
 在Java中类级别的方法或者属性通过`static`修饰符标明。通常类方法用于获取类属性。
 
 ```java
 //java
-/* 通过getInstanceNumbers得到Car类实例化对象的个数 */
-class Car{ 
-  public static int instanceNumbers;
-  public static int getInstanceNumbers(){
-    return instanceNumbers;
+/* 对比类方法和实例方法 */
+class Animal{ 
+  public static int number;
+  public int index;
+
+  public static int getNumber(){
+    return number;
   }
-  public Car(){
-    instanceNumbers++;
+  public int getIndex(){
+    return index;
+  }
+  public Animal(){
+    number++;
+    index++;
   }
   public static void main(String args[]){
-    Car c  = new Car();
-    System.out.println(Car.getInstanceNumbers());    //=>1
+    Animal cat = new Animal();
+    Animal dog = new Animal();
+    System.out.println(Animal.getNumber());    //=>2
+    System.out.println(dog.getIndex());        //=>1
   }
 }
 ```
-上述例子中声明了类属性instanceNumbers以及类方法getInstanceNumbers
+上述例子中声明了类属性number以及类方法getNumber，实例属性（也有叫成员属性的）index和实例方法getIndex。输出结果中可以看出，每次实例对象都会有一个新的index，但是number却是共享的，因为它是类级别的。
 
 **Ruby实例方法和类方法**
 
