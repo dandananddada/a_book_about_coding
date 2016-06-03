@@ -64,7 +64,7 @@ class Animal{
     return index;
   }
   public Animal(){
-    number++;
+    numbers++;
     index++;
   }
   public static void main(String args[]){
