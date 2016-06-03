@@ -102,7 +102,7 @@ dog = Animal.new
 puts Animal.get_numbers     #=>2
 puts dog.get_index          #=>1
 ```
-上面的例子和Java一样，只是语法上稍有不同，Ruby通过`@`定义成员属性,`@@`定义类属性，不同的时Ruby在构造函数里对实例属性进行
+上面的例子和Java一样，只是语法上稍有不同，Ruby通过`@`定义成员属性,`@@`定义类属性。
 ####私有方法
 
 public protected private
