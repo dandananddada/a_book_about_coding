@@ -199,10 +199,13 @@ JavaScript并没有区分整数和小数，所有的数字都是遵循IEEE 754 �
 0x2EA = 2 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 10 * 16<sup>0</sup> = 746
 ```
 注意16进制中用A表示10，B表示11，C表示12，以此类推，所以E表示14。而Clojure的Radix Numbers可以定义进制的底数，比如刚刚的0175就可以表示为`8r175`，0x2EA就可以表示为`16r2ea`，r前表示底数，r后表示数字。因为数字从0-9共10个，字母从a-z共26个，所以底数的范围是1-36，即Clojure的Radix Numbers最高可以计算36进制数转换。
-
+```Clojure
+(println (format "%s" 11r12)))    ;;=> 13
+```
 **微软系语言F#、C#、VB.net**
 
 这是一个很有趣的现象，我们以C#为例说明，微乳除了提供了像Java数字类型中byte、short、int、long、double、float这些类型为还特别针对有符号的short、int、long分别提供无符号的ushort、uint、ulong类型，这些类型无法表示负整数但是表示的正整数范围是以前的两倍。
+
 
 
 
