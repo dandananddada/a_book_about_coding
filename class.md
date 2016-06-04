@@ -60,3 +60,5 @@ Class Pen {
   public void draw(){};
 }
 ```
+
+类和变量
