@@ -29,3 +29,5 @@ struct account s;
 int a;      //声明了一个Int类型的变量a
 Pet dog;    //声明了一个Class类型的对象dog
 ```
+
+**new运算符**
