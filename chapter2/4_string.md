@@ -112,8 +112,6 @@ puts str         #=>string str
 puts equalStr    #=>string equalStr
 ```
 
-
-
 ##StringBuffer减少栈消耗
 
 
