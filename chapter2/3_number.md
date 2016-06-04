@@ -195,7 +195,7 @@ ox1A
 我们来计算这两个数字
 ```
 o175  = 1 * 8<sup>2</sup> + 7 * 8<sup>1</sup> + 5 * 8<sup>0</sup> = 125
-ox2EA = 2 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 10 * 16<sup>0</sup> = 756
+ox2EA = 2 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 10 * 16<sup>0</sup> = 746
 ```
 
 
