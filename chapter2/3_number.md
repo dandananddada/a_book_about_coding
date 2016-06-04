@@ -183,7 +183,7 @@ JavaScript并没有区分整数和小数，所有的数字都是遵循IEEE 754 �
 **基于JVM的语言**
 另外像Scala、Groovy这种基于JVM的二代语言，其数字类型是沿用自Java的，无非是Scala作为弱类型语言提供了类型推断机制，在使用数字类型时无需特别声明。
 
-另外一门基于JVM的Lisp语言方言Clojure，它没有效仿Java的数字类型，而是采用了Integers和Float两种类型，其中Integers由区分为Decimal Integers（整数类型）、Octal Numbers（八进制数）、Hexadecimal Numbers（十六进制数）、Radix Numbers（进制类型）。类似的Perl语言也提供了Hexadecimal（十六进制）和Octal（八进制）两种类型。
+另外一门基于JVM的Lisp语言方言Clojure，它没有效仿Java的数字类型，而是采用了Integers和Float两种类型，其中Integers由区分为Decimal Integers（整数类型）、Octal Numbers（八进制数）、Hexadecimal Numbers（十六进制数）、Radix Numbers（进制类型）。类似的Perl语言也提供了Hexadecimal（十六进制）和Octal（八进制）两种类型。进制类型会把对应进制表示转换为十进制数，因此如果你用的语言提供了这样的类型，在处理进制转换时相当方便。
 
 **进制类型**
 
