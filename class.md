@@ -15,3 +15,4 @@ struct account {
 //引用结构体
 struct account s;
 ```
+简单的说，结构体就是一种可以包含多种数据类型的数据类型。
