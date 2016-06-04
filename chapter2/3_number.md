@@ -180,9 +180,23 @@ JavaScript并没有区分整数和小数，所有的数字都是遵循IEEE 754 �
 
 另外Python的数字类型还包括int、long和float，这一点和Ruby其实是相似的。
 
+**基于JVM的语言**
+另外像Scala、Groovy这种基于JVM的二代语言，其数字类型是沿用自Java的，无非是Scala作为弱类型语言提供了类型推断机制，在使用数字类型时无需特别声明。
 
+另外一门基于JVM的Lisp语言方言Clojure，它没有效仿Java的数字类型，而是采用了Integers和Float两种类型，其中Integers由区分为Decimal Integers（整数类型）、Octal Numbers（八进制数）、Hexadecimal Numbers（十六进制数）、Radix Numbers（进制类型）。类似的Perl语言也提供了Hexadecimal（十六进制）和Octal（八进制）两种类型。
 
+**进制类型**
 
+这里单独说明下Clojure的进制类型，上面我们讲过二进制的算法了，其实八进制和十六进制的算法是一样的。为了和十进制区分，八进制以o开头，十六进制以ox开头。
+```
+o175
+ox1A
+```
+我们来计算这两个数字
+```
+o175  = 1 * 8<sup>2</sup> + 7 * 8<sup>1</sup> + 5 * 8<sup>0</sup> = 125
+ox2EA = 2 * 16<sup>2</sup> + 14 * 16<sup>1</sup> + 10 * 16<sup>0</sup> = 756
+```
 
 
 
