@@ -168,7 +168,7 @@ ______________
 
 ####其他语言数字类型
 
-同Java不同，JavaScript和Ruby这样的弱类型语言，本身数字类型没有做特别细致的划分，它们用Number类型表示数字。但细节处理上JavaScript和Ruby又是不同的。JavaScript并没有区分数字，所有的数字都是遵循IEEE 754 标准采用64位flaot类型，而Ruby本身则是有区分Integer、Float和Rational（准确数，类似于Java的BigDecimal类）的。
+同Java不同，JavaScript和Ruby这样的弱类型语言，本身数字类型没有做特别细致的划分，它们用Number类型表示数字。但细节处理上JavaScript和Ruby又是不同的。JavaScript并没有区分数字，所有的数字都是遵循IEEE 754 标准采用64位flaot类型，而Ruby本身则是有区分Integer（Integer由区分为Fixnum何Bignum）、Float和Rational（准确数，类似于Java的BigDecimal类）的。
 
 
 
