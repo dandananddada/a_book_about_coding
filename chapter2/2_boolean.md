@@ -31,13 +31,13 @@ null == false;          //=>false,  [7]
 !null == true;          //=>true,   [7]
 ```
 1. 在JavaScript中boolean会转化为数字，其中`true`会转换为`1`，`false`会转换为`0`，所以相等。
-
 2. 而强制等于`===`会禁止类型转换，所以这里`1`不等于`true`
 3. 空字符会转换为true。
 4. 非空字符和布尔类型始终不等。
 5. 通过4可知是非空字符本身即不是`true`也不是`false`，但是取反后是`false`，两次取反自然就是`true`。
 6. 通过Boolean强制转换非空字符就是`true`,空字符是`false`
 7. 这里`undefined`和`null`类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说`undefined``nill`和`NaN`都表示`false`，这个说法不是很准确，但是在if表达式中确实又是如此应用的。
+8. 
 ```javascript
 //第一个if表达式判断为false，不执行内部代码。
 if(undefined)   console.log("will not execute");
