@@ -157,8 +157,8 @@ ______________
 |短整型| short | 16 | 有 | [-32768, -32767]|
 |整型| int | 32 | 有 |[-2<sup>31</sup>,-2<sup>31</sup>-1]
 |长整型| long | 64 | 有 |[-2<sup>63</sup>,-2<sup>63</sup>-1]
-|浮点型| float | 32 | 3:5 |
-|双精度浮点型| double | 64 | 2:5 | 3:5 |
+|浮点型| float | 32 |有| IEEE 754 binary floating point |
+|双精度浮点型| double | 64 | 有 | IEEE 754 binary floating point |
 
 
 
