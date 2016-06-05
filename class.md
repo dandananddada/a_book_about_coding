@@ -65,3 +65,14 @@ Class Pen {
 类中有三种变量，局部变量、实例变量和类变量。
 
 实例变量和类变量在实例函数和类函数中已经有过说明，可以通过类直接访问的变量就是类变量，一般用`static`关键词修饰。通过对象访问的变量是实例变量。局部变量是指那些在函数中定义的变量，是无法通过类、对象访问的变量。
+```java
+//java
+Class Demo{  
+  public static String classVariable = "类变量";
+  public String instanceVariable = "实例变量";
+  
+  public static void(String args[]){
+     String localVariable = "局部变量";
+  }
+}
+```
