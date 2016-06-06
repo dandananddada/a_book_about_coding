@@ -180,7 +180,7 @@ JavaScript并没有区分整数和小数，所有的数字都是遵循IEEE 754 �
 
 谈到Ruby的实数，不得不说Python和R也提供了一个对应的数据类型`complex number`（复数类型），它表示为`a+bj`的形式，其中a和b都是浮点类型，a表示实部，b表示虚部。
 
-另外Python的数字类型还包括int、long和float，这一点和Ruby其实是相似的。
+另外Python的数字类型还包括int、long和float，这一点和Ruby其实是相似的。需要说明的是Python的long类型是没有长度限制的，而int类型超过长度限制则会转换为long类型。
 
 **基于JVM的二代语言**
 
