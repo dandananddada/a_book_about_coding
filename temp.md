@@ -31,11 +31,11 @@ object2 = { a: 20, b: 30 }
 
 对象模式通过原型来实现代码的复用，原型也是一个对象（你可以理解为类模式对象的一个属性）。任何一个对象都可以作为其他对象的原型来使用。
 ```
-object1 = { a: 10, b: 20 }
-object2 = { a: 20, c: 30 }
+object1 = { a: 10, b: 20, method1 }
+object2 = { a: 20, c: 30, method2 }
 object2.[[Prototype]] = object1
-object2 = { a: 20, b: 20, c: 30 }
+object2    //=>{ a: 20, b: 20, c: 30, method1, method2 }
 delete object2.a
 object2.d = 40
-object2 = { a: 10, b: 20, c: 30, d: 40 }
+object2    //=>{ a: 10, b: 20, c: 30, d: 40, method1, method2 }
 ```
