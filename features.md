@@ -54,6 +54,7 @@ puts a + 2
 在Java语言中通过泛型来实现变量多态，当然动态类型语言在运行时适配参数的数据类型也能使同一定义的函数根据参数类型的不同表现为返回不同结果。
 
 ```java
+/*  Java泛型作为参数使用  */
 public class Tree<T>{
   private T value;
   private Tree<T> left;
