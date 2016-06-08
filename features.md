@@ -116,7 +116,6 @@ public class Main{
     System.out.println(dog.run());
     System.out.println(duck.run());
   }
-
 }
 ```
 
