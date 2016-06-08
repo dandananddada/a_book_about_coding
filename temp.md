@@ -61,7 +61,24 @@ object2.active == 'duck' ? 'object2 is duck' : 'object2 is not duck'
 之前的两种模式可以对比为类和模型，通常静态语言使用类模式，而动态语言常使用原型模式。当然也存在像Python或Ruby这样的语言，他们属于动态类型语言，却使用类模式。
 
 他们通过定义类模板来规范对象的属性和方法，但又可以在运行中改变类的定义和对象的原型。我们来看下面的例子：
+```ruby
+class Demo
+  attr_accessor :a
+end
 
+d = Demo.new
+d.a = 1
+# d.b = 2
+#=> undefined method `b=' for #<Demo:0x007fe81a9caa68 @a=1> (NoMethodError)
+
+# 给Demo类拓展属性b
+Demo.class_eval do
+  attr_accessor :b
+end
+
+d.b = 2
+puts d.a, d.b
+```
 
 
 
