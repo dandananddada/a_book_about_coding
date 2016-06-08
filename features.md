@@ -94,6 +94,7 @@ public class Main{
 5. 执行主函数，声明了两个Pet类，一个传入的T是Dog，另一个是Duck，分别调用这两个Pet的run方法。
 
 **子类多态**
+
 ```java
 //Main.java
 abstract class Pet {
