@@ -97,25 +97,27 @@ public class Main{
 
 ```java
 //Main.java
-abstract class Pet {
-    abstract String run();
+class Pet {
+  String run(){
+    return "run with legs";
+ };
 }
 class Dog extends Animal {
-    String run() {
-        return "run with four legs";
-    }
+  String run() {
+    return "run with four legs";
+  }
 }
 class Duck extends Animal {
-    String run() {
-        return "run with two legs";
-    }
+  String run() {
+    return "run with two legs";
+  }
 }
-public class Main{
+public class Main2{
   public static void main(String args[]){
     Dog dog = new Dog();
     Duck duck = new Duck();
-    System.out.println(dog.run());
-    System.out.println(duck.run());
+    System.out.println(dog.run());     //=>run with four legs
+    System.out.println(duck.run());    //=>run with two legs
   }
 }
 ```
