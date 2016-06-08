@@ -19,3 +19,5 @@
    * [函数](function.md)
    * [类](class.md)
 * [第三章 是时候谈谈面向对象编程了](chapter3.md)
+   * 模式
+
