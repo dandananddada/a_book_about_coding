@@ -81,8 +81,8 @@ public class Main{
   public static void main(String args[]){
     Pet<Dog> dog = new Pet<Dog>(new Dog());
     Pet<Duck> duck = new Pet<Duck>(new Duck());
-    System.out.println(dog.run());
-    System.out.println(duck.run());
+    System.out.println(dog.run());     //=>run with four legs
+    System.out.println(duck.run());    //=>run with two legs   
   }
 }
 ```
