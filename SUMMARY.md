@@ -2,7 +2,6 @@
 
 * [Introduction](README.md)
    * [temp](temp.md)
-   * [第三章 是时候谈谈面向对象编程了](chapter3.md)
 * [第一章 编程语言只有两种](chapter1.md)
    * [1.1 语言类型](chapter1/1_type.md)
    * [1.2 强类型与弱类型](chapter1/2_strong_and_weak.md)
@@ -19,4 +18,4 @@
    * [散列](hash.md)
    * [函数](function.md)
    * [类](class.md)
-
+* [第三章 是时候谈谈面向对象编程了](chapter3.md)
