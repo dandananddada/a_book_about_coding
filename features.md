@@ -52,6 +52,40 @@ puts a + 2
 参数多态允许函数或数据类型采用同一定义，但是可以处理不同类型的变量。变量多态在保证静态类型安全的情况下使语言的表述更加清晰简明。
 
 在Java语言中通过泛型来实现变量多态，当然动态类型语言在运行时适配参数的数据类型也能使同一定义的函数根据参数类型的不同表现为返回不同结果。
+
+**子类多态**
+
+一些语言提供了子类多态的概念，子类多态允许你在定义函数的时候使用父类做形参，但实际使用的实参可以是其子类。
+
+```java
+//Main.java
+abstract class Pet {
+  abstract String run();
+}
+class Dog extends Pet {
+  String run() {
+    return "run with four legs";
+  }
+}
+class Duck extends Pet {
+  String run() {
+    return "run with two legs";
+  }
+}
+public class Main{
+  public static void petRun(Pet p){
+    System.out.println(p.run());
+  }
+  public static void main(String args[]){
+    Main.petRun(new Dog());     //=>run with four legs
+    Main.petRun(new Duck());    //=>run with two legs
+  }
+}
+```
+上面的Java代码中定义了petRun方法，形参为Pet类，但实际调用时传递的为Pet的子类Dog和Duck，这时p.run则分别调用了子类的run方法。
+
+接下来我们看一个泛型和子类多态组合使用的例子。
+
 ```java
 //Main.java
 
@@ -92,36 +126,5 @@ public class Main{
 3. 接着我们定义了一个Pet类，这个类需要传递一个实现了Runner接口的泛型（类）。
 4. 在Pet类定义了一个跑方法，这个跑方法实际上返回的是实现了Runner接口的T的run方法。
 5. 执行主函数，声明了两个Pet类，一个传入的T是Dog，另一个是Duck，分别调用这两个Pet的run方法。
-
-**子类多态**
-
-一些语言提供了子类多态的概念，子类多态允许你在定义函数的时候使用父类做形参，但实际使用的实参可以是其子类。
-
-```java
-//Main.java
-abstract class Pet {
-  abstract String run();
-}
-class Dog extends Pet {
-  String run() {
-    return "run with four legs";
-  }
-}
-class Duck extends Pet {
-  String run() {
-    return "run with two legs";
-  }
-}
-public class Main{
-  public static void petRun(Pet p){
-    System.out.println(p.run());
-  }
-  public static void main(String args[]){
-    Main.petRun(new Dog());     //=>run with four legs
-    Main.petRun(new Duck());    //=>run with two legs
-  }
-}
-```
-上面的Java代码中定义了petRun方法，形参为Pet类，但实际调用时传递的为Pet的子类Dog和Duck，这时p.run则分别调用了子类的run方法。
 
 
