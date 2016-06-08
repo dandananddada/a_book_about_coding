@@ -74,6 +74,7 @@ public class Tree<T>{
 
 ```java
 //Main.java
+/*  子类多态  */
 abstract class Pet {
   abstract String run();
 }
