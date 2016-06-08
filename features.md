@@ -47,7 +47,4 @@ a = Demo.new(2)
 puts a + 2
 ```
 
-**Java函数重载和Ruby加函数**
-
-
-变量多态
+变量多态（parametric polymorphism）
