@@ -93,5 +93,31 @@ public class Main{
 4. 在Pet类定义了一个跑方法，这个跑方法实际上返回的是实现了Runner接口的T的run方法。
 5. 执行主函数，声明了两个Pet类，一个传入的T是Dog，另一个是Duck，分别调用这两个Pet的run方法。
 
+**子类多态**
+```java
+//Main.java
+abstract class Pet {
+    abstract String run();
+}
+class Dog extends Animal {
+    String run() {
+        return "run with four legs";
+    }
+}
+class Duck extends Animal {
+    String run() {
+        return "run with two legs";
+    }
+}
+public class Main{
+  public static void main(String args[]){
+    Dog dog = new Dog();
+    Duck duck = new Duck();
+    System.out.println(dog.run());
+    System.out.println(duck.run());
+  }
+
+}
+```
 
 
