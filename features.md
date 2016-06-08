@@ -122,6 +122,6 @@ public class Main{
   }
 }
 ```
-上面的Java代码中
+上面的Java代码中定义了petRun方法，形参为Pet类，但实际调用时传递的为Pet的子类Dog和Duck，这时p.run则分别调用了子类的run方法。
 
 
