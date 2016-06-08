@@ -45,6 +45,6 @@ object2    //=>{ a: 10, b: 20, c: 30, d: 40, method1, method2 }
 
 在静态类模式下我们是通过类模板来描述对象的，比如说类模板定义了Class Car，那么Car的实例很明显都是汽车，而原型模式下则是通过对象鸭子类型（如果一个对象表现的行为是car，那么它就是Car）来表述这一概念的，简单的说当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。
 ```
-if object1.name == 'duck'
-if object2.name == 'duck'
+object1.active == 'duck' ? 'object1 is duck' : 'object1 is not duck'
+object2.active == 'duck' ? 'object2 is duck' : 'object2 is not duck'
 ```
