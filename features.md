@@ -114,7 +114,7 @@ class Duck extends Animal {
     return "run with two legs";
   }
 }
-public class Main2{
+public class Main{
   public static void main(String args[]){
     Dog dog = new Dog();
     Duck duck = new Duck();
@@ -123,5 +123,6 @@ public class Main2{
   }
 }
 ```
+上面的Java代码中
 
 
