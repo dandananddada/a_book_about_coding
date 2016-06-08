@@ -49,3 +49,9 @@ object2    //=>{ a: 10, b: 20, c: 30, d: 40, method1, method2 }
 object1.active == 'duck' ? 'object1 is duck' : 'object1 is not duck'
 object2.active == 'duck' ? 'object2 is duck' : 'object2 is not duck'
 ```
+
+对象本身是动态的可拓展的
+对象本身不需要模板来规范属性和方法
+对象可以通过原型实现代码的复用，同样原型也是随时可以改变的
+当原型发生改变时，会影响到原型链下层的对象
+对象的定义不是通过特定的类型或继承关系，而是通过当前所拥有的特性（鸭子类型）
