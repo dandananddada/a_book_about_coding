@@ -99,27 +99,26 @@ public class Main{
 
 ```java
 //Main.java
-class Pet {
-  String run(){
-    return "run with legs";
- };
+abstract class Pet {
+  abstract String run();
 }
-class Dog extends Animal {
+class Dog extends Pet {
   String run() {
     return "run with four legs";
   }
 }
-class Duck extends Animal {
+class Duck extends Pet {
   String run() {
     return "run with two legs";
   }
 }
 public class Main{
+  public static void petRun(Pet p){
+    System.out.println(p.run());
+  }
   public static void main(String args[]){
-    Dog dog = new Dog();
-    Duck duck = new Duck();
-    System.out.println(dog.run());     //=>run with four legs
-    System.out.println(duck.run());    //=>run with two legs
+    Main.petRun(new Dog());     //=>run with four legs
+    Main.petRun(new Duck());    //=>run with two legs
   }
 }
 ```
