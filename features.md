@@ -52,7 +52,40 @@ puts a + 2
 参数多态允许函数或数据类型采用同一定义，但是可以处理不同类型的变量。变量多态在保证静态类型安全的情况下使语言的表述更加清晰简明。
 
 在Java语言中通过泛型来实现变量多态，当然动态类型语言在运行时适配参数的数据类型也能使同一定义的函数根据参数类型的不同表现为返回不同结果。
+```java
+//Main.java
 
+interface Runner{  String run(); };
+
+class Pet<T extends Runner>{
+  private T pet;
+  public Pet(T pet){
+    this.pet = pet;
+  }
+  public String run(){
+    return pet.run();
+  }
+}
+class Dog implements Runner{
+  public String run(){
+    return "run with four legs";
+  }
+}
+class Duck implements Runner{
+  public String run(){
+    return "run with two legs";
+  }
+}
+
+public class Main{
+  public static void main(String args[]){
+    Pet<Dog> dog = new Pet<Dog>(new Dog());
+    Pet<Duck> duck = new Pet<Duck>(new Duck());
+    System.out.println(dog.run());
+    System.out.println(duck.run());
+  }
+}
+```
 
 
 
