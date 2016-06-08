@@ -12,5 +12,8 @@
 函数多态允许传入不同类型的参数，并且根据参数类型的不同，返回值也不同。常见的比如函数重载和操作重载。
 
 
+Java函数重载和Ruby加函数
+
+
 functions can be applied to arguments of different types,
 
