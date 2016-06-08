@@ -11,8 +11,8 @@
 函数多态允许传入不同类型的参数，并且根据参数类型的不同，返回值也不同。常见的比如函数重载和操作重载。
 
 ```java
-/*  函数重载，根据传入的参数类型不同，add函数返回的结果也不同  */
 //java
+/*  函数重载，根据传入的参数类型不同，add函数返回的结果也不同  */
 class Demo{
 
   public  static int add(int a, int b){
@@ -31,7 +31,21 @@ class Demo{
 ```
 
 Java本身不提供运算符重载，而Ruby的运算本身就是通过定义一个名为操作符的函数实现的，所以Ruby的运算符重载非常方便。
+```ruby
+#ruby
+# 运算符重载，通过定义+方法实现运算符重载
+class Demo
+ def initialize a
+   @a = a
+ end
+  def +(b)
+    "plus b equal to" + (@a+b).to_s
+  end
+end
 
+a = Demo.new(2)
+puts a + 2
+```
 
 **Java函数重载和Ruby加函数**
 
