@@ -246,4 +246,4 @@ puts a.instance_variable_get(:@a)    #=>10
 
 一个类可以继承自一个父类，那么它也可以继承自多个父类，这就是多重继承。但是多重继承存在很多的问题，最典型的问题就是菱形继承问题（diamond problem）。
 ![菱形继承问题](images/diamond_problem.png)
-如图B、C都继承自
+如图B、C都继承自A，并且重写了A的metho的方法，而D多重继承自B和C，D却没有重写method方法，那么这时D的method方法是以B为准，还是以C为准就形成了菱形继承问题。
