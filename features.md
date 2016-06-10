@@ -253,11 +253,11 @@ puts a.instance_variable_get(:@a)    #=>10
 
 不同的语言提出了不同的方案。
 
-**混合（Mixins）**
+**混合（Mixin）**
 
-Mixins也是一种代码复用的策略，任何对象都可以通过Mixins拓展方法，同类的多重继承一样，一个对象可以引用多个Mixins。
+Mixin也是一种代码复用的策略，任何对象都可以通过Mixin拓展方法，同类的多重继承一样，一个对象可以引用多个Mixin。
 
-Ruby就是采用Mixins的方式实现多重继承。
+Ruby就是采用Mixin的方式实现多重继承。
 ```ruby
 module Action
   def jump
@@ -283,4 +283,9 @@ cat = Cat.new
 puts cat.jump    #=>jump with legs
 puts cat.say     #=>say bark
 ```
-上面我们定义了两个Mixins，一个用于描述动作，一个用于描述叫声。我们只需要在定义类是通过`include`关键字引入Mixins就可以使用其中定义的方法了。
+上面我们定义了两个Mixin，一个用于描述动作，一个用于描述叫声。我们只需要在定义类是通过`include`关键字引入Mixin就可以使用其中定义的方法了。
+
+注意在Ruby中如果类中有和module（Mixin）中同名的方法，以类中的方法体为准，如果多个module定义了同一方法，以最后拓展（include）的那个为准。
+
+**Trait**
+Trait和Mixin类似也是用来拓展类的方法的，
