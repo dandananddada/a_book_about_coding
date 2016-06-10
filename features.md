@@ -307,3 +307,28 @@ american.greet    //=>Hello
 **接口（Interface）**
 
 接口和Mixin、Trait类似，也是用来给类拓展方法的，与Mixin、Trait不同的是，接口只定义方法，但不实现。接口是强制拓展接口的类来实现具体方法的。
+
+```java
+//java
+interface Move{
+  String jump();
+}
+interface Sound{
+  String say();
+}
+class Cat implements Move, Sound{
+  public String jump(){
+    return "jump with legs";
+  }
+  public String say(){
+    return "mew";
+  }
+}
+public class Main{
+  public static void main(String args[]){
+    Cat cat = new Cat();
+    System.out.println(cat.jump());    //=>jump with legs
+    System.out.println(cat.say());     //=>mew
+  }
+}
+```
