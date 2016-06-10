@@ -289,3 +289,17 @@ puts cat.say     #=>say bark
 
 **Trait**
 Trait和Mixin类似也是用来拓展类的方法的，只是Trait中不允许实例化对象，同时如果引用的两个Trait存在同名函数，那么将不会采取任何策略解决这个问题，而会直接返回冲突异常。
+
+我们来看下Scala中Trait的使用。
+```scala
+class Person()
+
+trait Nice{
+    def greet() = println("Hello")
+}
+
+class Character() extends Person(name) with Nice
+
+val american = new Character()
+american.greet
+```
