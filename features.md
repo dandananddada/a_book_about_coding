@@ -388,3 +388,7 @@ public class Main{
 3. 定义Cat类，同时声明Move类、Sound类作为属性。
 4. 重写Cat类的构造函数，实例化move对象和sound对象。
 5. 在Cat类中定义jump方法和say方法，方法体内分别调用move的jump方法及sound的say方法。
+
+
+####抽象
+
