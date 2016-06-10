@@ -157,6 +157,24 @@ public class Main{
 | no modifier | Y | Y | N | N |
 | private | Y | N | N | N |
 
+也就是假设A是B的父类，那么如果A中的一个属性a是用private修饰的话那么B实例化的对象是没有b这个属性的。
+```java
+//java
+class A {
+  protected String a = "protected prop can access subclass";
+  private int b = "private prop can not access in subclass";
+}
+
+class B extends A {}
+
+public class Main{
+  public static void main(String args[]){
+    B b = new B();
+    System.out.println(b.b);    //=>error: b has private access in A
+  }
+}
+```
+
 
 
 ####多重继承
