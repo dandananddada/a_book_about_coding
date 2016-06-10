@@ -198,6 +198,9 @@ public class Main{
   }
 }
 ```
+或者也可以用Java的反射机制获取。
+
+
 像Python和Ruby提供了直接访问私有属性的语法。
 ```ruby
 #ruby
