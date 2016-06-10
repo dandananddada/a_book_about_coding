@@ -303,3 +303,4 @@ class Character extends Person with Nice
 val american = new Character()
 american.greet
 ```
+上面我们定义了一个父类Person以及一个Trait，然后定义了一个Character类，继承自Person，同时使用了Trait拓展。这样Character在没有定义任何方法时也是可以访问Nice的greet方法的。
