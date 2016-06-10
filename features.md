@@ -340,3 +340,51 @@ public class Main{
 组合也是一种实现多重继承的方式，简单的说就是一个类的属性是另外一个类，这样这个类中就可以调用另外一个类的方法了，方便理解你可以把这个类看做是一个Mixins。一般我们称继承为`is a`，称组合为`has a`，你可以理解为：
   1. A是B的一个子类，那么A自然是B，所以`A is a B`。
   2. A通过组合引用了B，那么A中有B，所以`A has a B`。
+
+```java
+//java
+class Move{
+  public String jump(){
+    return "jump by legs";
+  }
+}
+
+class Sound{
+  public String say(String word){
+    return word;
+  }
+}
+
+class Cat{
+  String word;
+  Move move;
+  Sound sound;
+  Cat(){
+    this.word = "mew";
+    this.move = new Move();
+    this.sound = new Sound();
+  }
+
+  public String jump(){
+    return this.move.jump();
+  }
+  public String say(){
+    return this.sound.say(this.word);
+  }
+}
+
+public class Main{
+  public static void main(String args[])
+  {
+    Cat cat = new Cat();
+    System.out.println(cat.jump());
+    System.out.println(cat.say());
+  }
+}
+```
+我们来看下上面这段代码，这次我们直接用class来实现多重继承拓展。
+1. 首先定义了一个Move类，实现了jump方法。
+2. 然后定义了一个Sound类，实现了say方法。
+3. 定义Cat类，同时声明Move类、Sound类作为属性。
+4. 重写Cat类的构造函数，实例化move对象和sound对象。
+5. 在Cat类中定义jump方法和say方法，方法体内分别调用move的jump方法及sound的say方法。
