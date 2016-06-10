@@ -281,5 +281,5 @@ end
 
 cat = Cat.new
 puts cat.jump    #=>jump with legs
-puts cat.say    #=>say bark
+puts cat.say     #=>say bark
 ```
