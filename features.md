@@ -283,3 +283,4 @@ cat = Cat.new
 puts cat.jump    #=>jump with legs
 puts cat.say     #=>say bark
 ```
+上面我们定义了两个Mixins，一个用于描述动作，一个用于描述叫声。我们只需要在定义类是通过`include`关键字引入Mixins就可以使用其中定义的方法了。
