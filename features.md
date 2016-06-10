@@ -178,5 +178,26 @@ public class Main{
 
 当然如果你想在JavaScript里定义私有属性也是可以的，只要认为规定好一个规则，比如通用的用`_`为开头命名的变量。保证在外部访问变量时避免访问这些以`_`为开头的变量就可以了。
 
+继续刚才的例子，如果你就像用B来访问A的私有属性b，那么你可以在A中定义一个public/protected方法，然后返回b。
+```java
+//java
+class A {
+  protected int a = 1;
+  private int b = 2;
+  protected int getB(){
+    return this.b;
+  }
+}
+
+class B extends A {}
+
+public class Main{
+  public static void main(String args[]){
+    B b = new B();
+    System.out.println(b.getB());    //=>2
+  }
+}
+```
+
 
 ####多重继承
