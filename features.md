@@ -271,16 +271,15 @@ module Sound
   end
 end
 
-class Dog
+class Cat
   def initialize
-    @sound = "bark"
+    @sound = "mew"
   end
   include Move
   include Sound
 end
 
-dog = Dog.new
-puts dog.run    #=>run with legs
-puts dog.say    #=>say bark
-
+cat = Cat.new
+puts cat.run    #=>run with legs
+puts cat.say    #=>say bark
 ```
