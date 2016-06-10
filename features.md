@@ -298,7 +298,7 @@ trait Nice{
     def greet() = println("Hello")
 }
 
-class Character() extends Person(name) with Nice
+class Character() extends Person() with Nice
 
 val american = new Character()
 american.greet
