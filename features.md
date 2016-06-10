@@ -303,3 +303,7 @@ val american = new Character()
 american.greet    //=>Hello
 ```
 上面我们定义了一个父类Person以及一个Trait，然后定义了一个Character类，继承自Person，同时使用了Trait拓展。这样Character在没有定义任何方法时也是可以访问Nice的greet方法的。
+
+**接口（Interface）**
+
+接口和Mixin、Trait类似，也是用来给类拓展方法的，与Mixin、Trait不同的是，接口只定义方法，但不实现。接口是强制拓展接口的类来实现具体方法的。
