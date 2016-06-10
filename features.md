@@ -246,3 +246,4 @@ puts a.instance_variable_get(:@a)    #=>10
 
 一个类可以继承自一个父类，那么它也可以继承自多个父类，这就是多重继承。但是多重继承存在很多的问题，最典型的问题就是菱形继承问题（diamond problem）。
 ![菱形继承问题](images/diamond_problem.png)
+如图
