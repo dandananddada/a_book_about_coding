@@ -198,7 +198,24 @@ public class Main{
   }
 }
 ```
-或者也可以用Java的反射机制获取。
+或者通过Java的反射机制获取。
+```java
+//java
+import java.lang.reflect.*;
+class A {
+  private int b = 2;
+}
+
+public class Main{
+  public static void main(String agrs[])throws Throwable {
+    A a = new A();
+    Field field = a.getClass().getDeclaredField("b");
+	field.setAccessible(true);
+	Object b = (int)field.get(a);
+	System.out.println(b);    //=>2
+  }
+}
+```
 
 
 像Python和Ruby提供了直接访问私有属性的语法。
