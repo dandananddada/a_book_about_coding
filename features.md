@@ -280,6 +280,6 @@ class Cat
 end
 
 cat = Cat.new
-puts cat.run    #=>jump with legs
+puts cat.jump    #=>jump with legs
 puts cat.say    #=>say bark
 ```
