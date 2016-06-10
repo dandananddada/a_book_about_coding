@@ -292,13 +292,13 @@ Trait和Mixin类似也是用来拓展类的方法的，只是Trait中不允许�
 
 我们来看下Scala中Trait的使用。
 ```scala
-class Person()
+class Person
 
 trait Nice{
     def greet() = println("Hello")
 }
 
-class Character() extends Person() with Nice
+class Character extends Person with Nice
 
 val american = new Character()
 american.greet
