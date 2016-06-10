@@ -259,9 +259,9 @@ Mixins也是一种代码复用的策略，任何对象都可以通过Mixins拓�
 
 Ruby就是采用Mixins的方式实现多重继承。
 ```ruby
-module Move
-  def run
-    "run with legs"
+module Action
+  def jump
+    "jump with legs"
   end
 end
 
@@ -275,11 +275,11 @@ class Cat
   def initialize
     @sound = "mew"
   end
-  include Move
+  include Action
   include Sound
 end
 
 cat = Cat.new
-puts cat.run    #=>run with legs
+puts cat.run    #=>jump with legs
 puts cat.say    #=>say bark
 ```
