@@ -152,7 +152,7 @@ public class Main{
 
 简单的说这两点都是针对数据而提出的设计，一个是方便数据的修改，一个是保证数据修改的安全性。
 
-**访问级别**
+**访问级别（Access Level）**
 
 访问级别用来控制一个类的属性或方法能否被其他类访问，以Java的访问级别为例来说明包括：private、protected、public和不定义(no modifier)这四种，其对应的访问权限如下表(Y表示可访问，N表示不可)
 
@@ -250,3 +250,37 @@ puts a.instance_variable_get(:@a)    #=>10
 如图B、C都继承自A，并且重写了A的metho的方法，而D多重继承自B和C，D却没有重写method方法，那么这时D的method方法是以B为准，还是以C为准就形成了菱形继承问题。
 
 但多重继承的特性又是不可或缺的，我们还是以铅笔为例，它即属于文具，又是木制品，那么它要满足这两点，就需要继承文具类和木制品类，但是已经说过多重继承是存在缺陷的。那么该如何处理这种需求呢？
+
+不同的语言提出了不同的方案。
+
+**混合（Mixins）**
+
+Mixins也是一种代码复用的策略，任何对象都可以通过Mixins拓展方法，同类的多重继承一样，一个对象可以引用多个Mixins。
+
+Ruby就是采用Mixins的方式实现多重继承。
+```ruby
+module Move
+  def run
+    "run with legs"
+  end
+end
+
+module Sound
+  def say
+    "say #{@sound}"
+  end
+end
+
+class Dog
+  def initialize
+    @sound = "bark"
+  end
+  include Move
+  include Sound
+end
+
+dog = Dog.new
+puts dog.run    #=>run with legs
+puts dog.say    #=>say bark
+
+```
