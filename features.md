@@ -198,6 +198,22 @@ public class Main{
   }
 }
 ```
-
+像Python和Ruby提供了直接访问私有属性的语法。
+```ruby
+#ruby
+class A
+  def initialize
+    @a = 10
+  end
+  private
+ 
+  def private_method(b)
+    return @a + b
+  end
+end
+a = A.new
+puts a.send(:private_method, 20)     #=>30
+puts a.instance_variable_get(:@a)    #=>10
+```
 
 ####多重继承
