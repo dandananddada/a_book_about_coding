@@ -205,8 +205,8 @@ class A
   def initialize
     @a = 10
   end
-  private
  
+  private
   def private_method(b)
     return @a + b
   end
