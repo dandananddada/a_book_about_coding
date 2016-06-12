@@ -421,6 +421,20 @@ public class Main{
 ```
 
 抽象作为一种多态的实现机制对于Ruby这种动态类型的语言而言是不需要的，因为动态类型语言的函数参数和返回值是无需强制声明的，而是通过程序动态判断的。
+```java
+//java语言函数重载
+public String getA(String a){
+  return a;
+}
+
+public int getA(int a){
+  return a;
+}
+```
+```ruby
+#ruby函数定义
+```
+
 
 ####继承
 
