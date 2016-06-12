@@ -398,7 +398,7 @@ public class Main{
 
 面向对象中的抽象也是用于隐藏实现细节的。在Java语言下抽象通过`abstract`和`interface`两种方式实现。
 
-这里就不在重复接口的说明了，`abstract`和接口类似，也是用于声明类或方法，通过`abstract`操作符修饰的类叫做抽象类，修饰的方法叫做抽象方法。抽象类不能实例化，一般作为父类使用，抽象方法不需要定义方法体（由子类实现具体抽象方法）。另外因为`abstract`修饰的方法
+这里就不在重复接口的说明了，`abstract`和接口类似，也是用于声明类或方法，通过`abstract`操作符修饰的类叫做抽象类，修饰的方法叫做抽象方法。抽象类不能实例化，一般作为父类使用，抽象方法不需要定义方法体（由子类实现具体抽象方法）。另外因为`abstract`修饰的方法需要子类来实现，所以`abstract`不能和`private`（子类是没有访问私有属性的权限的）一起使用。
 
 
 The same abstract definition can be used as a common interface for a family of objects with different implementations and behaviors but which share the same meaning
