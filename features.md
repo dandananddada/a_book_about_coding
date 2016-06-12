@@ -392,6 +392,16 @@ public class Main{
 
 ####抽象
 
+抽象的概念是隐藏复杂的底层细节，只需关注呈现的结果就可以了。一般计算机上的抽象分两种。
+1. 操作抽象，比如编程语言中的`+`运算符，你只需要知道它可以处理加法运算不需要知道其底层实现的细节。
+2. 数据抽象，比如编程语言中的`Number`类型，你只需知道它用来存储数字类型就行，不需要知道底层的存储细节。
+
+面向对象中的抽象也是用于隐藏实现细节的。在Java语言下抽象通过`abstract`和`interface`两种方式实现。
+
+这里就不在重复接口的说明了，`abstract`和接口类似，也是用于声明类或方法，通过`abstract`操作符修饰的类叫做抽象类，修饰的方法叫做抽象方法。抽象类不能实例化，一般作为父类使用，抽象方法不需要定义方法体（由子类实现具体抽象方法）。
+The same abstract definition can be used as a common interface for a family of objects with different implementations and behaviors but which share the same meaning
+
+
 
 ####继承
 
