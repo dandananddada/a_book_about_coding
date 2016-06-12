@@ -146,7 +146,256 @@ public class Main{
 
 ####封装
 
+封装是通过一种结构（这里通常为类）将数据和函数包装起来，通常有以下两点用法：
+1. 将数据、函数的实现细节隐藏，简化使用。
+2. 防止外界直接访问包装内的数据、函数。
+
+简单的说这两点都是针对数据而提出的设计，一个是方便数据的修改，一个是保证数据修改的安全性。
+
+**访问级别（Access Level）**
+
+访问级别用来控制一个类的属性或方法能否被其他类访问，以Java的访问级别为例来说明包括：private、protected、public和不定义(no modifier)这四种，其对应的访问权限如下表(Y表示可访问，N表示不可)
+
+| 修饰符/场景 | 当前类 | 当前包 | 父类 | 全局 |
+| -- | -- | -- | -- | -- |
+| public| Y | Y | Y | Y |
+| protected | Y | Y | Y | N |
+| no modifier | Y | Y | N | N |
+| private | Y | N | N | N |
+
+也就是假设A是B的父类，那么如果A中的一个属性a是用private修饰的话那么B实例化的对象是没有b这个属性的。
+```java
+//java
+class A {
+  protected String a = "protected prop can access subclass";
+  private int b = "private prop can not access in subclass";
+}
+
+class B extends A {}
+
+public class Main{
+  public static void main(String args[]){
+    B b = new B();
+    System.out.println(b.b);    //=>error: b has private access in A
+  }
+}
+```
+如果你还记得面向对象模式说明中静态类模式下有一个弊端就是：子类只能继承父类全部属性，不能动态选择。当时我提到了访问权限，像Java和Ruby都通过这种机制解决了继承关系属性冗余的问题。因此访问级别是静态模式下用来弥补缺点的一个设计，而在基于原型的模式（比如JavaScript）下没有提出访问权限的概念也是正常的。
+
+当然如果你想在JavaScript里定义私有属性也是可以的，只要认为规定好一个规则，比如通用的用`_`为开头命名的变量。保证在外部访问变量时避免访问这些以`_`为开头的变量就可以了。
+
+继续刚才的例子，如果你就像用B来访问A的私有属性b，那么你可以在A中定义一个public/protected方法，然后返回b。
+```java
+//java
+class A {
+  protected int a = 1;
+  private int b = 2;
+  protected int getB(){
+    return this.b;
+  }
+}
+
+class B extends A {}
+
+public class Main{
+  public static void main(String args[]){
+    B b = new B();
+    System.out.println(b.getB());    //=>2
+  }
+}
+```
+或者通过Java的反射机制获取。
+```java
+//java
+import java.lang.reflect.*;
+class A {
+  private int b = 2;
+}
+
+public class Main{
+  public static void main(String agrs[])throws Throwable {
+    A a = new A();
+    Field field = a.getClass().getDeclaredField("b");
+	field.setAccessible(true);
+	Object b = (int)field.get(a);
+	System.out.println(b);    //=>2
+  }
+}
+```
+
+
+像Python和Ruby提供了直接访问私有属性的语法。
+```ruby
+#ruby
+class A
+  def initialize
+    @a = 10
+  end
+ 
+  private
+  def private_method(b)
+    return @a + b
+  end
+end
+a = A.new
+puts a.send(:private_method, 20)     #=>30
+puts a.instance_variable_get(:@a)    #=>10
+```
 
 ####多重继承
 
-###AOP
+一个类可以继承自一个父类，那么它也可以继承自多个父类，这就是多重继承。但是多重继承存在很多的问题，最典型的问题就是菱形继承问题（diamond problem）。
+
+![菱形继承问题](images/diamond_problem.png)
+如图B、C都继承自A，并且重写了A的metho的方法，而D多重继承自B和C，D却没有重写method方法，那么这时D的method方法是以B为准，还是以C为准就形成了菱形继承问题。
+
+但多重继承的特性又是不可或缺的，我们还是以铅笔为例，它即属于文具，又是木制品，那么它要满足这两点，就需要继承文具类和木制品类，但是已经说过多重继承是存在缺陷的。那么该如何处理这种需求呢？
+
+不同的语言提出了不同的方案。
+
+**混合（Mixin）**
+
+Mixin也是一种代码复用的策略，任何对象都可以通过Mixin拓展方法，同类的多重继承一样，一个对象可以引用多个Mixin。
+
+Ruby就是采用Mixin的方式实现多重继承。
+```ruby
+module Action
+  def jump
+    "jump with legs"
+  end
+end
+
+module Sound
+  def say
+    "say #{@sound}"
+  end
+end
+
+class Cat
+  def initialize
+    @sound = "mew"
+  end
+  include Action
+  include Sound
+end
+
+cat = Cat.new
+puts cat.jump    #=>jump with legs
+puts cat.say     #=>say bark
+```
+上面我们定义了两个Mixin，一个用于描述动作，一个用于描述叫声。我们只需要在定义类是通过`include`关键字引入Mixin就可以使用其中定义的方法了。
+
+注意在Ruby中如果类中有和module（Mixin）中同名的方法，以类中的方法体为准，如果多个module定义了同一方法，以最后拓展（include）的那个为准。这样的设计就避免了多重继承中菱形继承的问题。
+
+**Trait**
+Trait和Mixin类似也是用来拓展类的方法的，只是Trait中不允许实例化对象，同时如果引用的两个Trait存在同名函数，那么将不会采取任何策略解决这个问题，而会直接返回冲突异常。
+
+我们来看下Scala中Trait的使用。
+```scala
+class Person
+trait Nice{
+  def greet() = println("Hello")
+}
+
+class Character extends Person with Nice
+
+val american = new Character()
+american.greet    //=>Hello
+```
+上面我们定义了一个父类Person以及一个Trait，然后定义了一个Character类，继承自Person，同时使用了Trait拓展。这样Character在没有定义任何方法时也是可以访问Nice的greet方法的。
+
+**接口（Interface）**
+
+接口和Mixin、Trait类似，也是用来给类拓展方法的，与Mixin、Trait不同的是，接口只定义方法，但不实现。接口是强制拓展接口的类来实现具体方法的。
+
+```java
+//java
+interface Move{
+  String jump();
+}
+interface Sound{
+  String say();
+}
+class Cat implements Move, Sound{
+  public String jump(){
+    return "jump with legs";
+  }
+  public String say(){
+    return "mew";
+  }
+}
+public class Main{
+  public static void main(String args[]){
+    Cat cat = new Cat();
+    System.out.println(cat.jump());    //=>jump with legs
+    System.out.println(cat.say());     //=>mew
+  }
+}
+```
+因为接口规定实现由类完成，所以多个接口中存在同名函数也是没有影响的，因为类中函数的实现肯定是唯一的。
+
+注意Java中的接口和抽象类还是有区别的，抽象类的抽象方法和接口是类似的， 在拓展一个接口的情况下是可以用抽象方法代替的，但是多个接口的场景下抽象类是无法取代的。所以接口主要处理的问题还是多重继承。
+
+**组合（composition）**
+组合也是一种实现多重继承的方式，简单的说就是一个类的属性是另外一个类，这样这个类中就可以调用另外一个类的方法了，方便理解你可以把这个类看做是一个Mixins。一般我们称继承为`is a`，称组合为`has a`，你可以理解为：
+  1. A是B的一个子类，那么A自然是B，所以`A is a B`。
+  2. A通过组合引用了B，那么A中有B，所以`A has a B`。
+
+```java
+//java
+class Move{
+  public String jump(){
+    return "jump by legs";
+  }
+}
+
+class Sound{
+  public String say(String word){
+    return word;
+  }
+}
+
+class Cat{
+  String word;
+  Move move;
+  Sound sound;
+  Cat(){
+    this.word = "mew";
+    this.move = new Move();
+    this.sound = new Sound();
+  }
+
+  public String jump(){
+    return this.move.jump();
+  }
+  public String say(){
+    return this.sound.say(this.word);
+  }
+}
+
+public class Main{
+  public static void main(String args[])
+  {
+    Cat cat = new Cat();
+    System.out.println(cat.jump());
+    System.out.println(cat.say());
+  }
+}
+```
+我们来看下上面这段代码，这次我们直接用class来实现多重继承拓展。
+1. 首先定义了一个Move类，实现了jump方法。
+2. 然后定义了一个Sound类，实现了say方法。
+3. 定义Cat类，同时声明Move类、Sound类作为属性。
+4. 重写Cat类的构造函数，实例化move对象和sound对象。
+5. 在Cat类中定义jump方法和say方法，方法体内分别调用move的jump方法及sound的say方法。
+
+
+####抽象
+
+
+####继承
+
+####AOP
+
+####设计模式
+
