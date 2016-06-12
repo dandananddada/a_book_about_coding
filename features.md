@@ -1,3 +1,4 @@
+
 # 面向对象特点
 
 ####多态
@@ -438,6 +439,25 @@ def getA(a)
 end
 ```
 从上面例子可以看出Java这种静态类型语言需要声明函数的参数类型和返回值类型，参数类型、返回值类型不同的同名函数会被定义为两个不同的函数，而Ruby这种动态类型语言中，参数类型和返回值类型是程序在运行时动态决定的，所以动态语言的函数是允许不同类型作为参数进行调用的。这也是为什么Ruby语言没有提供像Java一样的`abstract class`来实现函数重载了。
+
+当然如果你就是想用动态类型语言模拟抽象类和抽象函数也是可以的。
+```ruby
+#ruby
+class Animal
+  def say
+    raise "abstract method"
+  end
+end
+
+class Cat < Animal
+  def say
+    return "mew"
+  end
+end
+
+c = Cat.new
+puts c.say    #=>mew
+```
 
 ####继承
 
