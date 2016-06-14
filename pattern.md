@@ -125,8 +125,13 @@ class LanguageFactory{
 
 public class Main{
   public static void main(String args[]){
-    LanguageFactory.getInstance().demoMethod();
+    LanguageFactory.getInstance().demoMethod();    //=>Singleton pattern
   }
 }
-
 ```
+
+单例模式用到了访问权限的特性，来看下上面的代码：
+1. 保证单例类不能被实例化的方式就是让其构造函数变为私有属性，这样就不能在外面调用构造函数实例化当前类了。
+2. 因为不能在外面实例化对象，所以我们需要单例类本身提供一个自己的实例（对象）作为属性，并且这个属性是类级别的（否则会变成一个死循环，如果是成员属性就必须有对象，而对象本身是通过这个属性暴漏出来的）。
+3. 最后需要暴漏一个类方法来返回这个属性（当前类的一个实例）。
+4. 这样就可以直接通过LanguageFactory的getInstance拿到这个类的唯一实例了。
