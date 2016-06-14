@@ -202,4 +202,6 @@ public class Main{
 ```
 简单分析下上述代码：
 
-1. 
+1. 我们有一个要适配的接口AdvancedMediaPlayer和用来包装的接口MediaPlayer，MediaPlayer定义了一个play方法，而AdvancedMediaPlayer对play细化定义了playFlv和playMp4。
+2. 创建了FlvPlayer和Mp4Player，一个实现了AdvancedMediaPlayer接口的playFlv方法，另一个实现了playMp4方法。
+3. 定义适配器，适配器实现了包装接口MediaPlayer的play方法，同时适配器采用类似工厂的方式根据输入参数返回了advancedMediaPlayer对象(advancedMediaPlayer被实例化为playFlv或者playMp4，两者都实现了AdapterPlayer接口)。并在Play方法中根据输入参数执行play方法（palyFlv或PlayMp4）。
