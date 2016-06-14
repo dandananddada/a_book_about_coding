@@ -97,3 +97,28 @@ public class Main{
 3. 创建一个LanguageFactory类和setLanguage方法，这个方法的返回值是Language接口。我们可以根据type参数进行调节判断，返回一个实现了Language接口的类。
 4. 调用LanguageFactory的setLanguage得到需要的对象（注意setLanguage的返回类型是Language，所以需要强制转换）。
 
+**单例模式**
+
+```java
+class LanguageFactory{
+
+  private static LanguageFactory instance = null;
+  private LanguageFactory(){}
+
+  public static LanguageFactory getInstance(){
+    if(instance == null)  instance = new LanguageFactory();
+    return instance;
+  }
+
+  public void demoMethod(){
+    System.out.println("Singleton pattern");
+  }
+}
+
+public class Main{
+  public static void main(String args[]){
+    LanguageFactory.getInstance().demoMethod();
+  }
+}
+
+```
