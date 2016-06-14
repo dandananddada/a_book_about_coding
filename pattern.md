@@ -87,7 +87,7 @@ public class Main{
   public static void main(String args[]){
     LanguageFactory languageFactory = new LanguageFactory();
     Java java = (Java)languageFactory.setLanguage("Java");
-    java.sayHello();
+    java.sayHello();    //=>hello
   }
 }
 ```
