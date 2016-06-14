@@ -207,3 +207,49 @@ public class Main{
 3. 定义适配器`AdapterPlayer`，适配器实现了包装接口`MediaPlayer`的`play`方法，同时适配器采用类似工厂的方式根据输入参数返回了`advancedMediaPlayer`对象(`advancedMediaPlayer`被实例化为`playFlv`或者`playMp4`，两者都实现了`AdvancedMediaPlayer`接口)。并在`play`方法中根据输入参数执行`play`方法（`palyFlv`或`playMp4`）。
 4. 创建`AudioPlayer`类，该类通过适配器`AdapterPlayer`实现了包装接口`MediaPlayer`的`play`方法，并根据`play`方法输入的参数实例化`AdapterPlayer`对象，然后调用`adapterPlayer`的`play`方法。这样`AudioPlayer`就通过适配器就隐藏了`play`的细节。
 5. 实例化`AudioPlayer`对象，并传递参数调用`audioPlayer`的`play`方法（其实`audioPlayer`的`play`方法是通过适配器`AdapterPlayer`返回的`FlvPlayer`对象或者`Mp4Player`对象的`play`方法）。
+
+**装饰模式**
+
+```java
+interface Animal{
+  public void say();
+}
+class Dog implements Animal{
+  public void say(){
+    System.out.println("bark");
+  }
+}
+class Cat implements Animal{
+  public void say(){
+    System.out.println("mew");
+  }
+}
+abstract class AnimalDecorator implements Animal{
+  protected Animal animal;
+  public AnimalDecorator(Animal animal){
+    this.animal = animal;
+  }
+  public void say(){
+    animal.say();
+  }
+}
+class LovelyAnimalDecorator extends AnimalDecorator{
+  public LovelyAnimalDecorator(Animal animal){
+    super(animal);
+  }
+  public void say(){
+    setCharacter();
+    animal.say();
+  }
+  public void setCharacter(){
+    System.out.println("lovely");
+  }
+} 
+public class Main{
+  public static void main(String args[]){
+    Animal cat = new Cat();
+    Animal kitten = new LovelyAnimalDecorator(cat);
+    kitten.say();
+  }
+}
+```
