@@ -136,3 +136,63 @@ public class Main{
 3. 最后需要暴漏一个类方法来返回这个属性（当前类的一个实例）。
 4. 这样就可以直接通过LanguageFactory的getInstance拿到这个类的唯一实例了。
 
+**适配器模式**
+
+适配器的作用主要用于将一个接口适配为另一个期望的接口，从而消除两个接口间不兼容的问题。其实本质上也是一种封装、多态的设计。
+```java
+interface MediaPlayer{
+  public void play(String audioType);
+}
+
+interface AdvancedMediaPlayer{
+  public void playFlv();
+  public void playMp4();
+}
+
+class FlvPlayer implements AdvancedMediaPlayer{
+  public void playFlv(){
+    System.out.println("play flv");
+  }
+  public void playMp4(){
+    //do nothing
+  }
+}
+class Mp4Player implements AdvancedMediaPlayer{
+  public void playFlv(){
+    //do nothing
+  }
+  public void playMp4(){
+    System.out.println("play mp4");
+  }
+}
+
+class AdapterPlayer implements MediaPlayer{
+  AdvancedMediaPlayer advancedMediaPlayer;
+
+  public AdapterPlayer(String type){
+    if("flv".equals(type))  advancedMediaPlayer = new FlvPlayer();
+    else if("mp4".equals(type))  advancedMediaPlayer = new Mp4Player();
+    else System.out.println("type error");
+  }
+  public void play(String audioType){
+    if("flv".equals(audioType))  advancedMediaPlayer.playFlv();
+    else if("mp4".equals(audioType)) advancedMediaPlayer.playMp4();
+    else  System.out.println("audio type error");
+  }
+}
+class AudioPlayer implements MediaPlayer{
+  AdapterPlayer adapterPlayer;
+  public void play(String audioType){
+    adapterPlayer = new AdapterPlayer(audioType);
+    adapterPlayer.play(audioType);
+  }
+}
+public class Main{
+  public static void main(String args[]){
+    AudioPlayer audioPlayer = new AudioPlayer();
+    audioPlayer.play("mp4");
+    audioPlayer.play("flv");
+  }
+}
+```
+
