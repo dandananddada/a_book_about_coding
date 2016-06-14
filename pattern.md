@@ -206,4 +206,4 @@ public class Main{
 2. 创建了`FlvPlayer`和`Mp4Player`，一个实现了`AdvancedMediaPlayer`接口的`playFlv`方法，另一个实现了`playMp4`方法。
 3. 定义适配器`AdapterPlayer`，适配器实现了包装接口`MediaPlayer`的`play`方法，同时适配器采用类似工厂的方式根据输入参数返回了`advancedMediaPlayer`对象(`advancedMediaPlayer`被实例化为`playFlv`或者`playMp4`，两者都实现了`AdvancedMediaPlayer`接口)。并在`play`方法中根据输入参数执行`play`方法（`palyFlv`或`playMp4`）。
 4. 创建`AudioPlayer`类，该类通过适配器`AdapterPlayer`实现了包装接口`MediaPlayer`的`play`方法，并根据`play`方法输入的参数实例化`AdapterPlayer`对象，然后调用`adapterPlayer`的`play`方法。这样`AudioPlayer`就通过适配器就隐藏了`play`的细节。
-5. 实例化`AudioPlayer`对象，并传递参数调用`audioPlayer`的`play`方法（其实`audioPlayer`的`play`方法是通过适配器`AdapterPlayer`处理后调用的`FlvPlayer`或者`Mp4Player`的`play`方法）。
+5. 实例化`AudioPlayer`对象，并传递参数调用`audioPlayer`的`play`方法（其实`audioPlayer`的`play`方法是通过适配器`AdapterPlayer`返回的`FlvPlayer`对象或者`Mp4Player`对象的`play`方法）。
