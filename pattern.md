@@ -55,3 +55,39 @@
 **工厂模式**
 
 在开发过程中经常会遇到根据不同的条件实例化不同的对象，每次都重复这个逻辑显然是不够理想的，所以我们可以把这样的逻辑封装到一个类中，这个类就是工厂类，通过类和条件参数类返回需要实例化的对象，这个模式就是工厂模式。
+```java
+interface Language{
+  public void sayHello();
+}
+
+class Java implements Language{
+  public void sayHello(){
+    System.out.println("hello Java");
+  }
+}
+
+class Ruby implements Language{
+  public void sayHello(){
+    System.out.println("hello Ruby");
+  }
+}
+
+class LanguageFactory{
+  public Language setLanguage(String type){
+    if("Java".equals(type))      return new Java();
+    else if("Ruby".equals(type)) return new Ruby();
+    else{
+      System.out.println("type error");
+      return null;
+    } 
+  }
+}
+
+public class Main{
+  public static void main(String args[]){
+    LanguageFactory languageFactory = new LanguageFactory();
+    Java java = (Java)languageFactory.setLanguage("Java");
+    java.sayHello();
+  }
+}
+```
