@@ -142,6 +142,8 @@ public class Main{
 
 适配器可以将代码细节更好的隐藏，在实现和工厂模式对返回对象进行逻辑选择一样，适配器要根据输入参数选择合适的处理类及方法（不同的类实现了不同的接口方法）。
 
+来看下面这个播放器的例子：
+
 ```java
 interface MediaPlayer{
   public void play(String audioType);
@@ -198,4 +200,6 @@ public class Main{
   }
 }
 ```
+简单分析下上述代码：
 
+1. 
