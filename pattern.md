@@ -339,3 +339,60 @@ public class Main{
 }
 ```
 **责任链模式**
+```java
+abstract class Task{
+  protected Task next;
+
+  public void nextTask(Task task){
+    this.next = task;
+  }
+  protected abstract void work();
+  public void start(){
+    work();
+    if(this.next != null)   this.next.start();
+  }
+}
+
+class Write extends Task{
+  public void work(){
+    System.out.println("write");
+  }
+}
+
+class Compile extends Task{
+  public void work(){
+    System.out.println("compile");
+  }
+}
+
+class Link extends Task{
+  public void work(){
+    System.out.println("link");
+  }
+}
+
+class Run extends Task{
+  public void work(){
+    System.out.println("run");
+  }
+}
+
+class TaskChain{
+  public static Task getTaskChain(){
+    Task write = new Write();
+    Task compile = new Compile();
+    Task link = new Link();
+    Task run = new Run();
+    write.nextTask(compile);
+    compile.nextTask(link);
+    link.nextTask(run);
+    return write;
+  }
+}
+public class Main{
+  public static void main(String args[]){
+    Task taskChain = TaskChain.getTaskChain();
+    taskChain.start();
+  }
+}
+```
