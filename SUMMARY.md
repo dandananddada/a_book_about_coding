@@ -25,5 +25,5 @@
    * [3.2 面向对象特点](chapter3/2_features.md)
    * [3.3 设计模式](chapter3/3_pattern.md)
 * [第四章 函数式](chapter4.md)
-   * intro.md
+   * 介绍
 
