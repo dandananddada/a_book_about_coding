@@ -280,3 +280,60 @@ public class Main{
   }
 }
 ```
+**观察者模式**
+```
+import java.util.List;
+import java.util.ArrayList;
+
+
+class WeatherForecast{
+  private List<Observer> observers = new ArrayList<Observer>();
+  private String weather;
+
+  public String getWeather(){
+    return this.weather;
+  }
+  public void setWeather(String weather){
+    this.weather = weather;
+    this.notifyObservers();
+  }
+  public void subscribe(Observer observer){
+    observers.add(observer);
+  }
+  public void notifyObservers(){
+    for (Observer observer : observers) {
+      observer.notified();
+    }
+ }
+}
+abstract class Observer{
+  protected WeatherForecast weatherForecast;
+  public abstract void notified();
+}
+class You extends Observer{
+  public You(WeatherForecast weatherForecast){
+    this.weatherForecast = weatherForecast;
+    this.weatherForecast.subscribe(this);
+  }
+  public void notified(){
+    System.out.println("notified you, "+ weatherForecast.getWeather());
+  }
+}
+class YourFriend extends Observer{
+  public YourFriend(WeatherForecast weatherForecast){
+    this.weatherForecast = weatherForecast;
+    this.weatherForecast.subscribe(this);
+  }
+  public void notified(){
+    System.out.println("notified your friend, "+ weatherForecast.getWeather());
+  }
+}
+public class Main{
+  public static void main(String args[]){
+    WeatherForecast weatherForecast = new WeatherForecast();
+    new You(weatherForecast);
+    new YourFriend(weatherForecast);
+    weatherForecast.setWeather("rain");
+  }
+}
+```
