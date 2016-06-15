@@ -255,3 +255,28 @@ public class Main{
 ```
 
 **代理模式**
+```java
+interface Trade{
+  public void buy(String good);
+}
+
+class Buyer implements Trade{
+  public void buy(String good){
+    System.out.println("buy "+ good);
+  }
+}
+class Taobao implements Trade{
+  private Buyer buyer;
+  public void buy(String good){
+    if(buyer == null)   buyer = new Buyer();
+    buyer.buy(good);
+    System.out.println("by taobao");
+  }
+}
+public class Main{
+  public static void main(String agrs[]){
+    Trade taobao = new Taobao();
+    taobao.buy("cd game");
+  }
+}
+```
