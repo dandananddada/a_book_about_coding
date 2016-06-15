@@ -281,7 +281,8 @@ public class Main{
 }
 ```
 **观察者模式**
-```
+
+```java
 import java.util.List;
 import java.util.ArrayList;
 
@@ -337,3 +338,4 @@ public class Main{
   }
 }
 ```
+**责任链模式**
