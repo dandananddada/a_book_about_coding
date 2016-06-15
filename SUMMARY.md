@@ -2,6 +2,7 @@
 
 * [Introduction](README.md)
    * [temp](temp.md)
+   * 第四章 函数式
 * [第一章 编程语言只有两种](chapter1.md)
    * [1.1 语言类型](chapter1/1_type.md)
    * [1.2 强类型与弱类型](chapter1/2_strong_and_weak.md)
