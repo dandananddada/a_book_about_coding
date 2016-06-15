@@ -253,3 +253,5 @@ public class Main{
   }
 }
 ```
+
+**代理模式**
