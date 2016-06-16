@@ -425,7 +425,7 @@ class NewFeatureReplaceFactory{
       language = ()-> System.out.println("hello Java");
     else
       language = ()-> System.out.println("type error");
-    language.sayHello();
+    language.sayHello();    //=>hello java
   }
 }
 
@@ -436,3 +436,4 @@ public class Main{
   }
 }
 ```
+上面代码可以看出，我们没有定义Language接口的实现类，而是在`NewFeatureReplaceFactory`类中根据`type`类型不同，实现了`Language`接口不同的函数体（注意使用接口函数时，接口只能定义一个函数，解释器会自动把定义的函数体和函数定义绑定）
