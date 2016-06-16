@@ -444,7 +444,7 @@ public class Main{
 2. Task类定义了一个抽象方法work交由子类实现，同时还定义了一个start方法，用来执行当前Task的work方法并判断是否存在下一个任务节点，如果存在则执行这个任务节点的start方法。这样就可以构成一个任务链了。
 3. 定义了Write、Compile、Link、Run四个任务，都继承自Task类，并实现了work方法。
 4. 定义一个责任链类，类中定义了一个静态方法`getTaskChain`用来获取任务链，方法中创建了任务类对象，并通过nextTask方法组成一个任务类链表，`getTaskChain`，返回了第一个任务对象。
-5. 最后调用`taskChain.start`触发任务链的执行，第一个任务对象执行work方法并判断是否存在下一个任务，存在则执行它的start方法，以此类推。
+5. 最后调用`taskChain.start`触发任务链的执行，start方法会执行当前任务的work方法并判断是否存在下一个任务，如果存在则执行下一个任务的start方法，以此类推。
 
 
 
