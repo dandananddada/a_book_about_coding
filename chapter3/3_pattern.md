@@ -305,6 +305,10 @@ public class Main{
 
 **观察者模式**
 
+观察者模式在一对多的场景下使用，当一个对象的属性发生改变时，所有依赖它的对象都会受到相应的通知。
+
+类似的使用场景比如消息订阅，当消息发生改变时，所有订阅这个消息的用户都应该受到通知。
+
 ```java
 import java.util.List;
 import java.util.ArrayList;
