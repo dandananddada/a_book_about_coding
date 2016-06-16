@@ -364,7 +364,17 @@ public class Main{
     weatherForecast.setWeather("rain");
   }
 }
+
 ```
+简单的说观察者模式就是两个类之间消息的传递，消息类状态发生改变时会通知观察者类执行相应操作，而观察者类在初始化时会通知消息类把自己加入到观察者注册列表。具体如下：
+
+1. 首先创建一个消息类，消息类中需要有一个消息状态及状态的读/写方法，这里定义了一个天气属性`weather`以及getWeather和setWeather方法来控制weather的读写。
+2. 消息类还定义了一个观察者列表及相关的方法。观察者列表`observers`用来存储所有订阅该消息的观察者，subscribe方法用来添加新的观察者对象到观察者列表。最后定义了notifyObservers方法来通知观察者消息改变了。
+3. notifyObservers方法遍历观察者列表中每一个观察者，并调用他们的notified方法。
+4. 接着定义一个抽象类Observer，这个抽象类一类消息类WeatherForecast，并定义了notified方法。
+5. 定义两个观察者类`You`和`YourFriend`，分别在构造函数中调用了消息类的注册观察者方法`weatherForecast.subscribe`，这样在消息发生改变时就会收到相应的通知。
+6. 最后每个观察者类都实现了notifed方法，当收到消息类的通知时执行。
+
 **责任链模式**
 ```java
 abstract class Task{
