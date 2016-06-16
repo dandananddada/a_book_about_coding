@@ -195,8 +195,8 @@ class AudioPlayer implements MediaPlayer{
 public class Main{
   public static void main(String args[]){
     AudioPlayer audioPlayer = new AudioPlayer();
-    audioPlayer.play("mp4");
-    audioPlayer.play("flv");
+    audioPlayer.play("mp4");    //=>play mp4
+    audioPlayer.play("flv");    //=>play flv
   }
 }
 ```
@@ -209,6 +209,10 @@ public class Main{
 5. 实例化`AudioPlayer`对象，并传递参数调用`audioPlayer`的`play`方法（其实`audioPlayer`的`play`方法是通过适配器`AdapterPlayer`返回的`FlvPlayer`对象或者`Mp4Player`对象的`play`方法）。
 
 **装饰模式**
+
+装饰模式可以在不修改现有结构的情况下，对当前对象追加新特性，装饰模式会创建一个装饰类来包装这个对象，然后通过装饰类来拓展新特性。
+
+相当于我们要对一个类进行拓展，可以通过组合的方式把它包装到装饰类里，通过对装饰类定义属性和方法来拓展新特性，然后通过装饰类依赖的原始类属性调用原有的特性。
 
 ```java
 interface Animal{
@@ -249,10 +253,18 @@ public class Main{
   public static void main(String args[]){
     Animal cat = new Cat();
     Animal kitten = new LovelyAnimalDecorator(cat);
-    kitten.say();
+    kitten.say();    //=>lovely
+                     //=>mew
   }
 }
 ```
+上面代码如下：
+
+1. 首先创建了一个`Animal`接口并定义了`say`方法，然后定义了实现这个接口的两个类`Cat`和`Dog`。
+2. 定义一个装饰类的抽象类，抽象类中定义了一个`Animal`类型的属性，方便子类包装使用。
+3. 定义了一个装饰类`LovelyAnimalDecorator`，继承了抽象类`AnimalDecorator`，并添加了新特性，重写了`say`方法。
+4. 实例化一个原始类对象`cat`，把`cat`作为参数传递给包装类`LovelyAnimalDecorator`，调用包装类的`say`方法。
+5. 包装类的`say`方法执行包装类定义的新特性，并执行原始类的`say`方法。
 
 **代理模式**
 ```java
