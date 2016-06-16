@@ -293,7 +293,8 @@ class Taobao implements Trade{
 public class Main{
   public static void main(String agrs[]){
     Trade taobao = new Taobao();
-    taobao.buy("cd game");
+    taobao.buy("cd game");    //=>buy cd game
+                              //=>by taobao
   }
 }
 ```
@@ -361,7 +362,8 @@ public class Main{
     WeatherForecast weatherForecast = new WeatherForecast();
     new You(weatherForecast);
     new YourFriend(weatherForecast);
-    weatherForecast.setWeather("rain");
+    weatherForecast.setWeather("rain");    //=>notified you, rain
+                                           //=>notified your friend, rain
   }
 }
 
@@ -434,7 +436,10 @@ class TaskChain{
 public class Main{
   public static void main(String args[]){
     Task taskChain = TaskChain.getTaskChain();
-    taskChain.start();
+    taskChain.start();    //=>write
+                          //=>compile
+                          //=>link
+                          //=>run
   }
 }
 ```
