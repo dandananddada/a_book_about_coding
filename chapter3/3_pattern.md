@@ -297,6 +297,12 @@ public class Main{
   }
 }
 ```
+分析以上代码
+
+1.首先我们创建了一个Trade接口，定义了购买方法。
+2.创建Buyer类，实现了Trade接口。
+3.定义代理类Taobao，拥有一个Buyer属性，实现了Trade接口，buy方法中调用buyer.buy。
+
 **观察者模式**
 
 ```java
