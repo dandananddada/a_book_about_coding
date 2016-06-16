@@ -407,14 +407,13 @@ public class Main{
 在讲匿名函数的时候提到过Java8新增了lambda特性，基于lambda的特性对应的也提出了接口方法，简单的说接口的函数体（具体实现），可以当做变量值一样在接口声明时赋值，而以前接口的函数体必须有实现类来定义，因为这个特性的增加相当于我们可以跳过不同实现类实现接口方法的范式，而是直接在接口声明时赋值函数体。
 ```java
 //java8 接口方法替代工厂模式
-
 interface Language{
   public void sayHello();
 }
 
 class NewFeatureReplaceFactory{
-  Language language;
-  String type;
+  private Language language;
+  private String type;
 
   public NewFeatureReplaceFactory(String type){
     this.type = type;
