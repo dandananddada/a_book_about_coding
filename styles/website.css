@@ -1,11 +1,33 @@
 /* CSS for website */
-code.lang-javascript:before {
-  content: "JS" !important;
+code[class^="lang-"]:before {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 2px 10px;
+  color: #ccc;
+  text-align: right;
+  font-size: 0.75em;
+  padding: 5px 10px 0;
+  line-height: 15px;
+  height: 15px
 }
 .markdown-section pre{
   position: relative;
+}
+code.lang-javascript:before{
+  content: "JavaScript" !important;
+}
+code.lang-java:before, code.lang-Java:before{
+  content: "Java" !important;
+}
+code.lang-ruby:before, code.lang-Ruby:before{
+  content: "Ruby" !important;
+}
+code.lang-scala:before{
+  content: "Scala" !important;
+}
+code.lang-clojure:before{
+  content: "Clojure" !important;
+}
+code.lang-ruby:haskell{
+  content: "Haskell" !important;
 }
