@@ -1,88 +1,15 @@
-####静态类 模式
+ We don't have to think about types belonging to a big hierarchy of types. Instead, we think about what the types can act like and then connect them with the appropriate typeclasses. 
+ 
+ It kind of applies the function to the element inside the box.
+ 
+ 
+ 
+ 
+回调后面的元素
 
-实例和类
+multBy4 (x:xs) = times4 x : multBy4 xs
 
-类是一些列实例的抽象，实例是类的一个具现。
-实例中通常包括属性（对象的描述）和方法（对象的行为），在静态类模式下实例所拥有的属性和方法是由类模板定义的，而且定义后是不允许改变的。
-```
-C = Class { a, b, method }
-c1 = { a: 10, b: 20 }
-c2 = { a: 20, b: 30 }
-```
-类模式通过类的继承来复用代码，A继承自B，那么A就拥有B的属性和方法，B继承自C，那么A、B都有C的属性和方法，如果尝试取得A的一个属性/方法：a，那么首先在A中寻找a，如果不存在就去B中找，以此类推，如果C中也不存在则A不存在这个属性/方法。另外要说明的是如果A继承自B，那么A会把B的所有属性都拷贝一遍（即使A类可能根本不需要这个属性），但是方法是无需拷贝的，所以A中与B同名的属性会以A为准，A中没有的属性才会到B中寻找。
-
-需要定义一个对象的模板：类
-根据模板来创建对象，对象中包含属性和方法
-类定义后无法修改，对象的属性和方法也依赖于类。
-类的继承使子类包含父类的所有属性和方法（有些语言提供了访问权限解决了这个问题）。
-实例无法拥有自己特有的属性和方法。
+code is data too
 
 
-####原型模式
-
-动态和可拓展对象
-
-对象可以不依赖于类，和实例一样也包含属性和方法。
-```
-object1 = { a: 10, b: 20 }
-object2 = { a: 20, b: 30 }
-```
-对象是可拓展的，因此可以动态的添加属性、方法。如果我们尝试取得a的一个属性/方法b，a会检查是否存在b，如果存在则更新b，如果不存在则创建b。
-
-对象模式通过原型来实现代码的复用，原型也是一个对象（你可以理解为类模式对象的一个属性）。任何一个对象都可以作为其他对象的原型来使用。
-```
-object1 = { a: 10, b: 20, method1 }
-object2 = { a: 20, c: 30, method2 }
-object2.[[Prototype]] = object1
-object2    //=>{ a: 20, b: 20, c: 30, method1, method2 }
-delete object2.a
-object2.d = 40
-object2    //=>{ a: 10, b: 20, c: 30, d: 40, method1, method2 }
-```
-因为原型本身也可以拥有原型，所以一个对象a以b为原型，b以c为原型，则abc就构成了一个原型链，原型链的概念就和类模式的继承一样了。不同的是因为对象的可拓展新，原型链的继承关系和结构是有可能改变的。
-
-另外除了通过指定原型属性外还有另外一种代码复用的实现，就是完全拷贝，这样做的好处是修改不会对原型对象产生影响，但相应的需要巨大的内存开销。
-
-在静态类模式下我们是通过类模板来描述对象的，比如说类模板定义了Class Car，那么Car的实例很明显都是汽车，而原型模式下则是通过对象鸭子类型（如果一个对象表现的行为是car，那么它就是Car）来表述这一概念的，简单的说当看到一只鸟走起来像鸭子、游泳起来像鸭子、叫起来也像鸭子，那么这只鸟就可以被称为鸭子。在鸭子类型中关注的不是对象本身是否是鸭子，而是它在使用是是否像鸭子。
-
-```
-object1.active == 'duck' ? 'object1 is duck' : 'object1 is not duck'
-object2.active == 'duck' ? 'object2 is duck' : 'object2 is not duck'
-```
-
-对象本身是动态的可拓展的
-对象本身不需要模板来规范属性和方法
-对象可以通过原型实现代码的复用，同样原型也是随时可以改变的
-当原型发生改变时，会影响到原型链下层的对象
-对象的定义不是通过特定的类型或继承关系，而是通过当前所拥有的特性（鸭子类型）
-
-
-####动态类模型
-之前的两种模式可以对比为类和模型，通常静态语言使用类模式，而动态语言常使用原型模式。当然也存在像Python或Ruby这样的语言，他们属于动态类型语言，却使用类模式。
-
-他们通过定义类模板来规范对象的属性和方法，但又可以在运行中改变类的定义和对象的原型。我们来看下面的例子：
-```ruby
-class Demo
-  attr_accessor :a
-end
-
-d = Demo.new
-d.a = 1
-# d.b = 2
-#=> undefined method `b=' for #<Demo:0x007fe81a9caa68 @a=1> (NoMethodError)
-
-# 给Demo类拓展属性b
-Demo.class_eval do
-  attr_accessor :b
-end
-
-d.b = 2
-puts d.a, d.b
-```
-可以看出在Ruby中可以通过class_eval来拓展类的定义，像这样的采用对象和类的方式组织数据，但却允许在程序运作过程中动态的改变类的定义，这种模式就是动态类模式。
-
-
-
-
-
-
+momod combine two things to a new things such as f·g is new function 
