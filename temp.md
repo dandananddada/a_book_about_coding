@@ -13,3 +13,15 @@ code is data too
 
 
 momod combine two things to a new things such as f·g is new function 
+
+(x.y).z = x.(y.z), 
+
+functor
+fmap::(a->b)->f a->f b,  f is a datatype such as Maybe
+
+functor like if else. 
+
+  1. make datatype a functor
+  2. implements the fmap of dataype
+ 
+ 
