@@ -35,4 +35,9 @@ Java8支持函数式编程，提供了stream库，通过stram可以使用更加�
 2. 执行map操作，取出数组中每个元素做`+3`运算。
 3. 通过collect方法求值并返回新的数组mappedNumbers。
 
+接下来看下纯函数式语言Haskell的map函数
+```haskell
+map (+3) [1, 2, 3]
+-- [4, 5, 6]
+```
 
