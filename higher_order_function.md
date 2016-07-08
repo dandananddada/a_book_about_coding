@@ -142,7 +142,24 @@ foldr (-) 0 [1, 2]    --=>
 比如说上面Haskell中常见的加法运算正常情况下`(+) 1 2`应该这样执行，`(+)`是函数名（haskell中加法运算符是个函数）而`1`和`2`是两个参数。而实际上haskell所有函数都是单参数的，其执行过程是函数`(+)`和参数`1`组合成一个新的函数`(+1)`，然后参数`2`在应用于函数`(+1)`。这就是将多个参数通过柯里化分割为单参数的过程。
 
 我们用Java重写上面的例子看看：
+```java
+import java.util.function.IntFunction;
+import java.util.function.IntUnaryOperator;
 
+public class Main {
+  public static void main(String[] args) {
+    IntFunction<IntUnaryOperator> curriedAdd = a -> b -> a + b;
+    IntUnaryOperator adder5 = curriedAdd.apply(5);
+
+    System.out.println(adder5.applyAsInt(4));    //=>9
+    System.out.println(adder5.applyAsInt(6));    //=>11
+  }
+}
+```
+
+1. 首先声明了一个参数和返回类型都为Int的函数接口curriedAdd，在lambda表达式`a -> b -> a + b`中`a`和`b`表示参数，`a+b`表示返回值，每一个参数或返回值之间都用`->`链接。
+2. 在curriedAdd的基础上应用了一个参数5，声明了一个参数和返回值都为Int的函数接口adder5。
+3. adder5就是柯里化后的函数，当一个参数作用于他时，他会把默认参数5和接受的参数应用到curriedAdd然后执行加法操作返回结果。
 
 
 柯里化和部分施用的作用都是用来调节函数的参数个数。
