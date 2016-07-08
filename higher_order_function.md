@@ -42,7 +42,7 @@ map (+3) [1, 2, 3]
 ```
 同样`(+3)`是一个函数参数，`[1, 2, 3]`是一个列表（你可以理解为数组，因为Haskell中列表是定长非异质的，这跟Java的数组是一样的）。map的作用就是将列表中的每一个元素都应用到(+3)的函数上。
 
-**过滤**
+**过滤（filter）**
 filter接受一个结合和函数，将集合中每个元素传入函数，并将函数返回值为真的元素重新组装并返回。
 
 ```java
@@ -55,11 +55,11 @@ public class Main {
 
     public static void main(String[] args) {
         List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
-        List<Integer> mappedNumbers = numbers
+        List<Integer> filteredNumbers = numbers
                                         .stream()
                                         .filter(i -> i < 3)
                                         .collect(Collectors.toList());
-        System.out.println(mappedNumbers);    //=>[1, 2]
+        System.out.println(filteredNumbers);    //=>[1, 2]
     }
 }
 ```
@@ -67,4 +67,21 @@ public class Main {
 ```haskell
 filter (<3) [1, 2, 3, 4]
 -- =>[1,2]
+```
+
+**折叠（fold）**
+```java
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+        Integer total = numbers
+                            .stream()
+                            .reduce(0, (i,j) -> i+j);
+        System.out.println(total);
+    }
+}
 ```
