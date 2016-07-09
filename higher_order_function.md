@@ -251,5 +251,5 @@ inRange a b c
 
 ####lambda
 
-我们之前已经说过，lambda可以看做是匿名函数，
+我们在讲匿名函数的时候已经提到过lambda，其实你也可以把lambda看做是匿名函数。
 
