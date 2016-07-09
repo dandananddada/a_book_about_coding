@@ -11,3 +11,15 @@ treats computation as the evaluation of mathematical functions and avoids changi
  
 Functional programming typically avoids using mutable state.
 Functional programming requires that functions are first-class
+
+
+
+
+####递归
+在命令式编程中我们通常通过索引来遍历一个数组中的每个元素，但在函数式中我们通常会将列表分成头和尾两部分，然后通过递归尾部（将尾部分为头和尾，尾部越来越短直至为空）来访问列表中的每一个元素。
+
+```haskell
+negatedEvery:: Num a=>[a]->[a]
+negatedEvery[] = []
+negatedEvery (x:xs)  = -x : test xs
+```
