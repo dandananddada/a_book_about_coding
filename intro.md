@@ -33,7 +33,9 @@ negatedEvery [1,2,3,4]    --=>[-1,-2,-3,-4]
 ```java
 import java.util.function.IntUnaryOperator;
 class Recursive {
-  static IntUnaryOperator func = x -> (x == 1 || x == 0) ? 1 : Recursive.func.applyAsInt(x -1) + Recursive.func.applyAsInt(x - 2);
+  static IntUnaryOperator func = 
+         x -> (x == 1 || x == 0) ? 1 : 
+         Recursive.func.applyAsInt(x -1) + Recursive.func.applyAsInt(x - 2);
 
   public static int fibonacci(int n){
     return func.applyAsInt(n);
