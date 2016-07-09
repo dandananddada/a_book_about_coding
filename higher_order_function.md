@@ -269,4 +269,14 @@ foldl (\a,b -> a+b^2) 0 [1,2,3,4]    --=>30
 ```
 在haskell中`\`用来声明一个lambda表达式，因为它看起来像是`λ`所以叫做lambda表达式。
 
-
+同样的例子我们来看下Java的实现。
+```java
+public static void main(String[] args) {
+  List<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+  Integer total = numbers
+                  .stream()
+                  .reduce(0, (i,j) -> i+j*j);
+  System.out.println(total);    //=>10
+}
+```
+可以看到和Haskell类似`(i,j) -> i+j*j`就是一个lambda表达式，我们会传入i和j两个参数，并返回`i+j*j`。
