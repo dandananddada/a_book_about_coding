@@ -31,20 +31,19 @@ negatedEvery [1,2,3,4]    --=>[-1,-2,-3,-4]
 接下来我们用递归解决斐波那契数列问题，斐波那契数列是满足`F(n) = F(n-2) + F(n-1), F(1) = F(0) = 1`这两条规则的数列。
 
 ```java
-import java.util.function.IntUnaryOperator;
 class Recursive {
-  static IntUnaryOperator func = 
-         x -> (x == 1 || x == 0) ? 1 : 
-         Recursive.func.applyAsInt(x -1) + Recursive.func.applyAsInt(x - 2);
+  static LongUnaryOperator func =
+          x -> (x == 1 || x == 0) ? 1 :
+          Recursive.func.applyAsLong(x -1) + Recursive.func.applyAsLong(x - 2);
 
-  public static int fibonacci(int n){
-    return func.applyAsInt(n);
+  public static long fibonacci(int n){
+    return func.applyAsLong(n);
   }
 }
 
 public class Main {
   public static void main(String[] args) {
-    System.out.print(Recursive.fibonacci(10));
+    System.out.print(Recursive.fibonacci(30));
   }
 }
 ```
