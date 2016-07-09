@@ -256,7 +256,17 @@ inRange a b c
 我们来看一个例子，对比一下lambda的作用：
 
 假如我们想要计算一个数组中所有数字的平方和是多少，在不使用lambda的情况下我们必须先要给出一个求平方和的函数作为foldl的一个参数。
+```haskell
+squareSum:: Num a => a->a->a
+squareSum a b = a + b ^2
+foldl squareSum 0 [1,2,3,4]    --=>30
+```
+但是这个平方和函数并不容易维护，如果我现在想要的操作是立方和，那么我处于语义的方便还需要修改squareSum的名字，而且这个看起来也并不是很简洁。
 
-
+替换为lambda表达式：
+```haskell
+foldl (\a,b -> a+b^2) 0 [1,2,3,4]    --=>30
+```
+在haskell中`\`用来声明一个lambda表达式，因为它看起来像是`λ`所以叫做lambda表达式。
 
 
