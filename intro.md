@@ -36,14 +36,13 @@ class Recursive {
   static IntUnaryOperator func = x -> (x == 1 || x == 0) ? 1 : Recursive.func.applyAsInt(x -1) + Recursive.func.applyAsInt(x - 2);
 
   public static int fibonacci(int n){
-      return func.applyAsInt(n);
+    return func.applyAsInt(n);
   }
 }
 
 public class Main {
-
-    public static void main(String[] args) {
-        System.out.print(Recursive.fibonacci(10));
-    }
+  public static void main(String[] args) {
+    System.out.print(Recursive.fibonacci(10));
+  }
 }
 ```
