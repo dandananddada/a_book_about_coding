@@ -20,6 +20,7 @@ Functional programming requires that functions are first-class
 
 ```haskell
 negatedEvery:: Num a=>[a]->[a]
-negatedEvery[] = []
+negatedEvery [] = []
 negatedEvery (x:xs)  = -x : test xs
+negatedEvery [1,2,3,4]    --=>[-1,-2,-3,-4]
 ```
