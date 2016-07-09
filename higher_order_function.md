@@ -165,7 +165,7 @@ public class Main {
 
 **部分施用**
 
-和柯里化类似，部分施用也是用来抽取参数个数的，不同的是部分施用是通过提取代入一部分参数值，使一个多参数函数变为较少数目参数的函数，而不是必须转换为单参数的函数。
+和柯里化类似，部分施用也是用来减少参数个数的，不同的是部分施用是通过提取代入一部分参数值，使一个多参数函数变为较少数目参数的函数，而不是必须转换为单参数的函数。
 
 我们来看下下面这个`a+b+c`的函数，是如何通过部分施用将函数和一个参数打包成一个需要传入两个参数的新函数的。
 
@@ -173,23 +173,20 @@ public class Main {
 ```java
 @FunctionalInterface
 interface TriFunction<T, U, V, R> {
-    R apply(T a, U b, V c);
+  R apply(T a, U b, V c);
 }
-
 public class Main {
-
-    public static int add(int x, int y, int z) {
-        return x + y + z;
-    }
-
-    public static <T, U, V, R> BiFunction<U, V, R> partial(TriFunction<T, U, V, R> f, T x) {
-        return (y, z) -> f.apply(x, y, z);
-    }
-
-    public static void main(String[] args) {
-        BiFunction<Integer, Integer, Integer> partialFunction = partial(Main::add, 1);
-        System.out.print(partialFunction.apply(2,3));
-    }
+  public static int add(int x, int y, int z) {
+    return x + y + z;
+  }
+  public static <T, U, V, R> BiFunction<U, V, R> partial(TriFunction<T, U, V, R> f, T x) {
+      return (y, z) -> f.apply(x, y, z);
+  }
+  public static void main(String[] args) {
+    BiFunction<Integer, Integer, Integer> partialFunction = partial(Main::add, 1);
+    System.out.print(partialFunction.apply(2,3));          //=>6
+    System.out.print(partial(Main::add, 2).apply(3,4));    //=>9
+  }
 }
 ```
 
@@ -197,7 +194,9 @@ public class Main {
 2. 声明一个原始的`a+b+c`方法`add`。
 3. 声明了一个返回 BiFunction接口（它和自定义的TriFunction接口类似，接受两个参数U和V并返回R）的方法partial，它接受两个参数TriFunction和T，其中TriFunction是一个函数，T是TriFunction的第一个参数。同样的的方法partial也返回一个函数，这个函数需要两个参数y和z。
 4. 通过partial构造一个新的方法partialFunction，在构造这个方法时需要传入要打包的方法和它的一个参数。之后我们就可以通过打包后的函数，传入其他两个参数来等价执行add方法了。
+5. 我们也可以像`partial(Main::add, 2).apply(3,4)`这样不显示的指定打包函数，像之前的`stream`操作一样连续传递参数。
 
+总上我们还是通过打包的方式将一个需要传递三个参数的函数拆分为两步，第一次传递一个参数，第二次传递两个参数。这样通过函数打包的方式来减少传递参数的方式就是部分施用。
 
 **总结**
 
