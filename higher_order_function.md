@@ -251,5 +251,5 @@ inRange a b c
 
 ####lambda
 
-我们在讲匿名函数的时候已经提到过lambda，其实你也可以把lambda看做是匿名函数。
+我们在讲匿名函数的时候已经提到过lambda，其实你也可以把lambda看做是匿名函数（至少Haskell是如此，在Java中lambda更像是用来存储一段代码的数据结构）。
 
