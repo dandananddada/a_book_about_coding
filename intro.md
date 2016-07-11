@@ -20,8 +20,14 @@ Functional programming requires that functions are first-class
 先看这段代码
 ```
 map' list = map (+3) list
+map' [1,2,3]    --=>[4,5,6]
 ```
-这是一个高阶函数，我们把列表中每一项都应用了`(+3)`函数，设想为了更方便使用能不能以再封装一层，让他变成`map' list = map (+x) list`。
+这是一个高阶函数，我们把列表中每一项都应用了`(+3)`函数，设想为了更方便使用能不能以再封装一层，让他变成`map (+x) list`。
+```
+map' x list = map (+x) list
+let map'' = map' 3
+map'' [1,2,3]    --=>[4,5,6]
+```
 
 
 
