@@ -17,6 +17,11 @@ Functional programming requires that functions are first-class
 ####闭包
 闭包是函数及其相关引用环境组合而成的一个整体，为了方便解释，你可以理解为闭包也是一个函数，只是这个函数所传入的参数不是直接使用，而是应用到函数内部嵌套的一个函数上。
 
+先看这段代码
+```
+map' list = map (+3) list
+```
+这是一个高阶函数，我们把列表中每一项都应用了`(+3)`函数，设想为了更方便使用能不能以再封装一层，让他变成`map' list = map (+x) list`。
 
 
 
