@@ -136,4 +136,4 @@ public class Main {
   }
 }
 ```
-我们重点来看`fibonacci`这个函数，它调用了memo的computeIfAbsent方法，computeIfAbsent是Java8对Map接口新增的方法，它传入两个参数，一个是键值，另一个是函数接口，当key（这里key就是x）值不在map中时会将x传入函数并把返回值以key为键追加到map中。之后我们用lambda表达式实现函数接口，因为表达式中没有区分x=0和x=1两种情况，所以我们直接在map中添加key为0和1的值，这样当x=0或者x=1时就不会执行函数接口了。
+我们重点来看`fibonacci`这个函数，它调用了`memo`的`computeIfAbsent`方法，`computeIfAbsent`是Java8对`Map`接口新增的方法，它传入两个参数，一个是键值，另一个是函数接口，当`key`（这里`key`就是`x`）值不在map中时会将`x`传入函数并把返回值以`key`为键追加到`map`中。之后我们用`lambda`表达式实现函数接口，因为表达式中没有区分`x=0`和`x=1`两种情况，所以我们直接在`map`中添加`key`为`0`和`1`的值，这样当`x=0`或者`x=1`时就不会执行函数接口了。
