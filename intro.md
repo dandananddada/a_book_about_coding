@@ -14,6 +14,11 @@ Functional programming typically avoids using mutable state.
 Functional programming requires that functions are first-class
 
 
+####闭包
+闭包是函数及其相关引用环境组合而成的一个整体，为了方便解释，你可以理解为闭包也是一个函数，只是这个函数所传入的参数不是直接使用，而是应用到函数内部嵌套的一个函数上。
+
+
+
 
 
 ####递归
@@ -68,3 +73,5 @@ fibonacci 0 = 0
 fibonacci 1 = 1
 fibonacci n = fibonacci (n-1) + fibonacci (n-2)
 ```
+
+
