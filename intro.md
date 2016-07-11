@@ -60,7 +60,7 @@ negatedEvery [1,2,3,4]    --=>[-1,-2,-3,-4]
 ```java
 class Recursive {
   static LongUnaryOperator func =
-          x -> (x == 1 || x == 0) ? 1 :
+          x -> (x == 1 || x == 0) ? x :
           Recursive.func.applyAsLong(x -1) + Recursive.func.applyAsLong(x - 2);
 
   public static long fibonacci(int n){
@@ -117,3 +117,26 @@ memoized_fib 30
  -}
 ```
 这样每次执行memoized_fib的时候都会把结果缓存起来，下次执行的时候就可以直接使用结果，因为斐波那契数列存在大量的重复运算，所以缓存的添加让执行效率有了质的改变。
+
+```java
+public class Main {
+  private static Map<Integer,Long> memo = new HashMap<>();
+  static {
+      memo.put(0,0L); 
+      memo.put(1,1L); 
+  }
+
+  public static long fibonacci(int x) {
+      return memo.computeIfAbsent(x, n -> (fibonacci(n-1) + fibonacci(n-2)));
+  }
+
+  public static void main(String[] args) {
+      long startTime = System.currentTimeMillis();
+      System.out.print(fibonacci(30));
+      long endTime = System.currentTimeMillis();
+      long duration = ((endTime - startTime));
+      System.out.print("\n" + duration + "milliseconds");
+
+  }
+}
+```
