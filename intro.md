@@ -144,4 +144,8 @@ public class Main {
 
 某些编程语言是默认惰性求值的，比如Haskell，另外也有些语言提供了惰性求值的函数或语法，比如Java8的stream操作就是惰性求值的。
 
-
+假设我们有这样一个需求：求余数为3的所有数字之和
+```haskell
+let mod3 = filter (\x -> mod x 3 == 0) [1..]
+take 5 mod3    --=>[3,6,9,12,15]
+```
