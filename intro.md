@@ -118,6 +118,7 @@ memoized_fib 30
 ```
 这样每次执行memoized_fib的时候都会把结果缓存起来，下次执行的时候就可以直接使用结果，因为斐波那契数列存在大量的重复运算，所以缓存的添加让执行效率有了质的改变。
 
+来看下Java8版本的实现：
 ```java
 public class Main {
   private static Map<Integer,Long> memo = new HashMap<>();
@@ -131,12 +132,8 @@ public class Main {
   }
 
   public static void main(String[] args) {
-      long startTime = System.currentTimeMillis();
       System.out.print(fibonacci(30));
-      long endTime = System.currentTimeMillis();
-      long duration = ((endTime - startTime));
-      System.out.print("\n" + duration + "milliseconds");
-
   }
 }
 ```
+我们重点来看`fibonacci`这个函数，它调用了memo的computeIfAbsent方法，computeIfAbsent是Java8对Map接口新增的方法，它传入两个参数，一个是键值，另一个是函数接口，当key（这里key就是x）值不在map中时会将x传入函数并把返回值以key为键追加到map中。之后我们用lambda表达式实现函数接口，因为表达式中没有区分x=0和x=1两种情况，所以我们直接在map中添加key为0和1的值，这样当x=0或者x=1时就不会执行函数接口了。
