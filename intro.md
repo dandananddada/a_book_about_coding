@@ -172,3 +172,35 @@ public static void main(String[] args) {
 }
 ```
 和之前不同我们在Stream操作最后调用了`collect(Collectors.toList())`方法，这是一个及时求值的方法，它会把之前的表达式执行并返回结果，因此这时`System.out.print(n);`就会把`numbers`的所有元素都打印出来了。
+
+
+####函数式数据结构
+
+**不相交联合体（disjoint union）**
+
+在函数式编程中经常会遇到需要返回两种不同类型的情况，为了满足这种需求设计了不相交联合体。不相交联合体可以存储两种不同类型的中某一种类型的实例。一般会用Either类来表述这种结构，Either有一个左值和一个右值，但是左值和右值只能选择一个。
+
+```haskell
+Left "This is left value"
+Right 2
+```
+
+Either类型另外一个重要的作用就是处理异常，很多函数式语言是没有异常处理机制的，因为异常的设计和函数式语言无副作用的思想是冲突的，异常会引导程序进入异常处理流程而不是期望的返回值，函数式编程是以值为根本的，所以我们可以把异常信息记录在Either类型的左值中，正确值记录在Either类型的右值中，如果返回了左值则说明函数执行时出现了异常。
+
+```haskell
+div3:: Float->Float->Either String Float
+div3 x 0 = Left "Divison by zero"
+div3 x y = Right (x / y)
+```
+上面定义了一个除以3的方法，当除数为0时，返回左值，给出错误信息`被除数为0`，其他情况下执行除运算并返回右值。
+
+
+
+
+
+
+
+
+
+
+
