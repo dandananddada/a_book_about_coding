@@ -144,14 +144,14 @@ public class Main {
 
 某些编程语言是默认惰性求值的，比如Haskell，另外也有些语言提供了惰性求值的函数或语法，比如Java8的stream操作就是惰性求值的。
 
-假设我们有这样一个需求：求余数为3的所有数字之和
+我能先看一个无限列表的例子，假设我们有这样一个需求：求所有三的倍数的数字之和
 ```haskell
 let mod3 = filter (\x -> mod x 3 == 0) [1..]
 take 5 mod3    --=>[3,6,9,12,15]
 ```
 我们创建了一个mod3函数，这个函数过滤出所有三的倍数。之后用take先后取了前五个三的倍数，因为惰性求值的缘故，mod3只会计算到第五个元素，这就是一个对无限列表应用函数的例子。
 
-同理我们看看Java8中stream是如何表现出惰性求值的。
+接下来我们看看Java8中stream是如何表现出惰性求值的。
 ```java
 public static void main(String[] args) {
   List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
