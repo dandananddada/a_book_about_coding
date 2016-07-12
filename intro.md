@@ -217,6 +217,9 @@ Java8也提供了Optional类型用来代替null值，这样就可以用Optional�
 ```java
 Optional emptyOptional = Optional.empty();
 Optional<String> a = Optional.of("a");
+System.out.print(emptyOptional.get());    //=>java.util.NoSuchElementException: No value present
+System.out.print(a.get());                //=>a
+
 ```
 
 
