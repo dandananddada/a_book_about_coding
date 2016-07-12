@@ -174,9 +174,9 @@ public static void main(String[] args) {
 和之前不同我们在Stream操作最后调用了`collect(Collectors.toList())`方法，这是一个及时求值的方法，它会把之前的表达式执行并返回结果，因此这时`System.out.print(n);`就会把`numbers`的所有元素都打印出来了。
 
 
-####函数式数据结构
+####不相交联合体（disjoint union）
 
-**不相交联合体（disjoint union）**
+**Either**
 
 在函数式编程中经常会遇到需要返回两种不同类型的情况，为了满足这种需求设计了不相交联合体。不相交联合体可以存储两种不同类型的中某一种类型的实例。一般会用Either类来表述这种结构，Either有一个左值和一个右值，但是左值和右值只能选择一个。
 
@@ -195,6 +195,13 @@ div3 3 0    --=>Exception: divide by zero
 div3 3 3    --=>1
 ```
 上面定义了一个除以3的方法，当除数为0时，返回左值，给出错误信息`被除数为0`，其他情况下执行除运算并返回右值。
+
+Java8本身没有提供Either类，
+
+**Maybe/Option**
+
+Maybe(Java/Scala中称作Option)类型和Either类型类似，你可以把它看做是一种简单的异常场景，它也存储两个值，一个为空，另一个为有效值。你可以认为Maybe类型只对返回结果做了失败还是成功的判断，如果失败则返回空，成功则返回计算结果的有效值。
+
 
 
 
