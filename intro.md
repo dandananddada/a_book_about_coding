@@ -198,11 +198,22 @@ div3 3 3    --=>1
 
 Java8本身没有提供Either类，
 
-**Maybe/Option**
+**Maybe/Optional**
 
-Maybe(Java/Scala中称作Option)类型和Either类型类似，你可以把它看做是一种简单的异常场景，它也存储两个值，一个为空，另一个为有效值。你可以认为Maybe类型只对返回结果做了失败还是成功的判断，如果失败则返回空，成功则返回计算结果的有效值。
+Maybe(Java/Scala中称作Optional)类型和Either类型类似，你可以把它看做是一种简单的异常场景，它也存储两个值，一个为空，另一个为有效值。你可以认为Maybe类型只对返回结果做了失败还是成功的判断，如果失败则返回空，成功则返回计算结果的有效值。
 
+```haskell
+returnEven:: Int -> Maybe Int
+returnEven a
+  | a `mod` 2 == 0 = Just a
+  | otherwise = Nothing
+ 
+returnEven 2    --=>Just 2
+returnEven 1    --=>Nothing
+```
+如上定义了一个返回偶数的函数，`returnEven`的返回类型是Maybe类型，如果为偶数则返回值（Just是Haskell对Maybe类型中有效值的包装，这里不用在意），否则返回Nothing。
 
+Java8也提供了Optional类型用来代替null值，这样就可以用Optional代替null表示值不存在，从而避免一些不必要的麻烦。也可以用Optional来判断一个变量是否存在值。
 
 
 
