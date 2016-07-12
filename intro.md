@@ -152,3 +152,23 @@ take 5 mod3    --=>[3,6,9,12,15]
 我们创建了一个mod3函数，这个函数过滤出所有三的倍数。之后用take先后取了前五个三的倍数，因为惰性求值的缘故，mod3只会计算到第五个元素，这就是一个对无限列表应用函数的例子。
 
 同理我们看看Java8中stream是如何表现出惰性求值的。
+```java
+public static void main(String[] args) {
+  List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+  numbers.stream().filter(n-> {
+    System.out.print(n);
+    return n > 2;
+  });
+}
+```
+执行上面这段代码不会输出任何结果，说明filter内的函数并没有执行。这是因为Stream是惰性求值的，如果想得到链操作的返回结果需要在最后执行一个及时求值的方法。
+```java
+public static void main(String[] args) {
+  List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+  List<Integer> results = numbers.stream().filter(n-> {
+      System.out.print(n);    //=>12345
+      return n > 2;
+  }).collect(Collectors.toList());
+}
+```
+和之前不同我们在Stream操作最后调用了`collect(Collectors.toList())`方法，这是一个及时求值的方法，它会把之前的表达式执行并返回结果，因此这时`System.out.print(n);`就会把`numbers`的所有元素都打印出来了。
