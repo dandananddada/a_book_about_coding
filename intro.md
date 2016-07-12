@@ -191,6 +191,8 @@ Either类型另外一个重要的作用就是处理异常，很多函数式语�
 div3:: Float->Float->Either String Float
 div3 x 0 = Left "Divison by zero"
 div3 x y = Right (x / y)
+div3 3 0    --=>Exception: divide by zero
+div3 3 3    --=>1
 ```
 上面定义了一个除以3的方法，当除数为0时，返回左值，给出错误信息`被除数为0`，其他情况下执行除运算并返回右值。
 
