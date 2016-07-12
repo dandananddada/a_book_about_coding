@@ -214,7 +214,10 @@ returnEven 1    --=>Nothing
 如上定义了一个返回偶数的函数，`returnEven`的返回类型是Maybe类型，如果为偶数则返回值（Just是Haskell对Maybe类型中有效值的包装，这里不用在意），否则返回Nothing。
 
 Java8也提供了Optional类型用来代替null值，这样就可以用Optional代替null表示值不存在，从而避免一些不必要的麻烦。也可以用Optional来判断一个变量是否存在值。
-
+```java
+Optional emptyOptional = Optional.empty();
+Optional<String> a = Optional.of("a");
+```
 
 
 
