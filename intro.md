@@ -224,11 +224,3 @@ System.out.print(a.get());                //=>a
 
 ```
 
-
-
-
-
-
-
-
-
