@@ -35,10 +35,12 @@ isZero 3    --=>no
 看下与之对应的命令式如何表述`isZero`。
 
 ```java
-public String isZero(int num){
+public static String isZero(int num){
   if(num == 0)  return "yes";
   else          return "no";
 }
+
+System.out.print(isZero(0));
 ```
 
 高避免值的修改和状态的变化。他是一种结构化的声明式的编程范式，通过表达式和声明语句来代理流程式的描述语句。
