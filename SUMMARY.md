@@ -27,4 +27,5 @@
 * [第四章 函数式](chapter4.md)
    * [高阶函数](higher_order_function.md)
    * [介绍](intro.md)
+   * 介绍
 
