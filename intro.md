@@ -220,5 +220,23 @@ System.out.print(a.get());                //=>a
 2. 向左平衡程度和向右平衡程度的和的绝对值表示平衡程度值，如果平衡程度值小于3则人是平衡的。
 3. 人每向前移动一步，则随机追加左右平衡程度值，计算平衡程度值。将平衡程度值传给下一步。
 
+```haskell
+type Rate = Int
+type Balance = (Rate, Rate)
 
+toLeft:: Rate->Balance->Balance
+toLeft n (left, right) = (left-n, right) 
 
+toRight:: Rate->Balance->Balance
+toRight n (left, right) = (left, right+n) 
+```
+我们用Rate表示平衡倾斜程度，用Balance表示平衡程度，其中left指向左倾斜程度，right指向右倾斜程度。这样我们定义了向左倾斜toLeft和向右倾斜toRight，两个函数都要求输入当前平衡程度，及平衡倾斜程度，然后返回新的平衡程度。
+
+我们做如下调用，向左倾斜1 -> 向右倾斜1 -> 向左倾斜2
+```haskell
+toLeft 2 (toRight 1 (toLeft 1 (0,0)))    --=>(-3, 1)
+```
+这是没有问题的，我们在这个基础上继续， 向右倾斜1 -> 向左倾斜3 -> 向右倾斜2
+```
+
+```
