@@ -13,7 +13,9 @@ treats computation as the evaluation of mathematical functions and avoids changi
 Functional programming typically avoids using mutable state.
 Functional programming requires that functions are first-class
 
-####纯度不变性
+####纯度
+
+
 
 
 
