@@ -269,8 +269,8 @@ return (-3,1) >>= toRight 1 >>= toLeft 3 >>= toRight 2    --=>Nothing
 ```
 可以看到这回返回了“摔倒”，同时monad不仅将值应用与函数返回包装类型，同时还提供了函数的链式调用，这种写法更加干净易懂。
 
-另外，针对`toRight 1 (toLeft 3 (toRight 2 (-3,1)))`这种嵌套调用，我们也可以定义一个`:-`方法实现函数的链式调用。
+另外，针对`toRight 1 (toLeft 3 (toRight 2 (-3,1)))`这种嵌套调用，我们也可以定义一个`-:`方法实现函数的链式调用。
 ```haskell
 x :- f = f x
-(0,0) :- toRight 1 :- toLeft 3 :- toRight 2
+(0,0) -: toRight 1 -: toLeft 3 -: toRight 2
 ```
