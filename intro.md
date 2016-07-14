@@ -272,5 +272,5 @@ return (-3,1) >>= toRight 1 >>= toLeft 3 >>= toRight 2    --=>Nothing
 另外，针对`toRight 1 (toLeft 3 (toRight 2 (-3,1)))`这种嵌套调用，我们也可以定义一个`-:`方法实现函数的链式调用。
 ```haskell
 x :- f = f x
-(0,0) -: toRight 1 -: toLeft 3 -: toRight 2
+(0,0) -: toRight 1 -: toLeft 3 -: toRight 2    --=>(-3,3)
 ```
