@@ -17,6 +17,29 @@ map (+3) [1,2,3]
 ```
 如上`map`是一个函数，`(+3)`也是一个函数（而且这个函数中包含了一个变量3用作操作数），`[1,2,3]`是一个数据参数，这里就是把函数`(+3)`当做参数传递给了另一个函数`map`。
 
+**声明式**
+
+函数式编程是一种声明式编程范式(declarative programming paradigm)，声明式一般通过表达式计算、函数声明来代替命令式编程中的逻辑控制。
+
+```haskell
+isZero:: Int->String
+isZero 0 = "yes"
+isZero _ = "no"
+
+isZero 3    --=>no
+```
+如上声明了一个函数，`isZero`，`Int->String`表示接受一个整数类型为参数，返回一个字符串类型。然后声明了`isZero 0 = "yes"`表示当参数为`0`时返回`yes`，及`isZero _ = "no"`表示其余任意参数都返回`no`。
+
+`isZero`会按照声明的顺序对输入参数进行判断，先判断`isZero 0`，满足则返回`yes`，不满足执行下一个模式，一般最后一个模式都用`_`匹配任意值，相当于`if else`中的`else`。
+
+看下与之对应的命令式如何表述`isZero`。
+
+```java
+public String isZero(int num){
+  if(num == 0)  return "yes";
+  else          return "no";
+}
+```
 
 高避免值的修改和状态的变化。他是一种结构化的声明式的编程范式，通过表达式和声明语句来代理流程式的描述语句。
 
