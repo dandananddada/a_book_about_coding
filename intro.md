@@ -238,5 +238,39 @@ toLeft 2 (toRight 1 (toLeft 1 (0,0)))    --=>(-3, 1)
 ```
 这是没有问题的，我们在这个基础上继续， 向右倾斜1 -> 向左倾斜3 -> 向右倾斜2
 ```
-toRight 1 (toLeft 3 (toRight 2 (0,0)))    --=>(-3, 1)
+toRight 1 (toLeft 3 (toRight 2 (-3,1)))    --=>(-6, 4)
+```
+这是返回的结果仍旧是保持平衡的：`|-6+4|<3`。但实际上在向左倾斜3的时候已经失去平衡摔倒了，所以是不可能再向右倾斜2恢复到平衡状态的（此时人已经掉下平衡木了）。
+
+那么我们需要在失去平衡的时候返回一个失败信息，并且这个信息会一致传递下去。
+
+我们做如下修改
+```haskell
+type Rate = Int
+type Balance = (Rate, Rate)
+
+toLeft:: Rate->Balance->Maybe Balance
+toLeft n (left, right)
+  | abs (left -n + right) < 3 = Just (left-n, right)
+  | otherwise = Nothing
+
+toRight:: Rate->Balance->Maybe Balance
+toRight n (left, right) 
+  | abs (left + right + n) < 3 = Just (left, right+n)
+  | otherwise = Nothing
+```
+我们对要传递给下一步的平衡状态包装为Maybe类型，如果失去平衡则返回Nothing，否则返回Just。这样当我们下一步接受到Nothing的时候只会传递Nothing。
+
+为了让一个值应用到函数并返回一个包装类型（Maybe在haskell中是一个函子）我们要用到monad（就是下面的`>>=`函数）。
+
+```
+return (0,0) >>= toLeft 2 >>= toRight 1 >>= toLeft 1      --=>Just(-3,1)
+return (-3,1) >>= toRight 1 >>= toLeft 3 >>= toRight 2    --=>Nothing
+```
+可以看到这回返回了“摔倒”，同时monad不仅将值应用与函数返回包装类型，同时还提供了函数的链式调用，这种写法更加干净易懂。
+
+另外，针对`toRight 1 (toLeft 3 (toRight 2 (-3,1)))`这种嵌套调用，我们也可以定义一个`:-`方法实现函数的链式调用。
+```haskell
+x :- f = f x
+(0,0) :- toRight 1 :- toLeft 3 :- toRight 2
 ```
