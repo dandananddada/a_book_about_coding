@@ -75,3 +75,15 @@ functor like if else.
 
  
  
+ console.log(
+  _.isEqual(300, 
+    (_.reduce
+      (_.filter
+        (_.range(1, 300), 
+          function(n){ return 300%n == 0 }
+        ),function(p,n){ return p+n }
+      , 0)
+    )
+  )
+);
+ 
