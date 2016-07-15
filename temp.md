@@ -75,21 +75,22 @@ functor like if else.
 
  
  
- console.log(
-  _.isEqual(300, 
-    (_.reduce
-      (_.filter
-        (_.range(1, 300), 
-          function(n){ return 300%n == 0 }
-        ),function(p,n){ return p+n }
+console.log(
+  _.isEqual(300,(
+    _.reduce(
+      _.filter(
+        _.range(1, 300)
+        , function(n){ return 300%n == 0 })
+      , function(p,n){ return p+n }
       , 0)
     )
   )
 );
 
-
 var a = _.chain(_.range(1, 300))
   .filter(function(n){ return 300%n == 0 })
   .reduce(function(p,n){ return p+n }, 0)
   .value();
+console.log(_.isEqual(a, 300))
+
  
