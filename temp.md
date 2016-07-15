@@ -86,4 +86,10 @@ functor like if else.
     )
   )
 );
+
+
+var a = _.chain(_.range(1, 300))
+  .filter(function(n){ return 300%n == 0 })
+  .reduce(function(p,n){ return p+n }, 0)
+  .value();
  
