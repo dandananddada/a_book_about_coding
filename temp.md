@@ -23,5 +23,55 @@ functor like if else.
 
   1. make datatype a functor
   2. implements the fmap of dataype
+
+
+
+//perfect number
+
+
+(function(){
+  var factors = []
+  ,   number
+  ,   sum = 0
+  ,   result;
+
+  number = 496;
+
+  getFactors();  
+  aliquoSum();
+  result = isPerfect();
+
+  if(result)   console.log(number + " is perfcet");
+  else                  console.log(number + " is not perfect");
+
+  function getFactors(){
+    for(i = 1;  i < number; i = i+1){
+       if(isFactor(i))  factors.push(i); 
+    }
+  }
+  
+  function isFactor(pontential){
+    return number % pontential === 0;
+  }
+
+  function aliquoSum(){
+    for(i = 0; i < factors.length; i = i+1){
+      sum = sum + factors[i];
+    }
+  }
+
+  function isPerfect(){
+    return sum === number;
+  }
+
+  function isAbundant(){
+    return aliquSum > number;
+  }
+
+  function isDeficient(){
+    return aliquSum < number;
+  }
+})()
+
  
  
