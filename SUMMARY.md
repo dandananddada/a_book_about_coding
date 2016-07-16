@@ -26,6 +26,6 @@
    * [3.3 设计模式](chapter3/3_pattern.md)
 * [第四章 函数式](chapter4.md)
    * [高阶函数](higher_order_function.md)
-   * [介绍](intro.md)
+   * [更多概念](intro.md)
    * [介绍](feature.md)
 
