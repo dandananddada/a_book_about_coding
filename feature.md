@@ -166,4 +166,4 @@ var number = 496
     .value();
 if(isPerfect)  console.log(number, "is perf
 ```
-我们通过`_.chain`就数组传入管道，然后就可以通过链式调用对数据进行处理，最后通过`value`计算结果返回最终值。
+我们通过`_.chain`将数组传入管道，然后就可以通过链式调用对数据进行处理，最后通过`value`计算结果返回最终值。
