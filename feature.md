@@ -133,3 +133,21 @@ System.out.print(isZero(0));    //=>yse
 
 好，接下来我们看看函数式是如何实现的（这里引用了JavaScript的函数式库Underscore.js）。
 
+```
+//函数式
+var number = 496;
+if(
+  _.isEqual(number,(
+    _.reduce(
+      _.filter(
+        _.range(1, number)
+        , function(n){ return number%n == 0 })
+      , function(p,n){ return p+n }
+      , 0)
+    )
+  )
+){
+  console.log(number + " is not perfect")
+}
+```
+
