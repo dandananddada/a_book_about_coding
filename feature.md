@@ -149,7 +149,7 @@ if(
     )
   )
 ){
-  console.log(number + " is not perfect")
+  console.log(number + " is not perfect");
 }
 ```
 
