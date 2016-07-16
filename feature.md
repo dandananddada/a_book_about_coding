@@ -91,6 +91,42 @@ System.out.print(isZero(0));    //=>yse
 
 ```
 //命令式
+(function(){
+  var factors = []
+  ,   number
+  ,   sum = 0
+  ,   result;
 
+  number = 496;
+
+  getFactors();  
+  aliquoSum();
+  result = isPerfect();
+
+  if(result)   console.log(number + " is perfcet");
+  else                  console.log(number + " is not perfect");
+
+  function getFactors(){
+    for(i = 1;  i < number; i = i+1){
+       if(isFactor(i))  factors.push(i); 
+    }
+  }
+  
+  function isFactor(pontential){
+    return number % pontential === 0;
+  }
+
+  function aliquoSum(){
+    for(i = 0; i < factors.length; i = i+1){
+      sum = sum + factors[i];
+    }
+  }
+
+  function isPerfect(){
+    return sum === number;
+  }
+
+})()
 ```
 
+可以看到我们先用`getFactors`方法取得1到当前数之间所有数字然后通过`isFactor`方法找出可以被整除的数记录到`factor`数组。最后把数组中所有元素相加，判断与这个数字是否相等，如果相等说明是完美数。
