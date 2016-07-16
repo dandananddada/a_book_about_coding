@@ -133,7 +133,7 @@ System.out.print(isZero(0));    //=>yse
 
 好，接下来我们看看函数式是如何实现的（这里引用了JavaScript的函数式库Underscore.js）。
 
-```
+```javascript
 //函数式
 var _ = require("underscore")
 ,   number = 496;
