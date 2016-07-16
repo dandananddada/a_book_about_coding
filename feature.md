@@ -157,3 +157,11 @@ if(
 我们可以看到函数式编程通常将数据作为输入，通过一个接一个的函数进行映射、过滤、折叠，最终返回出一个计算结果。
 
 函数式代码简洁清晰，但不易读，我们可以转换为链式调用，再来看下下过：
+
+```javascript
+var a = _.chain(_.range(1, 300))
+  .filter(function(n){ return 300%n == 0 })
+  .reduce(function(p,n){ return p+n }, 0)
+  .value();
+console.log(_.isEqual(a, 300))
+```
