@@ -135,7 +135,9 @@ System.out.print(isZero(0));    //=>yse
 
 ```
 //函数式
-var number = 496;
+var _ = require("underscore")
+,   number = 496;
+
 if(
   _.isEqual(number,(
     _.reduce(
