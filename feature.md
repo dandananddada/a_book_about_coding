@@ -130,3 +130,6 @@ System.out.print(isZero(0));    //=>yse
 ```
 
 可以看到我们先用`getFactors`方法取得1到当前数之间所有数字然后通过`isFactor`方法找出可以被整除的数记录到`factor`数组。最后把数组中所有元素相加，判断与这个数字是否相等，如果相等说明是完美数。
+
+好，接下来我们看看函数式是如何实现的（这里引用了JavaScript的函数式库Underscore.js）。
+
