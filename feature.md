@@ -89,7 +89,7 @@ System.out.print(isZero(0));    //=>yse
 
 这里我们用JavaScript来演示：
 
-```
+```javascript
 //命令式
 (function(){
   var factors = []
@@ -149,7 +149,7 @@ if(
     )
   )
 ){
-  console.log(number + " is not perfect");
+  console.log(number + " is perfect");
 }
 ```
-
+我们从最里面的调用开始看`_.range(1, number)`会帮我们生成一个从1到number的数组，然后我们把这个数组作为参数应用到`_.filter`，这个函数会把表达式`number%n == 0`为真的number返回，也就是能被整除的数字。然后我们把这些数字传递给`_.reduce`，应用函数`function(p,n){ return p+n }`求和，最后通过`_.isEqual`判断是否与这个数字相等。
