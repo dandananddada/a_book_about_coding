@@ -159,9 +159,11 @@ if(
 函数式代码简洁清晰，但不易读，我们可以转换为链式调用，再来看下下面这个例子：
 
 ```javascript
-var a = _.chain(_.range(1, 300))
-  .filter(function(n){ return 300%n == 0 })
-  .reduce(function(p,n){ return p+n }, 0)
-  .value();
-console.log(_.isEqual(a, 300))
+var number = 496
+,   isPerfect = _.chain(_.range(1, 300))
+    .filter(function(n){ return 300%n == 0 })
+    .reduce(function(p,n){ return p+n }, 0)
+    .value();
+if(isPerfect)  console.log(number, "is perf
 ```
+我们通过`_.chain`就数组传入管道，然后就可以通过链式调用对数据进行处理，最后通过`value`计算结果返回最终值。
