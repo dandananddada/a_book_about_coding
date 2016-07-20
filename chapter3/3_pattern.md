@@ -4,7 +4,7 @@
 
 设计模式的提出可以提高代码的复用性、易读性、可靠性，使程序开发更加工程化。
 
-####背景
+#### 背景
 
 1. 1987年Kent Beck和Ward Cunningham参照建筑设计领域的思想开提出了设计模式并应用在Smalltalk的图形接口。
 2. 1989年Erich Gamma在他的博士论文里开始尝试把这种思想用于软件开放。
@@ -13,7 +13,7 @@
 
 由于《设计模式》这本书的作者有四个人，这四个人在软件开发领域有了一个称号：四人帮（Gang of Four），简写做GoF，因此GoF也就成了软件设计模式的代称。
 
-####分类
+#### 分类
 
 设计模式总体来说分为三大类：
 
@@ -21,41 +21,43 @@
 2. 结构型，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。
 3. 行为型，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模式、解释器模式。
 
-####原则
+#### 原则
+
 1. 开闭原则（Open Close Principle）
 
   开闭原则就是说对扩展开放，对修改关闭。在程序需要进行拓展的时候，不能去修改原有的代码，从而使程序易于维护和升级。一般通过使用接口和抽象类来达到这个目的。
-  
+
 2. 里氏代换原则（Liskov Substitution Principle）
-  
+
   里氏代换原则是对“开-闭”原则的补充。实现“开-闭”原则的关键就是抽象化。而父类与子类的继承关系就是抽象化的一种具体实现。
   里氏代换原则下，任何父类都可以被它的子类替换，只有这样才能保证父类是可复用的。
-  
+
 3. 依赖倒转原则（Dependence Inversion Principle）
- 
+
   针对接口编程，不是依赖与具体的实现类，而是依赖于这个实现类的抽象（接口或抽象父类）。
 
 4. 接口隔离原则（Interface Segregation Principle）
-  
+
   将可以拆分的接口拆分为多个，目的在与降低接口之间的耦合性，从大型软件架构角度考虑，降低类与类，类与接口间的耦合性能使程序更易于维护。
 
 5. 迪米特法则（最少知道原则）（Demeter Principle）
-  
+
   同接口隔离类似，不过是针对实体而言，实体间应该尽量少的相互作用，从而保证功能模块的独立，本质还是降低耦合性使程序易于维护。
 
 6. 合成复用原则（Composite Reuse Principle）
-  
+
   尽量使用组合的方式，而不是继承。
-  
-####几种设计模式
+
+
+#### 几种设计模式
 
 我不准备把23种设计模式一一列举，毕竟这不是一本设计模式的书，我只是想说明面向对象编程下必不可少的一个要素：设计模式。而设计模式中有些是必须掌握的，我就从中列举几个简单说明下，当然设计模式的例子用Java语言最合适不过了。
-
 
 **工厂模式**
 
 在开发过程中经常会遇到根据不同的条件实例化不同的对象，每次都重复这个逻辑显然是不够理想的，所以我们可以把这样的逻辑封装到一个类中，这个类就是工厂类，通过类和条件参数类返回需要实例化的对象，这个模式就是工厂模式。
-```java
+
+```ruby
 interface Language{
   public void sayHello();
 }
@@ -91,6 +93,7 @@ public class Main{
   }
 }
 ```
+
 来看下上面的代码
 1. 创建一个Language接口，并定义了一个sayHello方法。
 2. 分别创建Java类和Ruby类，实现Language的sayHello方法。
@@ -107,7 +110,7 @@ public class Main{
 
 因为单例模式经常与工厂模式配合（通常用来实例化不同对象的工厂只需要一个就足够了），所以我们就把一个工厂类改为单例类。
 
-```java
+```ruby
 class LanguageFactory{
 
   private static LanguageFactory instance = null;
@@ -200,11 +203,12 @@ public class Main{
   }
 }
 ```
+
 简单分析下上述代码：
 
 1. 我们有一个要适配的接口`AdvancedMediaPlayer`和用来包装的接口`MediaPlayer`，`MediaPlayer`定义了一个`play`方法，而`AdvancedMediaPlayer`对`play`细化定义了`playFlv`和`playMp4`。
 2. 创建了`FlvPlayer`和`Mp4Player`，一个实现了`AdvancedMediaPlayer`接口的`playFlv`方法，另一个实现了`playMp4`方法。
-3. 定义适配器`AdapterPlayer`，适配器实现了包装接口`MediaPlayer`的`play`方法，同时适配器采用类似工厂的方式根据输入参数返回了`advancedMediaPlayer`对象(`advancedMediaPlayer`被实例化为`playFlv`或者`playMp4`，两者都实现了`AdvancedMediaPlayer`接口)。并在`play`方法中根据输入参数执行`play`方法（`palyFlv`或`playMp4`）。
+3. 定义适配器`AdapterPlayer`，适配器实现了包装接口`MediaPlayer`的`play`方法，同时适配器采用类似工厂的方式根据输入参数返回了`advancedMediaPlayer`对象\(`advancedMediaPlayer`被实例化为`playFlv`或者`playMp4`，两者都实现了`AdvancedMediaPlayer`接口\)。并在`play`方法中根据输入参数执行`play`方法（`palyFlv`或`playMp4`）。
 4. 创建`AudioPlayer`类，该类通过适配器`AdapterPlayer`实现了包装接口`MediaPlayer`的`play`方法，并根据`play`方法输入的参数实例化`AdapterPlayer`对象，然后调用`adapterPlayer`的`play`方法。这样`AudioPlayer`就通过适配器就隐藏了`play`的细节。
 5. 实例化`AudioPlayer`对象，并传递参数调用`audioPlayer`的`play`方法（其实`audioPlayer`的`play`方法是通过适配器`AdapterPlayer`返回的`FlvPlayer`对象或者`Mp4Player`对象的`play`方法）。
 
@@ -258,6 +262,7 @@ public class Main{
   }
 }
 ```
+
 上面代码如下：
 
 1. 首先创建了一个`Animal`接口并定义了`say`方法，然后定义了实现这个接口的两个类`Cat`和`Dog`。
@@ -298,6 +303,7 @@ public class Main{
   }
 }
 ```
+
 分析以上代码
 
 1.首先我们创建了一个Trade接口，定义了购买方法。
@@ -368,9 +374,10 @@ public class Main{
 }
 
 ```
+
 简单的说观察者模式就是两个类之间消息的传递，消息类状态发生改变时会通知观察者类执行相应操作，而观察者类在初始化时会通知消息类把自己加入到观察者注册列表。具体如下：
 
-1. 首先创建一个消息类，消息类中需要有一个消息状态及状态的读/写方法，这里定义了一个天气属性`weather`以及`getWeather`和`setWeather`方法来控制`weather`的读写。
+1. 首先创建一个消息类，消息类中需要有一个消息状态及状态的读\/写方法，这里定义了一个天气属性`weather`以及`getWeather`和`setWeather`方法来控制`weather`的读写。
 2. 消息类还定义了一个观察者列表及相关的方法。观察者列表`observers`用来存储所有订阅该消息的观察者，`subscribe`方法用来添加新的观察者对象到观察者列表。最后定义了`notifyObservers`方法来通知观察者消息改变了。
 3. `notifyObservers`方法遍历观察者列表中每一个观察者，并调用他们的`notified`方法。
 4. 接着定义一个抽象类`Observer`，这个抽象类一类消息类`WeatherForecast`，并定义了`notified`方法。
@@ -443,6 +450,7 @@ public class Main{
   }
 }
 ```
+
 这里我们以Java语言从代码到运行这个过程为例进行说明（Java从代码到执行要经过编写、编译、链接、运行四个步骤）。
 
 1. 首先我们创建一个Task抽象类，Task类定义了一个Task类型的属性next来指明下一个任务节点。
@@ -451,9 +459,7 @@ public class Main{
 4. 定义一个责任链类，类中定义了一个静态方法`getTaskChain`用来获取任务链，方法中创建了任务类对象，并通过nextTask方法组成一个任务类链表，`getTaskChain`，返回了第一个任务对象。
 5. 最后调用`taskChain.start`触发任务链的执行，start方法会执行当前任务的work方法并判断是否存在下一个任务，如果存在则执行下一个任务的start方法，以此类推。
 
-
-
-####设计模式和语言特性
+#### 设计模式和语言特性
 
 设计模式本身是一种规范与技巧，其存在的目的主要是完善或者弥补面向对象语言在编程开发上的补足。一些语言无法更好解决的问题，开发中可以通过适当的使用设计模式来妥善的处理，但是如果语言本身具备了你在开发中所需要的特性，那么设计模式就开抛到一边了。就像Java提供了C++没有的垃圾回收机制，你就无需在Java中手动释放内存了，Scala提供了Java没有的线程管理机制，你就无需在Scala中加线程锁一样。如果语言本身提供了更好的特性，你也就不必为了提高代码的复用性和维护性采用各种复杂设计模式了。
 
@@ -462,6 +468,7 @@ public class Main{
 **Java8接口方法替代工厂模式**
 
 在讲匿名函数的时候提到过Java8新增了lambda特性，基于lambda的特性对应的也提出了接口方法，简单的说接口的函数体（具体实现），可以当做变量值一样在接口声明时赋值，而以前接口的函数体必须有实现类来定义，因为这个特性的增加相当于我们可以跳过不同实现类实现接口方法的范式，而是直接在接口声明时赋值函数体。
+
 ```java
 //java8 接口方法替代工厂模式
 interface Language{
@@ -493,6 +500,7 @@ public class Main{
   }
 }
 ```
+
 上面代码可以看出，我们没有定义Language接口的实现类，而是在`NewFeatureReplaceFactory`类中的`sayHello`根据`type`类型不同，对`Language`接口赋值了不同的函数体（注意使用接口函数时，接口只能定义一个函数，解释器会自动把定义的函数体和函数定义绑定），这段逻辑其实和定义不同的类来实现`Language`的`sayHello`方法是等效的。
 
 **Io语言的单例实现**
@@ -500,6 +508,7 @@ public class Main{
 我们再来一个更加明显的例子，这里将引入一门基于原型的嵌入式语言Io，Io是基于原型的语言，支持面向对象编程范式，但是没有模板的概念，而是通过原型链来处理继承层次，原型的方法也像其他基于原型的语言一样在原型链中一层一层的向上查找，有就返回，没有就创建。
 
 Io中通过clone方法来链接原型之间的层级关系，`B := A clone`表示原型链中A在B的上级，同时clone方法默认也会返回一个新的Object原型。假设一个原型重写了clone方法，并指定返回值就是当前原型本身，那会如何？。没错，你没办法通过clone来创建一个新的Object原型，取代的是你始终会得到这个原型本身。这不正是单例模式要实现的功能么。
+
 ```Io
 Singleton clone := Singleton
 isSingleton := Singleton clone
@@ -509,3 +518,4 @@ isSingleton = Singleton    //=>true
 **关于设计模式和语言特性的折中**
 
 设计模式是一个复杂而高级的编程技巧，适当的使用可以是代码更健壮、更易维护，但是不要当做是一种信仰过分的依赖，比较所有技术手段和技巧其核心目的无非是提供更健壮、更易拓展的代码。如果你使用的语言本身有更好的特性，那么用语言的特性也是能够达到同样的效果的，至于究竟是采用Java7的接口编程规范，还是Java8的lambda编程特性。还是要根据项目及开发人员的实际情况来折中选择的。技术只是解决问题的手段，而人才是解决问题的根本，再充满技巧的、新潮的技术也没有手里最熟悉的技术更有优势。
+
