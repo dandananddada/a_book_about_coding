@@ -18,10 +18,10 @@
   * [2.4 字符类型](chapter2/4_string.md)
   * [2.5 原子类型](chapter2/5_atom.md)
 * [第三章 引用类型](chapter3.md)  
-  * [集合类型](chapter3/collection.md)
-  * [散列](chapter3/hash.md)
-  * [函数](chapter3/function.md)
-  * [类](chapter3/class.md)
+  * [3.1 集合类型](chapter3/1_collection.md)
+  * [3.2 散列类型](chapter3/2_hash.md)
+  * [3.3 函数类型](chapter3/3_function.md)
+  * [3.4 类类型](chapter3/4_class.md)
 
 * [第四章 编程范式](chapter4.md)
 
