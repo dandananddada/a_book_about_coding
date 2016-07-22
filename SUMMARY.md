@@ -9,7 +9,7 @@
     * [1.3 静态类型和动态类型](chapter1/3_static_and_dynamic.md)
     * [1.4 编译型与解释型](chapter1/4_compiled_and_interpreted.md)
     * CPU密集型和I\/O密集型
-    * 命令型和声明型
+    * [命令型和声明型](命令型和声明型.md)
 * [第二章 我想先跟你说说数据类型](chapter2.md)
     * [2.1 基础类型和引用类型](chapter2/1_primitive_and_reference.md)
     * [2.2 布尔类型](chapter2/2_boolean.md)
