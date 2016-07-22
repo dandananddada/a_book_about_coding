@@ -23,7 +23,7 @@ b[10] = 11;
 
 于此不同JavaScript和Ruby的数组就是异质且变长的，不过JavaScript似乎并不提供无序数组的概念，也就是说数组是有且只有顺序的。
 
-```javascript
+```js
 var a = [1, 2, 3];
 console.log(a.length);    //=>3
 a[3] = 4;
