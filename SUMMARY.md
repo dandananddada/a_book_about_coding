@@ -19,7 +19,6 @@
   * [2.5 原子类型](chapter2/5_atom.md)
 * [第三章 引用类型](chapter3.md)  
   * [集合类型](chapter3/collection.md)
-  * [数组](chapter3/array.md)
   * [散列](chapter3/hash.md)
   * [函数](chapter3/function.md)
   * [类](chapter3/class.md)
