@@ -30,7 +30,13 @@ y = x + 1, x ∊ {1,2}
 equation(X, Y) :- X == 1, Y is X + 1.
 equation(X, Y) :- X == 2, Y is X + 1.
 ```
-
+```
+equation(1, Y).
+/* Y = 2 */
+equation(3, Y).
+/* no */
+```
+这里定义了一个推断`equation`
 ```haskell
 --haskell
 equation x
