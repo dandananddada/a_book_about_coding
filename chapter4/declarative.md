@@ -32,10 +32,8 @@ equation(X, Y) :- X == 2, Y is X + 1.
 ```
 执行：
 ```
-equation(1, Y).
-/* Y = 2 */
-equation(3, Y).
-/* no */
+equation(1, Y).    /* Y = 2 */
+equation(3, Y).    /* no */
 ```
 这里定义了一个推断`equation`，当断言`x == 1`成立时，则执行`is`运算将Y绑定为`X+1`，Prolog通过断言和推断返回查询结果`Y=2`。如果断言不成立，程序无法查询到Y值，则返回`no`。
 
@@ -46,6 +44,12 @@ equation x
  | x == 2 = x + 1
  | otherwise = error "no"
 ```
+执行：
+```haskell
+equation 1    --2
+equation 3    --Exception: no
+```
+这里定义了一个函数，对传入参数x依次执行
 
 **领域专属语言**
 
