@@ -38,6 +38,7 @@ equation(3, Y).
 /* no */
 ```
 这里定义了一个推断`equation`，当断言`x == 1`成立时，则执行`is`运算将Y绑定为`X+1`，Prolog通过断言和推断得出`Y=2`返回。如果断言不成立，则Y值无法绑定，程序运行返回`no`。
+
 ```haskell
 --haskell
 equation x
