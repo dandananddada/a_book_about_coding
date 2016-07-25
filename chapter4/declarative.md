@@ -33,6 +33,14 @@ equation(X, Y) :- X == 1, Y is X + 1.
 equation(X, Y) :- X == 2, Y is X + 1.
 ```
 
+```haskell
+--haskell
+equation x
+ | x == 1 = x + 1
+ | x == 2 = x + 1
+ | otherwise = error "no"
+```
+
 
 **领域专属语言**
 
