@@ -30,11 +30,14 @@ y = x + 1, x ∊ {1,2}
 equation(X, Y) :- X == 1, Y is X + 1.
 equation(X, Y) :- X == 2, Y is X + 1.
 ```
+
 执行：
+
 ```
 equation(1, Y).    /* Y = 2 */
 equation(3, Y).    /* no */
 ```
+
 这里定义了一个推断`equation`，当断言`x == 1`成立时，则执行`is`运算将Y绑定为`X+1`，Prolog通过断言和推断返回查询结果`Y=2`。如果断言不成立，程序无法查询到Y值，则返回`no`。
 
 ```haskell
@@ -44,12 +47,22 @@ equation x
  | x == 2 = x + 1
  | otherwise = error "no"
 ```
+
 执行：
+
 ```haskell
 equation 1    --2
 equation 3    --Exception: no
 ```
+
 这里定义了一个函数，对传入参数x依次匹配各个模式，如果满足当前模式则返回操作结果，否则执行下一个模式，当传入参数为1时，满足第一个模式返回`x+1=2`，当传入参数为3时，前两个模式都不匹配，因此执行`otherwise`抛出一个异常。
+
+
+`测试`
+**dasda**
+打算打算```haskell
+大声
+```道
 
 **领域专属语言**
 
