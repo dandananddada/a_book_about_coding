@@ -59,6 +59,9 @@ equation 3    --Exception: no
 
 **领域专属语言**
 
+领域专属语言（DSLs：**Domain-specific languages**）是针对某一特定问题而设计的语言，常见的领域专属语言如正则表达式、SQL查询语言（linq）、标记语言（Html）。
+
+
 **逻辑编程**
 
 **函数式编程**
