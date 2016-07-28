@@ -48,8 +48,23 @@
 我们对输入的阿拉伯数字进行匹配返回对应的英文。
 
 ```haskell
-d
+numberToEnglish:: Int->String
+numberToEnglish 1 = "one"
+numberToEnglish 2 = "two"
+numberToEnglish 3 = "three"
+numberToEnglish 4 = "four"
+numberToEnglish 5 = "five"
+numberToEnglish 6 = "six"
+numberToEnglish 7 = "seven"
+numberToEnglish 8 = "eight"
+numberToEnglish 9 = "nine"
+numberToEnglish 0 = "zero"
+numberToEnglish x = "not between 0 to 9"
+
+numberToEnglish 4    --"four"
+numberToEnglish 12   --"not between 0 to 9"
 ```
+
 
 接下来我会简单介绍下约束编程和领域专属语言，然后相对详细的说明下逻辑编程，至于函数式编程范式，我会拿出一章来详细说明。
 
@@ -59,26 +74,24 @@ d
 
 约束编程规定了变量之间的一种约束关系，它不强调具体要执行哪一步计算，只是规定了变量的一些属性。简单的说，就是数学中方程式的概念，约束只定义了方程式的定义域，并没有指明具体解如何求解，但是解肯定是满足这个域的。
 
-```
 
-y = x + 1, x ∊ {1,2}
+    y = x + 1, x ∊ {1,2}
 
 
-    依上面的约束可以得知y的值域应该为`{2,3}`。
+        依上面的约束可以得知y的值域应该为`{2,3}`。
 
-    约束式编程一般作为其他范式的一种补充，我们来看看基于逻辑范式的`prolog`和基于函数范式的`haskell`下是如何表现的：
+        约束式编程一般作为其他范式的一种补充，我们来看看基于逻辑范式的`prolog`和基于函数范式的`haskell`下是如何表现的：
+
+        ```prolog
+        /* prolog */
+        equation(X, Y) :- X == 1, Y is X + 1.
+        equation(X, Y) :- X == 2, Y is X + 1.
+
+    执行：
 
     ```prolog
-    /* prolog */
-    equation(X, Y) :- X == 1, Y is X + 1.
-    equation(X, Y) :- X == 2, Y is X + 1.
-
-执行：
-
-```prolog
-equation(1, Y).    /* Y = 2 */
-equation(3, Y).    /* no */
-```
+    equation(1, Y).    /* Y = 2 */
+    equation(3, Y).    /* no */
 
 这里定义了一个推断`equation`，当断言`x == 1`成立时，则执行`is`运算将Y绑定为`X+1`，Prolog通过断言和推断返回查询结果`Y=2`。如果断言不成立，程序无法查询到Y值，则返回`no`。
 
