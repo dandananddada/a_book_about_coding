@@ -92,7 +92,11 @@ getBMI 27    --"overweight"
 
 合一和绑定都是赋值操作，我们先看看`prolog`的合一，在用haskell的绑定和合一来重写上面的获取BMI的函数。
 
+```prolog
+combine(X, Y, Z):- X = 1, Y = 2, Z = 3.
 
+combine(1,2,3).     /*  yes  */
+```
 
 
 #### 满足声明式风格的编程范式
