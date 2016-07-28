@@ -90,7 +90,7 @@ getBMI 27    --"overweight"
 
 **合一、绑定**
 
-合一和绑定都是赋值操作，我们先看看`prolog`的合一，在用haskell的绑定和合一来重写上面的获取BMI的函数。
+合一和绑定都是赋值操作，我们先看看`prolog`的合一，在用
 
 ```prolog
 combine(X, Y, Z):- X = 1, Y = 2, Z = 3.
@@ -98,6 +98,21 @@ combine(X, Y, Z):- X = 1, Y = 2, Z = 3.
 combine(1,2,3).     /*  yes  */
 ```
 `combine`对元组`(X, Y, Z)`执行了合一操作，这时元组中满足`X = 1, Y = 2, Z = 3`，因此执行`combine(1,2,3).`返回yes。
+
+好，我们了解了合一的语法后，接下来看看如何用haskell的绑定和合一来重写上面的`getBMI`函数。
+
+```haskell
+getBMI:: Double->Double->String
+getBMI weight height
+  | bmi <= normal     = "underweight"
+  | bmi <= overweight = "normal"
+  | bmi <= obese      = "overweight"
+  | otherwise         = "boese"
+ where bmi = weight/height^2
+       (normal, overweight, obese) = (18.5, 25.0, 30.0)
+
+getBMI 70 1.72    --"normal"
+```
 
 #### 满足声明式风格的编程范式
 
