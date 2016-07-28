@@ -194,7 +194,7 @@ equalToo(X,Y) :- equal(X,Z), equal(Y,Z).
 equalToo(a,c).    /*  yes  */
 ```
 
-我们以第一个查询`equalToo(a,c).`为例说明，带入推断后得到：`equal(a, Z), equal(c, Z)`。对比断言我们可以求出`Z=b`，也就是如果`Z=b`则断言运算后返回`true`，因此第一个查询返回`yes`。第二个查询同理，因为我们推断规定的是`a = b, c = b 则 a = c`，但不支持`a = b, c = `
+我们将查询`equalToo(a,c).`带入推断后得到：`equal(a, Z), equal(c, Z)`。对比断言我们可以求出`Z=b`，也就是当`Z=b`的时候断言是可以成立的，这是运算结果为`true`就会返回`yes`。
 
 **函数式编程**
 
