@@ -66,6 +66,24 @@ numberToEnglish 12   --"not between 0 to 9"
 ```
 这里我们定义了函数`numberToEnglish`并规定了输入类型`Int`及返回类型`String`，然后按顺序定义了十个模式，分别对参数为0-10的情况定义了处理逻辑，最后用参数`x`表示任意情况，相当于`default`或`else`。这里我们以参数`param = 4`为例，首先会匹配第一个模式`param = 1`，不符合条件，则匹配下一个模式`param = 2`，依次，当匹配到`param = 4`的时候成功，则执行返回`"four"`。同理`param = 12`对前面10个模式都不匹配，所以执行`param = x`返回`"not between 0 to 9"`。
 
+**哨兵（Guard）**
+
+和模式匹配一样，哨兵也是声明式语言中的分支逻辑，如果一定要对比的话，模式匹配有点像`case`而哨兵有些像`if-else`，每一个哨兵都是一个布尔表达式，如果表达式值为`true`，就会执行对应的操作。如果为`false`则对下一个哨兵求值。
+
+我们通过BMI（体重指数）来看下哨兵是如何工作的。
+
+```haskell
+getBMI:: Double->String
+getBMI bmi
+ | bmi <= 18.5 = "underweight"
+ | bmi <= 25.0 = "normal"
+ | bmi <= 30.0 = "overweight"
+ | otherwise = "obese"
+
+getBMI 27    --"overweight"
+```
+
+
 
 
 接下来我会简单介绍下约束编程和领域专属语言，然后相对详细的说明下逻辑编程，至于函数式编程范式，我会拿出一章来详细说明。
