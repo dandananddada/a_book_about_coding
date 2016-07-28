@@ -114,6 +114,10 @@ getBMI weight height
 getBMI 70 1.72    --"normal"
 ```
 
+在讲解这段代码之前我们先说下`where`的作用，`where`相当于指令式语言里的赋值操作，它可以记录一个操作结果，方便多次引用。其作用域限定在当前函数定义内。
+
+然后我们来看看`getBMI`函数，与之前不同，它传入了两个参数：`weight`和`height`，用来计算BMI。然后用`where`将`weight/height^2`的计算结果绑定到bmi，方便多次使用。同时用合一对元组`(normal, overweight, obese)`进行赋值，用来作为BMI参数的临界值。
+
 #### 满足声明式风格的编程范式
 
 **约束编程**
