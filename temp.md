@@ -84,15 +84,15 @@ var a = _.chain\(_.range\(1, 300\)\)
   .value\(\);
 console.log\(\_.isEqual\(a, 300\)\)
 
-
-
-
-
-
-
 编程范式用来区分不同程序语言的编程风格
 
-
-
 In these languages the computer is told what the problem is, not how to solve the problem
+
+
+
+
+
+
+
+
 
