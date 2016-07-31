@@ -90,9 +90,3 @@ In these languages the computer is told what the problem is, not how to solve th
 
 
 
-
-as
-
-
-
-
