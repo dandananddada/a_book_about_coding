@@ -214,7 +214,7 @@ equalToo(a,c).    /*  yes  */
 
 因为声明式语言不关心具体的操作步骤，所以我们根本不需要考虑通过怎样的移动可以达到这两个状态，我们只需要强调这两种状态的产生时机就可以了。
 
-```haskell
+```prolog
 move(1,X,Y,_) :-
   write('Move top disk from '),
   write(X),  write(' to '),
@@ -227,6 +227,8 @@ move(N,X,Y,Z) :-
   move(1,X,Y,_),
   move(M,Z,Y,X).
 ```
-
+```prolog
+| ?- move(3, left, right, center).Move top disk from left to rightMove top disk from left to centerMove top disk from right to centerMove top disk from left to rightMove top disk from center to leftMove top disk from center to rightMove top disk from left to right
+```
 **函数式编程**
 
