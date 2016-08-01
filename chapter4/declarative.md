@@ -248,9 +248,7 @@ move(3, 'A', 'B', 'C').
  move top disk fromA to C
 
  move top disk fromB to A
-
  move top disk fromB to C
-
  move top disk fromA to C
 
 */
