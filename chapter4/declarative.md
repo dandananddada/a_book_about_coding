@@ -215,7 +215,6 @@ equalToo(a,c).    /*  yes  */
 
 ```prolog
 move(1,A,B,C) :-
-
  write('move top disk from '),
 
  write(A),
