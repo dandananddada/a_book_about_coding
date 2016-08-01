@@ -227,24 +227,35 @@ move(N,A,B,C) :-
  move(1,A,B,C),
  move(M,B,A,C).
 ```
-
-```prolog
-move(3, 'A', 'B', 'C').
-/*
-  move top disk fromA to C
-  move top disk fromA to B
-  move top disk fromC to B
-  move top disk fromA to C
-  move top disk fromB to A
-  move top disk fromB to C
-  move top disk fromA to C
-*/
-```
 我们定义了一个移动函数，第一个参数表示当前存在的圆盘数，其余A、B、C参数分别表示图示中的三根圆柱，A，作为起始圆柱，B作为辅助圆柱，C作为终止圆柱。
 
 当只存在一个圆盘时，我们可以直接把圆盘从起始圆柱A移动到终止圆柱C。
 当存在一个以上（N个）圆盘时，我们先把上面N-1个圆盘从起始圆柱A移动到辅助圆柱B，然后再将起始柱A最下面的圆盘移动到终止圆柱C。这时B就变成了之前的起始圆柱，而A则变成了辅助圆柱，我们继续重复之前的逻辑将剩余的N-1个圆盘从起始圆柱B移动到终止圆柱C，而A则作为辅助圆柱。
 
+最后我们定义起始圆柱A、辅助圆柱B、终止圆柱C、圆盘数4，然后输出。
+```prolog
+
+move(3, 'A', 'B', 'C').
+
+/*
+
+ move top disk fromA to C
+
+ move top disk fromA to B
+
+ move top disk fromC to B
+
+ move top disk fromA to C
+
+ move top disk fromB to A
+
+ move top disk fromB to C
+
+ move top disk fromA to C
+
+*/
+
+```
 
 
 **函数式编程**
