@@ -234,9 +234,7 @@ move(N,A,B,C) :-
 
 最后我们定义起始圆柱A、辅助圆柱B、终止圆柱C、圆盘数4，然后输出。
 ```prolog
-
 move(3, 'A', 'B', 'C').
-
 /*
  move top disk fromA to C
  move top disk fromA to B
@@ -245,9 +243,7 @@ move(3, 'A', 'B', 'C').
  move top disk fromB to A
  move top disk fromB to C
  move top disk fromA to C
-
 */
-
 ```
 
 
