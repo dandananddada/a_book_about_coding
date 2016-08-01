@@ -214,17 +214,28 @@ equalToo(a,c).    /*  yes  */
 因为声明式语言不关心具体的操作步骤，所以我们根本不需要考虑通过怎样的移动可以达到这两个状态，我们只需要强调这两种状态的产生时机就可以了。
 
 ```prolog
-move(1,X,Y,_) :-
-  write('Move top disk from '),
-  write(X),  write(' to '),
-  write(Y),
-  nl.
-move(N,X,Y,Z) :-
-  N>1,
-  M is N-1,
-  move(M,X,Z,Y),
-  move(1,X,Y,_),
-  move(M,Z,Y,X).
+move(1,A,B,C) :-
+
+ write('move top disk from '),
+
+ write(A),
+
+ write(' to '),
+
+ write(C),
+
+ nl.
+
+move(N,A,B,C) :-
+
+ N>1,
+
+ M is N-1,
+
+ move(M,A,C,B),
+
+ move(1,A,B,C),   move(M,B,A,C).
+
 ```
 
 ```prolog
@@ -243,6 +254,8 @@ move(3, left, right, center).
 
 当只存在一个圆盘时，我们可以直接把圆盘从起始圆柱A移动到终止圆柱C。
 当存在一个以上（N个）圆盘时，我们先把上面N-1个圆盘从起始圆柱A移动到辅助圆柱B，然后再将最下面的圆盘从起始圆柱A移动到终止圆柱C。这时B就变成了之前的起始圆柱，而A则变成了辅助圆柱，我们继续重复之前的逻辑将剩余的N-1个圆盘从起始圆柱B移动到终止圆柱C，而A则作为辅助圆柱。
+
+
 
 **函数式编程**
 
