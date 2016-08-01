@@ -125,24 +125,22 @@ getBMI 70 1.72    --"normal"
 
 约束编程规定了变量之间的一种约束关系，它不强调具体要执行哪一步计算，只是规定了变量的一些属性。简单的说，就是数学中方程式的概念，约束只定义了方程式的定义域，并没有指明具体解如何求解，但是解肯定是满足这个域的。
 
-    y = x + 1, x ∊ {1,2}
+y = x + 1, x ∊ {1,2}
 
+依上面的约束可以得知y的值域应该为`{2,3}`。
+约束式编程一般作为其他范式的一种补充，我们来看看基于逻辑范式的`prolog`和基于函数范式的`haskell`下是如何表现的：
+```prolog
+/* prolog */
+equation(X, Y) :- X == 1, Y is X + 1.
+equation(X, Y) :- X == 2, Y is X + 1.
+```
 
-        依上面的约束可以得知y的值域应该为`{2,3}`。
+执行：
 
-        约束式编程一般作为其他范式的一种补充，我们来看看基于逻辑范式的`prolog`和基于函数范式的`haskell`下是如何表现的：
-
-        ```prolog
-        /* prolog */
-        equation(X, Y) :- X == 1, Y is X + 1.
-        equation(X, Y) :- X == 2, Y is X + 1.
-
-    执行：
-
-    ```prolog
-    equation(1, Y).    /* Y = 2 */
-    equation(3, Y).    /* no */
-
+```prolog
+equation(1, Y).    /* Y = 2 */
+equation(3, Y).    /* no */
+```
 这里定义了一个推断`equation`，当断言`x == 1`成立时，则执行`is`运算将Y绑定为`X+1`，Prolog通过断言和推断返回查询结果`Y=2`。如果断言不成立，程序无法查询到Y值，则返回`no`。
 
 ```haskell
@@ -227,17 +225,19 @@ move(N,X,Y,Z) :-
   move(1,X,Y,_),
   move(M,Z,Y,X).
 ```
+
 ```prolog
 move(3, left, right, center).
 /*
-    Move top disk from left to right
-    Move top disk from left to center
-    Move top disk from right to center
-    Move top disk from left to right
-    Move top disk from center to left
-    Move top disk from center to right
-    Move top disk from left to right
+  Move top disk from left to right
+  Move top disk from left to center
+  Move top disk from right to center
+  Move top disk from left to right
+  Move top disk from center to left
+  Move top disk from center to right
+  Move top disk from left to right
 */
 ```
+
 **函数式编程**
 
