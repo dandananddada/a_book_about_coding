@@ -230,7 +230,13 @@ move(N,A,B,C) :-
 ```prolog
 move(3, 'A', 'B', 'C').
 /*
-  move top disk fromA to C  move top disk fromA to B  move top disk fromC to B  move top disk fromA to C  move top disk fromB to A  move top disk fromB to C  move top disk fromA to C
+  move top disk fromA to C
+  move top disk fromA to B
+  move top disk fromC to B
+  move top disk fromA to C
+  move top disk fromB to A
+  move top disk fromB to C
+  move top disk fromA to C
 */
 ```
 我们定义了一个移动函数，第一个参数表示当前存在的圆盘数，其余A、B、C参数分别表示图示中的三根圆柱，A，作为起始圆柱，B作为辅助圆柱，C作为终止圆柱。
