@@ -228,7 +228,16 @@ move(N,X,Y,Z) :-
   move(M,Z,Y,X).
 ```
 ```prolog
-| ?- move(3, left, right, center).Move top disk from left to rightMove top disk from left to centerMove top disk from right to centerMove top disk from left to rightMove top disk from center to leftMove top disk from center to rightMove top disk from left to right
+move(3, left, right, center).
+/*
+    Move top disk from left to right
+    Move top disk from left to center
+    Move top disk from right to center
+    Move top disk from left to right
+    Move top disk from center to left
+    Move top disk from center to right
+    Move top disk from left to right
+*/
 ```
 **函数式编程**
 
