@@ -243,13 +243,13 @@ move(N,A,B,C) :-
 ```prolog
 move(3, 'A', 'B', 'C').
 /*
- move top disk fromA to C
- move top disk fromA to B
- move top disk fromC to B
- move top disk fromA to C
- move top disk fromB to A
- move top disk fromB to C
- move top disk fromA to C
+ move top disk from A to C
+ move top disk from A to B
+ move top disk from C to B
+ move top disk from A to C
+ move top disk from B to A
+ move top disk from B to C
+ move top disk from A to C
 */
 ```
 
