@@ -268,8 +268,15 @@ different(yellow, red). different(yellow, green). different(yellow, blue).
 
 接下来我们以从A到I的顺序确保其相邻区域都满足于着色方案：
 ```prolog
-coloring(A, B, C, D, E, F, G, H, I) :- different(A, B), different(A, C), different(A, D), different(A, E), different(B, C), different(B, E), different(B, F), different(C, D), different(C, F), different(C, G), different(D, E), different(D, H), different(E, F), different(E, H), different(E, I), different(F, G), different(G, H), different(H, I).
-
+coloring(A, B, C, D, E, F, G, H, I) :- 
+  different(A, B), different(A, C), different(A, D), different(A, E), 
+  different(B, C), different(B, E), different(B, F), 
+  different(C, D), different(C, F), different(C, G), 
+  different(D, E), different(D, H), 
+  different(E, F), different(E, H), different(E, I), 
+  different(F, G), 
+  different(G, H),
+  different(H, I).
 ```
 
 **函数式编程**
