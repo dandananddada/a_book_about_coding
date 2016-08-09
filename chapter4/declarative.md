@@ -287,9 +287,17 @@ coloring(A, B, C, D, E, F, G, H, I).
 ```
 得到结果：
 ```
-A = redB = greenC = blueD = greenE = blueF = redG = yellowH = redI = green
-
+A = red
+B = green
+C = blue
+D = green
+E = blue
+F = red
+G = yellow
+H = red
+I = green?
 ```
+如果输入`a`我们还能得到其他九中涂色方案，就不一一列举了。
 
 **函数式编程**
 
