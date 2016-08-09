@@ -285,6 +285,11 @@ coloring(A, B, C, D, E, F, G, H, I) :-
 ```prolog
 coloring(A, B, C, D, E, F, G, H, I).
 ```
+得到结果：
+```
+A = redB = greenC = blueD = greenE = blueF = redG = yellowH = redI = green
+
+```
 
 **函数式编程**
 
