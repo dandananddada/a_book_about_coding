@@ -251,9 +251,17 @@ move(3, 'A', 'B', 'C').
 可以看到在上述代码中我们并没有关心具体细节，只需要串联关键状态，计算机会自动帮我们计算具体步骤，这就是逻辑式语言的优势。
 
 最后我们再来举一个更纯粹的只关心规则声明的例子：四色定理。
->如果在平面上划出一些邻接的有限区域，那么可以用四种颜色来给这些区域染色，使得每两个邻接区域染的颜色都不一样
+
+> 如果在平面上划出一些邻接的有限区域，那么可以用四种颜色来给这些区域染色，使得每两个邻接区域染的颜色都不一样。
 
 ![](/images/coloring.png)
+
+我们用四种颜色（红、绿、蓝、黄）对上面9个区域进行染色，根据四色定理我们可以使任意相邻的两个区域都不同色。
+```prolog
+-- 断言：相邻两颜色必不同色
+different(red, green). different(red, blue). different(red, yellow).different(green, red). different(green, blue). different(green, yellow).different(blue, red). different(blue, green). different(blue, yellow).different(yellow, red). different(yellow, green). different(yellow, blue).
+```
+
 
 **函数式编程**
 
