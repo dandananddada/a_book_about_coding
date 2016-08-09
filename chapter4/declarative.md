@@ -317,3 +317,9 @@ Action (; for next solution, a for all solutions, RET to stop) ?
 函数式语言具有函数作为一等公民、引用透明、值不变等特性，它通过函数组织代码逻辑，将元组和列表作为基本数据结构，通过高阶函数强化元组和列表的功能；通过柯里化单一化函数参数；通过惰性求值优化执行性能；
 
 这些特性和技巧我将会用专门的一章来详细说明。
+
+为了展现函数式语言的特点，我们用haskell来实现汉诺塔
+```haskell
+hanoi :: Integer -> a -> a -> a -> [(a,a)]hanoi 0 _ _ _ = []hanoi n a b c = hanoi (n - 1) a c b ++ [(a,c)] ++ hanoi (n - 1) b a c hanoiIO :: Integer -> IO ()hanoiIO n = mapM_ f $ hanoi n "A" "B" "C" where f (x,y) = putStrLn $ "Move " ++ show x ++ " to " ++ show
+
+```
