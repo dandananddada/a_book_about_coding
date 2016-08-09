@@ -285,7 +285,9 @@ coloring(A, B, C, D, E, F, G, H, I) :-
 ```prolog
 coloring(A, B, C, D, E, F, G, H, I).
 ```
+
 得到结果：
+
 ```
 A = red
 B = green
@@ -296,7 +298,9 @@ F = red
 G = yellow
 H = red
 I = green?
+Action (; for next solution, a for all solutions, RET to stop) ?
 ```
+
 如果输入`a`我们还能得到其他九中涂色方案，就不一一列举了。
 
 **函数式编程**
