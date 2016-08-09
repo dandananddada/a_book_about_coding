@@ -257,14 +257,20 @@ move(3, 'A', 'B', 'C').
 ![](/images/coloring.png)
 
 我们用四种颜色（红、绿、蓝、黄）对上面9个区域进行染色，根据四色定理我们可以使任意相邻的两个区域都不同色。
+
+首先列出相邻两个区域不同颜色着色的所有方案。
 ```prolog
--- 断言：相邻两颜色必不同色
 different(red, green). different(red, blue). different(red, yellow).
 different(green, red). different(green, blue). different(green, yellow).
 different(blue, red). different(blue, green). different(blue, yellow).
 different(yellow, red). different(yellow, green). different(yellow, blue).
 ```
 
+接下来我们以从A到I的顺序确保其相邻区域都满足于着色方案：
+```prolog
+coloring(A, B, C, D, E, F, G, H, I) :- different(A, B), different(A, C), different(A, D), different(A, E), different(B, C), different(B, E), different(B, F), different(C, D), different(C, F), different(C, G), different(D, E), different(D, H), different(E, F), different(E, H), different(E, I), different(F, G), different(G, H), different(H, I).
+
+```
 
 **函数式编程**
 
