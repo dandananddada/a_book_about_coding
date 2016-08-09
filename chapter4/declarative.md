@@ -242,7 +242,7 @@ move(N,A,B,C) :-
 
 ```prolog
 move(3, 'A', 'B', 'C').
-/*
+/* 输出 */
  move top disk from A to C
  move top disk from A to B
  move top disk from C to B
@@ -250,7 +250,7 @@ move(3, 'A', 'B', 'C').
  move top disk from B to A
  move top disk from B to C
  move top disk from A to C
-*/
+
 ```
 
 可以看到在上述代码中我们并没有关心具体细节，只需要串联关键状态，计算机会自动帮我们计算具体步骤，这就是逻辑式语言的优势。
@@ -319,6 +319,7 @@ Action (; for next solution, a for all solutions, RET to stop) ?
 这些特性和技巧我将会用专门的一章来详细说明。
 
 为了展现函数式语言的特点，我们用haskell来实现汉诺塔
+
 ```haskell
 hanoi :: Integer -> a -> a -> a -> [(a,a)]
 hanoi 0 _ _ _ = []
@@ -326,4 +327,8 @@ hanoi n a b c = hanoi (n - 1) a c b ++ [(a,c)] ++ hanoi (n - 1) b a c
 hanoiIO :: Integer -> IO ()
 hanoiIO n = mapM_ f $ hanoi n "A" "B" "C" where
   f (x,y) = putStrLn $ "move top disk from " ++ show x ++ " to " ++ show y
+```
+```haskell
+hanoiIO 2
+--输出move top disk from "A" to "B"move top disk from "A" to "C"move top disk from "B" to "C"
 ```
