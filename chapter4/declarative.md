@@ -307,5 +307,7 @@ Action (; for next solution, a for all solutions, RET to stop) ?
 
 **函数式编程**
 
+函数式语言主要特点在于其减少甚至避免了程序中的副作用，保证了函数的输入相同则输出相同。因此函数式编程适用于并行开发以及一些严格需求无副作用的业务。
+
 
 
