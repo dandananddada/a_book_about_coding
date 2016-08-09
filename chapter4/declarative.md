@@ -259,7 +259,10 @@ move(3, 'A', 'B', 'C').
 我们用四种颜色（红、绿、蓝、黄）对上面9个区域进行染色，根据四色定理我们可以使任意相邻的两个区域都不同色。
 ```prolog
 -- 断言：相邻两颜色必不同色
-different(red, green). different(red, blue). different(red, yellow).different(green, red). different(green, blue). different(green, yellow).different(blue, red). different(blue, green). different(blue, yellow).different(yellow, red). different(yellow, green). different(yellow, blue).
+different(red, green). different(red, blue). different(red, yellow).
+different(green, red). different(green, blue). different(green, yellow).
+different(blue, red). different(blue, green). different(blue, yellow).
+different(yellow, red). different(yellow, green). different(yellow, blue).
 ```
 
 
