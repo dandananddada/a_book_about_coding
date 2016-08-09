@@ -273,17 +273,11 @@ different(yellow, red). different(yellow, green). different(yellow, blue).
 coloring(A, B, C, D, E, F, G, H, I) :-
  different(A, B), different(A, C), different(A, D), different(A, E),
  different(B, C), different(B, E), different(B, F),
-
  different(C, D), different(C, F), different(C, G),
-
  different(D, E), different(D, G), different(D, H),
-
  different(E, F), different(E, H), different(E, I),
-
  different(F, G), different(F, I),
-
  different(G, H),  different(H, I).
-
 ```
 
 最后对所选11个区域着色，执行查询：
