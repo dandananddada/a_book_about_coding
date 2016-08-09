@@ -330,5 +330,14 @@ hanoiIO n = mapM_ f $ hanoi n "A" "B" "C" where
 ```
 ```haskell
 hanoiIO 2
---输出move top disk from "A" to "B"move top disk from "A" to "C"move top disk from "B" to "C"
+--输出
+move top disk from "A" to "B"
+move top disk from "A" to "C"
+move top disk from "B" to "C"
 ```
+我们主要来看第三行，和之前的逻辑一样，我们先将前n-1个圆盘，从起始圆柱a移动到辅助圆柱b，接下来将最后一个圆盘从起始圆柱a移动到终止圆柱c，然后递归这个函数，将剩下的n-1个圆盘从新的起始圆柱b借助新的起始圆柱a移动到终止圆柱。这里因为每次移动返回的是一个元组类型的列表，代表从哪个圆柱移动到哪个圆柱，所以我们可以直接对最后一个圆盘的移动绑定为[(a,c)],也就是起始圆柱到终止圆柱。而我们在第二行中规定了当`n=0`时返回空，所以当`n=1`时函数实际执行了[]++[(a,c)]++[]，其中`++`是`haskell`中列表合并运算，所以n=1本身就返回了[(a,c)]，类似的我们上面执行的`n=2`则返回了`[(a,b), (a,c), (b,c)]`。
+
+其递归过程如下：
+
+
+下面的hanoiIO只是将列表中的移动信息文本化输出，可以不必关心。
