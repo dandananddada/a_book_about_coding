@@ -320,6 +320,10 @@ Action (; for next solution, a for all solutions, RET to stop) ?
 
 为了展现函数式语言的特点，我们用haskell来实现汉诺塔
 ```haskell
-hanoi :: Integer -> a -> a -> a -> [(a,a)]hanoi 0 _ _ _ = []hanoi n a b c = hanoi (n - 1) a c b ++ [(a,c)] ++ hanoi (n - 1) b a c hanoiIO :: Integer -> IO ()hanoiIO n = mapM_ f $ hanoi n "A" "B" "C" where f (x,y) = putStrLn $ "Move " ++ show x ++ " to " ++ show
-
+hanoi :: Integer -> a -> a -> a -> [(a,a)]
+hanoi 0 _ _ _ = []
+hanoi n a b c = hanoi (n - 1) a c b ++ [(a,c)] ++ hanoi (n - 1) b a c 
+hanoiIO :: Integer -> IO ()
+hanoiIO n = mapM_ f $ hanoi n "A" "B" "C" where
+  f (x,y) = putStrLn $ "move top disk from " ++ show x ++ " to " ++ show y
 ```
