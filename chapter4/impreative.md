@@ -72,10 +72,17 @@ loop: if(n < 3){ n++; goto loop;}
 if([表达式]) [语句]
 ```
 
-2. 如果`表达式1`成立则执行`语句`
+2. 如果依次判断`表达式*`，如果成立则执行`语句*`，结束语句，如果任何`表达式*`都不成立则执行`else`语句。
 
 ```java
-if(x > 1) System.out.println("x is positive number")；
+if([表达式1])         [语句1]
+else if([表达式2])    [语句2]
+else if([表达式3])    [语句3]
+else                 [else语句]
+```
+
+```java
+if(x == 1) System.out.println("one")；
 ```
 
 `javaif(x > 0) System.out.println("x is positive number")；
