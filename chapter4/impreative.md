@@ -26,32 +26,39 @@ function abs(a){ return a > 0 ? a : -a;}
 **断言**
 
 断言一般用来判断表达式结果的真假。
-
-assert\(1 &gt; 0\);System.out.println\("1 large than 0"\); \/\/1 large than 0assert\(1 &lt; 0\);System.out.println\("1 small than 0"\); \/\/Exception in thread "main" java.lang.AssertionError
-
+```java
+assert(1 > 0);System.out.println("1 large than 0"); //1 large than 0
+assert(1 < 0);System.out.println("1 small than 0"); //Exception in thread "main" java.lang.AssertionError
+```
 也有些测试库用来比较期望值与实际值是否相等。
-
-\/\/junitassertEquals\(2, 1+1\);
-
-\/\/jasmineexpect\(1+1\).toBe\(2\); \/\/true
+```java
+//junit
+assertEquals(2, 1+1);
+```
+```javascript
+//jasmine
+expect(1+1).toBe(2); //true
+```
 
 **调用**
 
 函数调用，用于执行定义的函数。
 
-add\(1, 3\);
-
-abs\(-4\)
+```
+add(1, 3);
+abs(-4)
+```
 
 **跳转**
 
-跳转到指定标记，因为goto语句使程序难以理解，所以即使在保留了goto语句的高级语言（C\/C++）中也不建议使用。
-
-int n = 0;loop: if\(n &lt; 3\){ n++; goto loop;}
+跳转到指定标记，因为goto语句使程序难以理解，所以即使在保留了goto语句的高级语言（C/C++）中也不建议使用。
+```c
+int n = 0;
+loop: if(n < 3){ n++; goto loop;}
+```
 
 **条件**
 
 **循环**
 
 **异常**
-
