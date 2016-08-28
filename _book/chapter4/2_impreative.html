@@ -1,0 +1,782 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>4.2 声明式编程 | 前言</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter4/3_declarative.html" />
+    
+    
+    <link rel="prev" href="../chapter4/1_intro.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="4.2"
+        data-chapter-title="4.2 声明式编程"
+        data-filepath="chapter4/2_impreative.md"
+        data-basepath=".."
+        data-revision="Sun Aug 28 2016 21:54:52 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="0.1" data-path="temp.html">
+            
+                
+                    <a href="../temp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                        temp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.2" >
+            
+            <span><b>0.2.</b> 第四章 函数式</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1.html">
+            
+                
+                    <a href="../chapter1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一章 编程语言只有两种
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1/1_type.html">
+            
+                
+                    <a href="../chapter1/1_type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        1.1 语言类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1/2_strong_and_weak.html">
+            
+                
+                    <a href="../chapter1/2_strong_and_weak.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        1.2 强类型与弱类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter1/3_static_and_dynamic.html">
+            
+                
+                    <a href="../chapter1/3_static_and_dynamic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        1.3 静态类型和动态类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter1/4_compiled_and_interpreted.html">
+            
+                
+                    <a href="../chapter1/4_compiled_and_interpreted.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        1.4 编译型与解释型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter1/5_imperative _and_declarative .html">
+            
+                
+                    <a href="../chapter1/5_imperative _and_declarative .html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        1.5 命令型和声明型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2.html">
+            
+                
+                    <a href="../chapter2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二章 值类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/1_primitive_and_reference.html">
+            
+                
+                    <a href="../chapter2/1_primitive_and_reference.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        2.1 基础类型和引用类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/2_boolean.html">
+            
+                
+                    <a href="../chapter2/2_boolean.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        2.2 布尔类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/3_number.html">
+            
+                
+                    <a href="../chapter2/3_number.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        2.3 数字类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter2/4_string.html">
+            
+                
+                    <a href="../chapter2/4_string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        2.4 字符类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter2/5_atom.html">
+            
+                
+                    <a href="../chapter2/5_atom.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        2.5 原子类型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3.html">
+            
+                
+                    <a href="../chapter3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第三章 引用类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/1_collection.html">
+            
+                
+                    <a href="../chapter3/1_collection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        3.1 集合类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/2_hash.html">
+            
+                
+                    <a href="../chapter3/2_hash.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        3.2 散列类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter3/3_function.html">
+            
+                
+                    <a href="../chapter3/3_function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        3.3 函数类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter3/4_class.html">
+            
+                
+                    <a href="../chapter3/4_class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        3.4 类类型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4.html">
+            
+                
+                    <a href="../chapter4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第四章 编程范式
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/1_intro.html">
+            
+                
+                    <a href="../chapter4/1_intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        4.1 编程范式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.2" data-path="chapter4/2_impreative.html">
+            
+                
+                    <a href="../chapter4/2_impreative.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        4.2 声明式编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter4/3_declarative.html">
+            
+                
+                    <a href="../chapter4/3_declarative.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        4.3 命令式编程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5.html">
+            
+            <span><b>5.</b> 第五章 是时候谈谈面向对象编程了</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter5/1_mode.html">
+            
+                
+                    <a href="../chapter5/1_mode.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        3.1 模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="chapter5/2_features.html">
+            
+                
+                    <a href="../chapter5/2_features.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        3.2 面向对象特点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter5/3_pattern.html">
+            
+                
+                    <a href="../chapter5/3_pattern.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        3.3 设计模式
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6.html">
+            
+            <span><b>6.</b> 第六章 函数式</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="chapter6/feature.html">
+            
+                
+                    <a href="../chapter6/feature.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="chapter6/higher_order_function.html">
+            
+                
+                    <a href="../chapter6/higher_order_function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        高阶函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="chapter6/intro.html">
+            
+                
+                    <a href="../chapter6/intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        更多概念
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >前言</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h2 id="&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;">&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;</h2>
+<p>&#x547D;&#x4EE4;&#x5F0F;&#x8303;&#x5F0F;&#x4FA7;&#x91CD;&#x4E0E;&#x63CF;&#x8FF0;&#x7A0B;&#x5E8F;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#xFF0C;&#x5B83;&#x7531;&#x4E00;&#x4E9B;&#x5217;&#x7684;&#x547D;&#x4EE4;&#x7EC4;&#x6210;&#xFF0C;&#x901A;&#x8FC7;&#x8BED;&#x53E5;&#xFF08;statements&#xFF09;&#x6539;&#x53D8;&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x72B6;&#x6001;&#x3002;</p>
+<pre><code>if(x &gt; 0) y = x;
+else y = -x;
+</code></pre><h4 id="&#x8BED;&#x53E5;&#xFF08;statements&#xFF09;">&#x8BED;&#x53E5;&#xFF08;statements&#xFF09;</h4>
+<p>&#x8BED;&#x53E5;&#x5206;&#x4E3A;&#x57FA;&#x672C;&#x8BED;&#x53E5;&#x548C;&#x590D;&#x5408;&#x8BED;&#x53E5;&#x4E24;&#x79CD;&#xFF0C;&#x5176;&#x4E2D;&#x57FA;&#x672C;&#x8BED;&#x53E5;&#x5305;&#x62EC;&#xFF1A;&#x65AD;&#x8A00;&#xFF08;assertion&#xFF09;&#x3001;&#x8D4B;&#x503C;&#xFF08;assignment&#xFF09;&#x3001;&#x8DF3;&#x8F6C;&#xFF08;goto&#xFF09;&#x3001;&#x8FD4;&#x56DE;&#xFF08;return&#xFF09;&#x3001;&#x8C03;&#x7528;&#xFF08;call&#xFF09;&#x3002;&#x590D;&#x5408;&#x8BED;&#x53E5;&#x53C8;&#x5305;&#x62EC;&#x533A;&#x5757;&#xFF08;block&#xFF09;&#x3001;&#x5FAA;&#x73AF;&#xFF08;do-loop, for-loop, while-loop&#xFF09;&#x6761;&#x4EF6;&#xFF08;if, if-else&#xFF09;&#x3001;&#x5206;&#x652F;&#xFF08;switch&#xFF09;&#x3001;&#x4F34;&#x968F;&#xFF08;with&#xFF09;&#x3001;&#x5F02;&#x5E38;&#xFF08;try-catch&#xFF09;&#x3002;</p>
+<p><strong>&#x8D4B;&#x503C;</strong></p>
+<p>&#x8D4B;&#x503C;&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x5BF9;&#x53D8;&#x91CF;&#x8FDB;&#x884C;&#x8D4B;&#x503C;&#x64CD;&#x4F5C;&#x3002;</p>
+<p>int a = 2;</p>
+<p><strong>&#x8FD4;&#x56DE;</strong>&#x8FD4;&#x56DE;&#x8BED;&#x53E5;&#x7528;&#x4E8E;&#x8FD4;&#x56DE;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>{ <span class="hljs-keyword">return</span> a + b;}
+<span class="hljs-function">function <span class="hljs-title">abs</span><span class="hljs-params">(a)</span></span>{ <span class="hljs-keyword">return</span> a &gt; <span class="hljs-number">0</span> ? a : -a;}
+</code></pre>
+<p><strong>&#x65AD;&#x8A00;</strong></p>
+<p>&#x65AD;&#x8A00;&#x4E00;&#x822C;&#x7528;&#x6765;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#x7ED3;&#x679C;&#x7684;&#x771F;&#x5047;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">assert</span>(<span class="hljs-number">1</span> &gt; <span class="hljs-number">0</span>);System.out.println(<span class="hljs-string">&quot;1 large than 0&quot;</span>); <span class="hljs-comment">//1 large than 0</span>
+<span class="hljs-keyword">assert</span>(<span class="hljs-number">1</span> &lt; <span class="hljs-number">0</span>);System.out.println(<span class="hljs-string">&quot;1 small than 0&quot;</span>); <span class="hljs-comment">//Exception in thread &quot;main&quot; java.lang.AssertionError</span>
+</code></pre>
+<p>&#x4E5F;&#x6709;&#x4E9B;&#x6D4B;&#x8BD5;&#x5E93;&#x7528;&#x6765;&#x6BD4;&#x8F83;&#x671F;&#x671B;&#x503C;&#x4E0E;&#x5B9E;&#x9645;&#x503C;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//junit</span>
+assertEquals(<span class="hljs-number">2</span>, <span class="hljs-number">1</span>+<span class="hljs-number">1</span>);
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-comment">//jasmine</span>
+expect(<span class="hljs-number">1</span>+<span class="hljs-number">1</span>).toBe(<span class="hljs-number">2</span>); <span class="hljs-comment">//true</span>
+</code></pre>
+<p><strong>&#x8C03;&#x7528;</strong></p>
+<p>&#x51FD;&#x6570;&#x8C03;&#x7528;&#xFF0C;&#x7528;&#x4E8E;&#x6267;&#x884C;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-javasript">add(1, 3);
+abs(-4)
+</code></pre>
+<p><strong>&#x8DF3;&#x8F6C;</strong></p>
+<p>&#x8DF3;&#x8F6C;&#x5230;&#x6307;&#x5B9A;&#x6807;&#x8BB0;&#xFF0C;&#x56E0;&#x4E3A;goto&#x8BED;&#x53E5;&#x4F7F;&#x7A0B;&#x5E8F;&#x96BE;&#x4EE5;&#x7406;&#x89E3;&#xFF0C;&#x6240;&#x4EE5;&#x5373;&#x4F7F;&#x5728;&#x4FDD;&#x7559;&#x4E86;goto&#x8BED;&#x53E5;&#x7684;&#x9AD8;&#x7EA7;&#x8BED;&#x8A00;&#xFF08;C\/C++&#xFF09;&#x4E2D;&#x4E5F;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-c"><span class="hljs-keyword">int</span> n = <span class="hljs-number">0</span>;
+loop: <span class="hljs-keyword">if</span>(n &lt; <span class="hljs-number">3</span>){ n++; <span class="hljs-keyword">goto</span> loop;}
+</code></pre>
+<p><strong>&#x6761;&#x4EF6;</strong>
+&#x547D;&#x4EE4;&#x5F0F;&#x7F16;&#x7A0B;&#x4E2D;&#x6700;&#x5177;&#x4EE3;&#x8868;&#x6027;&#x7684;&#x8BED;&#x53E5;&#x5C31;&#x662F;&#x6761;&#x4EF6;&#x3001;&#x5FAA;&#x73AF;&#x548C;&#x5206;&#x652F;&#x3002;&#x8FD9;&#x4E9B;&#x8BED;&#x53E5;&#x8D1F;&#x8D23;&#x7A0B;&#x5E8F;&#x7684;&#x903B;&#x8F91;&#x63A7;&#x5236;&#x3002;</p>
+<p><strong>1. if&#xFF1A;</strong>&#x5982;&#x679C;<code>&#x8868;&#x8FBE;&#x5F0F;</code>&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x6267;&#x884C;<code>&#x8BED;&#x53E5;</code>&#x3002;</p>
+<pre><code>if([&#x8868;&#x8FBE;&#x5F0F;]) [&#x8BED;&#x53E5;]
+</code></pre><pre><code class="lang-java"><span class="hljs-keyword">if</span>(x == <span class="hljs-number">1</span>)             System.out.println(<span class="hljs-string">&quot;one&quot;</span>)&#xFF1B;
+</code></pre>
+<p><strong>2. if-else if&#xFF1A;</strong>&#x4F9D;&#x6B21;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x5982;&#x679C;<code>[&#x8868;&#x8FBE;&#x5F0F;*]</code>&#x6210;&#x7ACB;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;*]</code>&#xFF0C;&#x7ED3;&#x675F;&#x5224;&#x65AD;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span>([&#x8868;&#x8FBE;&#x5F0F;<span class="hljs-number">1</span>])         [&#x8BED;&#x53E5;<span class="hljs-number">1</span>]
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>([&#x8868;&#x8FBE;&#x5F0F;<span class="hljs-number">2</span>])    [&#x8BED;&#x53E5;<span class="hljs-number">2</span>]
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>([&#x8868;&#x8FBE;&#x5F0F;<span class="hljs-number">3</span>])    [&#x8BED;&#x53E5;<span class="hljs-number">3</span>]
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> x = <span class="hljs-number">2</span>;
+<span class="hljs-keyword">if</span>(x == <span class="hljs-number">1</span>)            System.out.println(<span class="hljs-string">&quot;one&quot;</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x == <span class="hljs-number">2</span>)        System.out.println(<span class="hljs-string">&quot;2&quot;</span>);
+<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(x == <span class="hljs-number">2</span>)        System.out.println(<span class="hljs-string">&quot;two&quot;</span>);
+<span class="hljs-comment">//=&gt; 2</span>
+</code></pre>
+<p><strong>3. if-else&#xFF1A;</strong>&#x5982;&#x679C;<code>[&#x8868;&#x8FBE;&#x5F0F;]</code>&#x6210;&#x7ACB;&#xFF0C;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;1]</code>&#x5426;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;2]</code>&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">if</span>([&#x8868;&#x8FBE;&#x5F0F;])             [&#x8BED;&#x53E5;<span class="hljs-number">1</span>]
+<span class="hljs-keyword">else</span>                   [&#x8BED;&#x53E5;<span class="hljs-number">2</span>]
+</code></pre>
+<pre><code>int x = 1;
+if(x)                 [&#x8BED;&#x53E5;1]
+else                 [&#x8BED;&#x53E5;2]
+</code></pre><p><strong>&#x5FAA;&#x73AF;</strong></p>
+<p><strong>1. for&#xFF1A;</strong>&#x6267;&#x884C;<code>[&#x521D;&#x59CB;&#x5316;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;<code>[&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x5982;&#x679C;&#x6210;&#x7ACB;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;]</code>&#x548C;<code>[&#x589E;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x7EE7;&#x7EED;&#x6267;&#x884C;<code>[&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6210;&#x7ACB;&#x5219;&#x7ED3;&#x675F;&#x5FAA;&#x73AF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">for</span>([&#x521D;&#x59CB;&#x5316;&#x8868;&#x8FBE;&#x5F0F;]; [&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;]; [&#x589E;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;])    [&#x8BED;&#x53E5;]
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>; i&lt;=<span class="hljs-number">2</span>; i++)
+    System.out.print(i+<span class="hljs-number">1</span>);
+<span class="hljs-comment">//=&gt;123</span>
+</code></pre>
+<p><strong>2. while&#xFF1A;</strong>&#x6267;&#x884C;<code>[&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x5982;&#x679C;&#x6EE1;&#x8DB3;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;]</code>&#x3002;</p>
+<pre><code>while([&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;])         [&#x8BED;&#x53E5;]
+</code></pre><pre><code class="lang-java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">while</span>(i&lt;=<span class="hljs-number">3</span>){
+    System.out.print(i);
+    i+=<span class="hljs-number">1</span>;
+}
+<span class="hljs-comment">//=&gt;123</span>
+</code></pre>
+<p><strong>3. do-while&#xFF1A;</strong>&#x9996;&#x5148;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;]</code>&#xFF0C;&#x7136;&#x540E;&#x6267;&#x884C;<code>[&#x6761;&#x4EF6;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;]</code>&#xFF0C;&#x5982;&#x679C;&#x6210;&#x7ACB;&#x5219;&#x91CD;&#x590D;&#x4E0A;&#x8FF0;&#x64CD;&#x4F5C;&#xFF0C;&#x5426;&#x5219;&#x7ED3;&#x675F;&#x5FAA;&#x73AF;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>;
+do{
+    System.out.println(i);
+    i++;
+}<span class="hljs-keyword">while</span>(i&lt;=<span class="hljs-number">3</span>);
+<span class="hljs-comment">//=&gt;123</span>
+</code></pre>
+<p><strong>&#x5206;&#x652F;</strong></p>
+<p><code>switch</code>&#x548C;<code>if-else if</code>&#x529F;&#x80FD;&#x7C7B;&#x4F3C;&#xFF0C;&#x90E8;&#x5206;&#x8BED;&#x8A00;&#x5BF9;switch&#x8BED;&#x53E5;&#x6709;&#x4F18;&#x5316;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x8DEF;&#x5206;&#x652F;&#x65F6;switch&#x6548;&#x7387;&#x76F8;&#x5BF9;&#x9AD8;&#x4E9B;&#xFF0C;&#x4E0D;&#x8FC7;<code>switch</code>&#x8BED;&#x53E5;&#x4E0D;&#x6613;&#x7EF4;&#x62A4;&#xFF0C;&#x6240;&#x4EE5;&#x5904;&#x4E8E;&#x8FD9;&#x65B9;&#x9762;&#x8003;&#x8651;&#x53EF;&#x4EE5;&#x7528;<code>if-else if</code>&#x8BED;&#x53E5;&#x66FF;&#x6362;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;<code>switch</code>&#x548C;<code>if-else if</code>&#x53EF;&#x4EE5;&#x76F8;&#x4E92;&#x66FF;&#x6362;&#xFF0C;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4E0D;&#x53EF;&#x5217;&#x4E3E;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x53EA;&#x80FD;&#x7528;<code>if-else if</code>&#x3002;</p>
+<p><strong>1. switch&#xFF1A;</strong>&#x5982;&#x679C;&#x4F9D;&#x6B21;&#x5224;&#x65AD;<code>[&#x53D8;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;]</code>&#x548C;<code>[&#x5E38;&#x91CF;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;*]</code>&#x662F;&#x5426;&#x76F8;&#x7B49;&#xFF0C;&#x5982;&#x679C;&#x76F8;&#x7B49;&#x5219;&#x6267;&#x884C;<code>[&#x8BED;&#x53E5;*]</code>&#xFF0C;&#x5426;&#x5219;&#x6267;&#x884C;<code>[&#x9ED8;&#x8BA4;&#x5206;&#x652F;&#x8BED;&#x53E5;]</code>.</p>
+<pre><code class="lang-java"><span class="hljs-keyword">switch</span>([&#x53D8;&#x91CF;&#x8868;&#x8FBE;&#x5F0F;]){
+    <span class="hljs-keyword">case</span> [&#x5E38;&#x91CF;&#x5224;&#x65AD;&#x8868;&#x8FBE;&#x5F0F;*]
+        [&#x8BED;&#x53E5;*]
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>
+        [&#x9ED8;&#x8BA4;&#x5206;&#x652F;&#x8BED;&#x53E5;]
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+<span class="hljs-keyword">switch</span>(a){
+    <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>:
+        System.out.println(<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>:
+        System.out.println(<span class="hljs-number">2</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>:
+        System.out.println(<span class="hljs-number">3</span>);
+        <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">default</span>:
+        System.out.println(<span class="hljs-string">&quot;other number&quot;</span>);
+        <span class="hljs-keyword">break</span>;
+}
+<span class="hljs-comment">//=&gt;1</span>
+</code></pre>
+<p><strong>&#x5F02;&#x5E38;</strong></p>
+<p>&#x5F02;&#x5E38;&#x5904;&#x7406;&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x4E2D;&#x5BF9;&#x7528;&#x6765;&#x5BF9;&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x8F93;&#x5165;&#x8FDB;&#x884C;&#x63A7;&#x5236;&#x548C;&#x63D0;&#x793A;&#xFF0C;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x5D29;&#x6E83;&#x3002;</p>
+<p><strong>1 try-catch-finally&#xFF1A;</strong> &#x6267;&#x884C;<code>[&#x5F02;&#x5E38;&#x8BED;&#x53E5;]</code>&#x5982;&#x679C;&#x53D1;&#x73B0;&#x5F02;&#x5E38;&#x5219;&#x6267;&#x884C;<code>[&#x5F02;&#x5E38;&#x5904;&#x7406;&#x8BED;&#x53E5;]</code>&#xFF0C;&#x6700;&#x540E;&#x65E0;&#x8BBA;&#x662F;&#x5426;&#x5B58;&#x5728;&#x5F02;&#x5E38;&#x90FD;&#x4F1A;&#x6267;&#x884C;<code>[&#x7EC8;&#x6B62;&#x8BED;&#x53E5;]</code>&#x3002;</p>
+<pre><code>try { [&#x5F02;&#x5E38;&#x8BED;&#x53E5;] }
+catch{ [&#x5F02;&#x5E38;&#x5904;&#x7406;&#x8BED;&#x53E5;] }
+finally{ [&#x7EC8;&#x6B62;&#x8BED;&#x53E5;] }
+</code></pre><pre><code class="lang-java"><span class="hljs-keyword">try</span>{
+    <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>/<span class="hljs-number">0</span>;
+}<span class="hljs-keyword">catch</span>(Exception e){
+    System.out.println(e.toString());
+    <span class="hljs-comment">//java.lang.ArithmeticException: / by zero</span>
+}<span class="hljs-keyword">finally</span>{
+    System.out.println(<span class="hljs-string">&quot;finally&quot;</span>);
+    <span class="hljs-comment">//finally</span>
+}
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter4/1_intro.html" class="navigation navigation-prev " aria-label="Previous page: 4.1 编程范式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter4/3_declarative.html" class="navigation navigation-next " aria-label="Next page: 4.3 命令式编程"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

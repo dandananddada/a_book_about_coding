@@ -1,0 +1,1089 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>3.2 面向对象特点 | 前言</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+        <link rel="stylesheet" href="../styles/website.css">
+    
+
+        
+    
+    
+    <link rel="next" href="../chapter5/3_pattern.html" />
+    
+    
+    <link rel="prev" href="../chapter5/1_mode.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.2"
+        data-chapter-title="3.2 面向对象特点"
+        data-filepath="chapter5/2_features.md"
+        data-basepath=".."
+        data-revision="Sun Aug 28 2016 21:54:52 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="0.1" data-path="temp.html">
+            
+                
+                    <a href="../temp.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>0.1.</b>
+                        
+                        temp
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="0.2" >
+            
+            <span><b>0.2.</b> 第四章 函数式</span>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="chapter1.html">
+            
+                
+                    <a href="../chapter1.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        第一章 编程语言只有两种
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="chapter1/1_type.html">
+            
+                
+                    <a href="../chapter1/1_type.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        1.1 语言类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="chapter1/2_strong_and_weak.html">
+            
+                
+                    <a href="../chapter1/2_strong_and_weak.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        1.2 强类型与弱类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="chapter1/3_static_and_dynamic.html">
+            
+                
+                    <a href="../chapter1/3_static_and_dynamic.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        1.3 静态类型和动态类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="chapter1/4_compiled_and_interpreted.html">
+            
+                
+                    <a href="../chapter1/4_compiled_and_interpreted.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        1.4 编译型与解释型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="chapter1/5_imperative _and_declarative .html">
+            
+                
+                    <a href="../chapter1/5_imperative _and_declarative .html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        1.5 命令型和声明型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="chapter2.html">
+            
+                
+                    <a href="../chapter2.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        第二章 值类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="chapter2/1_primitive_and_reference.html">
+            
+                
+                    <a href="../chapter2/1_primitive_and_reference.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        2.1 基础类型和引用类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="chapter2/2_boolean.html">
+            
+                
+                    <a href="../chapter2/2_boolean.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        2.2 布尔类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="chapter2/3_number.html">
+            
+                
+                    <a href="../chapter2/3_number.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        2.3 数字类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="chapter2/4_string.html">
+            
+                
+                    <a href="../chapter2/4_string.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        2.4 字符类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="chapter2/5_atom.html">
+            
+                
+                    <a href="../chapter2/5_atom.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        2.5 原子类型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="chapter3.html">
+            
+                
+                    <a href="../chapter3.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        第三章 引用类型
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="chapter3/1_collection.html">
+            
+                
+                    <a href="../chapter3/1_collection.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        3.1 集合类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="chapter3/2_hash.html">
+            
+                
+                    <a href="../chapter3/2_hash.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        3.2 散列类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="chapter3/3_function.html">
+            
+                
+                    <a href="../chapter3/3_function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        3.3 函数类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="chapter3/4_class.html">
+            
+                
+                    <a href="../chapter3/4_class.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        3.4 类类型
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="chapter4.html">
+            
+                
+                    <a href="../chapter4.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        第四章 编程范式
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="chapter4/1_intro.html">
+            
+                
+                    <a href="../chapter4/1_intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        4.1 编程范式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="chapter4/2_impreative.html">
+            
+                
+                    <a href="../chapter4/2_impreative.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        4.2 声明式编程
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="chapter4/3_declarative.html">
+            
+                
+                    <a href="../chapter4/3_declarative.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        4.3 命令式编程
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="chapter5.html">
+            
+            <span><b>5.</b> 第五章 是时候谈谈面向对象编程了</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="chapter5/1_mode.html">
+            
+                
+                    <a href="../chapter5/1_mode.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        3.1 模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="chapter5/2_features.html">
+            
+                
+                    <a href="../chapter5/2_features.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        3.2 面向对象特点
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="chapter5/3_pattern.html">
+            
+                
+                    <a href="../chapter5/3_pattern.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        3.3 设计模式
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="chapter6.html">
+            
+            <span><b>6.</b> 第六章 函数式</span>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="chapter6/feature.html">
+            
+                
+                    <a href="../chapter6/feature.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="chapter6/higher_order_function.html">
+            
+                
+                    <a href="../chapter6/higher_order_function.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        高阶函数
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="chapter6/intro.html">
+            
+                
+                    <a href="../chapter6/intro.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        更多概念
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >前言</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x70B9;">&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x7279;&#x70B9;</h1>
+<h4 id="&#x591A;&#x6001;">&#x591A;&#x6001;</h4>
+<p>&#x591A;&#x6001;&#x6307;&#x7684;&#x662F;&#x76F8;&#x540C;&#x7684;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x4E0D;&#x540C;&#x7684;&#x5BF9;&#x8C61;&#x4F1A;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;&#x52A8;&#x4F5C;&#xFF0C;&#x6BD4;&#x5982;Animal&#x7C7B;&#x4E0B;&#x6709;duck&#x5BF9;&#x8C61;&#x548C;dog&#x7C7B;&#x578B;&#xFF0C;&#x6211;&#x4EEC;&#x7ED9;&#x4ED6;&#x4EEC;&#x4E00;&#x4E2A;run&#x7684;&#x6D88;&#x606F;&#x6765;&#x8BA9;&#x4ED6;&#x4EEC;&#x8DD1;&#xFF0C;&#x8FD9;&#x65F6;&#x9E2D;&#x5B50;&#x548C;&#x72D7;&#x6240;&#x8868;&#x73B0;&#x51FA;&#x7684;&#x52A8;&#x4F5C;&#x5C31;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x3002;</p>
+<p><strong> &#x51FD;&#x6570;&#x591A;&#x6001;&#xFF08;Ad hoc polymorphism&#xFF09;</strong></p>
+<p>&#x51FD;&#x6570;&#x591A;&#x6001;&#x5141;&#x8BB8;&#x4F20;&#x5165;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x4E14;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x4E5F;&#x4E0D;&#x540C;&#x3002;&#x5E38;&#x89C1;&#x7684;&#x6BD4;&#x5982;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x548C;&#x64CD;&#x4F5C;&#x91CD;&#x8F7D;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-comment">/*  &#x51FD;&#x6570;&#x91CD;&#x8F7D;&#xFF0C;&#x6839;&#x636E;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#xFF0C;add&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x4E0D;&#x540C;.  */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>{
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span>  <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> b)</span></span>{
+    <span class="hljs-keyword">return</span> a + b;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span>  <span class="hljs-keyword">static</span> String <span class="hljs-title">add</span><span class="hljs-params">(String a, String b)</span></span>{
+    <span class="hljs-keyword">return</span> a + b;
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    <span class="hljs-keyword">int</span> result1 = Demo.add(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>);
+    String result2 = Demo.add(<span class="hljs-string">&quot;String &quot;</span>, <span class="hljs-string">&quot;combined!&quot;</span>);
+    System.out.println(result1);    <span class="hljs-comment">//=&gt;3</span>
+    System.out.println(result2);    <span class="hljs-comment">//=&gt;String combined!</span>
+  }
+</code></pre>
+<p>Java&#x672C;&#x8EAB;&#x4E0D;&#x63D0;&#x4F9B;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#xFF0C;&#x800C;Ruby&#x7684;&#x8FD0;&#x7B97;&#x672C;&#x8EAB;&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x540D;&#x4E3A;&#x64CD;&#x4F5C;&#x7B26;&#x7684;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x6240;&#x4EE5;Ruby&#x7684;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-comment">#ruby</span>
+<span class="hljs-comment"># &#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;&#xFF0C;&#x901A;&#x8FC7;&#x5B9A;&#x4E49;+&#x65B9;&#x6CD5;&#x5B9E;&#x73B0;&#x8FD0;&#x7B97;&#x7B26;&#x91CD;&#x8F7D;.</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Demo</span></span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span> <span class="hljs-title">a</span></span>
+   <span class="hljs-variable">@a</span> = a
+ <span class="hljs-keyword">end</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">+</span><span class="hljs-params">(b)</span></span>
+    <span class="hljs-string">&quot;plus b equal to&quot;</span> + (<span class="hljs-variable">@a</span>+b).to_s
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+a = <span class="hljs-constant">Demo</span>.new(<span class="hljs-number">2</span>)
+puts a + <span class="hljs-number">2</span>
+</code></pre>
+<p><strong> &#x53D8;&#x91CF;&#x591A;&#x6001;&#xFF08;parametric polymorphism&#xFF09;</strong></p>
+<p>&#x53C2;&#x6570;&#x591A;&#x6001;&#x5141;&#x8BB8;&#x51FD;&#x6570;&#x6216;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x91C7;&#x7528;&#x540C;&#x4E00;&#x5B9A;&#x4E49;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x53D8;&#x91CF;&#x591A;&#x6001;&#x5728;&#x4FDD;&#x8BC1;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x5B89;&#x5168;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x4F7F;&#x8BED;&#x8A00;&#x7684;&#x8868;&#x8FF0;&#x66F4;&#x52A0;&#x6E05;&#x6670;&#x7B80;&#x660E;&#x3002;</p>
+<p>&#x5728;Java&#x8BED;&#x8A00;&#x4E2D;&#x901A;&#x8FC7;&#x6CDB;&#x578B;&#x6765;&#x5B9E;&#x73B0;&#x53D8;&#x91CF;&#x591A;&#x6001;&#xFF0C;&#x5F53;&#x7136;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x9002;&#x914D;&#x53C2;&#x6570;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x4E5F;&#x80FD;&#x4F7F;&#x540C;&#x4E00;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x7684;&#x4E0D;&#x540C;&#x8868;&#x73B0;&#x4E3A;&#x8FD4;&#x56DE;&#x4E0D;&#x540C;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/*  Java&#x6CDB;&#x578B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F7F;&#x7528;  */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Tree</span>&lt;<span class="hljs-title">T</span>&gt;</span>{
+  <span class="hljs-keyword">private</span> T value;
+  <span class="hljs-keyword">private</span> Tree&lt;T&gt; left;
+  <span class="hljs-keyword">private</span> Tree&lt;T&gt; right;
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">replaceAll</span><span class="hljs-params">(T value)</span></span>{
+    <span class="hljs-keyword">this</span>.value = value;
+    <span class="hljs-keyword">if</span>(left != <span class="hljs-keyword">null</span>)   left.replaceAll(value);
+    <span class="hljs-keyword">if</span>(right != <span class="hljs-keyword">null</span>)  right.replaceAll(value);
+  }
+}
+</code></pre>
+<p><strong>&#x5B50;&#x7C7B;&#x591A;&#x6001;&#xFF08;Subtyping&#xFF09;</strong></p>
+<p>&#x4E00;&#x4E9B;&#x8BED;&#x8A00;&#x63D0;&#x4F9B;&#x4E86;&#x5B50;&#x7C7B;&#x591A;&#x6001;&#x7684;&#x6982;&#x5FF5;&#xFF0C;&#x5B50;&#x7C7B;&#x591A;&#x6001;&#x5141;&#x8BB8;&#x4F60;&#x5728;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019;&#x4F7F;&#x7528;&#x7236;&#x7C7B;&#x505A;&#x5F62;&#x53C2;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x7684;&#x5B9E;&#x53C2;&#x53EF;&#x4EE5;&#x662F;&#x5176;&#x5B50;&#x7C7B;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//Main.java</span>
+<span class="hljs-comment">/*  &#x5B50;&#x7C7B;&#x591A;&#x6001;  */</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span> </span>{
+  <span class="hljs-function"><span class="hljs-keyword">abstract</span> String <span class="hljs-title">run</span><span class="hljs-params">()</span></span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span> </span>{
+  <span class="hljs-function">String <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;run with four legs&quot;</span>;
+  }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Pet</span> </span>{
+  <span class="hljs-function">String <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;run with two legs&quot;</span>;
+  }
+}
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">petRun</span><span class="hljs-params">(Pet p)</span></span>{
+    System.out.println(p.run());
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    Main.petRun(<span class="hljs-keyword">new</span> Dog());     <span class="hljs-comment">//=&gt;run with four legs</span>
+    Main.petRun(<span class="hljs-keyword">new</span> Duck());    <span class="hljs-comment">//=&gt;run with two legs</span>
+  }
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x7684;Java&#x4EE3;&#x7801;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;petRun&#x65B9;&#x6CD5;&#xFF0C;&#x5F62;&#x53C2;&#x4E3A;Pet&#x7C7B;&#xFF0C;&#x4F46;&#x5B9E;&#x9645;&#x8C03;&#x7528;&#x65F6;&#x4F20;&#x9012;&#x7684;&#x4E3A;Pet&#x7684;&#x5B50;&#x7C7B;Dog&#x548C;Duck&#xFF0C;&#x8FD9;&#x65F6;p.run&#x5219;&#x5206;&#x522B;&#x8C03;&#x7528;&#x4E86;&#x5B50;&#x7C7B;&#x7684;run&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E2A;&#x6CDB;&#x578B;&#x548C;&#x5B50;&#x7C7B;&#x591A;&#x6001;&#x7EC4;&#x5408;&#x4F7F;&#x7528;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//Main.java</span>
+
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Runner</span></span>{  <span class="hljs-function">String <span class="hljs-title">run</span><span class="hljs-params">()</span></span>; };
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Pet</span>&lt;<span class="hljs-title">T</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Runner</span>&gt;</span>{
+  <span class="hljs-keyword">private</span> T pet;
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Pet</span><span class="hljs-params">(T pet)</span></span>{
+    <span class="hljs-keyword">this</span>.pet = pet;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">run</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> pet.run();
+  }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runner</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">run</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;run with four legs&quot;</span>;
+  }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Runner</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">run</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;run with two legs&quot;</span>;
+  }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    Pet&lt;Dog&gt; dog = <span class="hljs-keyword">new</span> Pet&lt;Dog&gt;(<span class="hljs-keyword">new</span> Dog());
+    Pet&lt;Duck&gt; duck = <span class="hljs-keyword">new</span> Pet&lt;Duck&gt;(<span class="hljs-keyword">new</span> Duck());
+    System.out.println(dog.run());     <span class="hljs-comment">//=&gt;run with four legs</span>
+    System.out.println(duck.run());    <span class="hljs-comment">//=&gt;run with two legs   </span>
+  }
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5148;&#x8FC7;&#x4E0B;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#x7684;&#x903B;&#x8F91;&#x3002;</p>
+<ol>
+<li>&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x4E86;&#x4E00;&#x4E2A;Runner&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x53E3;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x8DD1;&#x7684;&#x884C;&#x4E3A;&#x3002;</li>
+<li>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;Dog&#x7C7B;&#x548C;Duck&#x7C7B;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;Runner&#x63A5;&#x53E3;&#x7684;run&#x884C;&#x4E3A;&#x3002;</li>
+<li>&#x63A5;&#x7740;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;Pet&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x9700;&#x8981;&#x4F20;&#x9012;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;Runner&#x63A5;&#x53E3;&#x7684;&#x6CDB;&#x578B;&#xFF08;&#x7C7B;&#xFF09;&#x3002;</li>
+<li>&#x5728;Pet&#x7C7B;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x8DD1;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x8DD1;&#x65B9;&#x6CD5;&#x5B9E;&#x9645;&#x4E0A;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5B9E;&#x73B0;&#x4E86;Runner&#x63A5;&#x53E3;&#x7684;T&#x7684;run&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x6267;&#x884C;&#x4E3B;&#x51FD;&#x6570;&#xFF0C;&#x58F0;&#x660E;&#x4E86;&#x4E24;&#x4E2A;Pet&#x7C7B;&#xFF0C;&#x4E00;&#x4E2A;&#x4F20;&#x5165;&#x7684;T&#x662F;Dog&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x662F;Duck&#xFF0C;&#x5206;&#x522B;&#x8C03;&#x7528;&#x8FD9;&#x4E24;&#x4E2A;Pet&#x7684;run&#x65B9;&#x6CD5;&#x3002;</li>
+</ol>
+<h4 id="&#x5C01;&#x88C5;">&#x5C01;&#x88C5;</h4>
+<p>&#x5C01;&#x88C5;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x79CD;&#x7ED3;&#x6784;&#xFF08;&#x8FD9;&#x91CC;&#x901A;&#x5E38;&#x4E3A;&#x7C7B;&#xFF09;&#x5C06;&#x6570;&#x636E;&#x548C;&#x51FD;&#x6570;&#x5305;&#x88C5;&#x8D77;&#x6765;&#xFF0C;&#x901A;&#x5E38;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x70B9;&#x7528;&#x6CD5;&#xFF1A;</p>
+<ol>
+<li>&#x5C06;&#x6570;&#x636E;&#x3001;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x9690;&#x85CF;&#xFF0C;&#x7B80;&#x5316;&#x4F7F;&#x7528;&#x3002;</li>
+<li>&#x9632;&#x6B62;&#x5916;&#x754C;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x5305;&#x88C5;&#x5185;&#x7684;&#x6570;&#x636E;&#x3001;&#x51FD;&#x6570;&#x3002;</li>
+</ol>
+<p>&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x8FD9;&#x4E24;&#x70B9;&#x90FD;&#x662F;&#x9488;&#x5BF9;&#x6570;&#x636E;&#x800C;&#x63D0;&#x51FA;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x65B9;&#x4FBF;&#x6570;&#x636E;&#x7684;&#x4FEE;&#x6539;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x4FEE;&#x6539;&#x7684;&#x5B89;&#x5168;&#x6027;&#x3002;</p>
+<p><strong>&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#xFF08;Access Level&#xFF09;</strong></p>
+<p>&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x7528;&#x6765;&#x63A7;&#x5236;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x6216;&#x65B9;&#x6CD5;&#x80FD;&#x5426;&#x88AB;&#x5176;&#x4ED6;&#x7C7B;&#x8BBF;&#x95EE;&#xFF0C;&#x4EE5;Java&#x7684;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x4E3A;&#x4F8B;&#x6765;&#x8BF4;&#x660E;&#x5305;&#x62EC;&#xFF1A;private&#x3001;protected&#x3001;public&#x548C;&#x4E0D;&#x5B9A;&#x4E49;(no modifier)&#x8FD9;&#x56DB;&#x79CD;&#xFF0C;&#x5176;&#x5BF9;&#x5E94;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x5982;&#x4E0B;&#x8868;(Y&#x8868;&#x793A;&#x53EF;&#x8BBF;&#x95EE;&#xFF0C;N&#x8868;&#x793A;&#x4E0D;&#x53EF;)</p>
+<table>
+<thead>
+<tr>
+<th>&#x4FEE;&#x9970;&#x7B26;/&#x573A;&#x666F;</th>
+<th>&#x5F53;&#x524D;&#x7C7B;</th>
+<th>&#x5F53;&#x524D;&#x5305;</th>
+<th>&#x7236;&#x7C7B;</th>
+<th>&#x5168;&#x5C40;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>Y</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+</tr>
+<tr>
+<td>no modifier</td>
+<td>Y</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+</tr>
+<tr>
+<td>private</td>
+<td>Y</td>
+<td>N</td>
+<td>N</td>
+<td>N</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E5F;&#x5C31;&#x662F;&#x5047;&#x8BBE;A&#x662F;B&#x7684;&#x7236;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x5982;&#x679C;A&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;a&#x662F;&#x7528;private&#x4FEE;&#x9970;&#x7684;&#x8BDD;&#x90A3;&#x4E48;B&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x6CA1;&#x6709;b&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  <span class="hljs-keyword">protected</span> String a = <span class="hljs-string">&quot;protected prop can access subclass&quot;</span>;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> b = <span class="hljs-string">&quot;private prop can not access in subclass&quot;</span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>{}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    B b = <span class="hljs-keyword">new</span> B();
+    System.out.println(b.b);    <span class="hljs-comment">//=&gt;error: b has private access in A</span>
+  }
+}
+</code></pre>
+<p>&#x5982;&#x679C;&#x4F60;&#x8FD8;&#x8BB0;&#x5F97;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x6A21;&#x5F0F;&#x8BF4;&#x660E;&#x4E2D;&#x9759;&#x6001;&#x7C7B;&#x6A21;&#x5F0F;&#x4E0B;&#x6709;&#x4E00;&#x4E2A;&#x5F0A;&#x7AEF;&#x5C31;&#x662F;&#xFF1A;&#x5B50;&#x7C7B;&#x53EA;&#x80FD;&#x7EE7;&#x627F;&#x7236;&#x7C7B;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#xFF0C;&#x4E0D;&#x80FD;&#x52A8;&#x6001;&#x9009;&#x62E9;&#x3002;&#x5F53;&#x65F6;&#x6211;&#x63D0;&#x5230;&#x4E86;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#xFF0C;&#x50CF;Java&#x548C;Ruby&#x90FD;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x673A;&#x5236;&#x89E3;&#x51B3;&#x4E86;&#x7EE7;&#x627F;&#x5173;&#x7CFB;&#x5C5E;&#x6027;&#x5197;&#x4F59;&#x7684;&#x95EE;&#x9898;&#x3002;&#x56E0;&#x6B64;&#x8BBF;&#x95EE;&#x7EA7;&#x522B;&#x662F;&#x9759;&#x6001;&#x6A21;&#x5F0F;&#x4E0B;&#x7528;&#x6765;&#x5F25;&#x8865;&#x7F3A;&#x70B9;&#x7684;&#x4E00;&#x4E2A;&#x8BBE;&#x8BA1;&#xFF0C;&#x800C;&#x5728;&#x57FA;&#x4E8E;&#x539F;&#x578B;&#x7684;&#x6A21;&#x5F0F;&#xFF08;&#x6BD4;&#x5982;JavaScript&#xFF09;&#x4E0B;&#x6CA1;&#x6709;&#x63D0;&#x51FA;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x6982;&#x5FF5;&#x4E5F;&#x662F;&#x6B63;&#x5E38;&#x7684;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x5982;&#x679C;&#x4F60;&#x60F3;&#x5728;JavaScript&#x91CC;&#x5B9A;&#x4E49;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#xFF0C;&#x53EA;&#x8981;&#x8BA4;&#x4E3A;&#x89C4;&#x5B9A;&#x597D;&#x4E00;&#x4E2A;&#x89C4;&#x5219;&#xFF0C;&#x6BD4;&#x5982;&#x901A;&#x7528;&#x7684;&#x7528;<code>_</code>&#x4E3A;&#x5F00;&#x5934;&#x547D;&#x540D;&#x7684;&#x53D8;&#x91CF;&#x3002;&#x4FDD;&#x8BC1;&#x5728;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x53D8;&#x91CF;&#x65F6;&#x907F;&#x514D;&#x8BBF;&#x95EE;&#x8FD9;&#x4E9B;&#x4EE5;<code>_</code>&#x4E3A;&#x5F00;&#x5934;&#x7684;&#x53D8;&#x91CF;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;</p>
+<p>&#x7EE7;&#x7EED;&#x521A;&#x624D;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x5C31;&#x50CF;&#x7528;B&#x6765;&#x8BBF;&#x95EE;A&#x7684;&#x79C1;&#x6709;&#x5C5E;&#x6027;b&#xFF0C;&#x90A3;&#x4E48;&#x4F60;&#x53EF;&#x4EE5;&#x5728;A&#x4E2D;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;public/protected&#x65B9;&#x6CD5;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;b&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  <span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> a = <span class="hljs-number">1</span>;
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;
+  <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getB</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.b;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">B</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">A</span> </span>{}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    B b = <span class="hljs-keyword">new</span> B();
+    System.out.println(b.getB());    <span class="hljs-comment">//=&gt;2</span>
+  }
+}
+</code></pre>
+<p>&#x6216;&#x8005;&#x901A;&#x8FC7;Java&#x7684;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x83B7;&#x53D6;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-keyword">import</span> java.lang.reflect.*;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span> </span>{
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> b = <span class="hljs-number">2</span>;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String agrs[])</span><span class="hljs-keyword">throws</span> Throwable </span>{
+    A a = <span class="hljs-keyword">new</span> A();
+    Field field = a.getClass().getDeclaredField(<span class="hljs-string">&quot;b&quot;</span>);
+    field.setAccessible(<span class="hljs-keyword">true</span>);
+    Object b = (<span class="hljs-keyword">int</span>)field.get(a);
+    System.out.println(b);    <span class="hljs-comment">//=&gt;2</span>
+  }
+}
+</code></pre>
+<p>&#x50CF;Python&#x548C;Ruby&#x63D0;&#x4F9B;&#x4E86;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x8BED;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-comment">#ruby</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">A</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span></span>
+    <span class="hljs-variable">@a</span> = <span class="hljs-number">10</span>
+  <span class="hljs-keyword">end</span>
+
+  private
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">private_method</span><span class="hljs-params">(b)</span></span>
+    <span class="hljs-keyword">return</span> <span class="hljs-variable">@a</span> + b
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+a = <span class="hljs-constant">A</span>.new
+puts a.send(<span class="hljs-symbol">:private_method</span>, <span class="hljs-number">20</span>)     <span class="hljs-comment">#=&gt;30</span>
+puts a.instance_variable_get(<span class="hljs-symbol">:</span><span class="hljs-variable">@a</span>)    <span class="hljs-comment">#=&gt;10</span>
+</code></pre>
+<h4 id="&#x591A;&#x91CD;&#x7EE7;&#x627F;">&#x591A;&#x91CD;&#x7EE7;&#x627F;</h4>
+<p>&#x4E00;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x81EA;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x4E5F;&#x53EF;&#x4EE5;&#x7EE7;&#x627F;&#x81EA;&#x591A;&#x4E2A;&#x7236;&#x7C7B;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x3002;&#x4F46;&#x662F;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x5B58;&#x5728;&#x5F88;&#x591A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6700;&#x5178;&#x578B;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x83F1;&#x5F62;&#x7EE7;&#x627F;&#x95EE;&#x9898;&#xFF08;diamond problem&#xFF09;&#x3002;</p>
+<p><img src="images/diamond_problem.png" alt="&#x83F1;&#x5F62;&#x7EE7;&#x627F;&#x95EE;&#x9898;">
+&#x5982;&#x56FE;B&#x3001;C&#x90FD;&#x7EE7;&#x627F;&#x81EA;A&#xFF0C;&#x5E76;&#x4E14;&#x91CD;&#x5199;&#x4E86;A&#x7684;metho&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x800C;D&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x81EA;B&#x548C;C&#xFF0C;D&#x5374;&#x6CA1;&#x6709;&#x91CD;&#x5199;method&#x65B9;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x65F6;D&#x7684;method&#x65B9;&#x6CD5;&#x662F;&#x4EE5;B&#x4E3A;&#x51C6;&#xFF0C;&#x8FD8;&#x662F;&#x4EE5;C&#x4E3A;&#x51C6;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x83F1;&#x5F62;&#x7EE7;&#x627F;&#x95EE;&#x9898;&#x3002;</p>
+<p>&#x4F46;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x7279;&#x6027;&#x53C8;&#x662F;&#x4E0D;&#x53EF;&#x6216;&#x7F3A;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;&#x662F;&#x4EE5;&#x94C5;&#x7B14;&#x4E3A;&#x4F8B;&#xFF0C;&#x5B83;&#x5373;&#x5C5E;&#x4E8E;&#x6587;&#x5177;&#xFF0C;&#x53C8;&#x662F;&#x6728;&#x5236;&#x54C1;&#xFF0C;&#x90A3;&#x4E48;&#x5B83;&#x8981;&#x6EE1;&#x8DB3;&#x8FD9;&#x4E24;&#x70B9;&#xFF0C;&#x5C31;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x6587;&#x5177;&#x7C7B;&#x548C;&#x6728;&#x5236;&#x54C1;&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x5DF2;&#x7ECF;&#x8BF4;&#x8FC7;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x662F;&#x5B58;&#x5728;&#x7F3A;&#x9677;&#x7684;&#x3002;&#x90A3;&#x4E48;&#x8BE5;&#x5982;&#x4F55;&#x5904;&#x7406;&#x8FD9;&#x79CD;&#x9700;&#x6C42;&#x5462;&#xFF1F;</p>
+<p>&#x4E0D;&#x540C;&#x7684;&#x8BED;&#x8A00;&#x63D0;&#x51FA;&#x4E86;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6848;&#x3002;</p>
+<p><strong>&#x6DF7;&#x5408;&#xFF08;Mixin&#xFF09;</strong></p>
+<p>Mixin&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x4EE3;&#x7801;&#x590D;&#x7528;&#x7684;&#x7B56;&#x7565;&#xFF0C;&#x4EFB;&#x4F55;&#x5BF9;&#x8C61;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Mixin&#x62D3;&#x5C55;&#x65B9;&#x6CD5;&#xFF0C;&#x540C;&#x7C7B;&#x7684;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x4E00;&#x6837;&#xFF0C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x5F15;&#x7528;&#x591A;&#x4E2A;Mixin&#x3002;</p>
+<p>Ruby&#x5C31;&#x662F;&#x91C7;&#x7528;Mixin&#x7684;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Action</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">jump</span></span>
+    <span class="hljs-string">&quot;jump with legs&quot;</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">module</span> <span class="hljs-title">Sound</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">say</span></span>
+    <span class="hljs-string">&quot;say <span class="hljs-subst">#{<span class="hljs-variable">@sound</span>}</span>&quot;</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">initialize</span></span>
+    <span class="hljs-variable">@sound</span> = <span class="hljs-string">&quot;mew&quot;</span>
+  <span class="hljs-keyword">end</span>
+  <span class="hljs-keyword">include</span> <span class="hljs-constant">Action</span>
+  <span class="hljs-keyword">include</span> <span class="hljs-constant">Sound</span>
+<span class="hljs-keyword">end</span>
+
+cat = <span class="hljs-constant">Cat</span>.new
+puts cat.jump    <span class="hljs-comment">#=&gt;jump with legs</span>
+puts cat.say     <span class="hljs-comment">#=&gt;say bark</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E24;&#x4E2A;Mixin&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x52A8;&#x4F5C;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;&#x53EB;&#x58F0;&#x3002;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x5728;&#x5B9A;&#x4E49;&#x7C7B;&#x662F;&#x901A;&#x8FC7;<code>include</code>&#x5173;&#x952E;&#x5B57;&#x5F15;&#x5165;Mixin&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4E2D;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x4E86;&#x3002;</p>
+<p>&#x6CE8;&#x610F;&#x5728;Ruby&#x4E2D;&#x5982;&#x679C;&#x7C7B;&#x4E2D;&#x6709;&#x548C;module&#xFF08;Mixin&#xFF09;&#x4E2D;&#x540C;&#x540D;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x4F53;&#x4E3A;&#x51C6;&#xFF0C;&#x5982;&#x679C;&#x591A;&#x4E2A;module&#x5B9A;&#x4E49;&#x4E86;&#x540C;&#x4E00;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x6700;&#x540E;&#x62D3;&#x5C55;&#xFF08;include&#xFF09;&#x7684;&#x90A3;&#x4E2A;&#x4E3A;&#x51C6;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x8BBE;&#x8BA1;&#x5C31;&#x907F;&#x514D;&#x4E86;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x4E2D;&#x83F1;&#x5F62;&#x7EE7;&#x627F;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p><strong>Trait</strong></p>
+<p>Trait&#x548C;Mixin&#x7C7B;&#x4F3C;&#x4E5F;&#x662F;&#x7528;&#x6765;&#x62D3;&#x5C55;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x53EA;&#x662F;Trait&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x540C;&#x65F6;&#x5982;&#x679C;&#x5F15;&#x7528;&#x7684;&#x4E24;&#x4E2A;Trait&#x5B58;&#x5728;&#x540C;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x90A3;&#x4E48;&#x5C06;&#x4E0D;&#x4F1A;&#x91C7;&#x53D6;&#x4EFB;&#x4F55;&#x7B56;&#x7565;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x800C;&#x4F1A;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x51B2;&#x7A81;&#x5F02;&#x5E38;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;Scala&#x4E2D;Trait&#x7684;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-scala"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span>
+</span><span class="hljs-class"><span class="hljs-keyword">trait</span> <span class="hljs-title">Nice</span>{</span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">greet</span>(</span>) = println(<span class="hljs-string">&quot;Hello&quot;</span>)
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Character</span> <span class="hljs-keyword"><span class="hljs-keyword">extends</span></span> <span class="hljs-title">Person</span> <span class="hljs-keyword"><span class="hljs-keyword">with</span></span> <span class="hljs-title">Nice</span>
+</span>
+<span class="hljs-function"><span class="hljs-keyword">val</span> <span class="hljs-title">american</span> =</span> <span class="hljs-keyword">new</span> <span class="hljs-type">Character</span>()
+american.greet    <span class="hljs-comment">//=&gt;Hello</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;&#x7236;&#x7C7B;Person&#x4EE5;&#x53CA;&#x4E00;&#x4E2A;Trait&#xFF0C;&#x7136;&#x540E;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;Character&#x7C7B;&#xFF0C;&#x7EE7;&#x627F;&#x81EA;Person&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;&#x4E86;Trait&#x62D3;&#x5C55;&#x3002;&#x8FD9;&#x6837;Character&#x5728;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#x65F6;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;Nice&#x7684;greet&#x65B9;&#x6CD5;&#x7684;&#x3002;</p>
+<p><strong>&#x63A5;&#x53E3;&#xFF08;Interface&#xFF09;</strong></p>
+<p>&#x63A5;&#x53E3;&#x548C;Mixin&#x3001;Trait&#x7C7B;&#x4F3C;&#xFF0C;&#x4E5F;&#x662F;&#x7528;&#x6765;&#x7ED9;&#x7C7B;&#x62D3;&#x5C55;&#x65B9;&#x6CD5;&#x7684;&#xFF0C;&#x4E0E;Mixin&#x3001;Trait&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x63A5;&#x53E3;&#x53EA;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x4E0D;&#x5B9E;&#x73B0;&#x3002;&#x63A5;&#x53E3;&#x662F;&#x5F3A;&#x5236;&#x62D3;&#x5C55;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#x5177;&#x4F53;&#x65B9;&#x6CD5;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Move</span></span>{
+  <span class="hljs-function">String <span class="hljs-title">jump</span><span class="hljs-params">()</span></span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Sound</span></span>{
+  <span class="hljs-function">String <span class="hljs-title">say</span><span class="hljs-params">()</span></span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Move</span>, <span class="hljs-title">Sound</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">jump</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;jump with legs&quot;</span>;
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">say</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;mew&quot;</span>;
+  }
+}
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span></span>{
+    Cat cat = <span class="hljs-keyword">new</span> Cat();
+    System.out.println(cat.jump());    <span class="hljs-comment">//=&gt;jump with legs</span>
+    System.out.println(cat.say());     <span class="hljs-comment">//=&gt;mew</span>
+  }
+}
+</code></pre>
+<p>&#x56E0;&#x4E3A;&#x63A5;&#x53E3;&#x89C4;&#x5B9A;&#x5B9E;&#x73B0;&#x7531;&#x7C7B;&#x5B8C;&#x6210;&#xFF0C;&#x6240;&#x4EE5;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x4E2D;&#x5B58;&#x5728;&#x540C;&#x540D;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x7C7B;&#x4E2D;&#x51FD;&#x6570;&#x7684;&#x5B9E;&#x73B0;&#x80AF;&#x5B9A;&#x662F;&#x552F;&#x4E00;&#x7684;&#x3002;</p>
+<p>&#x6CE8;&#x610F;Java&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x548C;&#x62BD;&#x8C61;&#x7C7B;&#x8FD8;&#x662F;&#x6709;&#x533A;&#x522B;&#x7684;&#xFF0C;&#x62BD;&#x8C61;&#x7C7B;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x548C;&#x63A5;&#x53E3;&#x662F;&#x7C7B;&#x4F3C;&#x7684;&#xFF0C; &#x5728;&#x62D3;&#x5C55;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x53EF;&#x4EE5;&#x7528;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x4EE3;&#x66FF;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x591A;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x573A;&#x666F;&#x4E0B;&#x62BD;&#x8C61;&#x7C7B;&#x662F;&#x65E0;&#x6CD5;&#x53D6;&#x4EE3;&#x7684;&#x3002;&#x6240;&#x4EE5;&#x63A5;&#x53E3;&#x4E3B;&#x8981;&#x5904;&#x7406;&#x7684;&#x95EE;&#x9898;&#x8FD8;&#x662F;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x3002;</p>
+<p><strong>&#x7EC4;&#x5408;&#xFF08;composition&#xFF09;</strong>
+&#x7EC4;&#x5408;&#x4E5F;&#x662F;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x7B80;&#x5355;&#x7684;&#x8BF4;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5C5E;&#x6027;&#x662F;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x8FD9;&#x6837;&#x8FD9;&#x4E2A;&#x7C7B;&#x4E2D;&#x5C31;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x4E86;&#xFF0C;&#x65B9;&#x4FBF;&#x7406;&#x89E3;&#x4F60;&#x53EF;&#x4EE5;&#x628A;&#x8FD9;&#x4E2A;&#x7C7B;&#x770B;&#x505A;&#x662F;&#x4E00;&#x4E2A;Mixins&#x3002;&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x79F0;&#x7EE7;&#x627F;&#x4E3A;<code>is a</code>&#xFF0C;&#x79F0;&#x7EC4;&#x5408;&#x4E3A;<code>has a</code>&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A;&#xFF1A;</p>
+<ol>
+<li>A&#x662F;B&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x7C7B;&#xFF0C;&#x90A3;&#x4E48;A&#x81EA;&#x7136;&#x662F;B&#xFF0C;&#x6240;&#x4EE5;<code>A is a B</code>&#x3002;</li>
+<li>A&#x901A;&#x8FC7;&#x7EC4;&#x5408;&#x5F15;&#x7528;&#x4E86;B&#xFF0C;&#x90A3;&#x4E48;A&#x4E2D;&#x6709;B&#xFF0C;&#x6240;&#x4EE5;<code>A has a B</code>&#x3002;</li>
+</ol>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Move</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">jump</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;jump by legs&quot;</span>;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Sound</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">say</span><span class="hljs-params">(String word)</span></span>{
+    <span class="hljs-keyword">return</span> word;
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span></span>{
+  String word;
+  Move move;
+  Sound sound;
+  Cat(){
+    <span class="hljs-keyword">this</span>.word = <span class="hljs-string">&quot;mew&quot;</span>;
+    <span class="hljs-keyword">this</span>.move = <span class="hljs-keyword">new</span> Move();
+    <span class="hljs-keyword">this</span>.sound = <span class="hljs-keyword">new</span> Sound();
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">jump</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.move.jump();
+  }
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">say</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.sound.say(<span class="hljs-keyword">this</span>.word);
+  }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String args[])</span>
+  </span>{
+    Cat cat = <span class="hljs-keyword">new</span> Cat();
+    System.out.println(cat.jump());
+    System.out.println(cat.say());
+  }
+}
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x6765;&#x770B;&#x4E0B;&#x4E0A;&#x9762;&#x8FD9;&#x6BB5;&#x4EE3;&#x7801;&#xFF0C;&#x8FD9;&#x6B21;&#x6211;&#x4EEC;&#x76F4;&#x63A5;&#x7528;class&#x6765;&#x5B9E;&#x73B0;&#x591A;&#x91CD;&#x7EE7;&#x627F;&#x62D3;&#x5C55;&#x3002;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;Move&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;jump&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x7136;&#x540E;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;Sound&#x7C7B;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;say&#x65B9;&#x6CD5;&#x3002;</li>
+<li>&#x5B9A;&#x4E49;Cat&#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x58F0;&#x660E;Move&#x7C7B;&#x3001;Sound&#x7C7B;&#x4F5C;&#x4E3A;&#x5C5E;&#x6027;&#x3002;</li>
+<li>&#x91CD;&#x5199;Cat&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5B9E;&#x4F8B;&#x5316;move&#x5BF9;&#x8C61;&#x548C;sound&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x5728;Cat&#x7C7B;&#x4E2D;&#x5B9A;&#x4E49;jump&#x65B9;&#x6CD5;&#x548C;say&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x4F53;&#x5185;&#x5206;&#x522B;&#x8C03;&#x7528;move&#x7684;jump&#x65B9;&#x6CD5;&#x53CA;sound&#x7684;say&#x65B9;&#x6CD5;&#x3002;</li>
+</ol>
+<h4 id="&#x62BD;&#x8C61;">&#x62BD;&#x8C61;</h4>
+<p>&#x62BD;&#x8C61;&#x7684;&#x6982;&#x5FF5;&#x662F;&#x9690;&#x85CF;&#x590D;&#x6742;&#x7684;&#x5E95;&#x5C42;&#x7EC6;&#x8282;&#xFF0C;&#x53EA;&#x9700;&#x5173;&#x6CE8;&#x5448;&#x73B0;&#x7684;&#x7ED3;&#x679C;&#x5C31;&#x53EF;&#x4EE5;&#x4E86;&#x3002;&#x4E00;&#x822C;&#x8BA1;&#x7B97;&#x673A;&#x4E0A;&#x7684;&#x62BD;&#x8C61;&#x5206;&#x4E24;&#x79CD;&#x3002;</p>
+<ol>
+<li>&#x64CD;&#x4F5C;&#x62BD;&#x8C61;&#xFF0C;&#x6BD4;&#x5982;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684;<code>+</code>&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5B83;&#x53EF;&#x4EE5;&#x5904;&#x7406;&#x52A0;&#x6CD5;&#x8FD0;&#x7B97;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5176;&#x5E95;&#x5C42;&#x5B9E;&#x73B0;&#x7684;&#x7EC6;&#x8282;&#x3002;</li>
+<li>&#x6570;&#x636E;&#x62BD;&#x8C61;&#xFF0C;&#x6BD4;&#x5982;&#x7F16;&#x7A0B;&#x8BED;&#x8A00;&#x4E2D;&#x7684;<code>Number</code>&#x7C7B;&#x578B;&#xFF0C;&#x4F60;&#x53EA;&#x9700;&#x77E5;&#x9053;&#x5B83;&#x7528;&#x6765;&#x5B58;&#x50A8;&#x6570;&#x5B57;&#x7C7B;&#x578B;&#x5C31;&#x884C;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x77E5;&#x9053;&#x5E95;&#x5C42;&#x7684;&#x5B58;&#x50A8;&#x7EC6;&#x8282;&#x3002;</li>
+</ol>
+<p>&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x62BD;&#x8C61;&#x4E5F;&#x662F;&#x7528;&#x4E8E;&#x9690;&#x85CF;&#x5B9E;&#x73B0;&#x7EC6;&#x8282;&#x7684;&#x3002;&#x5728;Java&#x8BED;&#x8A00;&#x4E0B;&#x62BD;&#x8C61;&#x901A;&#x8FC7;<code>abstract</code>&#x548C;<code>interface</code>&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x3002;</p>
+<p>&#x8FD9;&#x91CC;&#x5C31;&#x4E0D;&#x518D;&#x91CD;&#x590D;&#x8BF4;&#x660E;<code>interface</code>&#x4E86;&#xFF0C;<code>abstract</code>&#x548C;<code>interface</code>&#x529F;&#x80FD;&#x7C7B;&#x4F3C;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FEE;&#x9970;&#x7C7B;&#x4E5F;&#x53EF;&#x4EE5;&#x4FEE;&#x9970;&#x65B9;&#x6CD5;&#xFF0C;&#x901A;&#x8FC7;<code>abstract</code>&#x64CD;&#x4F5C;&#x7B26;&#x4FEE;&#x9970;&#x7684;&#x7C7B;&#x53EB;&#x505A;&#x62BD;&#x8C61;&#x7C7B;&#xFF0C;&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;&#x53EB;&#x505A;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x3002;&#x62BD;&#x8C61;&#x7C7B;&#x4E0D;&#x80FD;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;&#x4E00;&#x822C;&#x4F5C;&#x4E3A;&#x7236;&#x7C7B;&#x4F7F;&#x7528;&#xFF0C;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#x4E0D;&#x9700;&#x8981;&#x5B9A;&#x4E49;&#x65B9;&#x6CD5;&#x4F53;&#xFF08;&#x7531;&#x5B50;&#x7C7B;&#x5B9E;&#x73B0;&#x5177;&#x4F53;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;&#xFF09;&#x3002;&#x53E6;&#x5916;&#x56E0;&#x4E3A;<code>abstract</code>&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x5B50;&#x7C7B;&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x6240;&#x4EE5;<code>abstract</code>&#x4E0D;&#x80FD;&#x548C;<code>private</code>&#xFF08;&#x5B50;&#x7C7B;&#x662F;&#x6CA1;&#x6709;&#x8BBF;&#x95EE;&#x7236;&#x7C7B;&#x7684;&#x79C1;&#x6709;&#x5C5E;&#x6027;&#x7684;&#x6743;&#x9650;&#x7684;&#xFF09;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> String <span class="hljs-title">say</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">say</span><span class="hljs-params">()</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;mew&quot;</span>;
+  }
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Main</span></span>{
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String agrs[])</span></span>{
+    <span class="hljs-comment">//Animal animal = new Animal();    //=&gt;error: Animal is abstract; cannot be instantiated</span>
+    Cat cat = <span class="hljs-keyword">new</span> Cat();
+    System.out.println(cat.say());     <span class="hljs-comment">//=&gt;mew</span>
+  }
+}
+</code></pre>
+<p>&#x62BD;&#x8C61;&#x4F5C;&#x4E3A;&#x4E00;&#x79CD;&#x591A;&#x6001;&#x7684;&#x5B9E;&#x73B0;&#x673A;&#x5236;&#x5BF9;&#x4E8E;Ruby&#x8FD9;&#x79CD;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x7684;&#x8BED;&#x8A00;&#x800C;&#x8A00;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x7684;&#x51FD;&#x6570;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x65E0;&#x9700;&#x5F3A;&#x5236;&#x58F0;&#x660E;&#x7684;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x52A8;&#x6001;&#x5224;&#x65AD;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">//java&#x8BED;&#x8A00;&#x51FD;&#x6570;&#x91CD;&#x8F7D;</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getA</span><span class="hljs-params">(String a)</span></span>{
+  <span class="hljs-keyword">return</span> a;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getA</span><span class="hljs-params">(<span class="hljs-keyword">int</span> a)</span></span>{
+  <span class="hljs-keyword">return</span> a;
+}
+</code></pre>
+<pre><code class="lang-ruby"><span class="hljs-comment">#ruby&#x51FD;&#x6570;&#x5B9A;&#x4E49;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getA</span><span class="hljs-params">(a)</span></span>
+  <span class="hljs-keyword">return</span> a
+<span class="hljs-keyword">end</span>
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x4F8B;&#x5B50;&#x53EF;&#x4EE5;&#x770B;&#x51FA;Java&#x8FD9;&#x79CD;&#x9759;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x9700;&#x8981;&#x58F0;&#x660E;&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#xFF0C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x3001;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x4E0D;&#x540C;&#x7684;&#x540C;&#x540D;&#x51FD;&#x6570;&#x4F1A;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x800C;Ruby&#x8FD9;&#x79CD;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x4E2D;&#xFF0C;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x662F;&#x7A0B;&#x5E8F;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x51B3;&#x5B9A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#x7684;&#x51FD;&#x6570;&#x662F;&#x5141;&#x8BB8;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x8FDB;&#x884C;&#x8C03;&#x7528;&#x7684;&#x3002;&#x8FD9;&#x4E5F;&#x662F;&#x4E3A;&#x4EC0;&#x4E48;Ruby&#x8BED;&#x8A00;&#x6CA1;&#x6709;&#x63D0;&#x4F9B;&#x50CF;Java&#x4E00;&#x6837;&#x7684;<code>abstract class</code>&#x6765;&#x5B9E;&#x73B0;&#x51FD;&#x6570;&#x91CD;&#x8F7D;&#x4E86;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x5982;&#x679C;&#x4F60;&#x5C31;&#x662F;&#x60F3;&#x7528;&#x52A8;&#x6001;&#x7C7B;&#x578B;&#x8BED;&#x8A00;&#x6A21;&#x62DF;&#x62BD;&#x8C61;&#x7C7B;&#x548C;&#x62BD;&#x8C61;&#x51FD;&#x6570;&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x7684;&#x3002;</p>
+<pre><code class="lang-ruby"><span class="hljs-comment">#ruby</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">say</span></span>
+    raise <span class="hljs-string">&quot;abstract method&quot;</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-inheritance">&lt; <span class="hljs-parent">Animal</span></span></span>
+  <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">say</span></span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;mew&quot;</span>
+  <span class="hljs-keyword">end</span>
+<span class="hljs-keyword">end</span>
+
+c = <span class="hljs-constant">Cat</span>.new
+puts c.say    <span class="hljs-comment">#=&gt;mew</span>
+</code></pre>
+<p>&#x6211;&#x4EEC;&#x5728;Animal&#x91CC;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E2A;say&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x6267;&#x884C;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C;&#xFF0C;&#x53EA;&#x662F;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF08;&#x9632;&#x6B62;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x6211;&#x4EEC;&#x58F0;&#x660E;&#x4E86;&#x4E2A;Cat&#x7C7B;&#x7EE7;&#x627F;&#x4E86;Animal&#xFF0C;&#x5E76;&#x91CD;&#x5199;&#x4E86;say&#x65B9;&#x6CD5;&#x3002;&#x8FD9;&#x6837;&#x901A;&#x8FC7;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x7684;&#x65B9;&#x5F0F;&#x9650;&#x5236;&#x7236;&#x7C7B;&#x7684;say&#x65B9;&#x6CD5;&#x6A21;&#x62DF;<code>abstract</code>&#x4FEE;&#x9970;&#x7684;&#x65B9;&#x6CD5;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x3002;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../chapter5/1_mode.html" class="navigation navigation-prev " aria-label="Previous page: 3.1 模式"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../chapter5/3_pattern.html" class="navigation navigation-next " aria-label="Next page: 3.3 设计模式"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

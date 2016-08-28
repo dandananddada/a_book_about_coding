@@ -26,7 +26,9 @@
 
 * [第四章 编程范式](chapter4.md)
   * [4.1 编程范式](chapter4/1_intro.md)
-  * [声明式编程](声明式编程.md)
+  * [4.2 声明式编程](chapter4/2_impreative.md)
+  * [4.3 命令式编程](chapter4/3_declarative.md)
+
 
 * [第五章 是时候谈谈面向对象编程了](chapter5.md)
   * [3.1 模式](chapter5/1_mode.md)
