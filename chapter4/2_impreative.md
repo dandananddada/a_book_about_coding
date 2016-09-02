@@ -359,17 +359,58 @@ result 92:
 
 面向对象语言将数据和方法打包到一个结构中，通常称作为对象。对象内的数据和方法只有对象本身可以访问。程序不再由流程式的函数调用组成，而是通过对象及对象间的关系构成。
 
-后面我会用一个章节来对面向对象语言进行更详细的介绍。这里单纯用Java实现八皇后问题，并不能很好的对比面向对象语言与过程式语言的区别，面向对象在代码维护和拓展上更加有优势，因此我在这里用一段简单的代码来展示对象的特点。
+这里我们只是单纯的用C++来实现八皇后问题，对比下面向对象和过程式两种范式的区别。
 
-```java
+```c-plus
+#include <iostream>
+using namespace std;
 
+class EightQueens{
+  int rows[8];
+  public:
+    bool IsSafe(int x, int y){
+      int i;
+      if (y == 0)    return 1;
+      for (i=0; i < y; ++i) {
+        if (rows[i] == x || rows[i] == x + y - i || rows[i] == x - y +i)
+          return false;
+      }
+      return true;
+    }
 
+    void PutBoard(){
+      static int s = 0;
+      int x, y;
+      cout << "\nresult" << ++s << ":\n";
+      for (y=0; y < 8; ++y) {
+        for (x=0; x < 8; ++x)
+          x == rows[y] ? cout << "| o " : cout << "|   ";
+        cout << "|\n";
+      }
+    }
+
+    void Solution(int y){
+      int x;
+      for (x=0; x < 8; ++x) {
+        if (IsSafe(x, y)) {
+          rows[y] = x;
+          if(y == 7)    PutBoard();
+          else          Solution(y+1);
+        }
+      }
+    }
+};
+
+int main()
+{
+  EightQueens q;
+  q.Solution(0);
+}
 ```
 
+这里整体逻辑和C语言实现是相似的，唯一不同的在于代码的组织方式，像C++这种面向对象的语言，我们可以把数据与函数打包到对象中管理，在这里我们将八皇后问题所需要用到的方法和数据都打包到`EightQueens`对象中，对比C语言你会发现所有函数都不需要显示传递参数`rows`了。`rows`作为`EightQueens`对象的属性允许对象内的任何函数直接访问。最后声明了`EightQueens`的一个实例`q`，然后通过对象调用了`Solution`函数，传入起始行参数`0`来查询八皇后问题的有效解。
 
-
-
-
+对比过程式语言，面向对象语言更侧重于对数据与函数的封装，以及封装后对象与对象之间关系的处理。后面我会用一个章节来详细说明。
 
 
 

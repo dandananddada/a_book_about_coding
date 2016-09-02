@@ -31,3 +31,12 @@ code.lang-clojure:before{
 code.lang-ruby:haskell{
   content: "Haskell" !important;
 }
+code.lang-prolog:before{
+  content: "Prolog" !important;
+}
+code.lang-c:before{
+  content: "C" !important;
+}
+code.lang-c-plus:before{
+  content: "C + +" !important;
+}
