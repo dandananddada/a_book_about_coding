@@ -9,7 +9,6 @@
   * [1.2 强类型与弱类型](chapter1/2_strong_and_weak.md)
   * [1.3 静态类型和动态类型](chapter1/3_static_and_dynamic.md)
   * [1.4 编译型与解释型](chapter1/4_compiled_and_interpreted.md)
-  * [1.5 命令型和声明型](chapter1/5_imperative _and_declarative .md)
 
 * [第二章 值类型](chapter2.md)
   * [2.1 基础类型和引用类型](chapter2/1_primitive_and_reference.md)
@@ -25,9 +24,8 @@
   * [3.4 类类型](chapter3/4_class.md)
 
 * [第四章 编程范式](chapter4.md)
-  * [4.1 编程范式](chapter4/1_intro.md)
-  * [4.2 声明式编程](chapter4/2_impreative.md)
-  * [4.3 命令式编程](chapter4/3_declarative.md)
+  * [4.1 命令式编程](chapter4/1_impreative.md)
+  * [4.2 声明式编程](chapter4/2_declarative.md)
 
 
 * [第五章 是时候谈谈面向对象编程了](chapter5.md)

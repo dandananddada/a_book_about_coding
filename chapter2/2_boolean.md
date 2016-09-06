@@ -5,6 +5,11 @@
 //java
 if(true)        System.out.println("true");
 ```
+
+#### 类型转换
+
+**隐式转换**
+
 一般弱类型语言中也会可以用数字类型代替同样的逻辑判断。
 ```javascript
 //javascript
@@ -44,6 +49,8 @@ if(undefined)   console.log("will not execute");
 if(!null)       console.log("will execute");
 //=>will execute
 ```
+
+**显式转换**
 
 Java对于boolean类型的处理上和JavaScript有些不同，他禁止数字类型和布尔类型的转换，同时字符类型和布尔类型要通过API。
 ```java
@@ -85,4 +92,50 @@ a = 1
 puts "equals true" if a != 0            #=>equals true
 ```
 
+#### 与或运算
 
+与布尔类型最为相关的运算莫过于与运算（&&）与或运算（||）了。
+
+**与运算：** [表达式A]&&[表达式B]其中[表达式A]和[表达式B]必须同时为真才返回`true`，否则都返回`false`。
+
+**或运算：** [表达式A]||[表达式B]其中`表达式A`和`表达式B`必须同时为假才返回`false`，否则都返回`true`。
+
+因为与非运算的性质，所以在与运算中只要`表达式A`为假则`表达式B`就不会运算了。同理在或运算中只要`表达式A`为真则`表达式B`也不会运算了。
+
+```java
+boolean a = false;
+boolean b = true;
+boolean c = a && (b = !b);
+System.out.println(b);		//true
+```
+```java
+boolean a = true;
+boolean b = false;
+boolean c = a || (b = !b);
+System.out.println(b);		//false
+```
+
+因为这样的特性再配合弱类型，可以简化一些赋值语句。
+
+```javascript
+var a, b = "";
+if(b == "") a = "b should not empty";
+else        a = b;
+console.log(a);		//b should not empty
+```
+
+上述代码中我们把a赋值为b，如果b为空则设置一个缺省字符串"b should not empty"，可以使用或运算的特性配合弱类型简化if语句为：
+
+```javascript
+var b = ""
+,   a = b || "b should not empty";
+console.log(a);		//b should not empty
+```
+注意因为Java不支持字符串的与或运算，所以如果你在用Java还是规矩的使用`if-else`语句才符合Java语言的设计初衷。
+
+与JavaScript类似，Ruby更是提供了`||=`运算符。
+```ruby
+a ||= "default value"
+```
+`||=`和`+=`类似即：`a = a || "default value"`，因为`a`本身就是空所以`表达式A`返回`false`，执行`表达式B`对`a`设置缺省值：`default value`。其本质还是或运算与弱类型的配合，只是固定了第一个表达式，于是在Ruby中的`||=`就变长了：`如果a没有被赋值过，则赋值为`这样的命令。
+```

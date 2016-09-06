@@ -157,7 +157,7 @@ public class Main{
 
 访问级别用来控制一个类的属性或方法能否被其他类访问，以Java的访问级别为例来说明包括：private、protected、public和不定义(no modifier)这四种，其对应的访问权限如下表(Y表示可访问，N表示不可)
 
-| 修饰符/场景 | 当前类 | 当前包 | 父类 | 全局 |
+| 修饰符/场景 | 当前类 | 当前包 | 子类 | 全局 |
 | -- | -- | -- | -- | -- |
 | public| Y | Y | Y | Y |
 | protected | Y | Y | Y | N |
