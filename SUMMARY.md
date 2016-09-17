@@ -5,7 +5,7 @@
   * 第四章 函数式
 
 * [第一章 编程语言只有两种](chapter1.md)
-  * [1.1 语言类型](chapter1/1_type.md)
+  * [1.1 数据类型](chapter1/1_type.md)
   * [1.2 强类型与弱类型](chapter1/2_strong_and_weak.md)
   * [1.3 静态类型和动态类型](chapter1/3_static_and_dynamic.md)
   * [1.4 编译型与解释型](chapter1/4_compiled_and_interpreted.md)
