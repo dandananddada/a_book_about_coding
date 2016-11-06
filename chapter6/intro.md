@@ -1,318 +1,191 @@
+# 函数式编程
 
-# 更多概念
+函数式编程通过数学函数求值来处理程序计算，它具有代码简洁易读，更接近于自然语言，开发效率高等优点。
 
-####闭包
+####函数式特点
 
-闭包（closure）是函数及其相关引用环境组合而成的一个整体，为了方便解释，你可以理解为闭包就是一个容器，这个容器中包含一个函数，和几个参数，函数可以像访问自己内部定义的变量一样访问容器中的参数。
+他有如下特点：
 
-先看这段代码
-```
-map' list = map (+3) list
-map' [1,2,3]    --=>[4,5,6]
-```
+1. 函数为一等公民
+2. 声明式
+3. 值不可变
+4. 引用透明
 
-这是一个高阶函数，我们把列表中每一项都应用了`(+3)`函数，我们对它再封装一层，让他变成`map (+x) list`。
-```
-map' x list = map (+x) list
-map' 3 [1,2,3]    --=>[4,5,6]
-```
-做了如上改进，我们让`map'`传入两个参数，一个是加运算的操作数另一个是被操作的列表，其中`map`就是一个容器，`(+x)`就是容器中的函数。接下来在`map'`得到参数`x=3`时，就变成了`map (+3) list`，我们再把`(+3)`用匿名函数的方式展开就变成了：`map (\x->x+3) list`，这时我们看到`3`变成了`(\x->x+3)`函数的一部分，而`3`本身不是函数中定义的，是通过容器`map``传入的。
+**函数为一等公民**
 
-这种函数自由访问容器中外部变量的特性就是闭包，整个容器就是这个函数和它外部变量的`闭包`。
-
-
-
-####递归
-在命令式编程中我们通常通过索引来遍历一个数组中的每个元素，但在函数式中我们通常会将列表分成头和尾两部分，然后通过递归尾部（将尾部分为头和尾，尾部越来越短直至为空）来访问列表中的每一个元素。
+一等公民（first class）简单的说就是可以当做值来使用的，比如作为变量的值，作为函数的返回值。而函数作为一等公民就是说函数也可以作为参数进行传递，或者作为另一个函数的返回值。因为函数是一段代码，所以函数作为一等公民就意味着代码段及代码段内包含的变量也是可以传递的。
 
 ```haskell
-negatedEvery:: Num a=>[a]->[a]
-negatedEvery [] = []
-negatedEvery (x:xs)  = -x : negatedEvery xs
+--Haskell 函数作为参数传递给另一个函数
 
-negatedEvery [1,2,3,4]    --=>[-1,-2,-3,-4]
+map (+3) [1,2,3]
 ```
-上面代码中`negatedEvery`用于将列表中每一个元素都转换为负数，我们看第三行中`x:xs`是将列表拆分为头部`x`和尾部`xs`，然后分别对`x`和`xs`赋值，因为头部元素是一个数值，所以可以直接取负数，而尾部元素仍旧是一个列表，所以作为一个新的列表重新应用到`negatedEvery`函数。我们看第二行中约定如果元组为空则返回空，结束。所以当我们不断递归`xs`到`negatedEvery`函数时。只有列表不是无限的终究会执行到`negatedEvery [] = []`函数结束。这是得到的列表中每个元素都执行了`x=-x`，通过递归将列表中所有元素取负数。
 
-接下来我们用递归解决斐波那契数列问题，斐波那契数列的计算满足`F(n) = F(n-2) + F(n-1), F(0) = 1, F(1) = 1`这三条规则。
+如上`map`是一个函数，`(+3)`也是一个函数（这个函数传递了变量3作为加法的右操作数），`[1,2,3]`是另一个参数，这里把函数`(+3)`当做参数传递给了另一个函数`map`。
 
-斐波那契数列本身就是典型的递归实现，我们根据计算规则可以明确三种情况：
+**声明式**
 
-1. n=0时值为0
-2. n=1时值为1
-3. n为其他值时，递归F(n-1)+F(n-2)
+函数式编程是一种声明式编程范式，声明式通过表达式计算、函数声明来代替命令式编程中的逻辑控制。
 
-先用Java实现如上逻辑：
+```haskell
+--Haskell 函数定义
+
+isZero:: Int->String
+isZero 0 = "yes"
+isZero _ = "no"
+
+isZero 3    
+--no
+```
+如上声明了一个函数isZero，其中Int->String表示接受一个整数类型，返回一个字符串类型。然后声明了`isZero 0 = "yes"`表示当参数为0时返回yes。最后`isZero _ = "no"`表示除此之外任意参数都返回no。
+
+isZero会按照声明的顺序对输入参数进行判断，先判断输入参数是否为0，如果为0则返回yes，否则执行下一个模式，一般最后一个模式都用`_`匹配任意值，相当于if else中的else。
+
+对比声明式编程看下命令式如何实现isZero。
 
 ```java
-class Recursive {
-  static LongUnaryOperator func =
-          x -> (x == 1 || x == 0) ? x :
-          Recursive.func.applyAsLong(x -1) + Recursive.func.applyAsLong(x - 2);
-
-  public static long fibonacci(int n){
-    return func.applyAsLong(n);
-  }
+//Java 命令式编程
+public static String isZero(int num){
+  if(num == 0)  return "yes";
+  else          return "no";
 }
 
-public class Main {
-  public static void main(String[] args) {
-    System.out.print(Recursive.fibonacci(30));
+System.out.print(isZero(0));    
+//yes
+```
+
+**值不可变**
+
+1. 函数式编程是没有副作用的；
+2. 函数式要求值是不可修改的，状态也是不可改变的；
+3. 对输入参数进行函数运算不允许修改源数据，相应的会生成一个新的拷贝作为运算结果。
+4. 函数运算只依赖于输入参数，不会改变函数外部数据的值或状态。
+5. 面向对象语言通过封装解决状态改变的问题，而函数式语言通过函数变换避免状态改变。
+
+**引用透明**
+
+引用透明是指函数的运算不会受到外部变量的影响，其计算结果只依赖于输入参数，输入参数相同则返回结果相同。
+
+引用透明的特性使函数式语言使其具有如下优势：
+
+1. 如果当前函数表达式返回值不再需要，可以直接删除，不会对函数表达式外数据产生影响。
+2. 多次调用一个纯函数输入相同参数，返回结果相同，且不存在副作用。
+3. 替换两个纯函数表达式的执行顺序不会影响执行结果，因此适合做并行开发。
+4. 无副作用的表达式运算允许编译器自由结合表达式的运算结果，可以将多个函数组合使用。
+
+####对比命令式编程、面向对象编程
+
+1. 命令式编程是按照程序是一系列改变状态的命令来建模的一种编程风格，函数式编程则将程序描述为表达式和变换，以数学方程的形式建立模型。
+2. 命令式编程一次循环完成多个任务，更注重性能，而函数式一个任务可能需要多次循环，更注重语义。
+3. 面向对象是对数据进行封装，而函数式则对行为进行封装。
+4. 面向对象编程中通过封装不确定因素使代码更容易被人理解，而函数式编程通过尽量减少不确定因素来使代码容易被人理解。
+5. 面向对象提倡对具体的问题建立专门的数据结构及操作，而函数式则提倡使用几种基本的数据结构（数组、列表）及针对这几种结构高度优化的操作来完成程序任务。
+6. 函数式编程将程序描述为表达式和变换，像数学方程一样建立模型。更注重高层的抽象，而非底层的细节，开发者需要用高阶函数调整底层运转。
+7. 函数式编程能在更细小的层面上重用代码。
+
+###完美数的例子：
+
+上面像说明书一样列举了函数式的特点，并对比了与命令式的区别。但这些终究是教科书一样的文案，没有实际的例子是难以认清函数式编程的真面目的，下面我们来通过完美数例子来对比命令式编程与函数式编程。
+
+>完美数是指除了自身以外的所有他的正约数之和等于其本身的数字，比如6(1+2+3=6,其中6的非自身正约数有1，2，3)。
+
+在说明编码之前，先说明下如何判断一个数是否为完美数。
+
+1. 取1到这个数之间的所有数。
+2. 把这些数中能整除它的数筛选出来。
+3. 对筛选出来的数字求和。
+4. 判断是否与这个数自身相等。
+
+这里我们用JavaScript实现完美数例子：
+
+```javascript
+//JavaScript 命令式实现完美数
+
+(function(){
+  var factors = []
+  ,   number
+  ,   sum = 0
+  ,   result;
+
+  number = 496;
+
+  getFactors();  
+  aliquoSum();
+  result = isPerfect();
+
+  if(result)   console.log(number + " is perfcet");
+  else                  console.log(number + " is not perfect");
+  
+  //取得所有正公约数
+  function getFactors(){
+    for(i = 1;  i < number; i = i+1){
+       if(isFactor(i))  factors.push(i); 
+    }
   }
-}
-```
-
-1. 声明一个LongUnaryOperator函数接口，这个函数接口约定传入参数和返回类型都是long类型。
-2. 我们用lambda表达式对输入参数x应用三元运算符，如果x值为0或者1则返回1，否则返回`F(n-1) + F(n-2)`。
-3. 接下来声明一个取斐波那契数的方法，将传入参数转换为long类型应用到之前声明的LongUnaryOperator函数接口。
-
-同理Haskell的实现方式类似：
-
-```haskell
-fibonacci::Integer->Integer
-fibonacci 0 = 0
-fibonacci 1 = 1
-fibonacci n = fibonacci (n-1) + fibonacci (n-2)
-```
-
-**尾调用**
-
-尾调用是指一个函数里的最后一个动作是一个函数调用，这个调用的返回值被作为函数的返回值。如果函数在最后调用了自身，则称作尾递归。
-
-通常情况下函数在调用时会记录当前位置以及内部变量等信息，但是尾调用的函数因为位置的特殊性，可以不记录调用位置和内部变量（因为这些都不会再用到了，尾调用函数本身就是函数的返回值了），这样就节省了栈上的空间。单纯的尾调用其实倒也所谓，但是如果是尾递归调用的话就有区别了，我们来对比看下记录调用信息和不记录调用信息两种情况下栈的变化。
-
-先看下这段没采用尾调用代码。
-```haskell
-factorial 0 = 1
-factorial n = n * factorial(n-1)
-
-factorial 3
-```
-```
-factorial 3
-3 * (factorial 2)
-3 * (2 * (factorial 1))
-3 * (2 * (1 * (factorial 0)))
-3 * (2 * (1 * 1))
-3 * (2 * 1)
-3 * 2
-6
-```
-每次调用需要记录函数调用位置，以及内部变量，然后再依次求值，释放对应空间。
-
-用尾递归重写上面的代码：
-```haskell
-tail_factorial x = factorial' x 1 where
-  factorial' 1 y = y
-  factorial' x y = factorial' (x-1) $! (x*y)
-
-tail_factorial 3
-```
-可以看出尾递归优化后，只需要记录当前函数下的内部变量，不需要花费更多额外的空间记录调用函数的位置及调用函数的内部变量。
-```
-factorial' 3 1
-factorial' 2 3
-factorial' 1 6
-6
-```
-我之所以用Haskell而不是Java语言或者其他语言举例说明是因为尾递归优化是函数式语言默认支持的，而想Java、Ruby、Python这些面向对象语言，解释器并没有针对尾递归调用进行优化处理，不过Java8提供函数式支持后有针对尾递归进行优化，ES6标准也规定了JavaScript语言必须实施尾递归优化。也就是说在这些后续支持了尾递归优化的语言，在使用尾递归处理问题时不会像以前一样再出现栈溢出的问题了。
-
-####记忆
-
-记忆是用来存储一个函数的返回值的，因为函数式的不变性，输入参数相同返回结果一定相同，这样为了避免重复结算同一个函数调用的返回结果引入了记忆机制。
-
-通常我们会把输入参数作为key，把输出结果作为value存在一个缓存结构中（哈希或者元组，函数式用元组来存储key-value）中，在函数调用时先遍历这个缓存结构中是否存在当前调用的key，如果存在则返回缓存中的value，不存在则计算，并插入这对键值到缓存结构。
-
-我们还是以斐波那契数列为例说明，在不使用缓存机制时斐波那契数列的计算是非常慢的。
-```haskell
-fibonacci 30
-{- 
-  832040
-  (2.09 secs, 554,439,712 bytes)
--}
-```
-添加记忆机制后
-```haskell
-memoized_fib :: Int -> Integer
-memoized_fib = (map fib [0 ..] !!)
-   where fib 0 = 0
-         fib 1 = 1
-         fib n = memoized_fib (n-2) + memoized_fib (n-1)
-         
-memoized_fib 30
-{-
-  832040
-  (0.01 secs, 100,520 bytes)
- -}
-```
-这样每次执行memoized_fib的时候都会把结果缓存起来，下次执行的时候就可以直接使用结果，因为斐波那契数列存在大量的重复运算，所以缓存的添加让执行效率有了质的改变。
-
-来看下Java8版本的实现：
-```java
-public class Main {
-  private static Map<Integer,Long> memo = new HashMap<>();
-  static {
-      memo.put(0,0L); 
-      memo.put(1,1L); 
+  
+  //判断是否为公约数
+  function isFactor(pontential){
+    return number % pontential === 0;
+  }
+  
+  //对所有正公约数求和
+  function aliquoSum(){
+    for(i = 0; i < factors.length; i = i+1){
+      sum = sum + factors[i];
+    }
   }
 
-  public static long fibonacci(int x) {
-      return memo.computeIfAbsent(x, n -> (fibonacci(n-1) + fibonacci(n-2)));
+  //判断是否为完美数
+  function isPerfect(){
+    return sum === number;
   }
 
-  public static void main(String[] args) {
-      System.out.print(fibonacci(30));
-  }
+})();    
+//496 is perfect
+```
+
+可以看到我们先用getFactors方法取得1到当前数之间所有数字，然后通过isFactor方法找出可以整除的数记录到factor数组。最后把数组中所有元素相加，判断是否与这个数字相等，如果相等则说明这个数字是完美数。
+
+好，接下来我们看看函数式是如何实现的（这里引用了JavaScript的函数式库underscore.js）。
+
+```javascript
+//JavaScript 函数式编程实现完美数
+
+var _ = require("underscore")
+,   number = 496;
+
+if(
+  _.isEqual(number,(
+    _.reduce(
+      _.filter(
+        _.range(1, number)
+        , function(n){ return number%n == 0 })
+      , function(p,n){ return p+n }
+      , 0)
+    )
+  )
+){  
+  console.log(number + " is perfect");    
+  //496 is perfect
 }
 ```
-我们重点来看`fibonacci`这个函数，它调用了`memo`的`computeIfAbsent`方法，`computeIfAbsent`是Java8对`Map`接口新增的方法，它传入两个参数，一个是键值，另一个是函数接口，当`key`（这里`key`就是`x`）值不在map中时会将`x`传入函数并把返回值以`key`为键追加到`map`中。之后我们用`lambda`表达式实现函数接口，因为表达式中没有区分`x=0`和`x=1`两种情况，所以我们直接在`map`中添加`key`为`0`和`1`的值，这样当`x=0`或者`x=1`时就不会执行函数接口了。
+我们从最里层的调用开始看\_\.range(1, number)会帮我们生成一个从1到number的数组，然后我们把这个数组作为参数应用到filter函数，这个函数会把表达式`number%n == 0`为真的数字返回，也就是能整除的数字。然后我们把这些过滤后得到的数字传递给reduce函数，并通过匿名函数`function(p,n){ return p+n }`求和，最后将求和得到的结果传入isEqual函数，判断是否与number相等。
 
-####惰性求值
+这里可以看出函数式编程通常将数据作为输入，通过一个接一个的函数进行映射、过滤、折叠处理，最终返回出一个计算结果。
 
-惰性求值是指表达式不在它被绑定到变量之后就立即求值，而是在该值被取用的时候才求值，这样做除了可以提高计算性能外还能构造无限列表（因为惰性求值只关心列表中要求算的那个数，并不关心后面无限个数据的值是多少）。
+对比命令式编程，函数式代码更加简洁清晰，容易阅读。
 
-某些编程语言是默认惰性求值的，比如Haskell，另外也有些语言提供了惰性求值的函数或语法，比如Java8的stream操作就是惰性求值的。
+针对上述代码，我们还可以通过链式调用进行优化，使代码更加简洁清晰。
 
-我能先看一个无限列表的例子，假设我们有这样一个需求：求所有三的倍数的数字之和
-```haskell
-let mod3 = filter (\x -> mod x 3 == 0) [1..]
-take 5 mod3    --=>[3,6,9,12,15]
+```javascript
+//JavaScript 通过链式调用使函数式代码更加语义化
+
+var number = 496
+,   isPerfect = _.chain(_.range(1, 300))
+    .filter(function(n){ return 300%n == 0 })
+    .reduce(function(p,n){ return p+n }, 0)
+    .value();
+if(isPerfect)  console.log(number, "is perfect");
+//496 is perfect
 ```
-我们创建了一个mod3函数，这个函数过滤出所有三的倍数。之后用take先后取了前五个三的倍数，因为惰性求值的缘故，mod3只会计算到第五个元素，这就是一个对无限列表应用函数的例子。
-
-接下来我们看看Java8中stream是如何表现出惰性求值的。
-```java
-public static void main(String[] args) {
-  List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-  numbers.stream().filter(n-> {
-    System.out.print(n);
-    return n > 2;
-  });
-}
-```
-执行上面这段代码不会输出任何结果，说明filter内的函数并没有执行。这是因为Stream是惰性求值的，如果想得到链操作的返回结果需要在最后执行一个及时求值的方法。
-```java
-public static void main(String[] args) {
-  List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
-  List<Integer> results = numbers.stream().filter(n-> {
-      System.out.print(n);    //=>12345
-      return n > 2;
-  }).collect(Collectors.toList());
-}
-```
-和之前不同我们在Stream操作最后调用了`collect(Collectors.toList())`方法，这是一个及时求值的方法，它会把之前的表达式执行并返回结果，因此这时`System.out.print(n);`就会把`numbers`的所有元素都打印出来了。
-
-
-####不相交联合体（disjoint union）
-
-**Either**
-
-在函数式编程中经常会遇到需要返回两种不同类型的情况，为了满足这种需求设计了不相交联合体。不相交联合体可以存储两种不同类型的中某一种类型的实例。一般会用Either类来表述这种结构，Either有一个左值和一个右值，但是左值和右值只能选择一个。
-
-```haskell
-Left "This is left value"
-Right 2
-```
-
-Either类型另外一个重要的作用就是处理异常，很多函数式语言是没有异常处理机制的，因为异常的设计和函数式语言无副作用的思想是冲突的，异常会引导程序进入异常处理流程而不是期望的返回值，函数式编程是以值为根本的，所以我们可以把异常信息记录在Either类型的左值中，正确值记录在Either类型的右值中，如果返回了左值则说明函数执行时出现了异常。
-
-```haskell
-div3:: Float->Float->Either String Float
-div3 x 0 = Left "Divison by zero"
-div3 x y = Right (x / y)
-div3 3 0    --=>Exception: divide by zero
-div3 3 3    --=>1
-```
-上面定义了一个除以3的方法，当除数为0时，返回左值，给出错误信息`被除数为0`，其他情况下执行除运算并返回右值。
-
-Java8本身没有提供Either类，
-
-**Maybe/Optional**
-
-Maybe(Java/Scala中称作Optional)类型和Either类型类似，你可以把它看做是一种简单的异常场景，它也存储两个值，一个为空，另一个为有效值。你可以认为Maybe类型只对返回结果做了失败还是成功的判断，如果失败则返回空，成功则返回计算结果的有效值。
-
-```haskell
-returnEven:: Int -> Maybe Int
-returnEven a
-  | a `mod` 2 == 0 = Just a
-  | otherwise = Nothing
- 
-returnEven 2    --=>Just 2
-returnEven 1    --=>Nothing
-```
-如上定义了一个返回偶数的函数，`returnEven`的返回类型是Maybe类型，如果为偶数则返回值（Just是Haskell对Maybe类型中有效值的包装，这里不用在意），否则返回Nothing。
-
-Java8也提供了Optional类型用来代替null值，这样就可以用Optional代替null表示值不存在，从而避免一些不必要的麻烦。也可以用Optional来判断一个变量是否存在值。
-```java
-Optional emptyOptional = Optional.empty();
-Optional<String> a = Optional.of("a");
-System.out.print(emptyOptional.get());    //=>java.util.NoSuchElementException: No value present
-System.out.print(a.get());                //=>a
-
-```
-
-####纯度
-
-我之前有在介绍函数式特点的时候说过纯度（purely）及值不可变，纯度的特性有一定的优点但也存在很多问题，比如很多操作（混合运算）并非与顺序无关的，这些操作是有副作用的（输入结果相同，函数执行顺序不同，返回结果不同），因此对于纯函数式的语言要面对如何处理这样的问题（但并非所有支持函数式编程的语言都是纯函数式的）。
-
-我们来通过一个过平衡木的例子说明Haskell是如何处理因为函数执行顺序而产生的副作用的。
-
-规则如下：
-1. 用向左倾斜和向右倾斜程度表示一个人的平衡程度，向左平衡程度用负数表示，向右平衡程度用正数表示。
-2. 向左平衡程度和向右平衡程度的和的绝对值表示平衡程度值，如果平衡程度值小于3则人是平衡的。
-3. 人每向前移动一步，则随机追加左右平衡程度值，计算平衡程度值。将平衡程度值传给下一步。
-
-```haskell
-type Rate = Int
-type Balance = (Rate, Rate)
-
-toLeft:: Rate->Balance->Balance
-toLeft n (left, right) = (left-n, right) 
-
-toRight:: Rate->Balance->Balance
-toRight n (left, right) = (left, right+n) 
-```
-我们用Rate表示平衡倾斜程度，用Balance表示平衡程度，其中left指向左倾斜程度，right指向右倾斜程度。这样我们定义了向左倾斜toLeft和向右倾斜toRight，两个函数都要求输入当前平衡程度，及平衡倾斜程度，然后返回新的平衡程度。
-
-我们做如下调用，向左倾斜1 -> 向右倾斜1 -> 向左倾斜2
-```haskell
-toLeft 2 (toRight 1 (toLeft 1 (0,0)))    --=>(-3, 1)
-```
-这是没有问题的，我们在这个基础上继续， 向右倾斜1 -> 向左倾斜3 -> 向右倾斜2
-```
-toRight 1 (toLeft 3 (toRight 2 (-3,1)))    --=>(-6, 4)
-```
-这是返回的结果仍旧是保持平衡的：`|-6+4|<3`。但实际上在向左倾斜3的时候已经失去平衡摔倒了，所以是不可能再向右倾斜2恢复到平衡状态的（此时人已经掉下平衡木了）。
-
-那么我们需要在失去平衡的时候返回一个失败信息，并且这个信息会一致传递下去。
-
-我们做如下修改
-```haskell
-type Rate = Int
-type Balance = (Rate, Rate)
-
-toLeft:: Rate->Balance->Maybe Balance
-toLeft n (left, right)
-  | abs (left -n + right) < 3 = Just (left-n, right)
-  | otherwise = Nothing
-
-toRight:: Rate->Balance->Maybe Balance
-toRight n (left, right) 
-  | abs (left + right + n) < 3 = Just (left, right+n)
-  | otherwise = Nothing
-```
-我们对要传递给下一步的平衡状态包装为Maybe类型，如果失去平衡则返回Nothing，否则返回Just。这样当我们下一步接受到Nothing的时候只会传递Nothing。
-
-为了让一个值应用到函数并返回一个包装类型（Maybe在haskell中是一个函子）我们要用到monad（就是下面的`>>=`函数）。
-
-```
-return (0,0) >>= toLeft 2 >>= toRight 1 >>= toLeft 1      --=>Just(-3,1)
-return (-3,1) >>= toRight 1 >>= toLeft 3 >>= toRight 2    --=>Nothing
-```
-可以看到这回返回了“摔倒”，同时monad不仅将值应用与函数返回包装类型，同时还提供了函数的链式调用，这种写法更加干净易懂。
-
-另外，针对`toRight 1 (toLeft 3 (toRight 2 (-3,1)))`这种嵌套调用，我们也可以定义一个`-:`方法实现函数的链式调用。
-```haskell
-x :- f = f x
-(0,0) -: toRight 1 -: toLeft 3 -: toRight 2    --=>(-3,3)
-```
+我们通过\_\.chain函数可以将数组传入管道，然后就可以通过链式调用对数据进行处理，最后调用value函数计算最终结果。
