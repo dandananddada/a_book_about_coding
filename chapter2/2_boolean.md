@@ -46,7 +46,7 @@ null == false;          //false,  [7]
 5. 通过4可知是非空字符本身即不是true也不是false，但是取反后是false，两次取反自然就是true。
 6. 通过Boolean强制转换非空字符就是true,空字符是false。
 7. 这里undefined和null类型与布尔类型比较都返回false，但是取反后表示真，所以有些教程会说undefined、nill和NaN都表示false，这个说法不是很准确，但是在if表达式中确实又是如此应用的。
-8. 
+
 ```javascript
 //JavaScript 第一个if表达式判断为false，不执行内部代码。
 if(undefined)   console.log("will not execute");
