@@ -45,17 +45,15 @@ UTF-6规定用十六进制、两个字节来存储字符，其范围是`0x0000 -
 
 ```java
 //Java 字符𥊍长度
-System.out.println("𥊍".length()); 
-//2
+System.out.println("𥊍".length()); //2
 ```
 ```javascript
 //JavaScript 字符𥊍长度
-console.log("𥊍".length);  
-//2
+console.log("𥊍".length);  //2
 ```
 ```ruby
 #Ruby 字符𥊍长度
-puts "𥊍".length  #=>1
+puts "𥊍".length  #1
 ```
 注意Ruby、Go、Rust这些语言已经开始使用UTF-8作为内部编码了，所以Ruby对特殊字符取长度返回1。
 
@@ -72,28 +70,18 @@ public static void main(String args[]){
   char[] chars = {'s', 't', 'r', 'i', 'n', 'g'};
   String charstr = new String(chars);
   
-  System.out.println(normal);    
-  //a
-  
-  System.out.println(unicode);   
-  //K
-
-  System.out.println(str);       
-  //string
-
-  System.out.println(charstr);   
-  //string
+  System.out.println(normal);    //a
+  System.out.println(unicode);   //K
+  System.out.println(str);       //string
+  System.out.println(charstr);   //string
 }
 ```
 ```ruby
 char = 'a'
 string = 'string'
 
-puts char      
-#a
-
-puts string    
-#string
+puts char      #a
+puts string    #string
 ```
 注意虽然Java中String是一个类，但字符串拷贝的时候是值类型，而不是引用类型。
 ```java
@@ -107,11 +95,8 @@ public static void main(String args[]){
   charStr = "string charStr";
   equalCharStr = "string equalCharStr";
 
-  System.out.println(charStr);          
-  //string charStr
-
-  System.out.println(equalCharStr);     
-  //string equalCharStr
+  System.out.println(charStr);          //string charStr
+  System.out.println(equalCharStr);     //string equalCharStr
 
   String str = "string";
   String equalStr = str;
@@ -119,11 +104,8 @@ public static void main(String args[]){
   str = "string str";
   equalStr = "string equalStr";
 
-  System.out.println(str);             
-  //string str
-
-  System.out.println(equalStr);        
-  //string equalStr
+  System.out.println(str);             //string str
+  System.out.println(equalStr);        //string equalStr
 }
 ```
 Ruby和JavaScript中字符串本身就作为原始类型定义，所以字符串拷贝自然也是值类型拷贝。
@@ -136,11 +118,8 @@ equalStr = str
 str = "string srt"
 equalStr = "string equalStr"
 
-puts str         
-#string str
-
-puts equalStr    
-#string equalStr
+puts str         #string str
+puts equalStr    #string equalStr
 ```
 
 ####字符串修改及内存优化
@@ -159,10 +138,7 @@ public static void main(String args[]){
     s+= c;
     sb.append(c);
   }
-  System.out.println(s);
-  //abc
-
-  System.out.println(sb);
-  //abc
+  System.out.println(s);   //abc
+  System.out.println(sb);  //abc
 }
 ```
