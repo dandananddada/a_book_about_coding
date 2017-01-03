@@ -92,8 +92,7 @@ public class Main{
     LanguageFactory languageFactory = new LanguageFactory();
     Language java = languageFactory.setLanguage("Java");
     
-    java.sayHello();    
-    //say hello by Java
+    java.sayHello();    //say hello by Java
   }
 }
 ```
@@ -207,11 +206,8 @@ class AudioPlayer implements MediaPlayer{
 public class Main{
   public static void main(String args[]){
     AudioPlayer audioPlayer = new AudioPlayer();
-    audioPlayer.play("mp4");    
-    //play mp4
-
-    audioPlayer.play("flv");    
-    //play flv
+    audioPlayer.play("mp4");    //play mp4
+    audioPlayer.play("flv");    //play flv
   }
 }
 ```
@@ -272,8 +268,7 @@ public class Main{
   public static void main(String args[]){
     Animal cat = new Cat();
     Animal kitten = new LovelyAnimalDecorator(cat);
-    kitten.say();    
-    //lovely mew
+    kitten.say();    //lovely mew
   }
 }
 ```
@@ -317,8 +312,7 @@ class Taobao implements Trade{
 public class Main{
   public static void main(String agrs[]){
     Trade taobao = new Taobao();
-    taobao.buy("cd game");    
-    //buy cd game by taobao
+    taobao.buy("cd game");    //buy cd game by taobao
   }
 }
 ```
@@ -470,8 +464,7 @@ class TaskChain{
 public class Main{
   public static void main(String args[]){
     Task taskChain = TaskChain.getTaskChain();
-    taskChain.start();    
-    //write compile link run
+    taskChain.start();    //write compile link run
   }
 }
 ```
@@ -522,8 +515,7 @@ class NewFeatureReplaceFactory{
 public class Main{
   public static void main(String agrs[]){
     NewFeatureReplaceFactory java = new NewFeatureReplaceFactory("Java");
-    java.sayHello();    
-    //hello java8
+    java.sayHello();    //hello java8
   }
 }
 ```

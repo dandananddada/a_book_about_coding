@@ -19,9 +19,7 @@
 
 ```haskell
 --Haskell 列表推导
-
-[ x * 2 | x <- [1,2,3,4], x > 2]    
---[6,8]
+[ x * 2 | x <- [1,2,3,4], x > 2]    --[6,8]
 ```
 
 列表推导式语法和数学中集合推导式是一致的，`{x * 2 | x ∊ N, 2 < x < 5 }` 表示取2到5之间的正整数乘2。同理，上述代码表示取集合中满足x > 2的元素做x * 2运算，然后将结果集打包成一个新列表（[6, 8]）返回。
@@ -69,11 +67,9 @@ numberToEnglish 9 = "nine"
 numberToEnglish 0 = "zero"
 numberToEnglish _ = "not between 0 to 9"
 
-numberToEnglish 4    
---four
+numberToEnglish 4     --four
 
-numberToEnglish 12   
---not between 0 to 9
+numberToEnglish 12    --not between 0 to 9
 ```
 
 这里我们定义了函数numberToEnglish并规定了输入类型Int及返回类型String，然后按顺序定义了十个模式，分别对参数为0-10的情况定义了处理逻辑，最后用`_`表示任意参数，相当于default或else。
@@ -103,8 +99,7 @@ getBMI bmi
  | bmi <= 30.0 = "overweight"
  | otherwise = "obese"
 
-getBMI 27    
---overweight
+getBMI 27    --overweight
 ```
 
 我们以bmi = 27为例来说明：
@@ -122,8 +117,7 @@ getBMI 27
 
 combine(X, Y, Z):- X = 1, Y = 2, Z = 3.
 
-combine(1,2,3).     
-%yes
+combine(1,2,3).    %yes
 ```
 
 combine对元组(X, Y, Z)执行了合一操作，这时元组中满足X = 1, Y = 2, Z = 3，因此执行`combine(1,2,3).`返回yes。
@@ -142,8 +136,7 @@ getBMI weight height
  where bmi = weight/height^2
        (normal, overweight, obese) = (18.5, 25.0, 30.0)
 
-getBMI 70 1.72    
---normal
+getBMI 70 1.72    --normal
 ```
 
 在讲解这段代码之前我们先说下where的作用：where相当于指令式语言里的赋值操作，它可以记录一个操作结果，方便多次引用。其作用域限定在当前函数定义内。
@@ -172,11 +165,8 @@ equation(X, Y) :- X == 2, Y is X + 1.
 执行：
 
 ```prolog
-equation(1, Y).    
-%Y = 2
-
-equation(3, Y).    
-%no
+equation(1, Y).    %Y = 2
+equation(3, Y).    %no
 ```
 
 这里定义了一个推断equation，当断言x == 1成立时，则执行is运算将Y绑定为X+1，Prolog通过断言和推断返回查询结果Y=2。如果断言不成立，程序无法查询到Y值，则返回no。
@@ -193,11 +183,8 @@ equation x
 执行：
 
 ```haskell
-equation 1   
---2
-
-equation 3    
---Exception: no
+equation 1    --2
+equation 3    --Exception: no
 ```
 
 这里定义了一个函数equation，对传入参数x依次匹配各个模式，如果满足当前模式则返回操作结果，否则执行下一个模式。当传入参数为1时，满足第一个模式返回x+1=2，当传入参数为3时，前两个模式都不匹配，因此执行otherwise抛出一个异常。
@@ -221,7 +208,7 @@ equation 3
 
 我们用断言和推断来实现一个等量代换的例子，在数学中等量代换是指如果a = b, b = c，那么a = c。这里断言是a = b和b = c，推断是a = c。那么用prolog来实现断言和推断则如下：
 
-```
+```prolog
 equal(a,b).
 equal(c,b).
 
@@ -232,9 +219,8 @@ equalToo(X,Y) :- equal(X,Z), equal(Y,Z).
 
 我们运行这段程序，然后执行如下两个查询：
 
-```
-equalToo(a,c).    
-%yes
+```prolog
+equalToo(a,c).    %yes
 ```
 
 接下来看看prolog是如何解决汉诺塔问题的
@@ -339,7 +325,7 @@ coloring(A, B, C, D, E, F, G, H, I).
 
 得到结果：
 
-```
+```prolog
 A = red
 B = green
 C = blue

@@ -11,18 +11,16 @@
 --Haskell map'函数
 
 map' list = map (+3) list
-map' [1,2,3]    
---[4,5,6]
+map' [1,2,3]    --[4,5,6]
 ```
 
 这是一个高阶函数，我们把列表中每一项都应用了(+3)函数，我们对它进行抽象，让他变成`map (+x) list`。
 
-```
+```haskell
 --Haskell map'函数闭包应用
 
 map' x list = map (+x) list
-map' 3 [1,2,3]    
---[4,5,6]
+map' 3 [1,2,3]    --[4,5,6]
 ```
 
 做了如上改进，我们让map'传入两个参数，一个是加法运算的操作数另一个是被操作的列表，其中map就是一个容器，(+x)就是容器中的函数。接下来在map'得到参数x为3时，就变成了`map (+3) list`，我们再把(+3)用匿名函数的方式展开就变成了：`map (\x->x+3) list`，这时我们看到3变成了函数`(\x->x+3)`中的一部分，而3本身不是函数中定义的，而是通过容器map'传入的。
@@ -40,8 +38,7 @@ negatedEvery:: Num a=>[a]->[a]
 negatedEvery [] = []
 negatedEvery (x:xs)  = -x : negatedEvery xs
 
-negatedEvery [1,2,3,4]    
---[-1,-2,-3,-4]
+negatedEvery [1,2,3,4]    --[-1,-2,-3,-4]
 ```
 
 上面代码中函数negatedEvery作用是将列表元素取反。
@@ -118,7 +115,7 @@ factorial n = n * factorial(n-1)
 
 factorial 3
 ```
-```
+```haskell
 --Haskell 阶乘函数运算过程
 
 factorial 3
@@ -236,8 +233,7 @@ public class Main {
 --Haskell 惰性求值实现无限列表
 
 let mod3 = filter (\x -> mod x 3 == 0) [1..]
-take 5 mod3    
---[3,6,9,12,15]
+take 5 mod3    --[3, 6, 9, 12, 15]
 ```
 我们创建了一个mod3函数，这个函数过滤出所有三的倍数（但不会马上计算）。之后用take先后取了前五个三的倍数，因为惰性求值的缘故，mod3此时才会计算，并且只会计算到第五个元素。这就是一个惰性求值实现无限列表求值的例子。
 
@@ -292,11 +288,8 @@ div3:: Float->Float->Either String Float
 div3 x 0 = Left "Divison by zero"
 div3 x y = Right (x / y)
 
-div3 3 0    
---Exception: divide by zero
-
-div3 3 3    
---1
+div3 3 0    --Exception: divide by zero
+div3 3 3    --1
 ```
 上面定义了一个除3的方法，当除数为0时，返回左值，给出错误信息`除数为0`，其他情况下执行除运算并返回右值。
 
@@ -314,11 +307,8 @@ returnEven a
   | a `mod` 2 == 0 = Just a
   | otherwise = Nothing
  
-returnEven 2    
---Just 2
-
-returnEven 1    
---Nothing
+returnEven 2    --Just 2
+returnEven 1    --Nothing
 ```
 如上定义了一个返回偶数的函数returnEven，函数返回了一个Maybe类型。如果计算结果为偶数则返回值（Just是Haskell对Maybe类型中有效值的包装，这里不用在意），否则返回Nothing。
 
@@ -371,15 +361,12 @@ toRight n (left, right) = (left, right+n)
 
 ```haskell
 --Haskell 平衡木游戏
-
-toLeft 2 (toRight 1 (toLeft 1 (0,0)))    
---(-3, 1)
+toLeft 2 (toRight 1 (toLeft 1 (0,0)))    --(-3, 1)
 ```
 到目前为止是没有问题的，我们在这个基础上继续， 向右倾斜1 -> 向左倾斜3 -> 向右倾斜2
 
 ```haskell
-toRight 1 (toLeft 3 (toRight 2 (-3,1)))    
---(-6, 4)
+toRight 1 (toLeft 3 (toRight 2 (-3,1)))    --(-6, 4)
 ```
 这时返回的结果仍旧是保持平衡的：`|-6+4|<3`。但实际上在向左倾斜3的时候就已经失去平衡而摔倒了，所以是不可能再向右倾斜2恢复到平衡状态的（此时人已经掉下平衡木了）。
 
@@ -419,7 +406,6 @@ return (-3,1) >>= toRight 1 >>= toLeft 3 >>= toRight 2    --Nothing
 --Haskell 实现链式调用
 
 x :- f = f x
-(0,0) -: toRight 1 -: toLeft 3 -: toRight 2    
---(-3,3)
+(0,0) -: toRight 1 -: toLeft 3 -: toRight 2    --(-3,3)
 ```
 通过上面的例子可以看到为了处理产生副作用的调用，Haskell提供了诸如Maybe、Monad这样的概念。而对于允许副作用的语言处理其相同的问题就简单容易的多，这也是纯函数式对比命令式的一个缺点。

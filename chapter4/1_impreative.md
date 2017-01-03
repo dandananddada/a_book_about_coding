@@ -3,8 +3,8 @@
 命令式范式侧重于描述程序的执行过程，它由一系列的命令组成，通过语句（statements）改变程序中的状态（status）。
 
 ```java
-if(x > 0) y = x;
-else y = -x;
+if(x > 0)  y =  x;
+else       y = -x;
 ```
 
 #### 语句（statements）
@@ -52,16 +52,12 @@ assert(1 < 0);System.out.println("1 small than 0");
 
 ```java
 //Java junit断言
-
-assertEquals(2, 1+1);
-//true
+assertEquals(2, 1+1);    //true
 ```
 
 ```javascript
 //JavaScript jasmine断言
-
-expect(1+1).toBe(2); 
-//true
+expect(1+1).toBe(2);    //true
 ```
 
 **调用**
@@ -125,10 +121,10 @@ if([表达式]) 			[语句1]
 else   				 [语句2]
 ```
 
-```
+```java
 int x = 1;
-if(x == 1) 	System.out.println("x is 1");			
-else 				System.out.println("x is not 1");
+if(x == 1)  System.out.println("x is 1");			
+else        System.out.println("x is not 1");
 //x is 1
 ```
 
@@ -144,8 +140,7 @@ for([初始化表达式]; [条件判断表达式]; [增量表达式])	[语句]
 //Java for循环
 
 for(int i=0; i<=2; i++)
-	System.out.print(i+1);
-  //123
+	System.out.print(i+1);    //123
 ```
 
 while：执行条件判断表达式，如果满足则执行语句。
@@ -296,7 +291,6 @@ ADD AH, BH       ;将寄存器AH和BH相加
 //C 八皇后问题
 
 #include <stdio.h>
-
 int is_safe(int rows[8], int x, int y)  
 {
   int i;
@@ -398,7 +392,7 @@ result 92:
 
 这里用C++来重复上面的八皇后问题，对比下面向对象和过程式两种范式的区别。
 
-```c-plus
+```cpp
 //C++ 八皇后问题
 
 #include <iostream>

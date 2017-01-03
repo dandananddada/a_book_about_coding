@@ -40,3 +40,7 @@ code.lang-c:before{
 code.lang-c-plus:before{
   content: "C + +" !important;
 }
+
+sup{
+  font-size: 50%;
+}

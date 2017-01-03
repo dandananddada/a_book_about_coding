@@ -12,16 +12,14 @@
 #Ruby 散列
 
 language = { "name"=> "ruby", "type"=> "dynamic" }
-puts language["name"]    
-#ruby
+puts language["name"]    #ruby
 ```
 
 ```javascript
 //JavaScript 对象
 
 var language = { name: "javascript", type: "dynamic" }
-console.log(language.name);    
-//javascript
+console.log(language.name);    //javascript
 ```
 
 ```java
@@ -33,8 +31,7 @@ Map<String, String> language = new HashMap<String, String>(){
     put("type", "static");
   }
 };
-System.out.println(language.get("name"));    
-//java
+System.out.println(language.get("name"));    //java
 ```
 
 注意散列和数组一样，是引用类型，在使用时要特别小心，如果不想破坏原引用最好进行深度拷贝。
@@ -44,8 +41,8 @@ System.out.println(language.get("name"));
 
 a = language
 a["name"] = "Ruby"
-puts language["name"]    
-#Ruby
+
+puts language["name"]    #Ruby
 ```
 
 ```javascript
@@ -53,8 +50,8 @@ puts language["name"]
 
 var a = language;
 a.name = "JavaScript";
-console.log(language.name);    
-//JavaScript
+
+console.log(language.name);    //JavaScript
 ```
 
 ```java
@@ -63,8 +60,8 @@ console.log(language.name);
 Map<String, String> a = new HashMap<String, String>();
 a = language;
 a.put("name", "Java");
-System.out.println(language.get("name"));    
-//Java
+
+System.out.println(language.get("name"));    //Java
 ```
 
 **键值改变**
@@ -95,7 +92,6 @@ console.log(language, language[name]);
 
 ```ruby
 #Ruby 符号作为散列的键
-
 language = { :name=> "ruby", :type=> "dynamic" }
 ```
 
@@ -105,7 +101,6 @@ Ruby中用符号作为键还有另外一个优势，因为符号是同一个引�
 #Ruby 符号做键与字符串做键查询性能对比
 
 require 'benchmark/ips'
-
 STRING_HASH = { "foo" => "bar" }
 SYMBOL_HASH = { :foo => "bar"  }
 Benchmark.ips do |x|
@@ -172,7 +167,6 @@ public static void main(String args[]){
 定义一个元组
 ```haskell
 --Haskell 元组
-
 (1, "two", "3", "three")
 ```
 

@@ -37,7 +37,7 @@ UTF-6规定用十六进制、两个字节来存储字符，其范围是`0x0000 -
 但两字节只能存储2<sup>16</sup>即65535个字符，这是不够的，因此要存储更多字符就需要两个存储单元。但是这就又出现一个问题，怎么判断两个存储单元是表示两个字符还是表示一个字符。为了解决这个问题，UTF-6编码规范将`0xD800 - 0xDFFF`这段设置为空，不对应任何字符。然后又把这一段空出来的空间分成两段，
 `0xD800-0xDBFF`和`0xDC00-0xDFFF`，对于超出`0xFFFF`的字符追加的那一个存储单元映射为这两段的数值，并放在前面。这样计算机检测到第一个存储单元的两个字节在`0xD800-0xDBFF`和`0xDC00-0xDFFF`范围时就知道需要和后一个存储单元配合来定位为一个字符了。正是因为这个策略导致单个存储单元的UTF-16编码所能表示的字符数量要少。
 
->目前Java、C#、Object-C、JavaScript这些语言内部编码都采用的UTF-16（严格的说JavaScript采用的是UCS-2编码）。
+    目前Java、C#、Object-C、JavaScript这些语言内部编码都采用的UTF-16（严格的说JavaScript采用的是UCS-2编码）。
 
 ####字符长度
 
@@ -45,15 +45,15 @@ UTF-6规定用十六进制、两个字节来存储字符，其范围是`0x0000 -
 
 ```java
 //Java 字符𥊍长度
-System.out.println("𥊍".length()); //2
+System.out.println("𥊍".length());    //2
 ```
 ```javascript
 //JavaScript 字符𥊍长度
-console.log("𥊍".length);  //2
+console.log("𥊍".length);    //2
 ```
 ```ruby
 #Ruby 字符𥊍长度
-puts "𥊍".length  #1
+puts "𥊍".length    #1
 ```
 注意Ruby、Go、Rust这些语言已经开始使用UTF-8作为内部编码了，所以Ruby对特殊字符取长度返回1。
 
@@ -138,7 +138,7 @@ public static void main(String args[]){
     s+= c;
     sb.append(c);
   }
-  System.out.println(s);   //abc
-  System.out.println(sb);  //abc
+  System.out.println(s);     //abc
+  System.out.println(sb);    //abc
 }
 ```

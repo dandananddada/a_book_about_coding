@@ -110,7 +110,7 @@ public class Main{
 最后我们通过变量多态和子类型多态组合使用的例子来加深对多态的认识。
 
 ```java
-//Java 
+//Java 多态
 
 interface Runner{  String run(); };
 
@@ -264,7 +264,7 @@ B继承自A这种叫做单继承；C继承自A和B叫做多重继承；C继承�
 
 单继承和多级继承本身不存在什么问题，但多重继承却存在很多的问题，最典型的问题就是菱形继承问题（diamond problem）。
 
-![菱形继承问题](images/diamond_problem.png)
+<img src="../images/diamond_problem.png" alt="菱形继承" style="height: 320px; width: 320px; float: right; margin: 0px 40px">
 
 如图B、C都继承自A，并且重写了A的metho的方法，而D继承自B和C，同时D没有重写method方法，那么这时D的method方法究竟该继承自B，还是继承自C，这就是菱形继承问题。
 

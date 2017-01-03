@@ -21,11 +21,13 @@ var unknowVariable;     //这里通过变量声明无法判断其具体类型。
 在动态类型语言中你甚至可以不声明而直接使用一个变量。
 
 ```javascript
+//JavaScript 动态语言声明变量无须显式指定类型
+
 undeclaredVariable = "this variable is not declared";
-//undeclaredVariable是一个未声明的变量，在JavaScript中这个变量会变为Global对象的一个属性。
+//undeclaredVariable是一个未声明的变量，在JavaScript中这个变量会变为Global对象的一个属性
 ```
 
-也许你想说我在用Java范型时也无法得知变量的具体类型，但不得不承认你所用的范型是你自己定义的一个类，实质上类本身就是数据类型。而在JavaScript中我们无法判断`unknowVariable`是一个值还是一个对象。
+也许你想说我在用Java范型时也无法得知变量的具体类型，但不得不承认你所用的范型是你自己定义的一个类，实质上类本身就是数据类型。而在JavaScript中我们无法判断unknowVariable是一个值还是一个对象。
 
 除此之外你可能还会拿出Scala说它的val和var也是无法区分类型的，但在Scala的代码中你随处都可以看见 a: Int、b: Double 这样的变量声明，因为Scala确实是一个静态类型语言。而 val 和 var 只是Scala引入的类型推断机制，这一点可以在Scala用val或者var声明变量必须初始化看出来。
 ```scala
@@ -54,8 +56,7 @@ public class StaticTyped{
         String stringParams = "this params is a string";
         
         StaticTyped.mustBeInt(stringParams);
-        //error: method mustBeInt in class StaticTyped cannot be applied to given types:
-        
+        //error: method mustBeInt in class StaticTyped cannot be applied to given types:  
         StaticTyped.mustBeString(stringParams);
         //params is permited
      }
@@ -72,11 +73,8 @@ function paramsIsDynamicTyped(params){
 var number = 1
 ,   string = "this is a string";
 
-paramsIsDynamicTyped(number);
-//params is number
-
-paramsIsDynamicTyped(string);
-//params is string
+paramsIsDynamicTyped(number);    //params is number
+paramsIsDynamicTyped(string);    //params is string
 ```
 
 动态类型提供了更加灵活的编程方式，你不必因为函数参数类型而困扰，你也可以在需要使用一个变量时省去变量声明。不过同介绍强弱类型时所描述的一样，你在获得更高的灵活性的同时，也要付出更多的代价保证代码的准确，因为一个很常见的拼写错误在动态类型下是无法察觉的，而静态类型语言却会给出一个明确的编译错误。正因为这样的特性，静态类型语言往往更容易提供一个友好的IDE。
@@ -87,9 +85,7 @@ paramsIsDynamicTyped(string);
 
 var zero;
 zaro = 0;
-
-console.log(window.zaro, zero);     
-//0 undefined
+console.log(window.zaro, zero);    //0 undefined
 ```
 而在Java中因为变量必须声明才能使用，所以会抛出一个编译错误。
 
@@ -97,9 +93,7 @@ console.log(window.zaro, zero);
 //JavaScript 强类型语言变量必须声明并绑定具体类型，所以可以提供拼写错误警告
 
 int zero;
-
-zaro = 0;           
-//error: cannot find symbol
+zero = 0;     //error: cannot find symbol
 ```
 
 其实强弱类型和动静类型一样，都是在灵活性和安全性这个数轴上寻找一个折中点。动态类型使语言更加灵活，但更容易出错。与此相对的，强类型使语言更加安全，但代码累赘。虽然两者都是在灵活性与安全性上做出折中，但两者是不同的概念，也就是说静态类型语言可能是强类型的，也可能是弱类型的。

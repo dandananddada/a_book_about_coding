@@ -15,8 +15,7 @@ public static double devide(double a, double b){
 
 public static void main(String args[]){
   double r = devide(3, 2);
-  System.out.println(r);      
-  //1.5
+  System.out.println(r);    //1.5
 }
 ```
 
@@ -45,13 +44,11 @@ public static void main(String args[]){
 
 a = [4, 7, 5, 1, 2]
 a.sort
-puts a    
-#[4, 7, 5, 1, 2]
+puts a    #[4, 7, 5, 1, 2]
 
 a = [4, 7, 5, 1, 2]
 a.sort!
-puts a    
-#[1, 2, 5, 5, 7]
+puts a    #[1, 2, 5, 5, 7]
 ```
 
 对于大多数语言而言最基本的函数都是有提供的，比如字符串处理函数：
@@ -117,8 +114,7 @@ class Class
   end
 end
 
-puts Class.new(27, 24) + Class.new(26, 23)    
-#100
+puts Class.new(27, 24) + Class.new(26, 23)    #100
 ```
 可以看出我们重写了+运算符，使他对传入的对象c取得boy\_numbers和girl\_numbers的值并与自身的boy\_numbers和girl\_numbers值求和，最后返回总人数。
 
@@ -142,8 +138,7 @@ class Demo{
   public static void main(String args[]){
     Demo d = new Demo(1, 2);
     
-    System.out.println(d.a +","+ d.b);    
-    //1,2
+    System.out.println(d.a +","+ d.b);    //1,2
 }
 ```
 
@@ -164,8 +159,7 @@ class Demo
 end
 d = Demo.new(1, 2)
 
-puts d.a, d.b    
-#1 2
+puts d.a, d.b    #1 2
 ```
 
 ####析构函数(destructor)
@@ -217,7 +211,7 @@ class Animal{
     Animal dog = new Animal();
 
     System.out.println(Animal.getNumbers());    //2
-    System.out.println(dog.getIndex());        //1
+    System.out.println(dog.getIndex());         //1
   }
 }
 ```
@@ -275,10 +269,17 @@ public class Demo{
     A a = new A();
     B b = new B();
 
-    a.privateMethod();        //error: privateMethod() has private access in A       
-    a.callPrivateMethod();    //This is a private method of class A
-    b.privateMethod();        //error: cannot find symbol b.privateMethod();
-    b.callPrivateMethod();    //This is a private method of class A
+    a.privateMethod();        
+    //error: privateMethod() has private access in A       
+
+    a.callPrivateMethod();    
+    //This is a private method of class A
+
+    b.privateMethod();        
+    //error: cannot find symbol b.privateMethod();
+
+    b.callPrivateMethod();    
+    //This is a private method of class A
   }
 }
 ```
@@ -303,10 +304,17 @@ end
 a = A.new
 b = B.new
 
-a.privateMethod        #private method `privateMethod' called for #<A:0x007fde9309e038> (NoMethodError) 
-a.callPrivateMethod    #this is private method of class A
-b.privateMethod        #private method `privateMethod' called for #<A:0x007fde9309e038> (NoMethodError) 
-b.callPrivateMethod    #this is private method of class A 
+a.privateMethod        
+#private method `privateMethod' called for #<A:0x007fde9309e038> (NoMethodError) 
+
+a.callPrivateMethod    
+#this is private method of class A
+
+b.privateMethod        
+#private method `privateMethod' called for #<A:0x007fde9309e038> (NoMethodError) 
+
+b.callPrivateMethod    
+#this is private method of class A 
 ```
 
 可以看出Ruby中的私有方法调用结果和Java一样，对于类A所在的上下文外是无法访问的。
@@ -338,11 +346,15 @@ public class Demo{
   public static void main(String args[]){
     A a = new A();
     
-    a.privateVariable = "private variable";    //error: privateVariable has private access in A
-    System.out.println(a.privateVariable);     //error: privateVariable has private access in A
+    a.privateVariable = "private variable";    
+    //error: privateVariable has private access in A
+
+    System.out.println(a.privateVariable);     
+    //error: privateVariable has private access in A
 
     a.setVariable("private variable");         
-    System.out.println(a.getVariable());       //private variable
+    System.out.println(a.getVariable());       
+    //private variable
 
   }
 }
@@ -435,9 +447,7 @@ public class Main{
 
 ```javascript
 //JavaScript 匿名自执行函数
-
-console.log(function(){ return 2 }());    
-//1
+console.log(function(){ return 2 }());    //1
 ```
 
 我们在log函数里传入了一个匿名函数`function(){ return 2 }`，紧接着通过`()`运算符执行了这个匿名函数。
@@ -451,8 +461,7 @@ function add (a){
   return function(b, c){ a+b+c };
 }
 
-add(1)(2,3);    
-//6
+add(1)(2,3);    //6
 ```
 上面的例子中add函数返回了一个匿名函数`function(b, c){ a+b+c }`，当调用add(1)时会返回一个函数`function(b, c){ 1+b+c }`，所以我们可以继续用`()`运算符传入参数b与c执行返回的匿名函数。
 
@@ -512,8 +521,7 @@ Proc.new { |x| puts x + 1 }.call(2)     #3
 #Ruby lambda作为参数传递
 
 a = lambda { |x| puts x*2 }
-[1, 2, 3].each(&a)    
-#2 4 6
+[1, 2, 3].each(&a)    #2 4 6
 ```
 
 上面代码中`&`运算符是将proc对象转为block，相当于把代码段`puts x*2`带入到each中，当然这样的写法就不能算作纯粹的匿名函数了，因为我们给lambda指定了变量名a。
@@ -521,8 +529,7 @@ a = lambda { |x| puts x*2 }
 ```ruby
 #Ruby 匿名函数作为参数传递
 
-[1, 2, 3].each(&lambda { |x| puts x*2 })
-#2 4 6 
+[1, 2, 3].each(&lambda { |x| puts x*2 })    #2 4 6 
 ```
 
 ####纯函数
@@ -538,15 +545,15 @@ a = lambda { |x| puts x*2 }
 
 a = [1, 2, 3]
 
-puts a.reverse  #[3,2,1]
-puts a          #[1,2,3]
+puts a.reverse    #[3,2,1]
+puts a            #[1,2,3]
 ```
 ```ruby
 #Ruby reverse!函数
 a = [1, 2, 3]
 
-puts a.reverse!  #[3,2,1]
-puts a           #[3,2,1]
+puts a.reverse!    #[3,2,1]
+puts a             #[3,2,1]
 ```
 
 上面的例子中reverse就是一个纯函数，reverse翻转一个数组后不会改变原数组，而reverse!则相反，它会修改原数组，所以reverse!不是一个纯函数，包括上面函数分类用的sort和sort!也是如此的，Ruby本身提供的函数是纯函数，根据需求你也可以用相应的`!`函数改变源数据。对比Java（Java的reverse是破坏性的）和Haskell，Ruby提供了更多的可选条件。
@@ -570,8 +577,8 @@ isString(1);                  //false
 ```ruby
 #Ruby 谓词函数
 
-"it's a string".is_a? String  #true
-1.is_a? String                #false
+"it's a string".is_a? String    #true
+1.is_a? String                  #false
 ```
 函数is_a?用来判断参数类型是否匹配，匹配则返回true，否则返回false，注意观察会发现这个谓词函数后面跟着一个`?`，和破坏性函数类型，Ruby用`?`来特别标识一个函数为谓词函数。
 
@@ -584,8 +591,8 @@ def is_string? s
   s.is_a? String
 end
 
-is_string? "it's a string"  #true
-is_string? 1                #false
+is_string? "it's a string"    #true
+is_string? 1                  #false
 ```
 
 ####高阶函数

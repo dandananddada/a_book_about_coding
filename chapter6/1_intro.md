@@ -17,7 +17,6 @@
 
 ```haskell
 --Haskell 函数作为参数传递给另一个函数
-
 map (+3) [1,2,3]
 ```
 
@@ -34,8 +33,7 @@ isZero:: Int->String
 isZero 0 = "yes"
 isZero _ = "no"
 
-isZero 3    
---no
+isZero 3    --no
 ```
 如上声明了一个函数isZero，其中Int->String表示接受一个整数类型，返回一个字符串类型。然后声明了`isZero 0 = "yes"`表示当参数为0时返回yes。最后`isZero _ = "no"`表示除此之外任意参数都返回no。
 
@@ -50,8 +48,7 @@ public static String isZero(int num){
   else          return "no";
 }
 
-System.out.print(isZero(0));    
-//yes
+System.out.print(isZero(0));    //yes
 ```
 
 **值不可变**
@@ -114,7 +111,7 @@ System.out.print(isZero(0));
   result = isPerfect();
 
   if(result)   console.log(number + " is perfcet");
-  else                  console.log(number + " is not perfect");
+  else         console.log(number + " is not perfect");
   
   //取得所有正公约数
   function getFactors(){
