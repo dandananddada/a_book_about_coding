@@ -156,6 +156,99 @@ public static void main(String args[]){
 
 上面例子可以看出如果你试图修改匿名内部类中引用的变量name，程序在编译时就会抛出一个编译错误。
 
+#### 枚举
+
+枚举类型可以看做是一个键为常量，值为数字类型（默认值从0开始自增长）的散列，其主要用来存储一些列性质相同的常量元素。
+
+目前主流语言都加入了枚举类型：
+
+```c
+//C 枚举
+
+enum season {
+  Spring = 0,
+  Summer = 1,
+  Autumn = 2,
+  Winter = 3;
+};
+```
+
+```java
+//Java v1.5后引入枚举
+
+public enum Season {  
+  SPRING, SUMMER, AUTUMN, WINTER;  
+}
+
+```
+在分支语句中使用枚举能提高代码的可读性：
+
+```java
+//Java 分支语句中使用枚举
+
+public static void main(String args[]){
+  Color color = Color.RED;
+
+  switch(color){
+    case RED:
+      System.out.println("red");
+      break;
+    case GREEN:
+      System.out.println("green");
+      break;
+    case YELLOW:
+      System.out.println("yellow");
+      break;
+  }
+}
+```
+枚举的另外一个主要用途是充当静态常量，对比静态常量枚举类型更加安全。
+
+```java
+//Java 常量在使用时需要合法性验证
+
+interface Color{
+  static final int RED = 1;
+  static final int GREEN = 2;
+  static final int YELLOW = 3;
+}
+
+public class Main{
+  public Boolean isRed(int i){
+    //为保证参数有效，需要合法性验证
+    if(i < 1 || i > 3)  System.out.println("error code");
+
+    if(i == 1)  return true;
+    else        return false;
+  }
+  public static void main(String args[]){
+    Main main = new Main();
+    if(main.isRed(Color.RED))  System.out.println("red");    //red
+  }
+}
+```
+```java
+//Java 枚举类型比常量更加安全
+
+enum Color{
+  RED,GREEN,YELLOW;
+}
+public class Main{
+  public Boolean isRed(Color color){
+    //枚举类型限定了输入参数，保证了合法性输入
+    if(color.ordinal() == 0)  return true;
+    else                      return false;
+  }
+  public static void main(String args[]){
+    Main main = new Main();
+    Color red = Color.RED;
+    if(main.isRed(red))  System.out.println("red");    //red
+  }
+}
+```
+合理的通过枚举替换常量的使用是一种良好的编程习惯，当然抛去枚举的概念不用也不会产生什么严重的问题，枚举的使用与否也是个人习惯的一种选择，这里只是讲到散列类型联系到枚举，简单进行说明。
+
+
 #### 元组
 
 除了列表外函数式语言中另外一种常用的数据结构就是元组了，元组和列表的区别在于元组允许异质类型，不过元组多数都是定长的。
