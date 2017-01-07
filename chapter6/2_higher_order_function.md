@@ -276,9 +276,17 @@ inRange a b c
 柯里化是把参数传入第一个函数，执行后返回一个新的函数，然后把第二个参数应用到这个新函数，依次；
 而函数组合是把参数传递给第一个函数，执行后返回一个值，然后把值传入第二个函数，依次。所以柯里化看起来是一个函数连续调用了几个参数，而函数组合是多个函数嵌套调用了一个参数。
 
-# 图片处理下
-
-![柯里化和函数组合](../images/curry_and_function_composition.png)
+<p style="text-align: center">
+  <div class="img" style="
+    background-position: 0px -40px;
+    height: 40px;
+    background-image: url(../images/curry_and_function_composition.png);
+    height: 160px;
+    width: 540px;
+    background-repeat: no-repeat;
+    margin: auto;">
+  </div>
+</p>
 
 在数学中f(g(x))可以写作f·g(x)，同样为了便于书写和阅读，Haskell也提供了f.g(x)这样的表达方式。
 

@@ -287,11 +287,14 @@ move top disk from A to C
 
 > 如果在平面上划出一些邻接的有限区域，那么可以用四种颜色来给这些区域染色，使得每两个邻接区域染的颜色都不一样。
 
-![](/images/coloring.png)
+<img src="/images/coloring.png" style="width: 240px; height: 210px; float: left; margin-top: -20px; margin-left: -34px; mragin-bottom: -13px">
 
-我们用四种颜色（红、绿、蓝、黄）对上面9个区域进行染色，根据四色定理我们可以使任意相邻的两个区域都不同色。
+<p>我们用四种颜色（红、绿、蓝、黄）对左侧图中9个区域进行染色，根据四色定理我们可以使任意相邻的两个区域都不同色。
+</p>
 
-首先列出相邻两个区域不同颜色着色的所有方案。
+<p>首先列出相邻两个区域不同颜色着色的所有方案：</p>
+
+<p style="clear: both"></p>
 
 ```prolog
 %Prolog 断言相邻区域不同色
