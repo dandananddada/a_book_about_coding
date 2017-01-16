@@ -44,3 +44,7 @@ code.lang-c-plus:before{
 sup{
   font-size: 50%;
 }
+
+p{
+  text-indent: 2em;
+}
