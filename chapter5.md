@@ -1,6 +1,6 @@
 # 第五章 命令式下的面向对象概念
 
-继第四章引入命令式和声明式概念后，这里将主要说明命令式范式下的面向对象语言。
+第四章引入命令式和声明式概念后，在本章将主要说明命令式范式下的面向对象语言。
 
 * 介绍面向对象语言中对象相关概念及对象实现的三种常见模式。
 * 介绍面向对象语言的特点，及相关概念。
@@ -714,7 +714,7 @@ public class Main{
 来看下上面的代码：
 
 1. 创建一个Language接口，并定义了一个sayHello方法。
-2. 分别创建Java类和Ruby类，实现Language接口的sayHello方法。
+2. 创建Java类和Ruby类，分别实现Language接口的sayHello方法。
 3. 创建一个LanguageFactory类并实现setLanguage方法，这个方法的返回值是一个Language接口。我们可以根据type参数进行逻辑判断，返回一个实现了Language接口的类。
 4. 调用LanguageFactory的setLanguage得到需要的对象。
 
@@ -824,10 +824,10 @@ public class Main{
 
 简单分析下上述代码：
 
-1. 我们有一个要适配的接口AdvancedMediaPlayer和用来包装的接口MediaPlayer，MediaPlayer定义了一个play方法，而AdvancedMediaPlayer对play细化定义了playFlv和playMp4。
+1. 我们有一个要适配的接口AdvancedMediaPlayer和用来包装的接口MediaPlayer，MediaPlayer中定义了一个play方法，而AdvancedMediaPlayer对play进行细化，定义了playFlv和playMp4。
 2. 创建FlvPlayer和Mp4Player类，一个实现了AdvancedMediaPlayer接口的playFlv方法，另一个实现了AdvancedMediaPlayer接口的playMp4方法。
-3. 定义了适配器AdapterPlayer，适配器实现了包装接口MediaPlayer的play方法，同时适配器同工厂类似根据输入参数返回具体的advancedMediaPlayer对象。
-4. 创建AudioPlayer类，该类通过适配器AdapterPlayer实现了包装接口MediaPlayer的play方法，并根据play方法输入的参数实例化AdapterPlayer对象，然后调用adapterPlayer的play方法。这样AudioPlayer就通过适配器就隐藏了play的细节。
+3. 定义了适配器AdapterPlayer，适配器实现了包装接口MediaPlayer的play方法，同时适配器还会根据输入参数不同返回对应的advancedMediaPlayer对象。
+4. 创建AudioPlayer类，该类通过适配器AdapterPlayer实现了包装接口MediaPlayer的play方法，并根据play方法输入的参数实例化AdapterPlayer对象，然后通过adapterPlayer调用play方法执行播放任务。这样AudioPlayer就通过适配器隐藏了play的实现细节。
 
 ##### 装饰模式
 
@@ -883,11 +883,10 @@ public class Main{
 
 上面代码如下：
 
-1. 首先创建了一个Animal接口并定义了say方法，然后定义了实现这个接口的两个类Cat和Dog。
-2. 定义一个装饰类的抽象类，抽象类中定义了一个Animal类型的属性，方便子类包装使用。
-3. 定义了一个装饰类LovelyAnimalDecorator，继承了抽象类AnimalDecorator，并添加了新特性，重写了say方法。
-4. 实例化一个原始类对象cat，把cat作为参数传递给包装类LovelyAnimalDecorator，调用包装类的say方法。
-5. 包装类的say方法执行包装类定义的新特性，并执行原始类的say方法。
+1. 首先创建一个Animal接口并定义了say方法，然后定义Cat类和Dog类分别实现Animal接口的say方法。
+2. 然后定义一个装饰类的抽象类，抽象类中定义了一个Animal类型的属性，方便子类包装使用。
+3. 接下来定义了一个装饰类LovelyAnimalDecorator，继承了抽象类AnimalDecorator，并添加了新特性，重写了say方法。
+4. 最后实例化一个原始类对象cat，把cat作为参数传递给包装类LovelyAnimalDecorator，调用该包装类的say方法。包装类的say方法会得到包装类中定义的新特性，同时还会执行原始类的say方法。
 
 ##### 代理模式
 
@@ -925,9 +924,9 @@ public class Main{
 
 分析以上代码
 
-1. 创建了Trade接口并定义了购买方法。
-2. 创建Buyer类并实现Trade接口。
-3. 定义了代理类Taobao，拥有一个Buyer属性，实现Trade接口，并在buy方法中调用buyer对象的buy方法。
+1. 首先创建Trade接口并定义了购买方法buy。
+2. 然后创建Buyer类并实现Trade接口。
+3. 最后定义代理类Taobao，拥有一个Buyer属性，实现Trade接口，并在buy方法中调用buyer对象的buy方法。
 
 ##### 观察者模式
 
@@ -999,11 +998,11 @@ public class Main{
 简单的说观察者模式就是两个类之间消息的传递，消息类状态发生改变时会通知观察者执行相应操作，而观察者在初始化时会通知消息类把自己加入到观察者注册列表中。具体如下：
 
 1. 首先创建一个消息类，消息类中有一个消息状态及状态的访问器，这里定义了用来描述天气的属性weather及weather的属性访问器setWeather和getWeather。
-2. 消息类还定义了一个观察者列表及相关的方法。观察者列表observers用来存储所有订阅该消息的观察者，subscribe方法用来添加新的观察者对象到观察者列表，notifyObservers方法用来通知观察者消息改变了。
-3. 其中notifyObservers方法遍历观察者列表中每一个观察者，并调用他们的notified方法。
-4. 接着定义了观察者抽象类Observer，这个抽象类拥有消息类WeatherForecast及notified方法。
-5. 然后定义了两个观察者You和YourFriend，分别在构造函数中调用了消息类weatherForecast的观察者注册方法subscribe，这样在消息发生改变时所有在观察者列表中的观察者都会收到相应的通知并调用notifed方法。
-6. 最后让每个观察者类都实现notifed方法，当收到消息类发送的通知时分别执行各自的处理方法。
+2. 消息类还定义了一个观察者列表及相关的方法。观察者列表observers用来记录所有订阅了该消息的观察者，subscribe方法用来追加新的观察者对象到观察者列表，notifyObservers方法用来通知观察者消息改变了。
+3. 其中notifyObservers方法的工作原理是遍历观察者列表中的每一个观察者，然后并调用它们的notified方法。
+4. 接着定义观察者抽象类Observer，这个抽象类拥有消息类WeatherForecast及notified方法。
+5. 然后定义了两个观察者You和YourFriend，这两个观察者都在构造函数中调用了消息类weatherForecast的注册方法subscribe，这样新的观察者就会追加到观察者对象，并在消息发生改变时通过notifed方法通知所有观察者消息改变了。
+6. 最后让每个观察者类都实现notifed方法来处理接收到的消息。
 
 ##### 责任链模式
 
@@ -1075,11 +1074,11 @@ public class Main{
 
 >Java从代码到执行要经过编写、编译、链接、运行四个步骤
 
-1. 首先我们创建一个Task抽象类，Task类定义了一个Task类型的属性next来指明下一个任务节点。
-2. Task类中包含一个抽象方法work，交由子类实现。同时还定义了一个start方法，用来执行当前Task的work方法并判断是否存在下一个任务节点，如果存在，则执行这个任务节点的start方法。这样就可以构成一个任务链了。
-3. 然后定义Write、Compile、Link、Run四个任务，都继承自Task类，并实现了work方法。
-4. 定义一个责任链类TaskChain，类中定义了一个静态方法getTaskChain用来获取任务链，方法中创建了任务类对象，并通过nextTask方法组成一个任务类链表，然后将任务链的第一个任务返回。
-5. 最后调用taskChain.start方法触发任务链的执行，start方法会执行当前任务的work方法并判断是否存在下一个任务，如果存在，则执行下一个任务的start方法，否则结束任务，以此类推。
+1. 首先我们创建一个Task抽象类，Task类定义了属性next来指明下一个任务节点，其中next本身也是一个Task类。
+2. Task类中包含一个抽象方法work，交由子类实现。同时还定义了一个start方法，start方法调用当前任务的work方法并判断是否存在下一个任务节点，如果存在，则执行这个任务节点的start方法，不存在则结束。这样一来就构成了一个任务链。
+3. 然后定义Write、Compile、Link、Run四个任务类，继承自Task类，并实现了work方法。
+4. 接下来定义一个责任链类TaskChain，TaskChain中定义了一个静态方法getTaskChain用来获取任务链，getTaskChain依次创建了任务类对象write、compile、link和run，并通过对象的nextTask方法把四个任务对象串联成一个任务链，方法的最后返回任务链的第一个对象节点write。
+5. 最后调用taskChain.start方法触发任务链的执行。
 
 
 #### 设计模式和语言特性
