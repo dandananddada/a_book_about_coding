@@ -181,6 +181,7 @@ var number = 496
 ,   isPerfect = _.chain(_.range(1, number))
     .filter(function(n){ return number%n == 0 })
     .reduce(function(p,n){ return p+n }, 0)
+    .isEqual(number)
     .value();
 if(isPerfect)  console.log(number, "is perfect");    //496 is perfect
 ```
