@@ -178,8 +178,8 @@ if(
 //JavaScript 通过链式调用使函数式代码更加语义化
 
 var number = 496
-,   isPerfect = _.chain(_.range(1, 300))
-    .filter(function(n){ return 300%n == 0 })
+,   isPerfect = _.chain(_.range(1, number))
+    .filter(function(n){ return number%n == 0 })
     .reduce(function(p,n){ return p+n }, 0)
     .value();
 if(isPerfect)  console.log(number, "is perfect");    //496 is perfect
